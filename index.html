@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UZBEK BDAY — 30 IN TASHKENT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .shaky-line {
+            border-bottom: 1px solid #1C1C19;
+            position: relative;
+        }
+        .shaky-line::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #1C1C19;
+            transform: skewY(0.2deg);
+        }
+        .girikh-watermark {
+            opacity: 0.05;
+            pointer-events: none;
+            position: absolute;
+            z-index: 0;
+            filter: grayscale(1);
+        }
+        .sticker-offset {
+            position: relative;
+        }
+        .sticker-offset::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 100%;
+            height: 100%;
+            background: currentColor;
+            z-index: -1;
+            opacity: 1;
+        }
+        .handwritten {
+            font-family: 'Space Grotesk', sans-serif;
+            font-style: italic;
+        }
+        .cross-stitch-divider span:nth-child(3n+1) { color: #FF46CA; }
+        .cross-stitch-divider span:nth-child(3n+2) { color: #00CB8D; }
+        .cross-stitch-divider span:nth-child(3n) { color: #FF9400; }
+        
+        .timer-glitch {
+            text-shadow: 4px 4px 0px #FF46CA, -4px -4px 0px #00CB8D;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#FF46CA",
+                      "secondary": "#00CB8D",
+                      "tertiary": "#FF9400",
+                      "surface": "#fcf9f4",
+                      "on-surface": "#1c1c19",
+                      "surface-container-low": "#f6f3ee",
+                      "surface-container-highest": "#e5e2dd",
+              },
+              "borderRadius": {
+                      "DEFAULT": "0rem",
+                      "lg": "0rem",
+                      "xl": "0rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Epilogue"],
+                      "body": ["Space Grotesk"],
+                      "label": ["Space Grotesk"],
+                      "mono": ["Space Mono"]
+              }
+            },
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-surface border-b-[1px] border-on-surface/20">
+<div class="text-3xl font-black text-primary italic font-headline tracking-tighter uppercase">UZBEK BDAY</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary underline decoration-wavy decoration-1 underline-offset-4 font-headline font-black tracking-tighter uppercase hover:skew-x-[-2deg] transition-transform" href="index.html">HOME</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="plan.html">PLAN</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="tashkent.html">TASHKENT</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="samarkand.html">SAMARKAND</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="bukhara.html">BUKHARA</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="practical.html">PRACTICAL</a>
+</div>
+<button class="bg-primary text-white px-6 py-2 font-headline font-black uppercase tracking-tighter active:translate-y-0.5 active:scale-95 transition-all">RSVP</button>
+</nav>
+<main class="relative pt-24">
+<!-- Girikh Background Elements -->
+<img class="girikh-watermark top-20 -left-20 w-96 rotate-12" data-alt="Intricate blue and white geometric tile pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcfvZXf0vUEQkTNt5pW0yoU0HidTP4To9SF_f95u1kfIVZrMRAk4XvSQnxWmmCESSz9sBKyfcik1rNXmE3h1SEWyPOiedN_H4fV5mgzEWXNtaV56NJ7aEpwyjckv8FMKFJn2y9XGDqM-xArvb8I1zncQ6HJMC-AnUoApgxhELS4h0vRpv2_yrIJK8UJL7veIzDMAvMUVjzlvbiyX4JAxlZJFSi2RtWr2VLhcjDt74-omK9SoIz2ShjqxucXQEcBAxSWzkFDiAPKRT7"/>
+<img class="girikh-watermark bottom-40 -right-20 w-80 -rotate-12" data-alt="Traditional Uzbek wood carving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mYLbFXon0eMSm1zKeXUkU-rZBRHOE-kwH5fc4e6rDwyE8I9O-wW62lWALku9BMPLfNkNbFI9j3A6ELInQuXBM-qXqmJlWk44D1TV49sPJk0I4EixUSb5a1IKW8tPVqnsRGBRtgmSdVcmtRugdkmkrzdFMW4CLHgwE0NjRdUuOUe0IPlC21P-HRhJyttgCmkt4tVTwacwa_8c6ffQNJFPmj5PGlufZuBSFrWszwKeYaoBOcpk1zv740ZysG94PM9LRrVZqDEfymM-"/>
+<!-- 1. HERO SECTION -->
+<section class="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden">
+<div class="absolute top-10 right-10 md:right-20 rotate-12 bg-secondary text-on-surface font-mono font-bold text-sm uppercase z-10 px-4 py-2">
+                june 11, 2026
+            </div>
+<div class="z-10 max-w-5xl">
+<h1 class="font-headline font-black text-7xl md:text-9xl tracking-tighter leading-none mb-4 text-on-surface">HEY.</h1>
+<h2 class="font-headline font-black text-6xl md:text-8xl tracking-tighter leading-none mb-8 text-on-surface/90">I'M TURNING 30</h2>
+<p class="font-headline font-black text-4xl md:text-6xl tracking-tighter leading-tight max-w-4xl">
+                    THIS IS MY EXCUSE... <br/>
+                    FOR INVITING YOU TO... <br/>
+<span class="text-primary italic">UZBEKISTAN</span>
+</p>
+<p class="mt-8 text-on-surface/40 italic text-xl md:text-2xl max-w-2xl handwritten">
+                    (or, how to eat plov at 7am, sweat through your clothes, and call it a good time — with people I love)
+                </p>
+</div>
+<div class="absolute bottom-10 left-6 md:left-20 w-full max-w-xs aspect-square opacity-20 border-[1px] border-dashed border-on-surface p-2">
+<img class="w-full h-full object-cover filter grayscale" data-alt="Registan Square in Samarkand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB-x7j4NGp9w_-IHrcygfHIy7L7vnfodkOrKF4-S941_045xFpWmAlnObvykT-s8ebtM7Gqy_JFPDNfcrfyKxsGJYT9TknS2-XTmMbIvZW7toPlTV1HO_LHuzT0cmHkhPUQ5PXe5cBfMSfQQqqqaX3rL-mTsZeQope4RgrRahpOD75OH00KAJVz6ocgnRq8dofGE4XnxbHw2vD3LSSW29IUoUrx7TtV6Hutn7nKJANOri3ULAaRHvLxHYnLunm0mXNKdqBEmxbCpby"/>
+</div>
+</section>
+<!-- Repeating X X X Divider -->
+<div class="w-full py-12 flex justify-center items-center overflow-hidden">
+<div class="cross-stitch-divider whitespace-nowrap text-2xl font-mono flex gap-4">
+<span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span>
+</div>
+</div>
+<!-- 2. INVITE BLOCK -->
+<section class="px-6 md:px-20 py-20 max-w-4xl border-l-[1px] border-dashed border-on-surface/20 ml-4 md:ml-16">
+<p class="text-3xl md:text-4xl font-headline font-black leading-tight mb-12 uppercase tracking-tighter">
+                On <span class="text-secondary">June 11, 2026</span> I'm celebrating my 30th birthday in <span class="text-tertiary">Tashkent</span> and I really want you to be there.
+            </p>
+<div class="space-y-10 mb-16">
+<div class="border-l-8 border-primary pl-6 py-2">
+<p class="text-xl md:text-2xl font-mono font-bold">Come just for the birthday on the 11th.</p>
+</div>
+<div class="border-l-8 border-secondary pl-6 py-2">
+<p class="text-xl md:text-2xl font-mono font-bold">Come for a few days around it.</p>
+</div>
+<div class="border-l-8 border-tertiary pl-6 py-2">
+<p class="text-xl md:text-2xl font-mono font-bold">Come for the whole trip — 9 days, Tashkent → Samarkand → Bukhara.</p>
+</div>
+</div>
+<div class="mb-8 font-mono text-2xl tracking-[0.5em] md:text-4xl">
+<span class="opacity-20">JUN 09 —</span> <span class="font-bold text-primary">JUN 11</span> <span class="opacity-20">— JUN 16</span>
+</div>
+<p class="text-xl font-mono mb-4">However works for you works for me.</p>
+<p class="text-secondary font-bold italic handwritten text-lg">
+                (the party does not require full attendance. the party recommends it.)
+            </p>
+</section>
+<!-- Divider -->
+<div class="w-full py-12 flex justify-center items-center overflow-hidden">
+<div class="cross-stitch-divider whitespace-nowrap text-2xl font-mono flex gap-4">
+<span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span>
+</div>
+</div>
+<!-- 3. FUNNY LIST -->
+<section class="px-6 md:px-20 py-24 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+<div>
+<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter leading-none mb-16 uppercase">
+                        HERE'S WHAT THE TRIP <span class="text-tertiary">ACTUALLY</span> LOOKS LIKE:
+                    </h2>
+<div class="space-y-12">
+<div class="flex items-start gap-6 group">
+<span class="font-mono text-4xl text-primary font-bold">01</span>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">Tashkent Heat</h3>
+<p class="text-on-surface/70">A dry, honest sun that makes every shade of blue in the tiles pop like a neon sign.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="font-mono text-4xl text-secondary font-bold">02</span>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">Plov at 7am</h3>
+<p class="text-on-surface/70">Going to the Central Asian Plov Centre when it opens because that's when the magic happens.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="font-mono text-4xl text-tertiary font-bold">03</span>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">30th Birthday Dinner</h3>
+<p class="text-on-surface/70">Under the stars with too much bread and endless tea.</p>
+<p class="text-primary italic mt-2 handwritten text-xl">"Barakalla."</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="font-mono text-4xl text-primary font-bold">04</span>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">High-Speed Train</h3>
+<p class="text-on-surface/70">The Afrosiyob is surprisingly fast, very clean, and full of tea service.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="font-mono text-4xl text-secondary font-bold">05</span>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">Registan Photos</h3>
+<p class="text-on-surface/70">Yes, it's touristy. Yes, it's absolutely breathtaking. We are doing it.</p>
+<p class="text-tertiary italic mt-2 handwritten text-lg">Bring an extra SD card.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative mt-20 md:mt-0">
+<div class="sticker-offset bg-surface-container-highest p-4 rotate-2 text-primary">
+<img class="w-full aspect-[4/5] object-cover" data-alt="Uzbek plov preparation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA15rXwjh0Yvj1iw2tYS-BWD1dSRgUYxHNvLajcblQRnFsFtCzr2ia6b0YSiaX7wn3Ls2Mo2EQ7Bwl03SbmAixCqWxMfK0B0Q6p2PNJMerHxuEQgWiIZK484SO-pCnhlEeUqfuXUaKYyEwqHBff5IsEicYsNnNPcA9Ru5jEhpiy1_81Kd9SvDzw6le4cBPWjXSK2dH5kQ1A4IgBSfW4614MwplW9fXeS1y3OEG-axmXNlXtx1xUPrtgHpk5stYXH1rcs3kr8mVfnYw9"/>
+<div class="mt-4 font-mono text-xs uppercase tracking-widest text-on-surface/60">FIG 01. THE PLOV CENTER EXPERIENCE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. DRAMATIC COUNTDOWN -->
+<section class="px-6 md:px-20 py-40 bg-on-surface text-surface overflow-hidden relative">
+<div class="max-w-6xl mx-auto">
+<h2 class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-secondary">TIME UNTIL YOU HAVE TO DECIDE</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+<div class="flex flex-col items-center">
+<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">482</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">DAYS</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">14</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-secondary pt-2">HOURS</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">32</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-tertiary pt-2">MINUTES</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">09</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">SECONDS</span>
+</div>
+</div>
+<div class="flex justify-center gap-8 items-baseline mt-20">
+<p class="text-surface/40 italic handwritten text-3xl">
+                        (no pressure)
+                    </p>
+<p class="text-secondary italic handwritten text-3xl font-bold">
+                        (some pressure)
+                    </p>
+</div>
+<p class="mt-12 font-mono text-sm max-w-lg mx-auto text-center leading-relaxed text-surface/50">
+                    * NOTE: Trains in Uzbekistan sell out exactly 45 days in advance. I'll need your final "Yes" before then.
+                </p>
+</div>
+</section>
+<!-- 5. DATES BAR -->
+<div class="w-full bg-primary py-6 px-6 overflow-hidden">
+<div class="flex whitespace-nowrap gap-12 font-mono text-lg md:text-2xl animate-pulse text-on-surface">
+<span class="font-bold">JUN 09 → TASHKENT</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 11 → BDAY PARTY</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 12 → SAMARKAND</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 14 → BUKHARA</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 16 ✈ HOME</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 09 → TASHKENT</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 11 → BDAY PARTY</span>
+</div>
+</div>
+<!-- 6. CTA SECTION -->
+<section class="px-6 md:px-20 py-32 flex flex-col items-center text-center bg-surface">
+<div class="relative mb-16">
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold">
+                    ("yes", "maybe", "what even is plov" — all valid)
+                </div>
+<button class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter">
+                    I'M IN — MESSAGE ANASTASIA
+                </button>
+</div>
+<a class="group flex items-center gap-4 text-xl font-headline font-black uppercase tracking-tighter hover:text-secondary transition-colors" href="plan.html">
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                see the full trip plan
+            </a>
+</section>
+</main>
+<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-surface border-t-[1px] border-double border-on-surface">
+<div class="font-mono text-xs uppercase tracking-widest text-on-surface">© 2024 UZBEK BDAY ZINE</div>
+<div class="flex gap-10">
+<a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-primary transition-colors" href="#">INSTAGRAM</a>
+<a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="#">CONTACT</a>
+<a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-tertiary transition-colors" href="#">MAPS</a>
+</div>
+</footer>
+</body></html>

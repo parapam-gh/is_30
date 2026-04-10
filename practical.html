@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UZBEK BDAY - PRACTICAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;family=Reenie+Beanie&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .shaky-line {
+            border-bottom: 1px solid #1c1c19;
+            mask-image: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5 Q 2.5 2, 5 5 T 10 5 T 15 5 T 20 5 T 25 5 T 30 5 T 35 5 T 40 5 T 45 5 T 50 5 T 55 5 T 60 5 T 65 5 T 70 5 T 75 5 T 80 5 T 85 5 T 90 5 T 95 5 T 100 5' fill='transparent' stroke='black' stroke-width='1'/%3E%3C/svg%3E");
+            mask-size: 200px 10px;
+        }
+        .girikh-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='%231c1c19' stroke-width='0.5' stroke-opacity='0.1'/%3E%3C/svg%3E");
+        }
+        .handwritten {
+            font-family: 'Reenie Beanie', cursive;
+        }
+        .sticker-offset {
+            box-shadow: 8px 8px 0px 0px #1c1c19;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b002c",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-container": "#00714d",
+                        "secondary": "#006c49",
+                        "surface-container": "#f0ede9",
+                        "surface-variant": "#e5e2dd",
+                        "surface-bright": "#fcf9f4",
+                        "outline-variant": "#ddbecd",
+                        "on-tertiary-fixed-variant": "#6b3b00",
+                        "on-primary-container": "#5b0045",
+                        "inverse-on-surface": "#f3f0eb",
+                        "on-background": "#1c1c19",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dcdad5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3ee",
+                        "secondary-fixed-dim": "#37e0a0",
+                        "secondary-container": "#5afab8",
+                        "tertiary": "#8d4f00",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffaedd",
+                        "on-surface": "#1c1c19",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#462500",
+                        "surface": "#fcf9f4",
+                        "outline": "#8a707d",
+                        "on-error-container": "#93000a",
+                        "primary": "#b2008a",
+                        "on-secondary-fixed": "#002113",
+                        "background": "#fcf9f4",
+                        "on-primary-fixed-variant": "#880069",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-container": "#ff46ca",
+                        "on-surface-variant": "#57404c",
+                        "primary-fixed": "#ffd8eb",
+                        "on-tertiary-fixed": "#2d1600",
+                        "tertiary-fixed-dim": "#ffb875",
+                        "surface-tint": "#b2008a",
+                        "inverse-primary": "#ffaedd",
+                        "inverse-surface": "#31302d",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-container-high": "#ebe8e3",
+                        "secondary-fixed": "#5efdbb",
+                        "tertiary-container": "#da7e00",
+                        "tertiary-fixed": "#ffdcc0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Space Grotesk"],
+                        "label": ["Space Grotesk"],
+                        "mono": ["Space Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body girikh-bg min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-[#FCF9F4] border-b-[1px] border-dashed border-[#1C1C19]">
+<div class="text-3xl font-black text-[#FF46CA] italic font-['Epilogue'] tracking-tighter uppercase">
+            UZBEK BDAY
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="index.html">HOME</a>
+<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="plan.html">PLAN</a>
+<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="tashkent.html">TASHKENT</a>
+<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="samarkand.html">SAMARKAND</a>
+<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="bukhara.html">BUKHARA</a>
+<a class="text-[#FF46CA] underline decoration-wavy decoration-1 underline-offset-4 font-['Space_Mono'] uppercase text-sm" href="practical.html">PRACTICAL</a>
+</nav>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 font-black uppercase hover:translate-y-0.5 active:scale-95 transition-all sticker-offset border border-on-surface">
+            RSVP
+        </button>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+<!-- Hero Section -->
+<div class="relative w-full lg:w-1/2">
+<div class="absolute -top-12 -left-4 z-10 hidden md:block">
+<span class="handwritten text-primary-container text-3xl transform -rotate-12 block">
+                    we're still eating our way through the research
+                </span>
+<span class="material-symbols-outlined text-primary-container text-4xl block ml-12" data-icon="south_east">south_east</span>
+</div>
+<h1 class="font-headline font-black text-7xl md:text-9xl leading-[0.8] text-on-surface uppercase mb-8 tracking-tighter">
+                COMING<br/>
+<span class="text-primary-container">SOON</span>
+</h1>
+<div class="space-y-6 max-w-md">
+<p class="font-mono text-sm leading-relaxed border-l-2 border-primary-container pl-4">
+                    [SYS_UPDATE] :: Practical logistics for the Uzbekistan expedition are currently being collated. 
+                    Expect data on visa protocols, high-speed rail routing, and the definitive guide to non-negotiable snacks.
+                </p>
+<div class="flex items-center gap-4 py-4 border-t border-b border-[#1c1c19]/20">
+<div class="w-12 h-12 bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="restaurant">restaurant</span>
+</div>
+<div class="font-mono text-xs uppercase tracking-widest">
+                        Status: Collecting Plov Variations (84% complete)
+                    </div>
+</div>
+</div>
+</div>
+<!-- Abstract Tech Grid (Bento Style) -->
+<div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 border border-on-surface relative group overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="material-symbols-outlined text-6xl" data-icon="grid_view">grid_view</span>
+</div>
+<h3 class="font-mono font-bold text-xs uppercase mb-4 text-tertiary">Data_Fragment_01</h3>
+<div class="h-32 w-full bg-surface-dim relative overflow-hidden">
+<img alt="close-up of intricate geometric tile patterns in deep blue and turquoise from a silk road mosaic" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500" data-alt="close-up of intricate geometric tile patterns in deep blue and turquoise from a silk road mosaic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhJ9CfAR2zHcPKJJK4KyAPhMy5O2atSJLb7Hvgz72Z_WbWf61ldnRrIyowr5Yf7BKcdfUv3bEKwcabdaqsZ3GDEx26J8sHEIMl-r-tU0-tqfCd6cMb7wvigLo2JnaWlgYWFV7plvI_HLqvBKcf6e8VlqqvAN2NWLLuZ5mqIDvXqGN_ERjsNbiHE551WGqL45MlpDlHtkdwgAs7tGHMF1j9auHCOiJQ0L1xj3XNZaXeYG73X4_Cu9VN6qi00vxkba6o8G5zP3aK_GBu"/>
+</div>
+<p class="font-mono text-[10px] mt-4 uppercase">Mapping Registan Square logistics...</p>
+</div>
+<div class="bg-primary p-6 flex flex-col justify-between min-h-[200px] sticker-offset border border-on-surface">
+<span class="material-symbols-outlined text-on-primary text-4xl" data-icon="train">train</span>
+<div class="text-on-primary">
+<h4 class="font-headline font-bold text-xl uppercase leading-none">Afrosiyob High Speed</h4>
+<p class="font-mono text-[10px] mt-2 opacity-80 uppercase tracking-widest">Tickets: Sold Out 30 days in advance. Strategy required.</p>
+</div>
+</div>
+<div class="col-span-2 bg-surface-container-high p-8 border-t-[1px] border-double border-on-surface">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-1/3">
+<div class="aspect-square bg-on-surface flex items-center justify-center p-4">
+<img alt="a stylized map fragment showing old tashkent with handwritten annotations in pink ink" class="w-full h-full object-cover opacity-50" data-alt="a stylized map fragment showing old tashkent with handwritten annotations in pink ink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmFjRWGqDn-Cpknoj4joo3FTHhsmnFchxlgti4Xb4IZZ7JMS3O8JvdeA7xCqsZr8BkoX3eWlvie4ivtOSlCkm_8B7VIsX80qKCGIKdtFyy-bhyqI5ToUdqAHXlRzkKFQdH2lHCMvdJbCfwrCbAEqnxHsedO0n2hd6el8ljIBjHgqM1eyek4LkiC2kBGXrSTYALq7HD0HgY1RiodlIW7iijN0sqtWgvXfoUHEp3Gbvo7f0ic4_lx4GWB52EIZZjJrOnEpx-pOzynpgL"/>
+</div>
+</div>
+<div class="w-full md:w-2/3 space-y-4">
+<div class="flex justify-between items-end border-b border-on-surface pb-2">
+<span class="font-mono text-xs font-bold uppercase tracking-widest">Protocol: VISAS</span>
+<span class="font-mono text-[10px] text-primary">PENDING</span>
+</div>
+<div class="flex justify-between items-end border-b border-on-surface pb-2">
+<span class="font-mono text-xs font-bold uppercase tracking-widest">Protocol: CURRENCY</span>
+<span class="font-mono text-[10px] text-secondary">ACTIVE</span>
+</div>
+<div class="flex justify-between items-end border-b border-on-surface pb-2">
+<span class="font-mono text-xs font-bold uppercase tracking-widest">Protocol: SIM_CARDS</span>
+<span class="font-mono text-[10px] text-tertiary">RESEARCHING</span>
+</div>
+<p class="font-mono text-[10px] uppercase leading-relaxed text-on-surface/60">
+                            *Practical information will be deployed via encrypted zine updates once the cake is sliced. Stay technical.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Shaky Divider -->
+<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="shaky-line w-full h-2"></div>
+</div>
+<!-- Newsletter/Coming Soon Footnote -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+<div class="bg-surface-container-lowest p-12 border border-on-surface relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-on-surface text-surface px-4 py-1 font-mono text-[10px] uppercase">
+                Attention // DIK_KAT
+            </div>
+<div class="flex flex-col items-center text-center space-y-6">
+<h2 class="font-headline font-black text-4xl uppercase tracking-tighter max-w-lg">
+                    Don't Miss the <span class="text-secondary">Grand Reveal</span>
+</h2>
+<div class="flex flex-col sm:flex-row gap-0 w-full max-w-md">
+<input class="flex-grow bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-on-surface focus:ring-0 focus:border-primary-container font-mono text-sm px-4 py-2" placeholder="YOUR_EMAIL@VOX.DAT" type="email"/>
+<button class="bg-on-surface text-surface px-8 py-2 font-mono uppercase text-sm hover:bg-primary transition-colors">
+                        SUBSCRIBE
+                    </button>
+</div>
+<div class="handwritten text-2xl text-tertiary transform rotate-2">
+                    We promise no spam, only pomegranates.
+                </div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#FCF9F4] border-t-[1px] border-double border-[#1C1C19]">
+<div class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19]">
+            © 2024 UZBEK BDAY ZINE
+        </div>
+<div class="flex gap-8">
+<a class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] hover:italic" href="#">INSTAGRAM</a>
+<a class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] hover:italic" href="#">CONTACT</a>
+<a class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] hover:italic" href="#">MAPS</a>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-[#00CB8D] animate-pulse"></div>
+<span class="font-['Space_Mono'] text-[10px] uppercase text-[#1C1C19]">Server: TAS-01 Live</span>
+</div>
+</footer>
+<!-- Mobile Navigation (Semantic Rule) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface border-t border-on-surface/10 px-4 py-3 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface opacity-50" data-icon="home">home</span>
+<span class="font-mono text-[8px]">HOME</span>
+</button>
+<button class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-on-surface opacity-50" data-icon="map">map</span>
+<span class="font-mono text-[8px]">PLAN</span>
+</button>
+<button class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary-container" data-icon="info">info</span>
+<span class="font-mono text-[8px] text-primary-container">INFO</span>
+</button>
+</nav>
+</body></html>
