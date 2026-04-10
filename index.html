@@ -171,38 +171,32 @@
 <div class="flex items-start gap-6 group">
 <span class="font-mono text-4xl text-primary font-bold">01</span>
 <div>
-<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">Tashkent Heat</h3>
-<p class="text-on-surface/70">A dry, honest sun that makes every shade of blue in the tiles pop like a neon sign.</p>
+<p class="text-on-surface/70 text-xl leading-snug">You will land in Tashkent. It will be 40°C. You will say "that's fine, I like warm weather." You will be humbled.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-secondary font-bold">02</span>
 <div>
-<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">Plov at 7am</h3>
-<p class="text-on-surface/70">Going to the Central Asian Plov Centre when it opens because that's when the magic happens.</p>
+<p class="text-on-surface/70 text-xl leading-snug">We will eat plov at 7am. From a giant cauldron. In a parking lot. It will be the best thing you've ever eaten.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-tertiary font-bold">03</span>
 <div>
-<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">30th Birthday Dinner</h3>
-<p class="text-on-surface/70">Under the stars with too much bread and endless tea.</p>
-<p class="text-primary italic mt-2 handwritten text-xl">"Barakalla."</p>
+<p class="text-on-surface/70 text-xl leading-snug">On June 11 there will be deeply optional yoga at dawn, a hands-on thing that will make your parents think you've changed, and an unnecessarily beautiful dinner. I will turn 30 in front of everyone.</p>
+<p class="text-primary italic mt-2 handwritten text-xl">"Barakalla." <span class="text-on-surface/40 text-base not-italic font-body">(well done, roughly)</span></p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-primary font-bold">04</span>
 <div>
-<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">High-Speed Train</h3>
-<p class="text-on-surface/70">The Afrosiyob is surprisingly fast, very clean, and full of tea service.</p>
+<p class="text-on-surface/70 text-xl leading-snug">We will take a high-speed train through the steppe. You will stare out the window for the full 2.5 hours. This is encouraged.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-secondary font-bold">05</span>
 <div>
-<h3 class="text-2xl font-bold font-headline mb-2 uppercase text-on-surface">Registan Photos</h3>
-<p class="text-on-surface/70">Yes, it's touristy. Yes, it's absolutely breathtaking. We are doing it.</p>
-<p class="text-tertiary italic mt-2 handwritten text-lg">Bring an extra SD card.</p>
+<p class="text-on-surface/70 text-xl leading-snug">We will go to Samarkand. Then Bukhara. You will take the same photo of the Registan seventeen times. They are all slightly different. You will keep all of them.</p>
 </div>
 </div>
 </div>
@@ -221,22 +215,46 @@
 <h2 class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-secondary">TIME UNTIL YOU HAVE TO DECIDE</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
 <div class="flex flex-col items-center">
-<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">482</span>
+<span id="timer-days" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
 <span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">DAYS</span>
 </div>
 <div class="flex flex-col items-center">
-<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">14</span>
+<span id="timer-hours" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
 <span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-secondary pt-2">HOURS</span>
 </div>
 <div class="flex flex-col items-center">
-<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">32</span>
+<span id="timer-minutes" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
 <span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-tertiary pt-2">MINUTES</span>
 </div>
 <div class="flex flex-col items-center">
-<span class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">09</span>
+<span id="timer-seconds" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
 <span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">SECONDS</span>
 </div>
 </div>
+<script>
+function updateCountdown() {
+  var target = new Date('2026-06-11T00:00:00');
+  var now = new Date();
+  var diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('timer-days').textContent = '00';
+    document.getElementById('timer-hours').textContent = '00';
+    document.getElementById('timer-minutes').textContent = '00';
+    document.getElementById('timer-seconds').textContent = '00';
+    return;
+  }
+  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('timer-days').textContent = String(days).padStart(2, '0');
+  document.getElementById('timer-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('timer-minutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('timer-seconds').textContent = String(seconds).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
 <div class="flex justify-center gap-8 items-baseline mt-20">
 <p class="text-surface/40 italic handwritten text-3xl">
                         (no pressure)
@@ -246,27 +264,29 @@
                     </p>
 </div>
 <p class="mt-12 font-mono text-sm max-w-lg mx-auto text-center leading-relaxed text-surface/50">
-                    * NOTE: Trains in Uzbekistan sell out exactly 45 days in advance. I'll need your final "Yes" before then.
+                    if you're joining for the full trip — train tickets sell out fast. like, genuinely fast. → <a href="plan.html" class="underline hover:text-secondary transition-colors">check the deadlines on the trip plan page</a>
                 </p>
 </div>
 </section>
 <!-- 5. DATES BAR -->
 <div class="w-full bg-primary py-6 px-6 overflow-hidden">
-<div class="flex whitespace-nowrap gap-12 font-mono text-lg md:text-2xl animate-pulse text-on-surface">
+<div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mb-3">OUR PLAN</div>
+<div class="flex whitespace-nowrap gap-12 font-mono text-lg md:text-2xl text-on-surface">
 <span class="font-bold">JUN 09 → TASHKENT</span>
-<span class="opacity-30">//</span>
-<span class="font-bold">JUN 11 → BDAY PARTY</span>
 <span class="opacity-30">//</span>
 <span class="font-bold">JUN 12 → SAMARKAND</span>
 <span class="opacity-30">//</span>
 <span class="font-bold">JUN 14 → BUKHARA</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 16 ✈ HOME</span>
+<span class="font-bold">JUN 16 ✈</span>
 <span class="opacity-30">//</span>
 <span class="font-bold">JUN 09 → TASHKENT</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 11 → BDAY PARTY</span>
+<span class="font-bold">JUN 12 → SAMARKAND</span>
+<span class="opacity-30">//</span>
+<span class="font-bold">JUN 14 → BUKHARA</span>
 </div>
+<div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mt-3">join for any part of it</div>
 </div>
 <!-- 6. CTA SECTION -->
 <section class="px-6 md:px-20 py-32 flex flex-col items-center text-center bg-surface">
@@ -274,9 +294,9 @@
 <div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold">
                     ("yes", "maybe", "what even is plov" — all valid)
                 </div>
-<button class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter">
+<a href="https://t.me/parapam_tg" target="_blank" class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter inline-block">
                     I'M IN — MESSAGE ANASTASIA
-                </button>
+                </a>
 </div>
 <a class="group flex items-center gap-4 text-xl font-headline font-black uppercase tracking-tighter hover:text-secondary transition-colors" href="plan.html">
 <span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
@@ -285,7 +305,7 @@
 </section>
 </main>
 <footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-surface border-t-[1px] border-double border-on-surface">
-<div class="font-mono text-xs uppercase tracking-widest text-on-surface">© 2024 UZBEK BDAY ZINE</div>
+<div class="font-mono text-xs uppercase tracking-widest text-on-surface">© 2026 UZBEK BDAY ZINE</div>
 <div class="flex gap-10">
 <a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-primary transition-colors" href="#">INSTAGRAM</a>
 <a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-secondary transition-colors" href="#">CONTACT</a>
