@@ -62,9 +62,9 @@
                     "primary-container": "#ff46ca"
             },
             "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
                     "full": "9999px"
             },
             "fontFamily": {
@@ -79,46 +79,32 @@
       }
     </script>
 <style>
-        .style-shaky-ink {
-            border-bottom-width: 1px;
-            border-image: url("data:image/svg+xml,%3Csvg width='100' height='2' viewBox='0 0 100 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1C5 0.5 10 1.5 15 1C20 0.5 25 1.5 30 1C35 0.5 40 1.5 45 1C50 0.5 55 1.5 60 1C65 0.5 70 1.5 75 1C80 0.5 85 1.5 90 1C95 0.5 100 1.5 100 1' stroke='%231C1C19' stroke-width='0.5'/%3E%3C/svg%3E") 1;
-        }
-        .sticker-offset-4 {
-            box-shadow: 4px 4px 0px 0px #1C1C19;
-        }
-        .sticker-offset-pink {
-            box-shadow: 6px 6px 0px 0px #FF46CA;
-        }
-        .girikh-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L35 25L60 30L35 35L30 60L25 35L0 30L25 25Z' stroke='%231C1C19' stroke-opacity='0.05' fill='none'/%3E%3C/svg%3E");
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
-        .city-card:hover img {
-            filter: grayscale(0%) brightness(1.1);
+        .girikh-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 25h25l-20 15 8 20-18-12-18 12 8-20-20-15h25z' fill='%23FF46CA' fill-opacity='0.04'/%3E%3C/svg%3E");
         }
-        .city-card img {
-            filter: grayscale(100%);
-            transition: all 0.5s ease;
+        .shaky-line {
+            border-bottom: 1px solid #1c1c19;
+            mask-image: linear-gradient(to right, black 0%, black 10%, transparent 10%, transparent 12%, black 12%, black 45%, transparent 45%, transparent 47%, black 47%, black 100%);
         }
-        @keyframes dash {
-            to {
-                stroke-dashoffset: 0;
-            }
+        .sticker-shadow {
+            box-shadow: 4px 4px 0px 0px #1C1C19;
         }
-        .animate-draw {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: dash 3s ease-in-out forwards;
+        .sticker-offset-4 {
+            box-shadow: 4px 4px 0px 0px #1C1C19;
         }
-    
+        .style-shaky-ink {
+            border-bottom-width: 1px;
+            border-image: url("data:image/svg+xml,%3Csvg width='100' height='2' viewBox='0 0 100 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1C5 0.5 10 1.5 15 1C20 0.5 25 1.5 30 1C35 0.5 40 1.5 45 1C50 0.5 55 1.5 60 1C65 0.5 70 1.5 75 1C80 0.5 85 1.5 90 1C95 0.5 100 1.5 100 1' stroke='%231C1C19' stroke-width='0.5'/%3E%3C/svg%3E") 1;
+        }
     </style>
 </head>
-<body class="bg-[#FCF9F4] text-[#1C1C19] font-body selection:bg-[#FF46CA] selection:text-white overflow-x-hidden">
+<body class="bg-[#FCF9F4] text-[#1C1C19] font-body selection:bg-[#FF46CA] selection:text-white overflow-x-hidden girikh-bg">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 max-w-full bg-[#FCF9F4] border-b-[1px] border-[#1C1C19]/20 style-shaky-ink">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FCF9F4] border-b-[1px] border-[#1C1C19]/20 style-shaky-ink">
 <div class="font-['Epilogue'] text-3xl font-black text-[#FF46CA] italic tracking-tighter uppercase">
             UZBEK BDAY
         </div>
@@ -134,175 +120,156 @@
             RSVP
         </button></a>
 </nav>
-<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto girikh-bg">
-<!-- Section Header Label -->
-<div class="mb-12">
-<p class="font-mono text-sm tracking-widest uppercase mb-2">THE ROUTE // JUN 09 → JUN 16</p>
-<div class="text-[#1C1C19]/30 text-xs font-mono">XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX</div>
+
+<main class="pt-28 pb-32 px-6 max-w-2xl mx-auto">
+
+<!-- Section Header -->
+<div class="mb-10 mt-4">
+  <div class="flex items-center gap-2 mb-2">
+    <span class="text-[#FF46CA] font-mono text-xs font-bold">THE ROUTE</span>
+    <div class="flex-grow border-b border-dashed border-[#1C1C19]/10"></div>
+  </div>
+  <h2 class="font-headline font-black text-4xl md:text-5xl leading-none uppercase italic tracking-tighter">THE ROUTE<br/>// JUN 09 → JUN 16</h2>
+  <div class="mt-3 flex gap-1 text-[8px] font-mono opacity-20">
+    <span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span>
+  </div>
 </div>
-<!-- Visual Timeline Element -->
-<div class="mb-20 px-4 md:px-0">
-<div class="relative w-full max-w-5xl mx-auto py-16">
-<!-- Timeline Line (SVG) -->
-<svg class="absolute top-1/2 left-0 w-full h-24 -translate-y-1/2 overflow-visible pointer-events-none" preserveaspectratio="none" viewbox="0 0 1000 100">
-<!-- Main continuous route line -->
-<path class="animate-draw" d="M 50,50 L 300,50 L 550,50 L 800,50" fill="none" stroke="#1C1C19" stroke-dasharray="8 8" stroke-width="2"></path>
-<!-- Return loop to start -->
-<path class="animate-draw" d="M 800,50 C 950,50 950,140 500,140 C 50,140 50,55 45,55" fill="none" stroke="#1C1C19" stroke-dasharray="4 4" stroke-width="2"></path>
-<!-- Arrowhead -->
-<path d="M 55,65 L 45,55 L 35,65" fill="none" stroke="#1C1C19" stroke-width="2"></path>
-</svg>
-<!-- Timeline Nodes -->
-<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0">
-<!-- Arrival Icon (Start) -->
-<div class="hidden md:block absolute left-4 top-0 -translate-y-12 pointer-events-none">
-<span class="material-symbols-outlined text-[#FF46CA] text-2xl rotate-135">flight_land</span>
-</div>
-<!-- Train Icon 1 (Tashkent -> Samarkand) -->
-<div class="hidden md:block absolute left-[15%] top-1/2 -translate-y-6 pointer-events-none opacity-60"><span class="material-symbols-outlined text-base">train</span></div>
-<!-- Train Icon 2 (Samarkand -> Bukhara) -->
-<div class="hidden md:block absolute left-[48%] top-1/2 -translate-y-6 pointer-events-none opacity-60"><span class="material-symbols-outlined text-base">train</span></div>
-<!-- Train Icon 3 (Bukhara -> Tashkent) -->
-<div class="hidden md:block absolute left-[80%] top-1/2 -translate-y-6 pointer-events-none opacity-60"><span class="material-symbols-outlined text-base">train</span></div>
-<!-- Node 1: Tashkent -->
-<div class="flex flex-col items-center text-center group">
-<div class="w-4 h-4 bg-[#1C1C19] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
-<div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4">
-<span class="font-headline font-black text-xl uppercase tracking-tighter block">Tashkent</span>
-<span class="font-mono text-[10px] text-[#FF46CA]">JUN 09</span>
-</div>
-</div>
-<!-- Node 2: Samarkand -->
-<div class="flex flex-col items-center text-center group">
-<div class="w-4 h-4 bg-[#00CB8D] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
-<div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4">
-<span class="font-headline font-black text-xl uppercase tracking-tighter block">Samarkand</span>
-<span class="font-mono text-[10px] text-[#FF46CA]">JUN 12</span>
-</div>
-</div>
-<!-- Node 3: Bukhara -->
-<div class="flex flex-col items-center text-center group">
-<div class="w-4 h-4 bg-[#1C1C19] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
-<div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4">
-<span class="font-headline font-black text-xl uppercase tracking-tighter block">Bukhara</span>
-<span class="font-mono text-[10px] text-[#FF46CA]">JUN 14</span>
-</div>
-</div>
-<!-- Node 4: Tashkent (Return) -->
-<div class="flex flex-col items-center text-center group relative">
-<div class="w-4 h-4 bg-[#FF46CA] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
-<div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4 relative">
-<span class="font-headline font-black text-xl uppercase tracking-tighter block">Tashkent</span>
-<span class="font-mono text-[10px] text-[#FF46CA]">JUN 16</span>
-<div class="absolute -top-4 -right-4 bg-[#00CB8D] text-white font-mono text-[8px] px-1 py-0.5 -rotate-12">RETURN</div>
-</div>
-</div>
-<!-- Departure Icon (End) -->
-<div class="hidden md:block absolute right-4 top-0 -translate-y-12 pointer-events-none" style="transform: translateY(-3rem) rotate(20deg);">
-<span class="material-symbols-outlined text-[#FF46CA] text-2xl -rotate-[20deg]">flight_takeoff</span>
-</div>
-</div>
-</div>
-<div class="text-[#1C1C19]/30 text-xs font-mono text-center mt-8 md:mt-16">XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX</div>
-</div>
+
 <!-- Deadlines Header -->
-<div class="mb-8 relative">
-<div class="bg-surface-container-lowest p-10 border border-on-surface relative">
-<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-on-surface text-surface px-4 py-1 font-mono text-[10px] uppercase tracking-widest">
-    Attention // DIK_KAT
+<div class="mb-6 relative">
+  <div class="bg-[#ffffff] p-8 border border-[#1C1C19] relative">
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">
+      Attention // DIK_KAT
+    </div>
+    <h2 class="font-headline font-black text-3xl md:text-4xl uppercase tracking-tighter text-center">
+      The <span class="text-secondary">Deadlines</span> — the serious bit.
+    </h2>
+  </div>
 </div>
-<h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter text-center">
-    The <span class="text-secondary">Deadlines</span> — the serious bit.
-</h2>
+
+<!-- Alert Cards -->
+<section class="space-y-4 mb-14">
+  <!-- Train Tickets -->
+  <div class="bg-[#1C1C19] p-6 text-white border-l-4 border-[#00CB8D] relative overflow-hidden">
+    <div class="absolute -right-4 -top-4 opacity-10 rotate-12">
+      <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">train</span>
+    </div>
+    <h3 class="font-mono text-xs uppercase text-[#00CB8D] mb-2 tracking-widest font-bold">URGENT NOTICE</h3>
+    <p class="font-headline font-bold text-xl uppercase mb-1">TRAIN TICKETS</p>
+    <p class="text-sm font-mono opacity-80 mb-4">Final booking window closes end of April. Technical limit: 45 days prior.</p>
+    <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono text-xs font-bold border-b border-[#00CB8D] hover:opacity-80 transition-opacity" href="practical.html">
+      → SEE PRACTICAL PAGE <span class="material-symbols-outlined text-sm">arrow_outward</span>
+    </a>
+  </div>
+  <!-- Where We're Staying -->
+  <div class="bg-surface-container p-6 border border-dashed border-[#1C1C19]/15 relative">
+    <h3 class="font-mono text-[10px] uppercase opacity-50 mb-2 tracking-widest">LODGING STATUS</h3>
+    <p class="font-headline font-bold text-lg uppercase leading-tight">WHERE WE'RE STAYING</p>
+    <p class="font-mono text-xs italic text-[#FF46CA] mt-1">(details incoming.)</p>
+    <p class="text-[10px] font-mono mt-4 uppercase opacity-40">Awaiting confirmation from local anchors</p>
+  </div>
+</section>
+
+<!-- Vertical Timeline + City Cards -->
+<section class="relative">
+  <!-- Dashed vertical line -->
+  <div class="absolute left-4 top-0 bottom-0 w-px border-l border-dashed border-[#FF46CA]/30 -z-10"></div>
+
+  <!-- Arrival -->
+  <div class="relative pl-12 mb-14">
+    <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
+      <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_land</span>
+    </div>
+    <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1">ARRIVAL IN TASHKENT</div>
+    <div class="h-px shaky-line w-16"></div>
+  </div>
+
+  <!-- City Card: TASHKENT -->
+  <article class="mb-14 relative pl-12">
+    <div class="bg-white p-4 sticker-shadow border border-[#1C1C19] group">
+      <div class="relative h-56 w-full mb-4 overflow-hidden">
+        <img alt="Soviet-era architecture in Tashkent" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVWGthzrdvusJDpJbmIF6bC6-Xnrwt-Ys0Scw_NYP5T4zmoBaNbfYjzU1mtmvid-FofOULjq49SRrfi-oypQSYpRRDmqSf0xvDaM77beKqmKeR2AFBhX9nqkafu3oRr0qHmg9xChCin4W93A0gVB46makH4hRctkeUQlVl__ZUXqF-pXH1yQJtNjdRYIzKGf8C8Du3taiGfc5I0ZaC8s_tVy6Os7ss2t4Nsfbf-ruF4ylvCOZMu2vYSbufkmT0HiFupJdy2MYHS7bC"/>
+        <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px]">LOC_001</div>
+      </div>
+      <div class="flex justify-between items-end mb-2">
+        <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none">TASHKENT</h3>
+        <span class="font-mono text-xs font-bold text-[#FF46CA]">JUN 09–12</span>
+      </div>
+      <p class="font-mono text-xs opacity-70 mb-4 leading-snug">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. The heartbeat of the modern republic.</p>
+      <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="tashkent.html">→ explore</a>
+    </div>
+  </article>
+
+  <!-- Train Interlude 1 -->
+  <div class="relative pl-12 mb-14">
+    <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
+      <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
+    </div>
+    <div class="font-mono text-[10px] uppercase opacity-40">AFROSIYOB EXPRESS [2H 10M]</div>
+  </div>
+
+  <!-- City Card: SAMARKAND -->
+  <article class="mb-14 relative pl-12">
+    <div class="bg-white p-4 sticker-shadow border border-[#1C1C19] group">
+      <div class="relative h-56 w-full mb-4 overflow-hidden">
+        <img alt="Registan Square Samarkand" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-2HxP9VlKP4ZFltjXJS-l43s8tt5lsux9f0T61JUQl3Mvpvx_PZECUZJjS0QDK_yWWoVpQR9w3hw_LjD8oQHugGBQP1VW7YS2FifWGuxeeLVdJavmKDqtRRkP4dhetKhgZr8JOHgZbVUb_npuCy1O5Y8uwHfQh_G8ZtG_jnrWANKQvcUh5v6VDATcQYZ3SuCGUnJCH2tOqAtvw63HegTqLEmwOGkWqzTWvgseTUeONLMoE_lZW9B5kqOcEtf4i1XrFo0zAqn713f"/>
+        <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px]">LOC_002</div>
+      </div>
+      <div class="flex justify-between items-end mb-2">
+        <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none">SAMARKAND</h3>
+        <span class="font-mono text-xs font-bold text-[#FF46CA]">JUN 12–14</span>
+      </div>
+      <p class="font-mono text-xs opacity-70 mb-4 leading-snug">The Registan. Blue tiles. Bread worth carrying on a plane. A city of monumental turquoise dreams.</p>
+      <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="samarkand.html">→ explore</a>
+    </div>
+  </article>
+
+  <!-- Train Interlude 2 -->
+  <div class="relative pl-12 mb-14">
+    <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
+      <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
+    </div>
+    <div class="font-mono text-[10px] uppercase opacity-40">SHARQ TRAIN [1H 30M]</div>
+  </div>
+
+  <!-- City Card: BUKHARA -->
+  <article class="mb-14 relative pl-12">
+    <div class="bg-white p-4 sticker-shadow border border-[#1C1C19] group">
+      <div class="relative h-56 w-full mb-4 overflow-hidden">
+        <img alt="Old Bukhara streets and domes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2TSE7qLwcTOxQnpJ3WIAobuiS267GkO1-oljpb_QpsA_8FAk9rfZw6n8vHvJupn2jiJbi45EY_kR6UmnORTIBz0Tc911euZrc-DIURDEXBD1BQ32JogkvyQMU5v4mMyh3lkiE2Z6f4_-k33hMpQRS1kF3Kbwy7TzxfJFWiFZFjGe-BGSPhQKm8Zcx5Y6z5kS2YFjT-3apmQ_xUpjF1jHO9fFLb3ipDmdrNGMRE_M3bbnZqo_CL3JZ38K7HTBIJgNz7P6CHHl9luTI"/>
+        <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px]">LOC_003</div>
+      </div>
+      <div class="flex justify-between items-end mb-2">
+        <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none">BUKHARA</h3>
+        <span class="font-mono text-xs font-bold text-[#FF46CA]">JUN 14–15</span>
+      </div>
+      <p class="font-mono text-xs opacity-70 mb-4 leading-snug">140 monuments. No cars in the old city. The most atmospheric stop on our desert voyage.</p>
+      <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="bukhara.html">→ explore</a>
+    </div>
+  </article>
+
+  <!-- Departure -->
+  <div class="relative pl-12 mb-12">
+    <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
+      <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+    </div>
+    <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1">DEPARTURE — TASHKENT</div>
+    <div class="h-px shaky-line w-full"></div>
+  </div>
+</section>
+
+<!-- Annotation -->
+<div class="flex justify-center pt-4 pb-8">
+  <p class="font-hand text-3xl text-[#FF9400] rotate-2">your camera roll will not recover. (this is expected.)</p>
 </div>
+
+<!-- Footer divider -->
+<div class="py-8 flex justify-center opacity-20">
+  <span class="font-mono text-xs tracking-widest">XXXXX GIRIHK_PROTOCOL_0.1 XXXXX</span>
 </div>
-<!-- Top Row: Information Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-<!-- Card 1: Dark Mode Warning -->
-<div class="bg-[#1C1C19] text-white p-8 relative overflow-hidden group">
-<div class="relative z-10">
-<h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4 text-[#00CB8D]">TRAIN TICKETS</h2>
-<p class="font-body text-lg mb-8 text-white/80 leading-relaxed">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. Deadline for booking is strictly <span class="text-[#FF9400] font-mono">end of April</span>.</p>
-<a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono uppercase text-sm group-hover:translate-x-2 transition-transform" href="practical.html">
-                        → see practical page
-                    </a>
-</div>
-<div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
-<span class="material-symbols-outlined text-[120px]">train</span>
-</div>
-</div>
-<!-- Card 2: Accommodation -->
-<div class="bg-surface-container p-8 relative group border border-dashed border-[#1C1C19]/20">
-<h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4">WHERE WE'RE STAYING</h2>
-<p class="font-body text-lg mb-6 text-[#1C1C19]/70 italic">Coming soon</p>
-<div class="relative mt-12">
-<span class="font-hand text-3xl text-[#FF46CA] -rotate-3 inline-block">
-                        (details incoming.)
-                    </span>
-<div class="absolute -top-8 -left-12 pointer-events-none">
-<svg class="text-[#FF46CA]" fill="none" height="40" viewbox="0 0 60 40" width="60">
-<path d="M10 30Q25 5 50 15" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5"></path>
-<path d="M45 10L52 15L44 18" stroke="currentColor" stroke-width="1.5"></path>
-</svg>
-</div>
-</div>
-</div>
-</div>
-<!-- Bottom Row: City Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-[#1C1C19]/10">
-<!-- TASHKENT -->
-<div class="city-card group flex flex-col border-r border-[#1C1C19]/10 p-6 md:p-8 hover:bg-white transition-colors">
-<div class="font-mono text-xs mb-4 opacity-40">01 / CAPITALE</div>
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Soviet-era metro station with ornate mosaics and grand columns in Tashkent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVWGthzrdvusJDpJbmIF6bC6-Xnrwt-Ys0Scw_NYP5T4zmoBaNbfYjzU1mtmvid-FofOULjq49SRrfi-oypQSYpRRDmqSf0xvDaM77beKqmKeR2AFBhX9nqkafu3oRr0qHmg9xChCin4W93A0gVB46makH4hRctkeUQlVl__ZUXqF-pXH1yQJtNjdRYIzKGf8C8Du3taiGfc5I0ZaC8s_tVy6Os7ss2t4Nsfbf-ruF4ylvCOZMu2vYSbufkmT0HiFupJdy2MYHS7bC"/>
-</div>
-<h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">TASHKENT</h3>
-<div class="font-mono text-xs text-[#FF46CA] mb-4">JUN 09–12</div>
-<p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow">
-                    Arrival. Birthday. Soviet metro mosaics. Plov at 7am. The heartbeat of the modern republic.
-                </p>
-<a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="tashkent.html">
-                    → explore
-                </a>
-</div>
-<!-- SAMARKAND -->
-<div class="city-card group flex flex-col border-r border-[#1C1C19]/10 p-6 md:p-8 hover:bg-white transition-colors">
-<div class="font-mono text-xs mb-4 opacity-40">02 / SILK ROAD HERO</div>
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Breathtaking wide angle view of the Registan in Samarkand with intricate blue mosaic tiles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-2HxP9VlKP4ZFltjXJS-l43s8tt5lsux9f0T61JUQl3Mvpvx_PZECUZJjS0QDK_yWWoVpQR9w3hw_LjD8oQHugGBQP1VW7YS2FifWGuxeeLVdJavmKDqtRRkP4dhetKhgZr8JOHgZbVUb_npuCy1O5Y8uwHfQh_G8ZtG_jnrWANKQvcUh5v6VDATcQYZ3SuCGUnJCH2tOqAtvw63HegTqLEmwOGkWqzTWvgseTUeONLMoE_lZW9B5kqOcEtf4i1XrFo0zAqn713f"/>
-</div>
-<h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">SAMARKAND</h3>
-<div class="font-mono text-xs text-[#FF46CA] mb-4">JUN 12–14</div>
-<p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow">
-                    The Registan. Blue tiles. Bread worth carrying on a plane. A city of monumental turquoise dreams.
-                </p>
-<a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="samarkand.html">
-                    → explore
-                </a>
-</div>
-<!-- BUKHARA -->
-<div class="city-card group flex flex-col p-6 md:p-8 hover:bg-white transition-colors">
-<div class="font-mono text-xs mb-4 opacity-40">03 / OLD WORLD SOUL</div>
-<div class="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Atmospheric view of Bukhara's narrow old city streets with mud-brick walls and historic dome architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2TSE7qLwcTOxQnpJ3WIAobuiS267GkO1-oljpb_QpsA_8FAk9rfZw6n8vHvJupn2jiJbi45EY_kR6UmnORTIBz0Tc911euZrc-DIURDEXBD1BQ32JogkvyQMU5v4mMyh3lkiE2Z6f4_-k33hMpQRS1kF3Kbwy7TzxfJFWiFZFjGe-BGSPhQKm8Zcx5Y6z5kS2YFjT-3apmQ_xUpjF1jHO9fFLb3ipDmdrNGMRE_M3bbnZqo_CL3JZ38K7HTBIJgNz7P6CHHl9luTI"/>
-</div>
-<h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">BUKHARA</h3>
-<div class="font-mono text-xs text-[#FF46CA] mb-4">JUN 14–15</div>
-<p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow">
-                    140 monuments. No cars in the old city. The most atmospheric stop on our desert voyage.
-                </p>
-<a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="bukhara.html">
-                    → explore
-                </a>
-</div>
-</div>
-<!-- Annotation Decoration -->
-<div class="mt-20 flex justify-center">
-<div class="relative group cursor-default">
-<p class="font-hand text-4xl text-[#FF9400] rotate-2">your camera roll will not recover. (this is expected.)</p>
-</div>
-</div>
+
 </main>
+
 <!-- Footer -->
 <footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-[#FCF9F4] border-t-[1px] border-double border-[#1C1C19]">
 <div class="font-['Epilogue'] text-lg font-bold text-[#FF46CA] italic">
@@ -317,12 +284,7 @@
             © 2026 UZBEK BDAY ZINE
         </div>
 </footer>
-<!-- FAB for Contextual Action (mobile only) -->
-<div class="fixed bottom-8 right-8 z-40 md:hidden">
-<button class="bg-[#FF46CA] text-white w-14 h-14 flex items-center justify-center sticker-offset-4 active:scale-95 transition-transform">
-<span class="material-symbols-outlined">map</span>
-</button>
-</div>
+
 <script>
 document.querySelectorAll(".rsvp-link").forEach(function(el){
   el.addEventListener("click",function(){
@@ -331,7 +293,6 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
 });
 </script>
 
-
 <!-- Bottom Nav (mobile only) -->
 <nav class="fixed bottom-0 left-0 w-full bg-[#FCF9F4]/95 backdrop-blur-md border-t border-[#1C1C19]/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
 <a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
@@ -339,8 +300,8 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
 <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">HOME</span>
 </a>
 <a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#FF46CA] group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold group-hover:text-[#FF46CA] transition-colors">PLAN</span>
+<span class="material-symbols-outlined text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold transition-colors">PLAN</span>
 <div class="h-[2px] w-3 bg-[#FF46CA] mt-0.5 rounded-full"></div>
 </a>
 <a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
@@ -360,6 +321,5 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
 <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">INFO</span>
 </a>
 </nav>
-<!-- Spacer so content doesn't hide behind bottom nav on mobile -->
 <div class="h-20 md:hidden"></div>
 </body></html>
