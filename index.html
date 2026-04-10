@@ -53,32 +53,7 @@
         .timer-glitch {
             text-shadow: 4px 4px 0px #FF46CA, -4px -4px 0px #00CB8D;
         }
-            /* === СПЕЦЭФФЕКТЫ === */
-        .glitch-text {
-            transition: text-shadow 0.08s;
-        }
-        .glitch-text:hover {
-            text-shadow: 2px 0 #ff46ca, -2px 0 #006c49;
-        }
-        .rsvp-link button {
-            transition: transform 0.1s, box-shadow 0.1s !important;
-        }
-        .rsvp-link:hover button {
-            transform: translate(2px, -2px) !important;
-            box-shadow: 6px 6px 0px 0px #ff46ca !important;
-        }
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0);    }
-        }
-        .reveal {
-            opacity: 0;
-            animation: fadeSlideUp 0.55s ease forwards;
-        }
-        .reveal-1 { animation-delay: 0.05s; }
-        .reveal-2 { animation-delay: 0.2s; }
-        .reveal-3 { animation-delay: 0.35s; }
-        .reveal-4 { animation-delay: 0.5s; }
+    
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -258,21 +233,6 @@
 </div>
 </div>
 <script>
-(function(){
-  var children = document.querySelectorAll("main > *");
-  children.forEach(function(el, i){
-    if(i > 5) return;
-    var delay = (i * 0.12 + 0.05) + "s";
-    el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition = "opacity 0.5s ease " + delay + ", transform 0.5s ease " + delay;
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){ el.style.opacity = "1"; el.style.transform = "translateY(0)"; });
-    });
-  });
-})();
-</script>
-<script>
 function updateCountdown() {
   var target = new Date('2026-06-11T00:00:00');
   var now = new Date();
@@ -353,21 +313,6 @@ setInterval(updateCountdown, 1000);
 <a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-tertiary transition-colors" href="#">MAPS</a>
 </div>
 </footer>
-<script>
-(function(){
-  var children = document.querySelectorAll("main > *");
-  children.forEach(function(el, i){
-    if(i > 5) return;
-    var delay = (i * 0.12 + 0.05) + "s";
-    el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition = "opacity 0.5s ease " + delay + ", transform 0.5s ease " + delay;
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){ el.style.opacity = "1"; el.style.transform = "translateY(0)"; });
-    });
-  });
-})();
-</script>
 <script>
 document.querySelectorAll(".rsvp-link").forEach(function(el){
   el.addEventListener("click",function(){
