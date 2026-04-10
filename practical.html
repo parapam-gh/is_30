@@ -99,7 +99,7 @@
         }
     </script>
 </head>
-<body class="bg-background text-on-surface font-body girikh-bg min-h-screen">
+<body class="bg-background text-on-surface font-body girikh-bg min-h-screen overflow-x-hidden">
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-[#FCF9F4] border-b-[1px] border-dashed border-[#1C1C19]">
 <div class="text-3xl font-black text-[#FF46CA] italic font-['Epilogue'] tracking-tighter uppercase">
@@ -230,4 +230,36 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
   });
 });
 </script>
+
+
+<!-- Bottom Nav (mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full bg-[#FCF9F4]/95 backdrop-blur-md border-t border-[#1C1C19]/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
+<a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
+<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">home</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">HOME</span>
+</a>
+<a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
+<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">PLAN</span>
+</a>
+<a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
+<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">apartment</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">TAS</span>
+</a>
+<a href="samarkand.html" class="flex flex-col items-center gap-0.5 group py-1">
+<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">mosque</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">SAM</span>
+</a>
+<a href="bukhara.html" class="flex flex-col items-center gap-0.5 group py-1">
+<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">account_balance</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">BUK</span>
+</a>
+<a href="practical.html" class="flex flex-col items-center gap-0.5 group py-1">
+<span class="material-symbols-outlined text-[#FF46CA] group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">checklist</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold group-hover:text-[#FF46CA] transition-colors">INFO</span>
+<div class="h-[2px] w-3 bg-[#FF46CA] mt-0.5 rounded-full"></div>
+</a>
+</nav>
+<!-- Spacer so content doesn't hide behind bottom nav on mobile -->
+<div class="h-20 md:hidden"></div>
 </body></html>
