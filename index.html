@@ -70,12 +70,15 @@
             }
         }
         .pressure-btn {
-            transition: opacity 0.3s ease, transform 0.2s ease;
+            transition: opacity 0.3s ease, transform 0.2s ease, filter 0.2s ease;
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
             -webkit-user-select: none;
             user-select: none;
             cursor: pointer;
+        }
+        .pressure-btn:hover {
+            filter: brightness(1.5);
         }
         .pressure-btn:active {
             transform: scale(0.95);
