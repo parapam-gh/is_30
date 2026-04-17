@@ -49,11 +49,37 @@
         .cross-stitch-divider span:nth-child(3n+1) { color: #FF46CA; }
         .cross-stitch-divider span:nth-child(3n+2) { color: #00CB8D; }
         .cross-stitch-divider span:nth-child(3n) { color: #FF9400; }
-        
+
         .timer-glitch {
             text-shadow: 4px 4px 0px #FF46CA, -4px -4px 0px #00CB8D;
         }
-    
+
+        #timer-seconds {
+            transition: font-size 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #timer-seconds-col {
+            transition: opacity 0.4s ease;
+        }
+        #timer-seconds.seconds-big {
+            font-size: 8.5rem;
+        }
+        @media (min-width: 768px) {
+            #timer-seconds.seconds-big {
+                font-size: 15rem;
+            }
+        }
+        .pressure-btn {
+            transition: opacity 0.3s ease, transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: pointer;
+        }
+        .pressure-btn:active {
+            transform: scale(0.95);
+        }
+
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -227,7 +253,7 @@
 <span id="timer-minutes" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
 <span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-tertiary pt-2">MINUTES</span>
 </div>
-<div class="flex flex-col items-center">
+<div id="timer-seconds-col" class="flex flex-col items-center">
 <span id="timer-seconds" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
 <span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">SECONDS</span>
 </div>
@@ -255,12 +281,51 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+var pressureLevel = 0;
+var pressureMode = 'some';
+
+function selectSomePressure() {
+  if (pressureMode === 'no') {
+    pressureMode = 'some';
+    document.getElementById('timer-seconds-col').style.display = '';
+    updatePressureVisuals();
+  } else if (pressureMode === 'some' && pressureLevel === 0) {
+    pressureLevel = 1;
+    updatePressureVisuals();
+  }
+}
+
+function selectNoPressure() {
+  if (pressureMode === 'no') return;
+  pressureMode = 'no';
+  document.getElementById('timer-seconds-col').style.display = 'none';
+  updatePressureVisuals();
+}
+
+function updatePressureVisuals() {
+  var noEl = document.getElementById('pressure-no');
+  var someEl = document.getElementById('pressure-some');
+  var secSpan = document.getElementById('timer-seconds');
+  if (pressureMode === 'some') {
+    someEl.style.opacity = '1';
+    noEl.style.opacity = '0.25';
+  } else {
+    noEl.style.opacity = '1';
+    someEl.style.opacity = '0.25';
+  }
+  if (pressureLevel === 1) {
+    secSpan.classList.add('seconds-big');
+  } else {
+    secSpan.classList.remove('seconds-big');
+  }
+}
 </script>
 <div class="flex justify-center gap-8 items-baseline mt-20">
-<p class="text-surface/40 italic handwritten text-3xl">
+<p id="pressure-no" class="text-surface/40 italic handwritten text-3xl pressure-btn" onclick="selectNoPressure()">
                         (no pressure)
                     </p>
-<p class="text-secondary italic handwritten text-3xl font-bold">
+<p id="pressure-some" class="text-secondary italic handwritten text-3xl font-bold pressure-btn" onclick="selectSomePressure()">
                         (some pressure)
                     </p>
 </div>
