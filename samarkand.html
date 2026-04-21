@@ -101,7 +101,31 @@
             border-bottom: 1px solid #ff46ca;
             transform: rotate(-1deg);
         }
-    
+        .shaky-line {
+            border-bottom: 1px solid #1C1C19;
+            position: relative;
+        }
+        .shaky-line::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0;
+            width: 100%; height: 1px;
+            background: #1C1C19;
+            transform: skewY(0.2deg);
+        }
+        .sticker-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
+        .sticker-6 { box-shadow: 6px 6px 0 0 #1C1C19; }
+        .sticker-pink { box-shadow: 6px 6px 0 0 #FF46CA; }
+        .sticker-green { box-shadow: 6px 6px 0 0 #00CB8D; }
+        .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
+        .pressure-btn {
+            transition: opacity .3s ease, transform .2s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            user-select: none;
+            cursor: pointer;
+        }
+        .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -118,7 +142,7 @@
 <a class="text-[#1C1C19] dark:text-[#FCF9F4] font-['Space_Mono'] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html">BUKHARA</a>
 <a class="text-[#1C1C19] dark:text-[#FCF9F4] font-['Space_Mono'] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html">PRACTICAL</a>
 </div>
-<a class="rsvp-link" style="cursor:pointer"><button class="bg-primary-container text-on-primary-container px-6 py-2 font-['Epilogue'] font-black tracking-tighter uppercase active:translate-y-0.5 active:scale-95 transition-all">
+<a class="rsvp-link" style="cursor:pointer"><button class="bg-primary-container text-white px-6 py-2 font-['Epilogue'] font-black tracking-tighter uppercase sticker-4 border border-[#1C1C19] pressure-btn">
             RSVP
         </button></a>
 </nav>
@@ -166,35 +190,19 @@
 </div>
 </div>
 </div>
-<!-- Right Side: Imagery & Technical Zine Elements -->
-<div class="md:col-span-5 relative mt-20 md:mt-0">
-<!-- Ghost Plate Background -->
-<div class="absolute inset-0 bg-primary translate-x-4 translate-y-4"></div>
-<div class="relative bg-surface p-2 border border-on-surface">
+<!-- Right Side: Imagery -->
+<div class="md:col-span-5 relative mt-20 md:mt-0 group">
+<div class="bg-surface p-2 border border-on-surface sticker-pink">
 <div class="aspect-[3/4] overflow-hidden">
-<img alt="close-up of intricate blue and turquoise mosaic tiles on a Samarkand madrasah wall with golden geometric patterns" class="w-full h-full object-cover filter contrast-125 grayscale-[20%] hover:grayscale-0 transition-all duration-700" data-alt="close-up detail of samarkand blue mosaic tiles with intricate geometric floral patterns and gold leaf accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT3hTE3nhybx58L5fAboIQfu-dXEG1TViyeIGtPY9CWH1WPnpYGQN34Tfc1rXSICFkpUfi-LZzuAYBgwrCBPp5VqdGaJmEhuLn1Wcg3VtuRqX2H0_uOovGjTo88_egkA0r5fyXuoMj3ww248n220nlK6Xv9zJZzmnrc8GCBHtMs6ko9ZW-Uq_VcjHgBzP7IV-tW9MYYf7oD4VC7Kec7XtJgHe_vfCoHpa026ZCXOvAQHcWMn-ixbU7gTEnO0Hu2x2mvJY5F_VBKPH7"/>
+<img alt="close-up of intricate blue and turquoise mosaic tiles on a Samarkand madrasah wall with golden geometric patterns" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="close-up detail of samarkand blue mosaic tiles with intricate geometric floral patterns and gold leaf accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT3hTE3nhybx58L5fAboIQfu-dXEG1TViyeIGtPY9CWH1WPnpYGQN34Tfc1rXSICFkpUfi-LZzuAYBgwrCBPp5VqdGaJmEhuLn1Wcg3VtuRqX2H0_uOovGjTo88_egkA0r5fyXuoMj3ww248n220nlK6Xv9zJZzmnrc8GCBHtMs6ko9ZW-Uq_VcjHgBzP7IV-tW9MYYf7oD4VC7Kec7XtJgHe_vfCoHpa026ZCXOvAQHcWMn-ixbU7gTEnO0Hu2x2mvJY5F_VBKPH7"/>
 </div>
-<!-- Sticker Labels -->
-<div class="absolute top-8 -left-8 bg-secondary text-on-secondary font-mono text-xs px-3 py-1 rotate-[-90deg] uppercase tracking-widest">
-                        LOCATION: 39.6547° N
-                    </div>
-<div class="absolute bottom-12 -right-4 bg-tertiary-container text-on-tertiary-container font-mono text-xs px-4 py-2 rotate-3 uppercase">
-                        ARCHIVE_052
+<!-- Real info tag in sticker style -->
+<div class="absolute top-8 -left-8 bg-secondary text-white font-mono text-xs px-3 py-1 rotate-[-90deg] uppercase tracking-widest">
+                        [ JUN 12–14 ]
                     </div>
 </div>
-<!-- Technical Specs Overlay -->
-<div class="mt-8 font-mono text-[10px] leading-tight text-on-surface/60 uppercase grid grid-cols-2 gap-4">
-<div>
-                        [SYS_STATUS]: PROCESSING_MAP<br/>
-                        [DATA_LOAD]: 68%<br/>
-                        [TILE_COUNT]: 14,292,001
-                    </div>
-<div class="text-right">
-                        SAMARKAND_ZINE_v1.0<br/>
-                        UZBEK_BDAY_PROTOCOLS<br/>
-                        KEEP_EATING_RESEARCH
-                    </div>
-</div>
+<!-- Shaky divider ends this block -->
+<div class="mt-8 shaky-line h-1 opacity-40"></div>
 </div>
 </div>
 <!-- Decorative Divider -->
@@ -210,22 +218,11 @@
 <div class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] dark:text-[#FCF9F4]">
             © 2026 UZBEK BDAY ZINE
         </div>
+<div class="font-['Epilogue'] text-lg font-black italic text-[#FF46CA] tracking-tighter uppercase">UZBEK BDAY</div>
 <div class="flex gap-8">
 <a class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] dark:text-[#FCF9F4] hover:italic hover:opacity-80 transition-all" href="map.html">MAPS</a>
 </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-lg" data-weight="fill">star</span>
-<span class="font-mono text-[10px] uppercase tracking-tighter opacity-50">Built for the culture</span>
-</div>
 </footer>
-<!-- Location Marker -->
-<div class="fixed bottom-6 right-6 z-40 hidden md:block" data-location="Samarkand" style="">
-<div class="shaky-border bg-surface p-4 flex flex-col gap-1">
-<span class="font-mono text-[8px] uppercase opacity-40">Destination Coordinate</span>
-<span class="font-headline font-bold text-lg uppercase tracking-tighter">SAMARKAND</span>
-<span class="font-mono text-[10px] text-primary">RE-ROUTING_TO_PLOV...</span>
-</div>
-</div>
 <script>
 document.querySelectorAll(".rsvp-link").forEach(function(el){
   el.addEventListener("click",function(){

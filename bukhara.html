@@ -94,6 +94,19 @@
     font-style: italic;
     transform: rotate(-2deg)
     }
+.sticker-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
+.sticker-6 { box-shadow: 6px 6px 0 0 #1C1C19; }
+.sticker-pink { box-shadow: 6px 6px 0 0 #FF46CA; }
+.sticker-green { box-shadow: 6px 6px 0 0 #00CB8D; }
+.sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
+.pressure-btn {
+    transition: opacity .3s ease, transform .2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    cursor: pointer;
+}
+.pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body overflow-x-hidden">
@@ -108,7 +121,7 @@
 <a class="text-[#FF46CA] underline decoration-wavy decoration-1 underline-offset-4 hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html">BUKHARA</a>
 <a class="text-[#1C1C19] dark:text-[#FCF9F4] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html">PRACTICAL</a>
 </div>
-<a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white font-['Epilogue'] font-black px-6 py-2 active:translate-y-0.5 active:scale-95 transition-all">RSVP</button></a>
+<a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white font-['Epilogue'] font-black uppercase tracking-tighter px-6 py-2 sticker-4 border border-[#1C1C19] pressure-btn">RSVP</button></a>
 </nav>
 <main class="pb-24 pt-32 min-h-screen relative">
 <!-- Girikh background texture fragment -->
@@ -118,8 +131,8 @@
 <div class="flex flex-col md:flex-row gap-12 items-start">
 <!-- Hero Text Column -->
 <div class="w-full md:w-1/2 flex flex-col">
-<div class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 font-mono text-sm self-start mb-6">
-                        DESTINATION_03: BUKHARA_CENTRAL
+<div class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 font-mono text-xs tracking-widest uppercase self-start mb-6">
+                        [ BUKHARA · JUN 14–15 ]
                     </div>
 <h1 class="text-7xl md:text-9xl font-black font-headline tracking-tighter text-on-background leading-[0.8] mb-8">
                         COMING <br/> SOON
@@ -132,40 +145,23 @@
 <div class="shaky-line mb-8 w-full h-1"></div>
 </div>
 <div class="mt-12 font-mono text-sm space-y-4 max-w-md bg-surface-container-low p-6 border-l-4 border-primary">
-<p class="text-on-surface-variant italic">
-                            // status: gathering_data.exe
-                        </p>
 <p>
                             The best-preserved medieval city in Central Asia. 140 monuments. Almost no cars. (The plov is done differently here. This is not a small distinction.)
                         </p>
-<div class="flex gap-4 pt-4">
-<div class="flex items-center gap-1">
-<span class="w-2 h-2 bg-secondary rounded-full"></span>
-<span>Spices Found: 88%</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="w-2 h-2 bg-primary rounded-full"></span>
-<span>Silk Road Intel: 94%</span>
 </div>
 </div>
-</div>
-</div>
-<!-- Visual Collage Column -->
+<!-- Visual Column -->
 <div class="w-full md:w-1/2 relative group">
-<!-- The "Sticker Effect" Ghost Plate -->
-<div class="absolute top-4 left-4 w-full h-full bg-tertiary-container z-0 opacity-20"></div>
-<!-- Main Image -->
-<div class="relative z-10 bg-surface shadow-xl">
-<img alt="The ancient domed bazaars and sand-colored madrasas of Bukhara old city at sunset" class="w-full h-[600px] object-cover grayscale-25 sepia-[.2] contrast-[1.1]" data-alt="Cinematic wide shot of Bukhara ancient city at dusk, showing sand-colored brick domes of a trading dome bazaar with warm interior lights peeking through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXEjU0hWT65ke36aJWqmCyHgjyelcWip54Pqq2XdkqycMaFcv5eJnBpJEgv8knE5izJeKj2ep_beZAY_rsjLyndK7G7wsucTJU36yVuGWohYf6NuGWYTA5QOuzxIqtRcEPKvNVUje8f8T3l7cwTy9HpOelPwdUL31u9uMzyI-xIZnFOJ34UnVgYxTsqGsznuBo6D16lN8qMw0tlRZWyluCBdP_osd0lvldTg5AOHrPBphsUCp2wR_bXWMLjnQNH6A48JtPwUiiroeg"/>
+<div class="bg-surface p-2 border border-[#1C1C19] sticker-pink">
+<img alt="The ancient domed bazaars and sand-colored madrasas of Bukhara old city at sunset" class="w-full h-[600px] object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="Cinematic wide shot of Bukhara ancient city at dusk, showing sand-colored brick domes of a trading dome bazaar with warm interior lights peeking through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXEjU0hWT65ke36aJWqmCyHgjyelcWip54Pqq2XdkqycMaFcv5eJnBpJEgv8knE5izJeKj2ep_beZAY_rsjLyndK7G7wsucTJU36yVuGWohYf6NuGWYTA5QOuzxIqtRcEPKvNVUje8f8T3l7cwTy9HpOelPwdUL31u9uMzyI-xIZnFOJ34UnVgYxTsqGsznuBo6D16lN8qMw0tlRZWyluCBdP_osd0lvldTg5AOHrPBphsUCp2wR_bXWMLjnQNH6A48JtPwUiiroeg"/>
 <div class="absolute bottom-6 right-6 bg-background p-4 flex flex-col items-end">
-<span class="font-mono text-[10px] opacity-50 uppercase">Lat: 39.7747° N, Lon: 64.4286° E</span>
 <span class="font-headline font-black text-2xl tracking-tighter text-primary">PO-I-KALYAN</span>
 </div>
 </div>
-<!-- Overlapping Smaller Element -->
-<div class="absolute -bottom-10 -left-10 z-20 bg-primary p-8 hidden lg:block hover:translate-x-2 hover:-translate-y-2 transition-transform">
+<!-- Overlapping Smaller Element with real Uzbek word -->
+<div class="absolute -bottom-10 -left-10 z-20 bg-primary p-8 hidden lg:block hover:translate-x-2 hover:-translate-y-2 transition-transform border border-[#1C1C19]">
 <span class="material-symbols-outlined text-white text-6xl" style="font-variation-settings: 'FILL' 1;">mosque</span>
-<p class="text-white font-mono text-xs mt-4 tracking-widest">ARCHIVE_NO: BKH_001</p>
+<p class="text-white font-mono text-xs mt-4 tracking-widest">BARAKALLA</p>
 </div>
 </div>
 </div>
@@ -194,17 +190,11 @@
 <div class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] dark:text-[#FCF9F4]">
             © 2026 UZBEK BDAY ZINE
         </div>
+<div class="font-['Epilogue'] text-lg font-black italic text-[#FF46CA] tracking-tighter uppercase">UZBEK BDAY</div>
 <div class="flex gap-12">
 <a class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] dark:text-[#FCF9F4] hover:italic transition-all" href="map.html">MAPS</a>
 </div>
-<div class="text-[#FF9400] font-['Space_Mono'] text-[10px] uppercase tracking-tighter">
-            EST. 2026 // TASHKENT // LONDON
-        </div>
 </footer>
-<!-- Decorative Hand-drawn Overlay Element -->
-<div class="fixed bottom-10 right-10 w-24 h-24 border-2 border-dashed border-primary/30 rounded-full flex items-center justify-center rotate-12 pointer-events-none opacity-40">
-<div class="text-primary font-mono text-[10px] text-center font-bold">STILL<br/>LOADING</div>
-</div>
 <script>
 document.querySelectorAll(".rsvp-link").forEach(function(el){
   el.addEventListener("click",function(){
