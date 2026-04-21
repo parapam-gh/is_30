@@ -172,6 +172,13 @@
 <span class="text-primary-container">SOON</span>
 </h1>
 <div class="space-y-6 max-w-md">
+<!-- RU placeholder — only in Russian mode -->
+<div data-lang="ru">
+<p class="font-body text-base leading-relaxed border-l-2 border-primary-container pl-4">ой — эту страницу я ещё не доделала. приходи попозже.</p>
+<p class="font-['Epilogue'] italic text-primary-container text-base mt-3 pl-4">(но будет — обещаю.)</p>
+</div>
+<!-- EN content — hidden in RU -->
+<div data-lang="en" class="space-y-6">
 <p class="font-body text-base leading-relaxed border-l-2 border-primary-container pl-4">
                     Practical logistics for the trip — visa protocols, high-speed rail routing, and the definitive guide to non-negotiable snacks. (dropping before June.)
                 </p>
@@ -185,8 +192,9 @@
 </div>
 </div>
 </div>
-<!-- Practical Info Grid -->
-<div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+</div>
+<!-- Practical Info Grid — EN only -->
+<div data-lang="en" class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
 <div class="bg-primary p-6 flex flex-col justify-between min-h-[200px] sticker-offset border border-on-surface col-span-2">
 <span class="material-symbols-outlined text-on-primary text-4xl">train</span>
 <div class="text-on-primary">
