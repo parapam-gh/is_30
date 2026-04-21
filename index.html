@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>UZBEK BDAY — 30 IN TASHKENT</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&amp;family=Epilogue:wght@400;700;900&amp;family=Space+Grotesk:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         .shaky-line {
             border-bottom: 1px solid #1C1C19;
@@ -43,7 +43,7 @@
             opacity: 1;
         }
         .handwritten {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Caveat', 'Space Grotesk', sans-serif;
             font-style: italic;
         }
         .cross-stitch-divider span:nth-child(3n+1) { color: #FF46CA; }
@@ -107,6 +107,12 @@
         }
         .lang-toggle button:not(.lang-active):hover {
             background: #f0ede9;
+        }
+
+        /* Russian CTA note overlap fix */
+        body.lang-ru .cta-note {
+            top: -6rem;
+            width: 20rem;
         }
 
         /* Russian font-size overrides for hero */
@@ -414,7 +420,7 @@ function updatePressureVisuals() {
 <!-- 6. CTA SECTION -->
 <section class="px-6 md:px-20 py-32 flex flex-col items-center text-center bg-surface">
 <div class="relative mb-16">
-<div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold" data-i18n="cta-note">
+<div class="cta-note absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold" data-i18n="cta-note">
                     ("yes", "maybe", "what even is plov" — all valid)
                 </div>
 <a href="https://t.me/parapam_tg" target="_blank" class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter inline-block" data-i18n="cta-button">
@@ -575,7 +581,7 @@ var translations = {
     'cta-note': '(\u201C\u0434\u0430\u201D, \u201C\u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C\u201D, \u201C\u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0431\u0430\u0440\u0430\u043A\u0430\u043B\u043B\u0430\u201D \u2014 \u0432\u0441\u0451 \u043F\u043E\u0434\u0445\u043E\u0434\u0438\u0442)',
     'cta-button': '\u042F \u0415\u0414\u0423 \u2014 \u041D\u0410\u041F\u0418\u0421\u0410\u0422\u042C \u041D\u0410\u0421\u0422\u0415',
     'cta-plan': '\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u043B\u0430\u043D \u043F\u043E\u0435\u0437\u0434\u043A\u0438',
-    'bnav-home': '\u0414\u041E\u041C',
+    'bnav-home': '\u0416\u0414\u0423',
     'bnav-plan': '\u041F\u041B\u0410\u041D',
     'bnav-tas': '\u0422\u0410\u0428',
     'bnav-sam': '\u0421\u0410\u041C',

@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>PLAN - UZBEK BDAY</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Reenie+Beanie&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -72,7 +72,7 @@
                     "body": ["Space Grotesk"],
                     "label": ["Space Grotesk"],
                     "mono": ["Space Mono"],
-                    "hand": ["Reenie Beanie"]
+                    "hand": ["Caveat"]
             }
           },
         },
@@ -387,6 +387,7 @@
       <div class="flex-grow border-b border-dashed border-[#1C1C19]/10"></div>
     </div>
     <h2 class="font-headline font-black text-4xl leading-none uppercase italic tracking-tighter" data-i18n="plan-when-heading">WHEN WE GO<br/>// JUN 09 → JUN 16</h2>
+    <a href="#mobile-timeline" class="inline-flex items-center gap-1 mt-3 font-mono text-xs text-[#FF46CA] font-bold uppercase hover:underline" data-i18n="plan-dates-link">dates by city ↓</a>
     <div class="mt-3 flex gap-1 text-[8px] font-mono opacity-20">
       <span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span>
     </div>
@@ -466,7 +467,7 @@
     <div class="absolute left-4 top-0 bottom-0 w-px border-l border-dashed border-[#FF46CA]/30 -z-10"></div>
 
     <!-- Arrival -->
-    <div class="relative pl-12 mb-14">
+    <div id="mobile-timeline" class="relative pl-12 mb-14 scroll-mt-24">
       <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
         <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_land</span>
       </div>
@@ -620,6 +621,7 @@ var translations = {
     'plan-when': 'WHEN WE GO // JUN 09 \u2192 JUN 16',
     'plan-when-label': 'WHEN WE GO',
     'plan-when-heading': 'WHEN WE GO<br/>// JUN 09 \u2192 JUN 16',
+    'plan-dates-link': 'dates by city \u2193',
     'plan-node-tashkent': 'Tashkent',
     'plan-node-samarkand': 'Samarkand',
     'plan-node-bukhara': 'Bukhara',
@@ -639,7 +641,7 @@ var translations = {
     'plan-wyd-3': '\u2014 decide which group activities to join. the rest of the time is yours.',
     'plan-wtw': 'WHY THIS WAY',
     'plan-wtw-text': 'there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we\u2019re leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.',
-    'plan-pay': '(we pay for the group activities. trains, hotels, everything else \u2014 that\u2019s on you.)',
+    'plan-pay': '(we\u2019ll cover the group activities \u2014 and split the cost after. trains, hotels, everything else \u2014 that\u2019s on you.)',
     'plan-questions': 'questions, doubts, ideas \u2014 <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.',
     'plan-attention': 'Attention // DIK_KAT',
     'plan-deadlines': 'The <span class="text-secondary">Deadlines</span> \u2014 the serious bit.',
@@ -682,6 +684,7 @@ var translations = {
     'plan-when': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c // 9 \u0418\u042e\u041d \u2192 16 \u0418\u042e\u041d',
     'plan-when-label': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c',
     'plan-when-heading': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c<br/>// 9 \u0418\u042e\u041d \u2192 16 \u0418\u042e\u041d',
+    'plan-dates-link': '\u0434\u0430\u0442\u044b \u043f\u043e \u0433\u043e\u0440\u043e\u0434\u0430\u043c \u2193',
     'plan-node-tashkent': '\u0422\u0430\u0448\u043a\u0435\u043d\u0442',
     'plan-node-samarkand': '\u0421\u0430\u043c\u0430\u0440\u043a\u0430\u043d\u0434',
     'plan-node-bukhara': '\u0411\u0443\u0445\u0430\u0440\u0430',
@@ -701,7 +704,7 @@ var translations = {
     'plan-wyd-3': '\u2014 \u0440\u0435\u0448\u0430\u0435\u0448\u044c, \u043d\u0430 \u0447\u0442\u043e \u0438\u0434\u0442\u0438, \u0430 \u0447\u0442\u043e \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u0442\u044c. \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u2014 \u0442\u0432\u043e\u0451.',
     'plan-wtw': '\u041f\u041e\u0427\u0415\u041c\u0423 \u0422\u0410\u041a',
     'plan-wtw-text': '\u043d\u0430\u0441 \u043c\u043d\u043e\u0433\u043e, \u0443 \u0432\u0441\u0435\u0445 \u0440\u0430\u0437\u043d\u044b\u0439 \u0440\u0438\u0442\u043c. \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0437\u0430\u0432\u0442\u0440\u0430\u043a\u043e\u0432-\u043e\u0431\u0435\u0434\u043e\u0432-\u0443\u0436\u0438\u043d\u043e\u0432 \u2014 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0438, \u0447\u0435\u0441\u0442\u043d\u043e, \u043d\u0435 \u043d\u0443\u0436\u043d\u043e. \u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c \u0432\u043e\u0437\u0434\u0443\u0445 \u0434\u043b\u044f \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u043e\u0433\u043e: \u0443\u0436\u0438\u043d\u043e\u0432 \u043f\u043e \u0442\u0440\u043e\u0435, \u043f\u0440\u043e\u0433\u0443\u043b\u043e\u043a \u0434\u043e \u0443\u0442\u0440\u0430, \u0432\u043d\u0435\u043f\u043b\u0430\u043d\u043e\u0432\u044b\u0445 \u043f\u043b\u043e\u0432-\u043f\u0430\u0443\u0437.',
-    'plan-pay': '(\u043c\u044b \u043e\u043f\u043b\u0430\u0447\u0438\u0432\u0430\u0435\u043c \u0442\u043e\u043b\u044c\u043a\u043e \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438. \u043f\u043e\u0435\u0437\u0434\u0430, \u043e\u0442\u0435\u043b\u0438, \u0432\u0441\u0451 \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u2014 \u0442\u044b \u0441\u0430\u043c.)',
+    'plan-pay': '(\u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u043c\u044b \u0431\u0435\u0440\u0451\u043c \u043d\u0430 \u0441\u0435\u0431\u044f \u2014 \u043f\u043e\u0442\u043e\u043c \u043f\u043e\u0434\u0435\u043b\u0438\u043c. \u043f\u043e\u0435\u0437\u0434\u0430, \u043e\u0442\u0435\u043b\u0438, \u0432\u0441\u0451 \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u2014 \u0442\u044b \u0441\u0430\u043c.)',
     'plan-questions': '\u0432\u043e\u043f\u0440\u043e\u0441\u044b, \u0441\u043e\u043c\u043d\u0435\u043d\u0438\u044f, \u0438\u0434\u0435\u0438 \u2014 <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">\u043f\u0438\u0448\u0438 \u043d\u0430\u0441\u0442\u0435</a>.',
     'plan-attention': '\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435 // DIK_KAT',
     'plan-deadlines': '<span class="text-secondary">\u0414\u0435\u0434\u043b\u0430\u0439\u043d\u044b</span> \u2014 \u0441\u0435\u0440\u044c\u0451\u0437\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c.',
@@ -727,7 +730,7 @@ var translations = {
     'plan-departure': '\u0412\u042b\u041b\u0415\u0422 \u2014 \u0422\u0410\u0428\u041a\u0415\u041d\u0422',
     'plan-train1': '\u0410\u0424\u0420\u041e\u0421\u042c\u0401\u0411 \u042d\u041a\u0421\u041f\u0420\u0415\u0421\u0421 [2\u0427 10\u041c]',
     'plan-train2': '\u0428\u0410\u0420\u041a \u041f\u041e\u0415\u0417\u0414 [1\u0427 30\u041c]',
-    'bnav-home': '\u0414\u041e\u041c',
+    'bnav-home': '\u0416\u0414\u0423',
     'bnav-plan': '\u041f\u041b\u0410\u041d',
     'bnav-tas': '\u0422\u0410\u0428',
     'bnav-sam': '\u0421\u0410\u041c',
