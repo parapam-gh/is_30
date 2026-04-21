@@ -80,6 +80,57 @@
             transform: scale(0.95);
         }
 
+        /* Lang toggle */
+        .lang-toggle {
+            display: inline-flex;
+            border: 1px solid #1C1C19;
+            box-shadow: 3px 3px 0 0 #1C1C19;
+        }
+        .lang-toggle button {
+            padding: 4px 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-toggle button.lang-active {
+            background: #FF46CA;
+            color: #fff;
+        }
+        .lang-toggle button:not(.lang-active) {
+            background: #fff;
+            color: #1C1C19;
+        }
+        .lang-toggle button:not(.lang-active):hover {
+            background: #f0ede9;
+        }
+
+        /* Russian font-size overrides for hero */
+        body.lang-ru .hero-h1 {
+            font-size: 2.8rem;
+        }
+        body.lang-ru .hero-h2 {
+            font-size: 2.2rem;
+        }
+        body.lang-ru .hero-p {
+            font-size: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            body.lang-ru .hero-h1 {
+                font-size: 5rem;
+            }
+            body.lang-ru .hero-h2 {
+                font-size: 4rem;
+            }
+            body.lang-ru .hero-p {
+                font-size: 3.75rem;
+            }
+        }
+
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -117,14 +168,20 @@
 <nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-surface border-b-[1px] border-on-surface/20">
 <div class="text-3xl font-black text-primary italic font-headline tracking-tighter uppercase">UZBEK BDAY</div>
 <div class="hidden md:flex items-center gap-8">
-<a class="text-primary underline decoration-wavy decoration-1 underline-offset-4 font-headline font-black tracking-tighter uppercase hover:skew-x-[-2deg] transition-transform" href="index.html">INVITATION</a>
-<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="plan.html">PLAN</a>
-<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="tashkent.html">TASHKENT</a>
-<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="samarkand.html">SAMARKAND</a>
-<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="bukhara.html">BUKHARA</a>
-<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="practical.html">PRACTICAL</a>
+<a class="text-primary underline decoration-wavy decoration-1 underline-offset-4 font-headline font-black tracking-tighter uppercase hover:skew-x-[-2deg] transition-transform" href="index.html" data-i18n="nav-invitation">INVITATION</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="plan.html" data-i18n="nav-plan">PLAN</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="tashkent.html" data-i18n="nav-tashkent">TASHKENT</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="samarkand.html" data-i18n="nav-samarkand">SAMARKAND</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="bukhara.html" data-i18n="nav-bukhara">BUKHARA</a>
+<a class="text-on-surface font-mono uppercase text-sm hover:skew-x-[-2deg] hover:text-secondary transition-transform" href="practical.html" data-i18n="nav-practical">PRACTICAL</a>
+</div>
+<div class="flex items-center gap-3">
+<div class="lang-toggle">
+<button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
+<button id="lang-ru" onclick="setLang('ru')">RU</button>
 </div>
 <a class="rsvp-link" style="cursor:pointer"><button class="bg-primary text-white px-6 py-2 font-headline font-black uppercase tracking-tighter active:translate-y-0.5 active:scale-95 transition-all">RSVP</button></a>
+</div>
 </nav>
 <main class="pb-24 relative pt-24">
 <!-- Girikh Background Elements -->
@@ -132,18 +189,18 @@
 <img class="girikh-watermark bottom-40 -right-20 w-80 -rotate-12" data-alt="Traditional Uzbek wood carving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mYLbFXon0eMSm1zKeXUkU-rZBRHOE-kwH5fc4e6rDwyE8I9O-wW62lWALku9BMPLfNkNbFI9j3A6ELInQuXBM-qXqmJlWk44D1TV49sPJk0I4EixUSb5a1IKW8tPVqnsRGBRtgmSdVcmtRugdkmkrzdFMW4CLHgwE0NjRdUuOUe0IPlC21P-HRhJyttgCmkt4tVTwacwa_8c6ffQNJFPmj5PGlufZuBSFrWszwKeYaoBOcpk1zv740ZysG94PM9LRrVZqDEfymM-"/>
 <!-- 1. HERO SECTION -->
 <section class="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden">
-<div class="absolute top-10 right-10 md:right-20 rotate-12 bg-secondary text-on-surface font-mono font-bold text-sm uppercase z-10 px-4 py-2">
+<div class="absolute top-10 right-10 md:right-20 rotate-12 bg-secondary text-on-surface font-mono font-bold text-sm uppercase z-10 px-4 py-2" data-i18n="hero-date">
                 june 11, 2026
             </div>
 <div class="z-10 max-w-5xl">
-<h1 class="font-headline font-black text-7xl md:text-9xl tracking-tighter leading-none mb-4 text-on-surface">HEY.</h1>
-<h2 class="font-headline font-black text-6xl md:text-8xl tracking-tighter leading-none mb-8 text-on-surface/90">I'M TURNING 30</h2>
-<p class="font-headline font-black text-4xl md:text-6xl tracking-tighter leading-tight max-w-4xl">
+<h1 class="hero-h1 font-headline font-black text-7xl md:text-9xl tracking-tighter leading-none mb-4 text-on-surface" data-i18n="hero-h1">HEY.</h1>
+<h2 class="hero-h2 font-headline font-black text-6xl md:text-8xl tracking-tighter leading-none mb-8 text-on-surface/90" data-i18n="hero-h2">I'M TURNING 30</h2>
+<p class="hero-p font-headline font-black text-4xl md:text-6xl tracking-tighter leading-tight max-w-4xl" data-i18n="hero-p">
                     THIS IS MY EXCUSE... <br/>
                     FOR INVITING YOU TO... <br/>
 <span class="text-primary italic">UZBEKISTAN</span>
 </p>
-<p class="mt-8 text-on-surface/40 italic text-xl md:text-2xl max-w-2xl handwritten">
+<p class="mt-8 text-on-surface/40 italic text-xl md:text-2xl max-w-2xl handwritten" data-i18n="hero-subline">
                     (or, how to eat plov at 7am, sweat through your clothes, and call it a good time — with people I love)
                 </p>
 </div>
@@ -159,25 +216,25 @@
 </div>
 <!-- 2. INVITE BLOCK -->
 <section class="px-6 md:px-20 py-20 max-w-4xl border-l-[1px] border-dashed border-on-surface/20 ml-4 md:ml-16">
-<p class="text-3xl md:text-4xl font-headline font-black leading-tight mb-12 uppercase tracking-tighter">
+<p class="text-3xl md:text-4xl font-headline font-black leading-tight mb-12 uppercase tracking-tighter" data-i18n="invite-intro">
                 On <span class="text-secondary">June 11, 2026</span> I'm celebrating my 30th birthday in <span class="text-tertiary">Tashkent</span> and I really want you to be there.
             </p>
 <div class="space-y-10 mb-16">
 <div class="border-l-8 border-primary pl-6 py-2">
-<p class="text-xl md:text-2xl font-mono font-bold">Come just for the birthday on the 11th.</p>
+<p class="text-xl md:text-2xl font-mono font-bold" data-i18n="invite-opt1">Come just for the birthday on the 11th.</p>
 </div>
 <div class="border-l-8 border-secondary pl-6 py-2">
-<p class="text-xl md:text-2xl font-mono font-bold">Come for a few days around it.</p>
+<p class="text-xl md:text-2xl font-mono font-bold" data-i18n="invite-opt2">Come for a few days around it.</p>
 </div>
 <div class="border-l-8 border-tertiary pl-6 py-2">
-<p class="text-xl md:text-2xl font-mono font-bold">Come for the whole trip — Tashkent → Samarkand → Bukhara.</p>
+<p class="text-xl md:text-2xl font-mono font-bold" data-i18n="invite-opt3">Come for the whole trip — Tashkent → Samarkand → Bukhara.</p>
 </div>
 </div>
 <div class="mb-8 font-mono text-2xl tracking-[0.5em] md:text-4xl">
-<span class="opacity-20">JUN 09 —</span> <span class="font-bold text-primary">JUN 11</span> <span class="opacity-20">— JUN 16</span>
+<span class="opacity-20" data-i18n="invite-date-start">JUN 09 —</span> <span class="font-bold text-primary" data-i18n="invite-date-mid">JUN 11</span> <span class="opacity-20" data-i18n="invite-date-end">— JUN 16</span>
 </div>
-<p class="text-xl font-mono mb-4">However works for you works for me.</p>
-<p class="text-secondary font-bold italic handwritten text-lg">
+<p class="text-xl font-mono mb-4" data-i18n="invite-closing">However works for you works for me.</p>
+<p class="text-secondary font-bold italic handwritten text-lg" data-i18n="invite-party">
                 (the party does not require full attendance. the party recommends it.)
             </p>
 </section>
@@ -191,39 +248,39 @@
 <section class="px-6 md:px-20 py-24 bg-surface-container-low relative overflow-hidden">
 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
 <div>
-<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter leading-none mb-16 uppercase">
+<h2 class="font-headline font-black text-5xl md:text-7xl tracking-tighter leading-none mb-16 uppercase" data-i18n="list-title">
                         HERE'S WHAT THE TRIP <span class="text-tertiary">ACTUALLY</span> LOOKS LIKE:
                     </h2>
 <div class="space-y-12">
 <div class="flex items-start gap-6 group">
 <span class="font-mono text-4xl text-primary font-bold">01</span>
 <div>
-<p class="text-on-surface/70 text-xl leading-snug">You will land in Tashkent. It will be 40°C. You will say "that's fine, I like warm weather." You will be humbled.</p>
+<p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-01">You will land in Tashkent. It will be 40°C. You will say "that's fine, I like warm weather." You will be humbled.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-secondary font-bold">02</span>
 <div>
-<p class="text-on-surface/70 text-xl leading-snug">We will eat plov at 7am. From a giant cauldron. In a parking lot. It will be the best thing you've ever eaten.</p>
+<p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-02">We will eat plov at 7am. From a giant cauldron. In a parking lot. It will be the best thing you've ever eaten.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-tertiary font-bold">03</span>
 <div>
-<p class="text-on-surface/70 text-xl leading-snug">On June 11 there will be deeply optional yoga at dawn, a hands-on thing that will make your parents think you've changed, and an unnecessarily beautiful dinner. I will turn 30 in front of everyone.</p>
-<p class="text-primary italic mt-2 handwritten text-xl">"Barakalla." <span class="text-on-surface/40 text-base not-italic font-body">(well done, roughly)</span></p>
+<p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-03">On June 11 there will be deeply optional yoga at dawn, a hands-on thing that will make your parents think you've changed, and an unnecessarily beautiful dinner. I will turn 30 in front of everyone.</p>
+<p class="text-primary italic mt-2 handwritten text-xl" data-i18n="list-03-barakalla">"Barakalla." <span class="text-on-surface/40 text-base not-italic font-body">(well done, roughly)</span></p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-primary font-bold">04</span>
 <div>
-<p class="text-on-surface/70 text-xl leading-snug">We will take a high-speed train through the steppe. You will stare out the window for the full 2.5 hours. This is encouraged.</p>
+<p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-04">We will take a high-speed train through the steppe. You will stare out the window for the full 2.5 hours. This is encouraged.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-secondary font-bold">05</span>
 <div>
-<p class="text-on-surface/70 text-xl leading-snug">We will go to Samarkand. Then Bukhara. You will take the same photo of the Registan seventeen times. They are all slightly different. You will keep all of them.</p>
+<p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-05">We will go to Samarkand. Then Bukhara. You will take the same photo of the Registan seventeen times. They are all slightly different. You will keep all of them.</p>
 </div>
 </div>
 </div>
@@ -231,7 +288,7 @@
 <div class="relative mt-20 md:mt-0">
 <div class="sticker-offset bg-surface-container-highest p-4 rotate-2 text-primary">
 <img class="w-full aspect-[4/5] object-cover" data-alt="Uzbek plov preparation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA15rXwjh0Yvj1iw2tYS-BWD1dSRgUYxHNvLajcblQRnFsFtCzr2ia6b0YSiaX7wn3Ls2Mo2EQ7Bwl03SbmAixCqWxMfK0B0Q6p2PNJMerHxuEQgWiIZK484SO-pCnhlEeUqfuXUaKYyEwqHBff5IsEicYsNnNPcA9Ru5jEhpiy1_81Kd9SvDzw6le4cBPWjXSK2dH5kQ1A4IgBSfW4614MwplW9fXeS1y3OEG-axmXNlXtx1xUPrtgHpk5stYXH1rcs3kr8mVfnYw9"/>
-<div class="mt-4 font-mono text-xs uppercase tracking-widest text-on-surface/60">FIG 01. THE PLOV CENTER EXPERIENCE</div>
+<div class="mt-4 font-mono text-xs uppercase tracking-widest text-on-surface/60" data-i18n="list-fig">FIG 01. THE PLOV CENTER EXPERIENCE</div>
 </div>
 </div>
 </div>
@@ -239,23 +296,23 @@
 <!-- 4. DRAMATIC COUNTDOWN -->
 <section class="px-6 md:px-20 py-40 bg-on-surface text-surface overflow-hidden relative">
 <div class="max-w-6xl mx-auto">
-<h2 class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-secondary">TIME UNTIL YOU HAVE TO DECIDE</h2>
+<h2 class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-secondary" data-i18n="countdown-title">TIME UNTIL YOU HAVE TO DECIDE</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
 <div class="flex flex-col items-center">
 <span id="timer-days" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
-<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">DAYS</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2" data-i18n="countdown-days">DAYS</span>
 </div>
 <div class="flex flex-col items-center">
 <span id="timer-hours" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
-<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-secondary pt-2">HOURS</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-secondary pt-2" data-i18n="countdown-hours">HOURS</span>
 </div>
 <div class="flex flex-col items-center">
 <span id="timer-minutes" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
-<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-tertiary pt-2">MINUTES</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-tertiary pt-2" data-i18n="countdown-minutes">MINUTES</span>
 </div>
 <div id="timer-seconds-col" class="flex flex-col items-center">
 <span id="timer-seconds" class="text-8xl md:text-[12rem] font-black font-headline tracking-tighter leading-none timer-glitch">--</span>
-<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2">SECONDS</span>
+<span class="font-mono text-xl uppercase mt-4 tracking-widest border-t-2 border-primary pt-2" data-i18n="countdown-seconds">SECONDS</span>
 </div>
 </div>
 <script>
@@ -322,52 +379,52 @@ function updatePressureVisuals() {
 }
 </script>
 <div class="flex justify-center gap-8 items-baseline mt-20">
-<p id="pressure-no" class="text-surface/40 italic handwritten text-3xl pressure-btn" onclick="selectNoPressure()">
+<p id="pressure-no" class="text-surface/40 italic handwritten text-3xl pressure-btn" onclick="selectNoPressure()" data-i18n="pressure-no">
                         (no pressure)
                     </p>
-<p id="pressure-some" class="text-secondary italic handwritten text-3xl font-bold pressure-btn" onclick="selectSomePressure()">
+<p id="pressure-some" class="text-secondary italic handwritten text-3xl font-bold pressure-btn" onclick="selectSomePressure()" data-i18n="pressure-some">
                         (some pressure)
                     </p>
 </div>
-<p class="mt-12 font-mono text-sm max-w-lg mx-auto text-center leading-relaxed text-surface/50">
+<p class="mt-12 font-mono text-sm max-w-lg mx-auto text-center leading-relaxed text-surface/50" data-i18n="countdown-ps">
                     if you're joining for the full trip — train tickets sell out fast. like, genuinely fast. → <a href="plan.html" class="underline hover:text-secondary transition-colors">check the deadlines on the trip plan page</a>
                 </p>
 </div>
 </section>
 <!-- 5. DATES BAR -->
 <div class="w-full bg-primary py-6 px-6 overflow-hidden">
-<div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mb-3">OUR PLAN</div>
+<div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mb-3" data-i18n="dates-top">OUR PLAN</div>
 <div class="flex whitespace-nowrap gap-12 font-mono text-lg md:text-2xl text-on-surface">
-<span class="font-bold">JUN 09 → TASHKENT</span>
+<span class="font-bold" data-i18n="dates-1">JUN 09 → TASHKENT</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 12 → SAMARKAND</span>
+<span class="font-bold" data-i18n="dates-2">JUN 12 → SAMARKAND</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 14 → BUKHARA</span>
+<span class="font-bold" data-i18n="dates-3">JUN 14 → BUKHARA</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 16 ✈</span>
+<span class="font-bold" data-i18n="dates-4">JUN 16 ✈</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 09 → TASHKENT</span>
+<span class="font-bold" data-i18n="dates-1">JUN 09 → TASHKENT</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 12 → SAMARKAND</span>
+<span class="font-bold" data-i18n="dates-2">JUN 12 → SAMARKAND</span>
 <span class="opacity-30">//</span>
-<span class="font-bold">JUN 14 → BUKHARA</span>
+<span class="font-bold" data-i18n="dates-3">JUN 14 → BUKHARA</span>
 </div>
-<div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mt-3">join for any part of it</div>
+<div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mt-3" data-i18n="dates-bottom">join for any part of it</div>
 </div>
 <!-- 6. CTA SECTION -->
 <section class="px-6 md:px-20 py-32 flex flex-col items-center text-center bg-surface">
 <div class="relative mb-16">
-<div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold">
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold" data-i18n="cta-note">
                     ("yes", "maybe", "what even is plov" — all valid)
                 </div>
-<a href="https://t.me/parapam_tg" target="_blank" class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter inline-block">
+<a href="https://t.me/parapam_tg" target="_blank" class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter inline-block" data-i18n="cta-button">
                     I'M IN — MESSAGE ANASTASIA
                 </a>
 </div>
 <a class="group flex items-center gap-4 text-xl font-headline font-black uppercase tracking-tighter hover:text-secondary transition-colors" href="plan.html">
 <span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
-                see the full trip plan
-            </a>
+<span data-i18n="cta-plan">see the full trip plan</span>
+</a>
 </section>
 </main>
 <footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-surface border-t-[1px] border-double border-on-surface">
@@ -389,30 +446,179 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
 <nav class="fixed bottom-0 left-0 w-full bg-[#FCF9F4]/95 backdrop-blur-md border-t border-[#1C1C19]/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
 <a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
 <span class="material-symbols-outlined text-[#FF46CA] group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">home</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold group-hover:text-[#FF46CA] transition-colors">HOME</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-home">HOME</span>
 <div class="h-[2px] w-3 bg-[#FF46CA] mt-0.5 rounded-full"></div>
 </a>
 <a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
 <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">PLAN</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-plan">PLAN</span>
 </a>
 <a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
 <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">apartment</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">TAS</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-tas">TAS</span>
 </a>
 <a href="samarkand.html" class="flex flex-col items-center gap-0.5 group py-1">
 <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">mosque</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">SAM</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-sam">SAM</span>
 </a>
 <a href="bukhara.html" class="flex flex-col items-center gap-0.5 group py-1">
 <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">account_balance</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">BUK</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-buk">BUK</span>
 </a>
 <a href="practical.html" class="flex flex-col items-center gap-0.5 group py-1">
 <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">checklist</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">INFO</span>
+<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-info">INFO</span>
 </a>
 </nav>
 <!-- Spacer so content doesn't hide behind bottom nav on mobile -->
 <div class="h-20 md:hidden"></div>
+
+<!-- Language Switcher -->
+<script>
+var translations = {
+  en: {
+    'nav-invitation': 'INVITATION',
+    'nav-plan': 'PLAN',
+    'nav-tashkent': 'TASHKENT',
+    'nav-samarkand': 'SAMARKAND',
+    'nav-bukhara': 'BUKHARA',
+    'nav-practical': 'PRACTICAL',
+    'hero-date': 'june 11, 2026',
+    'hero-h1': 'HEY.',
+    'hero-h2': "I'M TURNING 30",
+    'hero-p': 'THIS IS MY EXCUSE... <br/>FOR INVITING YOU TO... <br/><span class="text-primary italic">UZBEKISTAN</span>',
+    'hero-subline': '(or, how to eat plov at 7am, sweat through your clothes, and call it a good time \u2014 with people I love)',
+    'invite-intro': 'On <span class="text-secondary">June 11, 2026</span> I\u2019m celebrating my 30th birthday in <span class="text-tertiary">Tashkent</span> and I really want you to be there.',
+    'invite-opt1': 'Come just for the birthday on the 11th.',
+    'invite-opt2': 'Come for a few days around it.',
+    'invite-opt3': 'Come for the whole trip \u2014 Tashkent \u2192 Samarkand \u2192 Bukhara.',
+    'invite-date-start': 'JUN 09 \u2014',
+    'invite-date-mid': 'JUN 11',
+    'invite-date-end': '\u2014 JUN 16',
+    'invite-closing': 'However works for you works for me.',
+    'invite-party': '(the party does not require full attendance. the party recommends it.)',
+    'list-title': 'HERE\u2019S WHAT THE TRIP <span class="text-tertiary">ACTUALLY</span> LOOKS LIKE:',
+    'list-01': 'You will land in Tashkent. It will be 40\u00B0C. You will say \u201Cthat\u2019s fine, I like warm weather.\u201D You will be humbled.',
+    'list-02': 'We will eat plov at 7am. From a giant cauldron. In a parking lot. It will be the best thing you\u2019ve ever eaten.',
+    'list-03': 'On June 11 there will be deeply optional yoga at dawn, a hands-on thing that will make your parents think you\u2019ve changed, and an unnecessarily beautiful dinner. I will turn 30 in front of everyone.',
+    'list-03-barakalla': '\u201CBarakalla.\u201D <span class="text-on-surface/40 text-base not-italic font-body">(well done, roughly)</span>',
+    'list-04': 'We will take a high-speed train through the steppe. You will stare out the window for the full 2.5 hours. This is encouraged.',
+    'list-05': 'We will go to Samarkand. Then Bukhara. You will take the same photo of the Registan seventeen times. They are all slightly different. You will keep all of them.',
+    'list-fig': 'FIG 01. THE PLOV CENTER EXPERIENCE',
+    'countdown-title': 'TIME UNTIL YOU HAVE TO DECIDE',
+    'countdown-days': 'DAYS',
+    'countdown-hours': 'HOURS',
+    'countdown-minutes': 'MINUTES',
+    'countdown-seconds': 'SECONDS',
+    'pressure-no': '(no pressure)',
+    'pressure-some': '(some pressure)',
+    'countdown-ps': 'if you\u2019re joining for the full trip \u2014 train tickets sell out fast. like, genuinely fast. \u2192 <a href="plan.html" class="underline hover:text-secondary transition-colors">check the deadlines on the trip plan page</a>',
+    'dates-top': 'OUR PLAN',
+    'dates-1': 'JUN 09 \u2192 TASHKENT',
+    'dates-2': 'JUN 12 \u2192 SAMARKAND',
+    'dates-3': 'JUN 14 \u2192 BUKHARA',
+    'dates-4': 'JUN 16 \u2708',
+    'dates-bottom': 'join for any part of it',
+    'cta-note': '(\u201Cyes\u201D, \u201Cmaybe\u201D, \u201Cwhat even is plov\u201D \u2014 all valid)',
+    'cta-button': "I'M IN \u2014 MESSAGE ANASTASIA",
+    'cta-plan': 'see the full trip plan',
+    'bnav-home': 'HOME',
+    'bnav-plan': 'PLAN',
+    'bnav-tas': 'TAS',
+    'bnav-sam': 'SAM',
+    'bnav-buk': 'BUK',
+    'bnav-info': 'INFO'
+  },
+  ru: {
+    'nav-invitation': '\u041F\u0420\u0418\u0413\u041B\u0410\u0428\u0415\u041D\u0418\u0415',
+    'nav-plan': '\u041F\u041B\u0410\u041D',
+    'nav-tashkent': '\u0422\u0410\u0428\u041A\u0415\u041D\u0422',
+    'nav-samarkand': '\u0421\u0410\u041C\u0410\u0420\u041A\u0410\u041D\u0414',
+    'nav-bukhara': '\u0411\u0423\u0425\u0410\u0420\u0410',
+    'nav-practical': '\u0418\u041D\u0424\u041E',
+    'hero-date': '11 \u0438\u044E\u043D\u044F 2026',
+    'hero-h1': '\u041C\u041D\u0415 \u0418\u0421\u041F\u041E\u041B\u041D\u042F\u0415\u0422\u0421\u042F 30',
+    'hero-h2': '\u0418 \u042F \u041D\u0415 \u0423\u041F\u0423\u0429\u0423 \u0428\u0410\u041D\u0421...',
+    'hero-p': '\u0417\u0410\u0422\u0410\u0429\u0418\u0422\u042C \u0422\u0415\u0411\u042F \u0412<br/><span class="text-primary italic">\u0423\u0417\u0411\u0415\u041A\u0418\u0421\u0422\u0410\u041D</span>',
+    'hero-subline': '(\u043A\u0442\u043E \u0441\u043A\u0430\u0437\u0430\u043B, \u0447\u0442\u043E \u043F\u0440\u0430\u0437\u0434\u043D\u043E\u0432\u0430\u0442\u044C 30 \u0432 \u0441\u043E\u0440\u043E\u043A\u0430\u0433\u0440\u0430\u0434\u0443\u0441\u043D\u0443\u044E \u0436\u0430\u0440\u0443 \u2014 \u043F\u043B\u043E\u0445\u0430\u044F \u0438\u0434\u0435\u044F?)',
+    'invite-intro': '11 \u0438\u044E\u043D\u044F 2026 \u044F \u043E\u0442\u043C\u0435\u0447\u0430\u044E \u0441\u0432\u043E\u0451 30-\u043B\u0435\u0442\u0438\u0435 \u0432 <span class="text-tertiary">\u0422\u0430\u0448\u043A\u0435\u043D\u0442\u0435</span> \u2014 \u0438 \u0445\u043E\u0447\u0443 \u043F\u0440\u043E\u0432\u0435\u0441\u0442\u0438 \u044D\u0442\u043E \u0432\u0440\u0435\u043C\u044F \u0432\u043C\u0435\u0441\u0442\u0435.',
+    'invite-opt1': '\u043F\u0440\u0438\u0435\u0437\u0436\u0430\u0439 \u043D\u0430 \u0434\u0440 \u2014 11-\u0433\u043E',
+    'invite-opt2': '\u043D\u0430 \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0434\u043D\u0435\u0439',
+    'invite-opt3': '\u0438\u043B\u0438 \u043D\u0430 \u0432\u0441\u044E \u043F\u043E\u0435\u0437\u0434\u043A\u0443 \u2014 \u0422\u0430\u0448\u043A\u0435\u043D\u0442 \u2192 \u0421\u0430\u043C\u0430\u0440\u043A\u0430\u043D\u0434 \u2192 \u0411\u0443\u0445\u0430\u0440\u0430',
+    'invite-date-start': '9 \u0418\u042E\u041D \u2014',
+    'invite-date-mid': '11 \u0418\u042E\u041D',
+    'invite-date-end': '\u2014 16 \u0418\u042E\u041D',
+    'invite-closing': '\u0432 \u043B\u044E\u0431\u043E\u043C \u0441\u043B\u0443\u0447\u0430\u0435 \u2014 \u0436\u0434\u0443.',
+    'invite-party': '(\u043F\u0430\u0440\u0442\u0438\u044F \u044F\u0432\u043A\u0438 \u043D\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442. \u043F\u0430\u0440\u0442\u0438\u044F \u0435\u0451 \u0440\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u0442.)',
+    'list-title': '\u0412\u041E\u0422 \u041A\u0410\u041A \u042D\u0422\u041E \u0411\u0423\u0414\u0415\u0422 <span class="text-tertiary">\u041D\u0410 \u0421\u0410\u041C\u041E\u041C \u0414\u0415\u041B\u0415</span>:',
+    'list-01': '\u0442\u044B \u043F\u0440\u0438\u043B\u0435\u0442\u0438\u0448\u044C \u0432 \u0422\u0430\u0448\u043A\u0435\u043D\u0442. \u0431\u0443\u0434\u0435\u0442 40\u00B0C. \u0442\u044B \u0441\u043A\u0430\u0436\u0435\u0448\u044C \u201C\u043D\u0438\u0447\u0435\u0433\u043E, \u044F \u043B\u044E\u0431\u043B\u044E \u0442\u0435\u043F\u043B\u043E\u201D. \u0438 \u0441\u0440\u0430\u0437\u0443 \u043F\u043E\u0439\u043C\u0451\u0448\u044C, \u0447\u0442\u043E \u043E\u0448\u0438\u0431\u0441\u044F.',
+    'list-02': '\u043C\u044B \u0431\u0443\u0434\u0435\u043C \u0435\u0441\u0442\u044C \u043F\u043B\u043E\u0432 \u043D\u0430 \u0437\u0430\u0432\u0442\u0440\u0430\u043A, \u043E\u0431\u0435\u0434 \u0438 \u0443\u0436\u0438\u043D \u2014 \u0438 \u043C\u0435\u0436\u0434\u0443 \u043D\u0438\u043C\u0438. \u0438\u0437 \u043E\u0433\u0440\u043E\u043C\u043D\u043E\u0433\u043E \u043A\u0430\u0437\u0430\u043D\u0430. \u044D\u0442\u043E \u0431\u0443\u0434\u0435\u0442 \u043B\u0443\u0447\u0448\u0435\u0435, \u0447\u0442\u043E \u0442\u044B \u043A\u043E\u0433\u0434\u0430-\u043B\u0438\u0431\u043E \u0435\u043B.',
+    'list-03': '11 \u0438\u044E\u043D\u044F \u0431\u0443\u0434\u0435\u0442 \u0439\u043E\u0433\u0430 \u043D\u0430 \u0440\u0430\u0441\u0441\u0432\u0435\u0442\u0435 \u2014 \u0434\u043B\u044F \u0436\u0430\u0432\u043E\u0440\u043E\u043D\u043A\u043E\u0432 \u0438 \u043F\u0440\u043E\u0447\u0438\u0445 \u043E\u043F\u0442\u0438\u043C\u0438\u0441\u0442\u043E\u0432. \u043C\u0430\u0441\u0442\u0435\u0440\u043A\u043B\u0430\u0441\u0441 \u0438 \u0443\u0436\u0438\u043D, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u044F\u0432\u043D\u043E \u043C\u043E\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u0431\u044B \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u043F\u043E\u043F\u0440\u043E\u0449\u0435. \u043C\u043D\u0435 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0441\u044F 30 \u043F\u0435\u0440\u0435\u0434 \u0432\u0441\u0435\u043C\u0438.',
+    'list-03-barakalla': '\u00AB\u0431\u0430\u0440\u0430\u043A\u0430\u043B\u043B\u0430!\u00BB <span class="text-on-surface/40 text-base not-italic font-body">(\u043C\u043E\u043B\u043E\u0434\u0435\u0446.)</span>',
+    'list-04': '\u043C\u044B \u043F\u043E\u0435\u0434\u0435\u043C \u043D\u0430 \u043F\u043E\u0435\u0437\u0434\u0435 \u00AB\u0430\u0444\u0440\u043E\u0441\u044C\u0451\u0431\u00BB \u0447\u0435\u0440\u0435\u0437 \u0441\u0442\u0435\u043F\u044C. (\u043D\u0430\u0437\u0432\u0430\u043D \u0432 \u0447\u0435\u0441\u0442\u044C \u0446\u0430\u0440\u044F \u2014 \u0430 \u043D\u0435 \u0442\u043E, \u0447\u0442\u043E \u0442\u044B \u043F\u043E\u0434\u0443\u043C\u0430\u043B.) \u043C\u044B \u0431\u0443\u0434\u0435\u043C \u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432 \u043E\u043A\u043D\u043E \u0432\u0441\u0435 2,5 \u0447\u0430\u0441\u0430. \u044D\u0442\u043E \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E.',
+    'list-05': '\u043C\u044B \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u043C \u0421\u0430\u043C\u0430\u0440\u043A\u0430\u043D\u0434. \u043F\u043E\u0442\u043E\u043C \u0411\u0443\u0445\u0430\u0440\u0443. \u0432\u043E\u0441\u0442\u043E\u043A \u2014 \u0434\u0435\u043B\u043E \u0442\u043E\u043D\u043A\u043E\u0435. \u043D\u043E \u043C\u044B \u0440\u0430\u0437\u0431\u0435\u0440\u0451\u043C\u0441\u044F.',
+    'list-fig': '\u0420\u0418\u0421 01. \u041F\u041B\u041E\u0412-\u0426\u0415\u041D\u0422\u0420',
+    'countdown-title': '\u0412\u0420\u0415\u041C\u0415\u041D\u0418 \u041D\u0410 \u0420\u0415\u0428\u0415\u041D\u0418\u0415 \u041E\u0421\u0422\u0410\u041B\u041E\u0421\u042C',
+    'countdown-days': '\u0414\u041D\u0415\u0419',
+    'countdown-hours': '\u0427\u0410\u0421\u041E\u0412',
+    'countdown-minutes': '\u041C\u0418\u041D\u0423\u0422',
+    'countdown-seconds': '\u0421\u0415\u041A\u0423\u041D\u0414',
+    'pressure-no': '(\u0431\u0435\u0437 \u0434\u0430\u0432\u043B\u0435\u043D\u0438\u044F)',
+    'pressure-some': '(\u043D\u0435\u043C\u043D\u043E\u0433\u043E \u0434\u0430\u0432\u043B\u0435\u043D\u0438\u044F)',
+    'countdown-ps': '\u0435\u0441\u043B\u0438 \u0435\u0434\u0435\u0448\u044C \u043D\u0430 \u0432\u0441\u044E \u043F\u043E\u0435\u0437\u0434\u043A\u0443 \u2014 \u0431\u0438\u043B\u0435\u0442\u044B \u043D\u0430 \u043F\u043E\u0435\u0437\u0434 \u0438\u0441\u0447\u0435\u0437\u0430\u044E\u0442 \u0431\u044B\u0441\u0442\u0440\u0435\u0435, \u0447\u0435\u043C \u043F\u043B\u043E\u0432 \u0438\u0437 \u043A\u0430\u0437\u0430\u043D\u0430. \u2192 <a href="plan.html" class="underline hover:text-secondary transition-colors">\u0434\u0435\u0434\u043B\u0430\u0439\u043D\u044B \u043D\u0430 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0435 \u0441 \u043F\u043B\u0430\u043D\u043E\u043C</a>',
+    'dates-top': '\u041D\u0410\u0428 \u041F\u041B\u0410\u041D',
+    'dates-1': '\u0418\u042E\u041D 09 \u2192 \u0422\u0410\u0428\u041A\u0415\u041D\u0422',
+    'dates-2': '\u0418\u042E\u041D 12 \u2192 \u0421\u0410\u041C\u0410\u0420\u041A\u0410\u041D\u0414',
+    'dates-3': '\u0418\u042E\u041D 14 \u2192 \u0411\u0423\u0425\u0410\u0420\u0410',
+    'dates-4': '\u0418\u042E\u041D 16 \u2708',
+    'dates-bottom': '\u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u044F\u0439\u0441\u044F \u043D\u0430 \u043B\u044E\u0431\u043E\u0439 \u043E\u0442\u0440\u0435\u0437\u043E\u043A',
+    'cta-note': '(\u201C\u0434\u0430\u201D, \u201C\u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C\u201D, \u201C\u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0431\u0430\u0440\u0430\u043A\u0430\u043B\u043B\u0430\u201D \u2014 \u0432\u0441\u0451 \u043F\u043E\u0434\u0445\u043E\u0434\u0438\u0442)',
+    'cta-button': '\u042F \u0415\u0414\u0423 \u2014 \u041D\u0410\u041F\u0418\u0421\u0410\u0422\u042C \u041D\u0410\u0421\u0422\u0415',
+    'cta-plan': '\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u043F\u043B\u0430\u043D \u043F\u043E\u0435\u0437\u0434\u043A\u0438',
+    'bnav-home': '\u0414\u041E\u041C',
+    'bnav-plan': '\u041F\u041B\u0410\u041D',
+    'bnav-tas': '\u0422\u0410\u0428',
+    'bnav-sam': '\u0421\u0410\u041C',
+    'bnav-buk': '\u0411\u0423\u0425',
+    'bnav-info': '\u0418\u041D\u0424\u041E'
+  }
+};
+
+function applyLang(lang) {
+  var dict = translations[lang];
+  if (!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+  // Toggle body class for font-size overrides
+  if (lang === 'ru') {
+    document.body.classList.add('lang-ru');
+  } else {
+    document.body.classList.remove('lang-ru');
+  }
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+  // Update page title
+  document.title = lang === 'ru' ? '\u0423\u0417\u0411\u0415\u041A \u0414\u0420 \u2014 30 \u0412 \u0422\u0410\u0428\u041A\u0415\u041D\u0422\u0415' : 'UZBEK BDAY \u2014 30 IN TASHKENT';
+  // Update toggle buttons
+  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
+  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+}
+
+function setLang(lang) {
+  localStorage.setItem('uzbekbday-lang', lang);
+  applyLang(lang);
+}
+
+// Apply saved language on load
+(function() {
+  var saved = localStorage.getItem('uzbekbday-lang');
+  if (saved && translations[saved]) {
+    applyLang(saved);
+  }
+})();
+</script>
 </body></html>
