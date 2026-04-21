@@ -117,6 +117,35 @@
         .city-card:hover img {
             filter: grayscale(0%) brightness(1.1);
         }
+
+        /* Lang toggle */
+        .lang-toggle {
+            display: inline-flex;
+            border: 1px solid #1C1C19;
+            box-shadow: 3px 3px 0 0 #1C1C19;
+        }
+        .lang-toggle button {
+            padding: 4px 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-toggle button.lang-active {
+            background: #FF46CA;
+            color: #fff;
+        }
+        .lang-toggle button:not(.lang-active) {
+            background: #fff;
+            color: #1C1C19;
+        }
+        .lang-toggle button:not(.lang-active):hover {
+            background: #f0ede9;
+        }
     </style>
 </head>
 <body class="bg-[#FCF9F4] text-[#1C1C19] font-body selection:bg-[#FF46CA] selection:text-white overflow-x-hidden">
@@ -125,14 +154,20 @@
 <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FCF9F4] border-b-[1px] border-[#1C1C19]/20 style-shaky-ink">
   <div class="font-['Epilogue'] text-3xl font-black text-[#FF46CA] italic tracking-tighter uppercase">UZBEK BDAY</div>
   <div class="hidden md:flex gap-8 items-center">
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="index.html">INVITATION</a>
-    <a class="text-[#FF46CA] border-b-2 border-[#FF46CA] pb-1 font-['Space_Mono'] uppercase text-sm font-black tracking-tighter" href="plan.html">PLAN</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="tashkent.html">TASHKENT</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="samarkand.html">SAMARKAND</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html">BUKHARA</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html">PRACTICAL</a>
+    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="index.html" data-i18n="nav-invitation">INVITATION</a>
+    <a class="text-[#FF46CA] border-b-2 border-[#FF46CA] pb-1 font-['Space_Mono'] uppercase text-sm font-black tracking-tighter" href="plan.html" data-i18n="nav-plan">PLAN</a>
+    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="tashkent.html" data-i18n="nav-tashkent">TASHKENT</a>
+    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="samarkand.html" data-i18n="nav-samarkand">SAMARKAND</a>
+    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html" data-i18n="nav-bukhara">BUKHARA</a>
+    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html" data-i18n="nav-practical">PRACTICAL</a>
   </div>
-  <a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white px-6 py-2 font-headline font-black uppercase tracking-tighter hover:skew-x-[-2deg] transition-all active:translate-x-0.5 active:translate-y-0.5 sticker-offset-4">RSVP</button></a>
+  <div class="flex items-center gap-3">
+    <div class="lang-toggle">
+      <button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
+      <button id="lang-ru" onclick="setLang('ru')">RU</button>
+    </div>
+    <a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white px-6 py-2 font-headline font-black uppercase tracking-tighter hover:skew-x-[-2deg] transition-all active:translate-x-0.5 active:translate-y-0.5 sticker-offset-4">RSVP</button></a>
+  </div>
 </nav>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -143,7 +178,7 @@
 
   <!-- Section Header -->
   <div class="mb-12">
-    <p class="font-mono text-sm tracking-widest uppercase mb-2">WHEN WE GO // JUN 09 → JUN 16</p>
+    <p class="font-mono text-sm tracking-widest uppercase mb-2" data-i18n="plan-when">WHEN WE GO // JUN 09 → JUN 16</p>
     <div class="text-[#1C1C19]/30 text-xs font-mono">XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX XXXXX</div>
   </div>
 
@@ -175,33 +210,33 @@
         <div class="flex flex-col items-center text-center group">
           <div class="w-4 h-4 bg-[#1C1C19] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
           <div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4">
-            <span class="font-headline font-black text-xl uppercase tracking-tighter block">Tashkent</span>
-            <span class="font-mono text-[10px] text-[#FF46CA]">JUN 09</span>
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block" data-i18n="plan-node-tashkent">Tashkent</span>
+            <span class="font-mono text-[10px] text-[#FF46CA]" data-i18n="plan-node-date1">JUN 09</span>
           </div>
         </div>
         <!-- Node 2: Samarkand -->
         <div class="flex flex-col items-center text-center group">
           <div class="w-4 h-4 bg-[#00CB8D] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
           <div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4">
-            <span class="font-headline font-black text-xl uppercase tracking-tighter block">Samarkand</span>
-            <span class="font-mono text-[10px] text-[#FF46CA]">JUN 12</span>
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block" data-i18n="plan-node-samarkand">Samarkand</span>
+            <span class="font-mono text-[10px] text-[#FF46CA]" data-i18n="plan-node-date2">JUN 12</span>
           </div>
         </div>
         <!-- Node 3: Bukhara -->
         <div class="flex flex-col items-center text-center group">
           <div class="w-4 h-4 bg-[#1C1C19] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
           <div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4">
-            <span class="font-headline font-black text-xl uppercase tracking-tighter block">Bukhara</span>
-            <span class="font-mono text-[10px] text-[#FF46CA]">JUN 14</span>
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block" data-i18n="plan-node-bukhara">Bukhara</span>
+            <span class="font-mono text-[10px] text-[#FF46CA]" data-i18n="plan-node-date3">JUN 14</span>
           </div>
         </div>
         <!-- Node 4: Tashkent Return -->
         <div class="flex flex-col items-center text-center group relative">
           <div class="w-4 h-4 bg-[#FF46CA] rotate-45 mb-4 group-hover:scale-125 transition-transform"></div>
           <div class="bg-white border border-[#1C1C19] p-3 sticker-offset-4 relative">
-            <span class="font-headline font-black text-xl uppercase tracking-tighter block">Tashkent</span>
-            <span class="font-mono text-[10px] text-[#FF46CA]">JUN 16</span>
-            <div class="absolute -top-4 -right-4 bg-[#00CB8D] text-white font-mono text-[8px] px-1 py-0.5 -rotate-12">RETURN</div>
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block" data-i18n="plan-node-tashkent">Tashkent</span>
+            <span class="font-mono text-[10px] text-[#FF46CA]" data-i18n="plan-node-date4">JUN 16</span>
+            <div class="absolute -top-4 -right-4 bg-[#00CB8D] text-white font-mono text-[8px] px-1 py-0.5 -rotate-12" data-i18n="plan-return">RETURN</div>
           </div>
         </div>
         <div class="hidden md:block absolute right-4 top-0 -translate-y-12 pointer-events-none">
@@ -215,34 +250,34 @@
   <!-- How This Works -->
   <div class="mb-16">
     <div class="bg-surface-container-low border border-[#1C1C19]/20 p-10">
-      <h2 class="font-headline font-black text-3xl uppercase tracking-tighter mb-1">HOW THIS WORKS</h2>
-      <p class="font-body text-sm text-[#1C1C19]/60 italic mb-10">a quick note on how this works.</p>
+      <h2 class="font-headline font-black text-3xl uppercase tracking-tighter mb-1" data-i18n="plan-htw">HOW THIS WORKS</h2>
+      <p class="font-body text-sm text-[#1C1C19]/60 italic mb-10" data-i18n="plan-htw-sub">a quick note on how this works.</p>
 
       <div class="grid grid-cols-3 gap-10 mb-10">
         <div>
-          <div class="font-mono text-[11px] uppercase font-bold text-[#FF46CA] mb-4 tracking-widest">WHAT WE DO</div>
+          <div class="font-mono text-[11px] uppercase font-bold text-[#FF46CA] mb-4 tracking-widest" data-i18n="plan-wwd">WHAT WE DO</div>
           <ul class="space-y-3 font-body text-[15px] text-[#1C1C19]/80 leading-relaxed">
-            <li>— share info: where we're staying, which restaurants to hit, what's worth seeing</li>
-            <li>— run a schedule of group activities — 1–2 per day. join whichever you like. skip whichever you don't.</li>
+            <li data-i18n="plan-wwd-1">— share info: where we're staying, which restaurants to hit, what's worth seeing</li>
+            <li data-i18n="plan-wwd-2">— run a schedule of group activities — 1–2 per day. join whichever you like. skip whichever you don't.</li>
           </ul>
         </div>
         <div>
-          <div class="font-mono text-[11px] uppercase font-bold text-[#00CB8D] mb-4 tracking-widest">WHAT YOU DO</div>
+          <div class="font-mono text-[11px] uppercase font-bold text-[#00CB8D] mb-4 tracking-widest" data-i18n="plan-wyd">WHAT YOU DO</div>
           <ul class="space-y-3 font-body text-[15px] text-[#1C1C19]/80 leading-relaxed">
-            <li>— pick your dates</li>
-            <li>— book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us — booking on you.)</em></li>
-            <li>— decide which group activities to join. the rest of the time is yours.</li>
+            <li data-i18n="plan-wyd-1">— pick your dates</li>
+            <li data-i18n="plan-wyd-2">— book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us — booking on you.)</em></li>
+            <li data-i18n="plan-wyd-3">— decide which group activities to join. the rest of the time is yours.</li>
           </ul>
         </div>
         <div>
-          <div class="font-mono text-[11px] uppercase font-bold text-[#FF9400] mb-4 tracking-widest">WHY THIS WAY</div>
-          <p class="font-body text-[15px] text-[#1C1C19]/80 leading-relaxed">there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we're leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.</p>
+          <div class="font-mono text-[11px] uppercase font-bold text-[#FF9400] mb-4 tracking-widest" data-i18n="plan-wtw">WHY THIS WAY</div>
+          <p class="font-body text-[15px] text-[#1C1C19]/80 leading-relaxed" data-i18n="plan-wtw-text">there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we're leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.</p>
         </div>
       </div>
 
       <div class="border-t border-dashed border-[#1C1C19]/20 pt-6 space-y-3">
-        <p class="font-body text-sm italic text-[#1C1C19]/60">(we pay for the group activities. trains, hotels, everything else — that's on you.)</p>
-        <p class="font-body text-base font-bold">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.</p>
+        <p class="font-body text-sm italic text-[#1C1C19]/60" data-i18n="plan-pay">(we pay for the group activities. trains, hotels, everything else — that's on you.)</p>
+        <p class="font-body text-base font-bold" data-i18n="plan-questions">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.</p>
       </div>
     </div>
   </div>
@@ -250,10 +285,10 @@
   <!-- Deadlines Header -->
   <div class="mb-8 relative">
     <div class="bg-[#ffffff] p-10 border border-[#1C1C19] relative">
-      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap" data-i18n="plan-attention">
         Attention // DIK_KAT
       </div>
-      <h2 class="font-headline font-black text-4xl uppercase tracking-tighter text-center">
+      <h2 class="font-headline font-black text-4xl uppercase tracking-tighter text-center" data-i18n="plan-deadlines">
         The <span class="text-secondary">Deadlines</span> — the serious bit.
       </h2>
     </div>
@@ -264,9 +299,9 @@
     <!-- Train Tickets -->
     <div class="bg-[#1C1C19] text-white p-8 relative overflow-hidden group">
       <div class="relative z-10">
-        <h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4 text-[#00CB8D]">TRAIN TICKETS</h2>
-        <p class="font-body text-lg mb-8 text-white/80 leading-relaxed">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.</p>
-        <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono uppercase text-sm group-hover:translate-x-2 transition-transform" href="practical.html">→ see practical page</a>
+        <h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4 text-[#00CB8D]" data-i18n="plan-train-title">TRAIN TICKETS</h2>
+        <p class="font-body text-lg mb-8 text-white/80 leading-relaxed" data-i18n="plan-train-text">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.</p>
+        <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono uppercase text-sm group-hover:translate-x-2 transition-transform" href="practical.html" data-i18n="plan-train-link">→ see practical page</a>
       </div>
       <div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
         <span class="material-symbols-outlined text-[120px]">train</span>
@@ -274,11 +309,11 @@
     </div>
     <!-- Where We're Staying -->
     <div class="bg-surface-container p-8 relative group border border-dashed border-[#1C1C19]/20">
-      <h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4">WHERE WE'RE STAYING</h2>
-      <p class="font-body text-lg mb-4 text-[#1C1C19]/70 italic">Coming soon</p>
-      <p class="font-body text-base text-[#1C1C19]/70 mb-6 leading-relaxed">We'll share where we're staying and a couple of places nearby. <em>(advice on us — booking on you.)</em></p>
+      <h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4" data-i18n="plan-stay-title">WHERE WE'RE STAYING</h2>
+      <p class="font-body text-lg mb-4 text-[#1C1C19]/70 italic" data-i18n="plan-stay-soon">Coming soon</p>
+      <p class="font-body text-base text-[#1C1C19]/70 mb-6 leading-relaxed" data-i18n="plan-stay-text">We'll share where we're staying and a couple of places nearby. <em>(advice on us — booking on you.)</em></p>
       <div class="relative mt-4">
-        <span class="font-hand text-3xl text-[#FF46CA] -rotate-3 inline-block">(details incoming.)</span>
+        <span class="font-hand text-3xl text-[#FF46CA] -rotate-3 inline-block" data-i18n="plan-stay-note">(details incoming.)</span>
         <div class="absolute -top-8 -left-12 pointer-events-none">
           <svg class="text-[#FF46CA]" fill="none" height="40" viewBox="0 0 60 40" width="60">
             <path d="M10 30Q25 5 50 15" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5"/>
@@ -293,43 +328,43 @@
   <div class="grid grid-cols-3 gap-0 border-t border-b border-[#1C1C19]/10">
     <!-- TASHKENT -->
     <div class="city-card group flex flex-col border-r border-[#1C1C19]/10 p-6 md:p-8 hover:bg-white transition-colors">
-      <div class="font-mono text-xs mb-4 opacity-40">01 / CAPITAL</div>
+      <div class="font-mono text-xs mb-4 opacity-40" data-i18n="plan-city1-label">01 / CAPITAL</div>
       <div class="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Soviet-era architecture in Tashkent" src="images/tashkent.jpg"/>
       </div>
-      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">TASHKENT</h3>
-      <div class="font-mono text-xs text-[#FF46CA] mb-4">JUN 09–12</div>
-      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.</p>
-      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="tashkent.html">→ explore</a>
+      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4" data-i18n="nav-tashkent">TASHKENT</h3>
+      <div class="font-mono text-xs text-[#FF46CA] mb-4" data-i18n="plan-city1-dates">JUN 09–12</div>
+      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow" data-i18n="plan-city1-text">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.</p>
+      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="tashkent.html" data-i18n="plan-explore">→ explore</a>
     </div>
     <!-- SAMARKAND -->
     <div class="city-card group flex flex-col border-r border-[#1C1C19]/10 p-6 md:p-8 hover:bg-white transition-colors">
-      <div class="font-mono text-xs mb-4 opacity-40">02 / SILK ROAD HERO</div>
+      <div class="font-mono text-xs mb-4 opacity-40" data-i18n="plan-city2-label">02 / SILK ROAD HERO</div>
       <div class="aspect-[3/4] overflow-hidden mb-6">
         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Registan Square Samarkand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-2HxP9VlKP4ZFltjXJS-l43s8tt5lsux9f0T61JUQl3Mvpvx_PZECUZJjS0QDK_yWWoVpQR9w3hw_LjD8oQHugGBQP1VW7YS2FifWGuxeeLVdJavmKDqtRRkP4dhetKhgZr8JOHgZbVUb_npuCy1O5Y8uwHfQh_G8ZtG_jnrWANKQvcUh5v6VDATcQYZ3SuCGUnJCH2tOqAtvw63HegTqLEmwOGkWqzTWvgseTUeONLMoE_lZW9B5kqOcEtf4i1XrFo0zAqn713f"/>
       </div>
-      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">SAMARKAND</h3>
-      <div class="font-mono text-xs text-[#FF46CA] mb-4">JUN 12–14</div>
-      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow">The Registan. Turquoise domes, minarets, tiles — more blue than you've ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)</p>
-      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="samarkand.html">→ explore</a>
+      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4" data-i18n="nav-samarkand">SAMARKAND</h3>
+      <div class="font-mono text-xs text-[#FF46CA] mb-4" data-i18n="plan-city2-dates">JUN 12–14</div>
+      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow" data-i18n="plan-city2-text">The Registan. Turquoise domes, minarets, tiles — more blue than you've ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)</p>
+      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="samarkand.html" data-i18n="plan-explore">→ explore</a>
     </div>
     <!-- BUKHARA -->
     <div class="city-card group flex flex-col p-6 md:p-8 hover:bg-white transition-colors">
-      <div class="font-mono text-xs mb-4 opacity-40">03 / OLD WORLD SOUL</div>
+      <div class="font-mono text-xs mb-4 opacity-40" data-i18n="plan-city3-label">03 / OLD WORLD SOUL</div>
       <div class="aspect-[3/4] overflow-hidden mb-6">
         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Old Bukhara streets and domes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2TSE7qLwcTOxQnpJ3WIAobuiS267GkO1-oljpb_QpsA_8FAk9rfZw6n8vHvJupn2jiJbi45EY_kR6UmnORTIBz0Tc911euZrc-DIURDEXBD1BQ32JogkvyQMU5v4mMyh3lkiE2Z6f4_-k33hMpQRS1kF3Kbwy7TzxfJFWiFZFjGe-BGSPhQKm8Zcx5Y6z5kS2YFjT-3apmQ_xUpjF1jHO9fFLb3ipDmdrNGMRE_M3bbnZqo_CL3JZ38K7HTBIJgNz7P6CHHl9luTI"/>
       </div>
-      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">BUKHARA</h3>
-      <div class="font-mono text-xs text-[#FF46CA] mb-4">JUN 14–15</div>
-      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow">140 monuments. No cars in the old city. You'll forget what year it is.</p>
-      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="bukhara.html">→ explore</a>
+      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4" data-i18n="nav-bukhara">BUKHARA</h3>
+      <div class="font-mono text-xs text-[#FF46CA] mb-4" data-i18n="plan-city3-dates">JUN 14–15</div>
+      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow" data-i18n="plan-city3-text">140 monuments. No cars in the old city. You'll forget what year it is.</p>
+      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="bukhara.html" data-i18n="plan-explore">→ explore</a>
     </div>
   </div>
 
   <!-- Annotation -->
   <div class="mt-20 flex justify-center">
     <div class="relative group cursor-default">
-      <p class="font-hand text-4xl text-[#FF9400] rotate-2">you will want to move here. (we are not responsible for this.)</p>
+      <p class="font-hand text-4xl text-[#FF9400] rotate-2" data-i18n="plan-annotation">you will want to move here. (we are not responsible for this.)</p>
       <div class="absolute -top-4 -right-8">
         <span class="material-symbols-outlined text-[#FF46CA] animate-pulse" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">explore</span>
       </div>
@@ -348,10 +383,10 @@
   <!-- Section Header -->
   <div class="mb-10 mt-4">
     <div class="flex items-center gap-2 mb-2">
-      <span class="text-[#FF46CA] font-mono text-xs font-bold">WHEN WE GO</span>
+      <span class="text-[#FF46CA] font-mono text-xs font-bold" data-i18n="plan-when-label">WHEN WE GO</span>
       <div class="flex-grow border-b border-dashed border-[#1C1C19]/10"></div>
     </div>
-    <h2 class="font-headline font-black text-4xl leading-none uppercase italic tracking-tighter">WHEN WE GO<br/>// JUN 09 → JUN 16</h2>
+    <h2 class="font-headline font-black text-4xl leading-none uppercase italic tracking-tighter" data-i18n="plan-when-heading">WHEN WE GO<br/>// JUN 09 → JUN 16</h2>
     <div class="mt-3 flex gap-1 text-[8px] font-mono opacity-20">
       <span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span>
     </div>
@@ -360,34 +395,34 @@
   <!-- How This Works -->
   <div class="mb-10">
     <div class="bg-surface-container-low border border-[#1C1C19]/20 p-6">
-      <h2 class="font-headline font-black text-2xl uppercase tracking-tighter mb-1">HOW THIS WORKS</h2>
-      <p class="font-body text-xs text-[#1C1C19]/60 italic mb-6">a quick note on how this works.</p>
+      <h2 class="font-headline font-black text-2xl uppercase tracking-tighter mb-1" data-i18n="plan-htw">HOW THIS WORKS</h2>
+      <p class="font-body text-xs text-[#1C1C19]/60 italic mb-6" data-i18n="plan-htw-sub">a quick note on how this works.</p>
 
       <div class="space-y-6 mb-6">
         <div>
-          <div class="font-mono text-[10px] uppercase font-bold text-[#FF46CA] mb-2 tracking-widest">WHAT WE DO</div>
+          <div class="font-mono text-[10px] uppercase font-bold text-[#FF46CA] mb-2 tracking-widest" data-i18n="plan-wwd">WHAT WE DO</div>
           <ul class="space-y-2 font-body text-sm text-[#1C1C19]/80 leading-relaxed">
-            <li>— share info: where we're staying, which restaurants to hit, what's worth seeing</li>
-            <li>— run a schedule of group activities — 1–2 per day. join whichever you like. skip whichever you don't.</li>
+            <li data-i18n="plan-wwd-1">— share info: where we're staying, which restaurants to hit, what's worth seeing</li>
+            <li data-i18n="plan-wwd-2">— run a schedule of group activities — 1–2 per day. join whichever you like. skip whichever you don't.</li>
           </ul>
         </div>
         <div>
-          <div class="font-mono text-[10px] uppercase font-bold text-[#00CB8D] mb-2 tracking-widest">WHAT YOU DO</div>
+          <div class="font-mono text-[10px] uppercase font-bold text-[#00CB8D] mb-2 tracking-widest" data-i18n="plan-wyd">WHAT YOU DO</div>
           <ul class="space-y-2 font-body text-sm text-[#1C1C19]/80 leading-relaxed">
-            <li>— pick your dates</li>
-            <li>— book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us — booking on you.)</em></li>
-            <li>— decide which group activities to join. the rest of the time is yours.</li>
+            <li data-i18n="plan-wyd-1">— pick your dates</li>
+            <li data-i18n="plan-wyd-2">— book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us — booking on you.)</em></li>
+            <li data-i18n="plan-wyd-3">— decide which group activities to join. the rest of the time is yours.</li>
           </ul>
         </div>
         <div>
-          <div class="font-mono text-[10px] uppercase font-bold text-[#FF9400] mb-2 tracking-widest">WHY THIS WAY</div>
-          <p class="font-body text-sm text-[#1C1C19]/80 leading-relaxed">there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we're leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.</p>
+          <div class="font-mono text-[10px] uppercase font-bold text-[#FF9400] mb-2 tracking-widest" data-i18n="plan-wtw">WHY THIS WAY</div>
+          <p class="font-body text-sm text-[#1C1C19]/80 leading-relaxed" data-i18n="plan-wtw-text">there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we're leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.</p>
         </div>
       </div>
 
       <div class="border-t border-dashed border-[#1C1C19]/20 pt-4 space-y-2">
-        <p class="font-body text-xs italic text-[#1C1C19]/60">(we pay for the group activities. trains, hotels, everything else — that's on you.)</p>
-        <p class="font-body text-sm font-bold">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.</p>
+        <p class="font-body text-xs italic text-[#1C1C19]/60" data-i18n="plan-pay">(we pay for the group activities. trains, hotels, everything else — that's on you.)</p>
+        <p class="font-body text-sm font-bold" data-i18n="plan-questions">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.</p>
       </div>
     </div>
   </div>
@@ -395,10 +430,10 @@
   <!-- Deadlines Header -->
   <div class="mb-6 relative">
     <div class="bg-[#ffffff] p-8 border border-[#1C1C19] relative">
-      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap" data-i18n="plan-attention">
         Attention // DIK_KAT
       </div>
-      <h2 class="font-headline font-black text-3xl uppercase tracking-tighter text-center">
+      <h2 class="font-headline font-black text-3xl uppercase tracking-tighter text-center" data-i18n="plan-deadlines">
         The <span class="text-secondary">Deadlines</span> — the serious bit.
       </h2>
     </div>
@@ -408,20 +443,20 @@
   <section class="space-y-4 mb-14">
     <div class="bg-[#1C1C19] p-6 text-white relative overflow-hidden group">
       <div class="relative z-10">
-        <h2 class="font-headline text-2xl font-black uppercase tracking-tighter mb-3 text-[#00CB8D]">TRAIN TICKETS</h2>
-        <p class="font-body text-sm mb-6 text-white/80 leading-relaxed">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.</p>
-        <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono text-xs font-bold group-hover:translate-x-2 transition-transform" href="practical.html">→ see practical page</a>
+        <h2 class="font-headline text-2xl font-black uppercase tracking-tighter mb-3 text-[#00CB8D]" data-i18n="plan-train-title">TRAIN TICKETS</h2>
+        <p class="font-body text-sm mb-6 text-white/80 leading-relaxed" data-i18n="plan-train-text">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.</p>
+        <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono text-xs font-bold group-hover:translate-x-2 transition-transform" href="practical.html" data-i18n="plan-train-link">→ see practical page</a>
       </div>
       <div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
         <span class="material-symbols-outlined text-[80px]">train</span>
       </div>
     </div>
     <div class="bg-surface-container p-6 relative group border border-dashed border-[#1C1C19]/20">
-      <h2 class="font-headline text-2xl font-black uppercase tracking-tighter mb-3">WHERE WE'RE STAYING</h2>
-      <p class="font-body text-sm mb-3 text-[#1C1C19]/70 italic">Coming soon</p>
-      <p class="font-body text-sm text-[#1C1C19]/70 mb-5 leading-relaxed">We'll share where we're staying and a couple of places nearby. <em>(advice on us — booking on you.)</em></p>
+      <h2 class="font-headline text-2xl font-black uppercase tracking-tighter mb-3" data-i18n="plan-stay-title">WHERE WE'RE STAYING</h2>
+      <p class="font-body text-sm mb-3 text-[#1C1C19]/70 italic" data-i18n="plan-stay-soon">Coming soon</p>
+      <p class="font-body text-sm text-[#1C1C19]/70 mb-5 leading-relaxed" data-i18n="plan-stay-text">We'll share where we're staying and a couple of places nearby. <em>(advice on us — booking on you.)</em></p>
       <div class="relative mt-3">
-        <span class="font-hand text-2xl text-[#FF46CA] -rotate-3 inline-block">(details incoming.)</span>
+        <span class="font-hand text-2xl text-[#FF46CA] -rotate-3 inline-block" data-i18n="plan-stay-note">(details incoming.)</span>
       </div>
     </div>
   </section>
@@ -435,7 +470,7 @@
       <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
         <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_land</span>
       </div>
-      <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1">ARRIVAL IN TASHKENT</div>
+      <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1" data-i18n="plan-arrival">ARRIVAL IN TASHKENT</div>
       <div class="h-px shaky-line w-16"></div>
     </div>
 
@@ -447,11 +482,11 @@
           <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px]">LOC_001</div>
         </div>
         <div class="flex justify-between items-end mb-2">
-          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none">TASHKENT</h3>
-          <span class="font-mono text-xs font-bold text-[#FF46CA]">JUN 09–12</span>
+          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none" data-i18n="nav-tashkent">TASHKENT</h3>
+          <span class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-city1-dates">JUN 09–12</span>
         </div>
-        <p class="font-mono text-xs opacity-70 mb-4 leading-snug">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.</p>
-        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="tashkent.html">→ explore</a>
+        <p class="font-mono text-xs opacity-70 mb-4 leading-snug" data-i18n="plan-city1-text">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.</p>
+        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="tashkent.html" data-i18n="plan-explore">→ explore</a>
       </div>
     </article>
 
@@ -460,7 +495,7 @@
       <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
         <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
       </div>
-      <div class="font-mono text-[10px] uppercase opacity-40">AFROSIYOB EXPRESS [2H 10M]</div>
+      <div class="font-mono text-[10px] uppercase opacity-40" data-i18n="plan-train1">AFROSIYOB EXPRESS [2H 10M]</div>
     </div>
 
     <!-- Samarkand -->
@@ -471,11 +506,11 @@
           <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px]">LOC_002</div>
         </div>
         <div class="flex justify-between items-end mb-2">
-          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none">SAMARKAND</h3>
-          <span class="font-mono text-xs font-bold text-[#FF46CA]">JUN 12–14</span>
+          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none" data-i18n="nav-samarkand">SAMARKAND</h3>
+          <span class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-city2-dates">JUN 12–14</span>
         </div>
-        <p class="font-mono text-xs opacity-70 mb-4 leading-snug">The Registan. Turquoise domes, minarets, tiles — more blue than you've ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)</p>
-        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="samarkand.html">→ explore</a>
+        <p class="font-mono text-xs opacity-70 mb-4 leading-snug" data-i18n="plan-city2-text">The Registan. Turquoise domes, minarets, tiles — more blue than you've ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)</p>
+        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="samarkand.html" data-i18n="plan-explore">→ explore</a>
       </div>
     </article>
 
@@ -484,7 +519,7 @@
       <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
         <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
       </div>
-      <div class="font-mono text-[10px] uppercase opacity-40">SHARQ TRAIN [1H 30M]</div>
+      <div class="font-mono text-[10px] uppercase opacity-40" data-i18n="plan-train2">SHARQ TRAIN [1H 30M]</div>
     </div>
 
     <!-- Bukhara -->
@@ -495,11 +530,11 @@
           <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px]">LOC_003</div>
         </div>
         <div class="flex justify-between items-end mb-2">
-          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none">BUKHARA</h3>
-          <span class="font-mono text-xs font-bold text-[#FF46CA]">JUN 14–15</span>
+          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none" data-i18n="nav-bukhara">BUKHARA</h3>
+          <span class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-city3-dates">JUN 14–15</span>
         </div>
-        <p class="font-mono text-xs opacity-70 mb-4 leading-snug">140 monuments. No cars in the old city. You'll forget what year it is.</p>
-        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="bukhara.html">→ explore</a>
+        <p class="font-mono text-xs opacity-70 mb-4 leading-snug" data-i18n="plan-city3-text">140 monuments. No cars in the old city. You'll forget what year it is.</p>
+        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="bukhara.html" data-i18n="plan-explore">→ explore</a>
       </div>
     </article>
 
@@ -508,14 +543,14 @@
       <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
         <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
       </div>
-      <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1">DEPARTURE — TASHKENT</div>
+      <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1" data-i18n="plan-departure">DEPARTURE — TASHKENT</div>
       <div class="h-px shaky-line w-full"></div>
     </div>
   </section>
 
   <!-- Annotation -->
   <div class="flex justify-center pt-4 pb-8">
-    <p class="font-hand text-3xl text-[#FF9400] rotate-2">you will want to move here. (we are not responsible for this.)</p>
+    <p class="font-hand text-3xl text-[#FF9400] rotate-2" data-i18n="plan-annotation">you will want to move here. (we are not responsible for this.)</p>
   </div>
 
   <div class="py-8 flex justify-center opacity-20">
@@ -546,29 +581,186 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
 <nav class="fixed bottom-0 left-0 w-full bg-[#FCF9F4]/95 backdrop-blur-md border-t border-[#1C1C19]/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
   <a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
     <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">home</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">HOME</span>
+    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-home">HOME</span>
   </a>
   <a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
     <span class="material-symbols-outlined text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold transition-colors">PLAN</span>
+    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold transition-colors" data-i18n="bnav-plan">PLAN</span>
     <div class="h-[2px] w-3 bg-[#FF46CA] mt-0.5 rounded-full"></div>
   </a>
   <a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
     <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">apartment</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">TAS</span>
+    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-tas">TAS</span>
   </a>
   <a href="samarkand.html" class="flex flex-col items-center gap-0.5 group py-1">
     <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">mosque</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">SAM</span>
+    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-sam">SAM</span>
   </a>
   <a href="bukhara.html" class="flex flex-col items-center gap-0.5 group py-1">
     <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">account_balance</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">BUK</span>
+    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-buk">BUK</span>
   </a>
   <a href="practical.html" class="flex flex-col items-center gap-0.5 group py-1">
     <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">checklist</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors">INFO</span>
+    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-info">INFO</span>
   </a>
 </nav>
 <div class="h-20 md:hidden"></div>
+
+<!-- Language Switcher -->
+<script>
+var translations = {
+  en: {
+    'nav-invitation': 'INVITATION',
+    'nav-plan': 'PLAN',
+    'nav-tashkent': 'TASHKENT',
+    'nav-samarkand': 'SAMARKAND',
+    'nav-bukhara': 'BUKHARA',
+    'nav-practical': 'PRACTICAL',
+    'plan-when': 'WHEN WE GO // JUN 09 \u2192 JUN 16',
+    'plan-when-label': 'WHEN WE GO',
+    'plan-when-heading': 'WHEN WE GO<br/>// JUN 09 \u2192 JUN 16',
+    'plan-node-tashkent': 'Tashkent',
+    'plan-node-samarkand': 'Samarkand',
+    'plan-node-bukhara': 'Bukhara',
+    'plan-node-date1': 'JUN 09',
+    'plan-node-date2': 'JUN 12',
+    'plan-node-date3': 'JUN 14',
+    'plan-node-date4': 'JUN 16',
+    'plan-return': 'RETURN',
+    'plan-htw': 'HOW THIS WORKS',
+    'plan-htw-sub': 'a quick note on how this works.',
+    'plan-wwd': 'WHAT WE DO',
+    'plan-wwd-1': '\u2014 share info: where we\u2019re staying, which restaurants to hit, what\u2019s worth seeing',
+    'plan-wwd-2': '\u2014 run a schedule of group activities \u2014 1\u20132 per day. join whichever you like. skip whichever you don\u2019t.',
+    'plan-wyd': 'WHAT YOU DO',
+    'plan-wyd-1': '\u2014 pick your dates',
+    'plan-wyd-2': '\u2014 book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us \u2014 booking on you.)</em>',
+    'plan-wyd-3': '\u2014 decide which group activities to join. the rest of the time is yours.',
+    'plan-wtw': 'WHY THIS WAY',
+    'plan-wtw-text': 'there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we\u2019re leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.',
+    'plan-pay': '(we pay for the group activities. trains, hotels, everything else \u2014 that\u2019s on you.)',
+    'plan-questions': 'questions, doubts, ideas \u2014 <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.',
+    'plan-attention': 'Attention // DIK_KAT',
+    'plan-deadlines': 'The <span class="text-secondary">Deadlines</span> \u2014 the serious bit.',
+    'plan-train-title': 'TRAIN TICKETS',
+    'plan-train-text': 'Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.',
+    'plan-train-link': '\u2192 see practical page',
+    'plan-stay-title': 'WHERE WE\u2019RE STAYING',
+    'plan-stay-soon': 'Coming soon',
+    'plan-stay-text': 'We\u2019ll share where we\u2019re staying and a couple of places nearby. <em>(advice on us \u2014 booking on you.)</em>',
+    'plan-stay-note': '(details incoming.)',
+    'plan-city1-label': '01 / CAPITAL',
+    'plan-city1-dates': 'JUN 09\u201312',
+    'plan-city1-text': 'Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.',
+    'plan-city2-label': '02 / SILK ROAD HERO',
+    'plan-city2-dates': 'JUN 12\u201314',
+    'plan-city2-text': 'The Registan. Turquoise domes, minarets, tiles \u2014 more blue than you\u2019ve ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)',
+    'plan-city3-label': '03 / OLD WORLD SOUL',
+    'plan-city3-dates': 'JUN 14\u201315',
+    'plan-city3-text': '140 monuments. No cars in the old city. You\u2019ll forget what year it is.',
+    'plan-explore': '\u2192 explore',
+    'plan-annotation': 'you will want to move here. (we are not responsible for this.)',
+    'plan-arrival': 'ARRIVAL IN TASHKENT',
+    'plan-departure': 'DEPARTURE \u2014 TASHKENT',
+    'plan-train1': 'AFROSIYOB EXPRESS [2H 10M]',
+    'plan-train2': 'SHARQ TRAIN [1H 30M]',
+    'bnav-home': 'HOME',
+    'bnav-plan': 'PLAN',
+    'bnav-tas': 'TAS',
+    'bnav-sam': 'SAM',
+    'bnav-buk': 'BUK',
+    'bnav-info': 'INFO'
+  },
+  ru: {
+    'nav-invitation': '\u041f\u0420\u0418\u0413\u041b\u0410\u0428\u0415\u041d\u0418\u0415',
+    'nav-plan': '\u041f\u041b\u0410\u041d',
+    'nav-tashkent': '\u0422\u0410\u0428\u041a\u0415\u041d\u0422',
+    'nav-samarkand': '\u0421\u0410\u041c\u0410\u0420\u041a\u0410\u041d\u0414',
+    'nav-bukhara': '\u0411\u0423\u0425\u0410\u0420\u0410',
+    'nav-practical': '\u0418\u041d\u0424\u041e',
+    'plan-when': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c // 9 \u0418\u042e\u041d \u2192 16 \u0418\u042e\u041d',
+    'plan-when-label': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c',
+    'plan-when-heading': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c<br/>// 9 \u0418\u042e\u041d \u2192 16 \u0418\u042e\u041d',
+    'plan-node-tashkent': '\u0422\u0430\u0448\u043a\u0435\u043d\u0442',
+    'plan-node-samarkand': '\u0421\u0430\u043c\u0430\u0440\u043a\u0430\u043d\u0434',
+    'plan-node-bukhara': '\u0411\u0443\u0445\u0430\u0440\u0430',
+    'plan-node-date1': '\u0418\u042e\u041d 09',
+    'plan-node-date2': '\u0418\u042e\u041d 12',
+    'plan-node-date3': '\u0418\u042e\u041d 14',
+    'plan-node-date4': '\u0418\u042e\u041d 16',
+    'plan-return': '\u041e\u0411\u0420\u0410\u0422\u041d\u041e',
+    'plan-htw': '\u041a\u0410\u041a \u042d\u0422\u041e \u0420\u0410\u0411\u041e\u0422\u0410\u0415\u0422',
+    'plan-htw-sub': '\u043f\u0430\u0440\u0430 \u0441\u043b\u043e\u0432 \u043e \u0442\u043e\u043c, \u043a\u0430\u043a \u0432\u0441\u0451 \u0443\u0441\u0442\u0440\u043e\u0435\u043d\u043e.',
+    'plan-wwd': '\u0427\u0422\u041e \u041c\u042b \u0414\u0415\u041b\u0410\u0415\u041c',
+    'plan-wwd-1': '\u2014 \u0434\u0435\u043b\u0438\u043c\u0441\u044f \u0438\u043d\u0444\u043e\u0439: \u0433\u0434\u0435 \u043c\u044b \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c\u0441\u044f, \u043a\u0430\u043a\u0438\u0435 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u044b \u0441\u043e\u0432\u0435\u0442\u0443\u0435\u043c, \u043a\u0443\u0434\u0430 \u0441\u0442\u043e\u0438\u0442 \u0441\u0445\u043e\u0434\u0438\u0442\u044c',
+    'plan-wwd-2': '\u2014 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0435\u0439 \u2014 1\u20132 \u0432 \u0434\u0435\u043d\u044c. \u043f\u0440\u0438\u0441\u043e\u0435\u0434\u0438\u043d\u044f\u0439\u0441\u044f \u043a \u043b\u044e\u0431\u044b\u043c. \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u0430\u0439, \u0435\u0441\u043b\u0438 \u043d\u0435 \u043f\u043e \u043d\u0430\u0441\u0442\u0440\u043e\u0435\u043d\u0438\u044e.',
+    'plan-wyd': '\u0427\u0422\u041e \u0422\u042b \u0414\u0415\u041b\u0410\u0415\u0428\u042c \u0421\u0410\u041c',
+    'plan-wyd-1': '\u2014 \u0432\u044b\u0431\u0438\u0440\u0430\u0435\u0448\u044c \u0441\u0432\u043e\u0438 \u0434\u0430\u0442\u044b',
+    'plan-wyd-2': '\u2014 \u0431\u0440\u043e\u043d\u0438\u0440\u0443\u0435\u0448\u044c \u043f\u043e\u0435\u0437\u0434 \u0438 \u043e\u0442\u0435\u043b\u044c. <em class="text-[#1C1C19]/50">(\u043f\u043e\u043c\u043e\u0436\u0435\u043c \u0441\u043e\u0432\u0435\u0442\u043e\u043c \u2014 \u0431\u0440\u043e\u043d\u044c \u0437\u0430 \u0442\u043e\u0431\u043e\u0439.)</em>',
+    'plan-wyd-3': '\u2014 \u0440\u0435\u0448\u0430\u0435\u0448\u044c, \u043d\u0430 \u0447\u0442\u043e \u0438\u0434\u0442\u0438, \u0430 \u0447\u0442\u043e \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u0442\u044c. \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u2014 \u0442\u0432\u043e\u0451.',
+    'plan-wtw': '\u041f\u041e\u0427\u0415\u041c\u0423 \u0422\u0410\u041a',
+    'plan-wtw-text': '\u043d\u0430\u0441 \u043c\u043d\u043e\u0433\u043e, \u0443 \u0432\u0441\u0435\u0445 \u0440\u0430\u0437\u043d\u044b\u0439 \u0440\u0438\u0442\u043c. \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0437\u0430\u0432\u0442\u0440\u0430\u043a\u043e\u0432-\u043e\u0431\u0435\u0434\u043e\u0432-\u0443\u0436\u0438\u043d\u043e\u0432 \u2014 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0438, \u0447\u0435\u0441\u0442\u043d\u043e, \u043d\u0435 \u043d\u0443\u0436\u043d\u043e. \u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c \u0432\u043e\u0437\u0434\u0443\u0445 \u0434\u043b\u044f \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u043e\u0433\u043e: \u0443\u0436\u0438\u043d\u043e\u0432 \u043f\u043e \u0442\u0440\u043e\u0435, \u043f\u0440\u043e\u0433\u0443\u043b\u043e\u043a \u0434\u043e \u0443\u0442\u0440\u0430, \u0432\u043d\u0435\u043f\u043b\u0430\u043d\u043e\u0432\u044b\u0445 \u043f\u043b\u043e\u0432-\u043f\u0430\u0443\u0437.',
+    'plan-pay': '(\u043c\u044b \u043e\u043f\u043b\u0430\u0447\u0438\u0432\u0430\u0435\u043c \u0442\u043e\u043b\u044c\u043a\u043e \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438. \u043f\u043e\u0435\u0437\u0434\u0430, \u043e\u0442\u0435\u043b\u0438, \u0432\u0441\u0451 \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u2014 \u0442\u044b \u0441\u0430\u043c.)',
+    'plan-questions': '\u0432\u043e\u043f\u0440\u043e\u0441\u044b, \u0441\u043e\u043c\u043d\u0435\u043d\u0438\u044f, \u0438\u0434\u0435\u0438 \u2014 <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">\u043f\u0438\u0448\u0438 \u043d\u0430\u0441\u0442\u0435</a>.',
+    'plan-attention': '\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435 // DIK_KAT',
+    'plan-deadlines': '<span class="text-secondary">\u0414\u0435\u0434\u043b\u0430\u0439\u043d\u044b</span> \u2014 \u0441\u0435\u0440\u044c\u0451\u0437\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c.',
+    'plan-train-title': '\u0411\u0418\u041b\u0415\u0422\u042b \u041d\u0410 \u041f\u041e\u0415\u0417\u0414',
+    'plan-train-text': '\u0441\u0440\u043e\u0447\u043d\u043e: \u0431\u0438\u043b\u0435\u0442\u044b \u0440\u0430\u0437\u043b\u0435\u0442\u0430\u044e\u0442\u0441\u044f. \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0437\u0430 45 \u0434\u043d\u0435\u0439 \u0434\u043e \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f. \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 <span class="text-[#FF9400] font-mono">\u043a\u043e\u043d\u0446\u0435 \u0430\u043f\u0440\u0435\u043b\u044f</span>. \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u0430 railway.uz.',
+    'plan-train-link': '\u2192 \u0441\u043c. \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0438\u043d\u0444\u043e',
+    'plan-stay-title': '\u0413\u0414\u0415 \u041c\u042b \u0416\u0418\u0412\u0401\u041c',
+    'plan-stay-soon': '\u0441\u043a\u043e\u0440\u043e',
+    'plan-stay-text': '\u043c\u044b \u0440\u0430\u0441\u0441\u043a\u0430\u0436\u0435\u043c, \u0433\u0434\u0435 \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c\u0441\u044f, \u0438 \u043f\u043e\u0434\u043a\u0438\u043d\u0435\u043c \u043f\u0430\u0440\u0443 \u043e\u043f\u0446\u0438\u0439 \u0440\u044f\u0434\u043e\u043c. <em>(\u043f\u043e\u043c\u043e\u0436\u0435\u043c \u0441\u043e\u0432\u0435\u0442\u043e\u043c \u2014 \u0431\u0440\u043e\u043d\u044c \u0437\u0430 \u0442\u043e\u0431\u043e\u0439.)</em>',
+    'plan-stay-note': '(\u0441\u043a\u043e\u0440\u043e \u0440\u0430\u0441\u0441\u043a\u0430\u0436\u0435\u043c.)',
+    'plan-city1-label': '01 / \u0421\u0422\u041e\u041b\u0418\u0426\u0410',
+    'plan-city1-dates': '9\u201312 \u0418\u042e\u041d',
+    'plan-city1-text': '\u043f\u0440\u0438\u043b\u0451\u0442. \u0434\u0435\u043d\u044c \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f. \u0441\u043e\u0432\u0435\u0442\u0441\u043a\u0438\u0435 \u043c\u043e\u0437\u0430\u0438\u043a\u0438 \u0432 \u043c\u0435\u0442\u0440\u043e. \u043f\u043b\u043e\u0432 \u0432 7 \u0443\u0442\u0440\u0430. \u0438\u0437 \u043a\u0430\u0437\u0430\u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u043c \u0441 \u0442\u0435\u0431\u044f.',
+    'plan-city2-label': '02 / \u0413\u0415\u0420\u041e\u0419 \u0428\u0401\u041b\u041a\u041e\u0412\u041e\u0413\u041e \u041f\u0423\u0422\u0418',
+    'plan-city2-dates': '12\u201314 \u0418\u042e\u041d',
+    'plan-city2-text': '\u0420\u0435\u0433\u0438\u0441\u0442\u0430\u043d. \u0431\u0438\u0440\u044e\u0437\u043e\u0432\u044b\u0435 \u043a\u0443\u043f\u043e\u043b\u0430, \u043c\u0438\u043d\u0430\u0440\u0435\u0442\u044b, \u043f\u043b\u0438\u0442\u043a\u0430 \u2014 \u0441\u0442\u043e\u043b\u044c\u043a\u043e \u0441\u0438\u043d\u0435\u0433\u043e \u0446\u0432\u0435\u0442\u0430 \u0442\u044b \u0435\u0449\u0451 \u043d\u0435 \u0432\u0438\u0434\u0435\u043b. \u0441\u0430\u043c\u0430\u0440\u043a\u0430\u043d\u0434\u0441\u043a\u0438\u0439 \u0445\u043b\u0435\u0431 \u043d\u0430\u0441\u0442\u043e\u043b\u044c\u043a\u043e \u043a\u0443\u043b\u044c\u0442\u043e\u0432\u044b\u0439, \u0447\u0442\u043e \u0435\u0433\u043e \u0432\u0435\u0437\u0443\u0442 \u0434\u043e\u043c\u043e\u0439 \u0447\u0435\u0440\u0435\u0437 \u043f\u043e\u043b\u0441\u0442\u0440\u0430\u043d\u044b. \u0432 \u0440\u0443\u0447\u043d\u043e\u0439 \u043a\u043b\u0430\u0434\u0438. (\u043c\u044b \u0442\u043e\u0436\u0435 \u043f\u043e\u0432\u0435\u0437\u0451\u043c.)',
+    'plan-city3-label': '03 / \u0414\u0423\u0428\u0410 \u0421\u0422\u0410\u0420\u041e\u0413\u041e \u041c\u0418\u0420\u0410',
+    'plan-city3-dates': '14\u201315 \u0418\u042e\u041d',
+    'plan-city3-text': '140 \u043f\u0430\u043c\u044f\u0442\u043d\u0438\u043a\u043e\u0432. \u043d\u0438 \u043e\u0434\u043d\u043e\u0439 \u043c\u0430\u0448\u0438\u043d\u044b \u0432 \u0441\u0442\u0430\u0440\u043e\u043c \u0433\u043e\u0440\u043e\u0434\u0435. \u0442\u044b \u0437\u0430\u0431\u0443\u0434\u0435\u0448\u044c, \u043a\u0430\u043a\u043e\u0439 \u0441\u0435\u0439\u0447\u0430\u0441 \u0433\u043e\u0434.',
+    'plan-explore': '\u2192 \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c',
+    'plan-annotation': '\u0442\u044b \u0437\u0430\u0445\u043e\u0447\u0435\u0448\u044c \u0441\u044e\u0434\u0430 \u043f\u0435\u0440\u0435\u0435\u0445\u0430\u0442\u044c. (\u043c\u044b \u043d\u0435 \u043d\u0435\u0441\u0451\u043c \u0437\u0430 \u044d\u0442\u043e \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c.)',
+    'plan-arrival': '\u041f\u0420\u0418\u041b\u0401\u0422 \u0412 \u0422\u0410\u0428\u041a\u0415\u041d\u0422',
+    'plan-departure': '\u0412\u042b\u041b\u0415\u0422 \u2014 \u0422\u0410\u0428\u041a\u0415\u041d\u0422',
+    'plan-train1': '\u0410\u0424\u0420\u041e\u0421\u042c\u0401\u0411 \u042d\u041a\u0421\u041f\u0420\u0415\u0421\u0421 [2\u0427 10\u041c]',
+    'plan-train2': '\u0428\u0410\u0420\u041a \u041f\u041e\u0415\u0417\u0414 [1\u0427 30\u041c]',
+    'bnav-home': '\u0414\u041e\u041c',
+    'bnav-plan': '\u041f\u041b\u0410\u041d',
+    'bnav-tas': '\u0422\u0410\u0428',
+    'bnav-sam': '\u0421\u0410\u041c',
+    'bnav-buk': '\u0411\u0423\u0425',
+    'bnav-info': '\u0418\u041d\u0424\u041e'
+  }
+};
+
+function applyLang(lang) {
+  var dict = translations[lang];
+  if (!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+  document.documentElement.lang = lang;
+  document.title = lang === 'ru' ? '\u041f\u041b\u0410\u041d \u2014 \u0423\u0417\u0411\u0415\u041a \u0414\u0420' : 'PLAN - UZBEK BDAY';
+  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
+  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+}
+
+function setLang(lang) {
+  localStorage.setItem('uzbekbday-lang', lang);
+  applyLang(lang);
+}
+
+(function() {
+  var saved = localStorage.getItem('uzbekbday-lang');
+  if (saved && translations[saved]) {
+    applyLang(saved);
+  }
+})();
+</script>
 </body></html>
