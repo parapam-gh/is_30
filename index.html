@@ -28,9 +28,13 @@
             z-index: 0;
             filter: grayscale(1);
         }
-        .sticker-offset {
-            position: relative;
-        }
+        .sticker-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
+        .sticker-6 { box-shadow: 6px 6px 0 0 #1C1C19; }
+        .sticker-pink { box-shadow: 6px 6px 0 0 #FF46CA; }
+        .sticker-green { box-shadow: 6px 6px 0 0 #00CB8D; }
+        .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
+        /* legacy ::before sticker kept for the plov card rotation */
+        .sticker-offset { position: relative; }
         .sticker-offset::before {
             content: '';
             position: absolute;
@@ -42,6 +46,18 @@
             z-index: -1;
             opacity: 1;
         }
+        .girikh-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 10 L50 30 L30 50 L10 30 Z' fill='none' stroke='%23FCF9F4' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E");
+        }
+        .pressure-btn {
+            transition: opacity .3s ease, transform .2s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: pointer;
+        }
+        .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
         .handwritten {
             font-family: 'Caveat', 'Space Grotesk', sans-serif;
             font-style: italic;
@@ -115,6 +131,16 @@
             width: 20rem;
         }
 
+        /* Russian: dates row — tighten tracking so Russian chars fit on one line */
+        body.lang-ru .invite-dates {
+            letter-spacing: 0.1em;
+        }
+        @media (min-width: 768px) {
+            body.lang-ru .invite-dates {
+                letter-spacing: 0.12em;
+            }
+        }
+
         /* Russian font-size overrides for hero */
         body.lang-ru .hero-h1 {
             font-size: 2.8rem;
@@ -186,7 +212,7 @@
 <button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
 <button id="lang-ru" onclick="setLang('ru')">RU</button>
 </div>
-<a class="rsvp-link" style="cursor:pointer"><button class="bg-primary text-white px-6 py-2 font-headline font-black uppercase tracking-tighter active:translate-y-0.5 active:scale-95 transition-all">RSVP</button></a>
+<a class="rsvp-link" style="cursor:pointer"><button class="bg-primary text-white px-6 py-2 font-headline font-black uppercase tracking-tighter sticker-4 border border-on-surface pressure-btn">RSVP</button></a>
 </div>
 </nav>
 <main class="pb-24 relative pt-24">
@@ -209,15 +235,39 @@
 <p class="mt-8 text-on-surface/40 italic text-xl md:text-2xl max-w-2xl handwritten" data-i18n="hero-subline">
                     (or, how to eat plov at 7am, sweat through your clothes, and call it a good time — with people I love)
                 </p>
+<div class="shaky-line w-48 h-1 mt-4 opacity-40"></div>
 </div>
-<div class="absolute bottom-10 left-6 md:left-20 w-full max-w-xs aspect-square opacity-20 border-[1px] border-dashed border-on-surface p-2">
-<img class="w-full h-full object-cover filter grayscale" data-alt="Registan Square in Samarkand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB-x7j4NGp9w_-IHrcygfHIy7L7vnfodkOrKF4-S941_045xFpWmAlnObvykT-s8ebtM7Gqy_JFPDNfcrfyKxsGJYT9TknS2-XTmMbIvZW7toPlTV1HO_LHuzT0cmHkhPUQ5PXe5cBfMSfQQqqqaX3rL-mTsZeQope4RgrRahpOD75OH00KAJVz6ocgnRq8dofGE4XnxbHw2vD3LSSW29IUoUrx7TtV6Hutn7nKJANOri3ULAaRHvLxHYnLunm0mXNKdqBEmxbCpby"/>
+<div class="absolute bottom-10 left-6 md:left-20 w-full max-w-xs aspect-square opacity-20 border-[1px] border-dashed border-on-surface p-2 group">
+<img class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="Registan Square in Samarkand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB-x7j4NGp9w_-IHrcygfHIy7L7vnfodkOrKF4-S941_045xFpWmAlnObvykT-s8ebtM7Gqy_JFPDNfcrfyKxsGJYT9TknS2-XTmMbIvZW7toPlTV1HO_LHuzT0cmHkhPUQ5PXe5cBfMSfQQqqqaX3rL-mTsZeQope4RgrRahpOD75OH00KAJVz6ocgnRq8dofGE4XnxbHw2vD3LSSW29IUoUrx7TtV6Hutn7nKJANOri3ULAaRHvLxHYnLunm0mXNKdqBEmxbCpby"/>
 </div>
 </section>
 <!-- Repeating X X X Divider -->
 <div class="w-full py-12 flex justify-center items-center overflow-hidden">
-<div class="cross-stitch-divider whitespace-nowrap text-2xl font-mono flex gap-4">
-<span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span>
+<div class="flex items-center justify-center gap-3 flex-wrap [&>svg:nth-child(3n+1)]:text-primary [&>svg:nth-child(3n+2)]:text-secondary [&>svg:nth-child(3n)]:text-tertiary">
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
+<svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
 </div>
 </div>
 <!-- 2. INVITE BLOCK -->
@@ -233,10 +283,10 @@
 <p class="text-xl md:text-2xl font-mono font-bold" data-i18n="invite-opt2">Come for a few days around it.</p>
 </div>
 <div class="border-l-8 border-tertiary pl-6 py-2">
-<p class="text-xl md:text-2xl font-mono font-bold" data-i18n="invite-opt3">Come for the whole trip — Tashkent → Samarkand → Bukhara.</p>
+<p class="text-xl md:text-2xl font-mono font-bold [text-wrap:balance]" data-i18n="invite-opt3">Come for the whole trip — Tashkent → Samarkand → Bukhara.</p>
 </div>
 </div>
-<div class="mb-8 font-mono text-2xl tracking-[0.5em] md:text-4xl">
+<div class="invite-dates mb-8 font-mono text-xl tracking-[0.2em] md:text-3xl">
 <span class="opacity-20" data-i18n="invite-date-start">JUN 09 —</span> <span class="font-bold text-primary" data-i18n="invite-date-mid">JUN 11</span> <span class="opacity-20" data-i18n="invite-date-end">— JUN 16</span>
 </div>
 <p class="text-xl font-mono mb-4" data-i18n="invite-closing">However works for you works for me.</p>
@@ -244,11 +294,17 @@
                 (the party does not require full attendance. the party recommends it.)
             </p>
 </section>
-<!-- Divider -->
-<div class="w-full py-12 flex justify-center items-center overflow-hidden">
-<div class="cross-stitch-divider whitespace-nowrap text-2xl font-mono flex gap-4">
-<span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span> <span>X</span>
-</div>
+<!-- Girikh Divider (structural, hand-drawn zine feel) -->
+<div class="w-full py-12 overflow-hidden">
+<svg class="w-full h-8 text-on-surface opacity-40" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern id="girikhDiv1" x="0" y="0" width="40" height="30" patternUnits="userSpaceOnUse">
+<path d="M20 0 L40 15 L20 30 L0 15 Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+<path d="M20 5 L35 15 L20 25 L5 15 Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+</pattern>
+</defs>
+<rect width="1200" height="30" fill="url(#girikhDiv1)"/>
+</svg>
 </div>
 <!-- 3. FUNNY LIST -->
 <section class="px-6 md:px-20 py-24 bg-surface-container-low relative overflow-hidden">
@@ -260,47 +316,47 @@
 <div class="space-y-12">
 <div class="flex items-start gap-6 group">
 <span class="font-mono text-4xl text-primary font-bold">01</span>
-<div>
+<div class="max-w-2xl">
 <p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-01">You will land in Tashkent. It will be 40°C. You will say "that's fine, I like warm weather." You will be humbled.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-secondary font-bold">02</span>
-<div>
+<div class="max-w-2xl">
 <p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-02">We will eat plov at 7am. From a giant cauldron. In a parking lot. It will be the best thing you've ever eaten.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-tertiary font-bold">03</span>
-<div>
+<div class="max-w-2xl">
 <p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-03">On June 11 there will be deeply optional yoga at dawn, a hands-on thing that will make your parents think you've changed, and an unnecessarily beautiful dinner. I will turn 30 in front of everyone.</p>
 <p class="text-primary italic mt-2 handwritten text-xl" data-i18n="list-03-barakalla">"Barakalla." <span class="text-on-surface/40 text-base not-italic font-body">(well done, roughly)</span></p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-primary font-bold">04</span>
-<div>
+<div class="max-w-2xl">
 <p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-04">We will take a high-speed train through the steppe. You will stare out the window for the full 2.5 hours. This is encouraged.</p>
 </div>
 </div>
 <div class="flex items-start gap-6">
 <span class="font-mono text-4xl text-secondary font-bold">05</span>
-<div>
+<div class="max-w-2xl">
 <p class="text-on-surface/70 text-xl leading-snug" data-i18n="list-05">We will go to Samarkand. Then Bukhara. You will take the same photo of the Registan seventeen times. They are all slightly different. You will keep all of them.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="relative mt-20 md:mt-0">
-<div class="sticker-offset bg-surface-container-highest p-4 rotate-2 text-primary">
-<img class="w-full aspect-[4/5] object-cover" data-alt="Uzbek plov preparation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA15rXwjh0Yvj1iw2tYS-BWD1dSRgUYxHNvLajcblQRnFsFtCzr2ia6b0YSiaX7wn3Ls2Mo2EQ7Bwl03SbmAixCqWxMfK0B0Q6p2PNJMerHxuEQgWiIZK484SO-pCnhlEeUqfuXUaKYyEwqHBff5IsEicYsNnNPcA9Ru5jEhpiy1_81Kd9SvDzw6le4cBPWjXSK2dH5kQ1A4IgBSfW4614MwplW9fXeS1y3OEG-axmXNlXtx1xUPrtgHpk5stYXH1rcs3kr8mVfnYw9"/>
-<div class="mt-4 font-mono text-xs uppercase tracking-widest text-on-surface/60" data-i18n="list-fig">FIG 01. THE PLOV CENTER EXPERIENCE</div>
+<div class="bg-surface-container-highest p-4 rotate-2 sticker-pink group">
+<img class="w-full aspect-[4/5] object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="Uzbek plov preparation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA15rXwjh0Yvj1iw2tYS-BWD1dSRgUYxHNvLajcblQRnFsFtCzr2ia6b0YSiaX7wn3Ls2Mo2EQ7Bwl03SbmAixCqWxMfK0B0Q6p2PNJMerHxuEQgWiIZK484SO-pCnhlEeUqfuXUaKYyEwqHBff5IsEicYsNnNPcA9Ru5jEhpiy1_81Kd9SvDzw6le4cBPWjXSK2dH5kQ1A4IgBSfW4614MwplW9fXeS1y3OEG-axmXNlXtx1xUPrtgHpk5stYXH1rcs3kr8mVfnYw9"/>
+<div class="mt-4 font-mono text-xs uppercase tracking-widest text-on-surface/60" data-i18n="list-fig">[ PLOV · 7AM ]</div>
 </div>
 </div>
 </div>
 </section>
 <!-- 4. DRAMATIC COUNTDOWN -->
-<section class="px-6 md:px-20 py-40 bg-on-surface text-surface overflow-hidden relative">
+<section class="px-6 md:px-20 py-40 bg-on-surface text-surface overflow-hidden relative girikh-bg">
 <div class="max-w-6xl mx-auto">
 <h2 class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-secondary" data-i18n="countdown-title">TIME UNTIL YOU HAVE TO DECIDE</h2>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
@@ -400,7 +456,7 @@ function updatePressureVisuals() {
 <!-- 5. DATES BAR -->
 <div class="w-full bg-primary py-6 px-6 overflow-hidden">
 <div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-on-surface/60 mb-3" data-i18n="dates-top">OUR PLAN</div>
-<div class="flex whitespace-nowrap gap-12 font-mono text-lg md:text-2xl text-on-surface">
+<div class="flex justify-center whitespace-nowrap gap-12 font-mono text-lg md:text-2xl text-on-surface">
 <span class="font-bold" data-i18n="dates-1">JUN 09 → TASHKENT</span>
 <span class="opacity-30">//</span>
 <span class="font-bold" data-i18n="dates-2">JUN 12 → SAMARKAND</span>
@@ -423,7 +479,7 @@ function updatePressureVisuals() {
 <div class="cta-note absolute -top-16 left-1/2 -translate-x-1/2 bg-surface p-3 border-[1px] border-secondary text-secondary rotate-2 handwritten z-20 w-64 shadow-lg font-bold" data-i18n="cta-note">
                     ("yes", "maybe", "what even is plov" — all valid)
                 </div>
-<a href="https://t.me/parapam_tg" target="_blank" class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 hover:bg-primary/90 transition-colors relative z-10 uppercase tracking-tighter inline-block" data-i18n="cta-button">
+<a href="https://t.me/parapam_tg" target="_blank" class="bg-primary text-white text-xl md:text-2xl font-black font-headline px-12 py-5 relative z-10 uppercase tracking-tighter inline-block sticker-4 border border-on-surface pressure-btn" data-i18n="cta-button">
                     I'M IN — MESSAGE ANASTASIA
                 </a>
 </div>
@@ -435,6 +491,7 @@ function updatePressureVisuals() {
 </main>
 <footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-surface border-t-[1px] border-double border-on-surface">
 <div class="font-mono text-xs uppercase tracking-widest text-on-surface">© 2026 UZBEK BDAY ZINE</div>
+<div class="font-headline text-lg font-black italic text-primary tracking-tighter uppercase">UZBEK BDAY</div>
 <div class="flex gap-10">
 <a class="font-mono text-xs uppercase tracking-widest text-on-surface hover:text-tertiary transition-colors" href="map.html">MAPS</a>
 </div>
@@ -510,7 +567,7 @@ var translations = {
     'list-03-barakalla': '\u201CBarakalla.\u201D <span class="text-on-surface/40 text-base not-italic font-body">(well done, roughly)</span>',
     'list-04': 'We will take a high-speed train through the steppe. You will stare out the window for the full 2.5 hours. This is encouraged.',
     'list-05': 'We will go to Samarkand. Then Bukhara. You will take the same photo of the Registan seventeen times. They are all slightly different. You will keep all of them.',
-    'list-fig': 'FIG 01. THE PLOV CENTER EXPERIENCE',
+    'list-fig': '[ PLOV · 7AM ]',
     'countdown-title': 'TIME UNTIL YOU HAVE TO DECIDE',
     'countdown-days': 'DAYS',
     'countdown-hours': 'HOURS',
@@ -563,7 +620,7 @@ var translations = {
     'list-03-barakalla': '\u00AB\u0431\u0430\u0440\u0430\u043A\u0430\u043B\u043B\u0430!\u00BB <span class="text-on-surface/40 text-base not-italic font-body">(\u043C\u043E\u043B\u043E\u0434\u0435\u0446.)</span>',
     'list-04': '\u043C\u044B \u043F\u043E\u0435\u0434\u0435\u043C \u043D\u0430 \u043F\u043E\u0435\u0437\u0434\u0435 \u00AB\u0430\u0444\u0440\u043E\u0441\u044C\u0451\u0431\u00BB \u0447\u0435\u0440\u0435\u0437 \u0441\u0442\u0435\u043F\u044C. (\u043D\u0430\u0437\u0432\u0430\u043D \u0432 \u0447\u0435\u0441\u0442\u044C \u0446\u0430\u0440\u044F \u2014 \u0430 \u043D\u0435 \u0442\u043E, \u0447\u0442\u043E \u0442\u044B \u043F\u043E\u0434\u0443\u043C\u0430\u043B.) \u043C\u044B \u0431\u0443\u0434\u0435\u043C \u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432 \u043E\u043A\u043D\u043E \u0432\u0441\u0435 2,5 \u0447\u0430\u0441\u0430. \u044D\u0442\u043E \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E.',
     'list-05': '\u043C\u044B \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438\u043C \u0421\u0430\u043C\u0430\u0440\u043A\u0430\u043D\u0434. \u043F\u043E\u0442\u043E\u043C \u0411\u0443\u0445\u0430\u0440\u0443. \u0432\u043E\u0441\u0442\u043E\u043A \u2014 \u0434\u0435\u043B\u043E \u0442\u043E\u043D\u043A\u043E\u0435. \u043D\u043E \u043C\u044B \u0440\u0430\u0437\u0431\u0435\u0440\u0451\u043C\u0441\u044F.',
-    'list-fig': '\u0420\u0418\u0421 01. \u041F\u041B\u041E\u0412-\u0426\u0415\u041D\u0422\u0420',
+    'list-fig': '[ \u041F\u041B\u041E\u0412 \u00B7 7:00 ]',
     'countdown-title': '\u0412\u0420\u0415\u041C\u0415\u041D\u0418 \u041D\u0410 \u0420\u0415\u0428\u0415\u041D\u0418\u0415 \u041E\u0421\u0422\u0410\u041B\u041E\u0421\u042C',
     'countdown-days': '\u0414\u041D\u0415\u0419',
     'countdown-hours': '\u0427\u0410\u0421\u041E\u0412',
