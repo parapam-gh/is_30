@@ -30,6 +30,30 @@
             cursor: pointer;
         }
         .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
+        /* Lang toggle — same style as plan.html */
+        .lang-toggle {
+            display: inline-flex;
+            border: 1px solid #1C1C19;
+            box-shadow: 3px 3px 0 0 #1C1C19;
+        }
+        .lang-toggle button {
+            padding: 4px 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-toggle button.lang-active { background: #FF46CA; color: #fff; }
+        .lang-toggle button:not(.lang-active) { background: #fff; color: #1C1C19; }
+        .lang-toggle button:not(.lang-active):hover { background: #f0ede9; }
+        /* Bilingual content swap via data-lang attribute */
+        [data-lang="ru"] { display: none; }
+        body.lang-ru [data-lang="ru"] { display: revert; }
+        body.lang-ru [data-lang="en"] { display: none; }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -115,16 +139,23 @@
 <a class="text-[#1C1C19] font-['Space_Mono'] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform active:translate-y-0.5 active:scale-95" href="bukhara.html">BUKHARA</a>
 <a class="text-[#1C1C19] font-['Space_Mono'] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform active:translate-y-0.5 active:scale-95" href="practical.html">PRACTICAL</a>
 </div>
+<div class="flex items-center gap-3">
+<div class="lang-toggle">
+<button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
+<button id="lang-ru" onclick="setLang('ru')">RU</button>
+</div>
 <a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white px-6 py-2 font-['Epilogue'] font-black tracking-tighter uppercase sticker-4 border border-[#1C1C19] pressure-btn">
             RSVP
         </button></a>
+</div>
 </nav>
 <main class="pt-32 pb-24 px-6 min-h-screen girikh-pattern">
 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 <!-- Left Column: Coming Soon Message -->
 <div class="md:col-span-7 flex flex-col gap-12">
 <div class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 font-mono text-xs tracking-widest uppercase self-start mb-2">
-    [ TASHKENT · JUN 09–12 ]
+<span data-lang="en">[ TASHKENT · JUN 09–12 ]</span>
+<span data-lang="ru">[ ТАШКЕНТ · 9–12 ИЮН ]</span>
 </div>
 <div class="relative">
 <h1 class="text-7xl md:text-9xl font-['Epilogue'] font-black text-on-surface tracking-tighter leading-[0.8] mb-4">
@@ -138,8 +169,13 @@
 <div class="w-full h-1 shaky-line opacity-50 mt-1"></div>
 </div>
 </div>
-<!-- City Description -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20">
+<!-- RU placeholder — only visible in Russian mode -->
+<div data-lang="ru" class="bg-surface-container-high p-8 border-l-4 border-primary-container mt-20">
+<p class="font-['Space_Grotesk'] text-xl leading-relaxed">ой — эту страницу я ещё не доделала. приходи попозже.</p>
+<p class="font-['Epilogue'] italic text-primary-container text-lg mt-4">(но будет — обещаю.)</p>
+</div>
+<!-- EN City Description (hidden in RU, leaves empty blocks via data-lang) -->
+<div data-lang="en" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20">
 <div class="bg-surface-container-high p-8 border-l-4 border-primary-container md:col-span-2">
 <p class="font-['Space_Grotesk'] text-xl leading-relaxed mb-4">3 million people. Soviet modernism at full blast. Five minutes away: Chorsu bazaar — medieval, loud, smelling of cumin.</p>
 <p class="font-['Epilogue'] italic text-primary-container text-lg mt-4">(The plov centre opens at 7am. We are going.)</p>
@@ -199,6 +235,17 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
     window.open("https://t.me/"+"parapam_tg","_blank");
   });
 });
+// Lang toggle — shared with index/plan via 'uzbekbday-lang' localStorage key
+function setLang(lang) {
+  localStorage.setItem('uzbekbday-lang', lang);
+  document.body.classList.toggle('lang-ru', lang === 'ru');
+  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
+  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+}
+(function() {
+  var saved = localStorage.getItem('uzbekbday-lang');
+  if (saved === 'ru') setLang('ru');
+})();
 </script>
 
 

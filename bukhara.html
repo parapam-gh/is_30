@@ -107,6 +107,28 @@
     cursor: pointer;
 }
 .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
+.lang-toggle {
+    display: inline-flex;
+    border: 1px solid #1C1C19;
+    box-shadow: 3px 3px 0 0 #1C1C19;
+}
+.lang-toggle button {
+    padding: 4px 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+}
+.lang-toggle button.lang-active { background: #FF46CA; color: #fff; }
+.lang-toggle button:not(.lang-active) { background: #fff; color: #1C1C19; }
+.lang-toggle button:not(.lang-active):hover { background: #f0ede9; }
+[data-lang="ru"] { display: none; }
+body.lang-ru [data-lang="ru"] { display: revert; }
+body.lang-ru [data-lang="en"] { display: none; }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body overflow-x-hidden">
@@ -121,7 +143,13 @@
 <a class="text-[#FF46CA] underline decoration-wavy decoration-1 underline-offset-4 hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html">BUKHARA</a>
 <a class="text-[#1C1C19] dark:text-[#FCF9F4] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html">PRACTICAL</a>
 </div>
+<div class="flex items-center gap-3">
+<div class="lang-toggle">
+<button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
+<button id="lang-ru" onclick="setLang('ru')">RU</button>
+</div>
 <a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white font-['Epilogue'] font-black uppercase tracking-tighter px-6 py-2 sticker-4 border border-[#1C1C19] pressure-btn">RSVP</button></a>
+</div>
 </nav>
 <main class="pb-24 pt-32 min-h-screen relative">
 <!-- Girikh background texture fragment -->
@@ -132,7 +160,8 @@
 <!-- Hero Text Column -->
 <div class="w-full md:w-1/2 flex flex-col">
 <div class="inline-block bg-secondary-container text-on-secondary-container px-3 py-1 font-mono text-xs tracking-widest uppercase self-start mb-6">
-                        [ BUKHARA · JUN 14–15 ]
+<span data-lang="en">[ BUKHARA · JUN 14–15 ]</span>
+<span data-lang="ru">[ БУХАРА · 14–15 ИЮН ]</span>
                     </div>
 <h1 class="text-7xl md:text-9xl font-black font-headline tracking-tighter text-on-background leading-[0.8] mb-8">
                         COMING <br/> SOON
@@ -144,7 +173,13 @@
 </div>
 <div class="shaky-line mb-8 w-full h-1"></div>
 </div>
-<div class="mt-12 font-mono text-sm space-y-4 max-w-md bg-surface-container-low p-6 border-l-4 border-primary">
+<!-- RU placeholder — only in Russian mode -->
+<div data-lang="ru" class="mt-12 font-mono text-sm space-y-4 max-w-md bg-surface-container-low p-6 border-l-4 border-primary">
+<p>ой — эту страницу я ещё не доделала. приходи попозже.</p>
+<p class="italic text-primary mt-2">(но будет — обещаю.)</p>
+</div>
+<!-- EN content — hidden in RU -->
+<div data-lang="en" class="mt-12 font-mono text-sm space-y-4 max-w-md bg-surface-container-low p-6 border-l-4 border-primary">
 <p>
                             The best-preserved medieval city in Central Asia. 140 monuments. Almost no cars. (The plov is done differently here. This is not a small distinction.)
                         </p>
@@ -165,8 +200,8 @@
 </div>
 </div>
 </div>
-<!-- Brutalist Grid Layout for Teasers -->
-<div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-0 border-t-[1px] border-on-surface/20">
+<!-- Brutalist Grid Layout for Teasers — EN only -->
+<div data-lang="en" class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-0 border-t-[1px] border-on-surface/20">
 <div class="p-8 md:border-r-[1px] border-on-surface/20 hover:bg-surface-container transition-colors">
 <h3 class="font-headline font-black text-3xl mb-4">THE TRADING DOMES</h3>
 <p class="font-mono text-sm leading-relaxed mb-6">Medieval covered markets, still operating. Three domes — silk, spices, ceramics. 500 years. Walk through them.</p>
@@ -201,6 +236,16 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
     window.open("https://t.me/"+"parapam_tg","_blank");
   });
 });
+function setLang(lang) {
+  localStorage.setItem('uzbekbday-lang', lang);
+  document.body.classList.toggle('lang-ru', lang === 'ru');
+  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
+  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+}
+(function() {
+  var saved = localStorage.getItem('uzbekbday-lang');
+  if (saved === 'ru') setLang('ru');
+})();
 </script>
 
 
