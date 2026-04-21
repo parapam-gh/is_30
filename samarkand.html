@@ -126,6 +126,29 @@
             cursor: pointer;
         }
         .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
+        /* Lang toggle */
+        .lang-toggle {
+            display: inline-flex;
+            border: 1px solid #1C1C19;
+            box-shadow: 3px 3px 0 0 #1C1C19;
+        }
+        .lang-toggle button {
+            padding: 4px 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-toggle button.lang-active { background: #FF46CA; color: #fff; }
+        .lang-toggle button:not(.lang-active) { background: #fff; color: #1C1C19; }
+        .lang-toggle button:not(.lang-active):hover { background: #f0ede9; }
+        [data-lang="ru"] { display: none; }
+        body.lang-ru [data-lang="ru"] { display: revert; }
+        body.lang-ru [data-lang="en"] { display: none; }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
@@ -142,9 +165,15 @@
 <a class="text-[#1C1C19] dark:text-[#FCF9F4] font-['Space_Mono'] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html">BUKHARA</a>
 <a class="text-[#1C1C19] dark:text-[#FCF9F4] font-['Space_Mono'] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html">PRACTICAL</a>
 </div>
+<div class="flex items-center gap-3">
+<div class="lang-toggle">
+<button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
+<button id="lang-ru" onclick="setLang('ru')">RU</button>
+</div>
 <a class="rsvp-link" style="cursor:pointer"><button class="bg-primary-container text-white px-6 py-2 font-['Epilogue'] font-black tracking-tighter uppercase sticker-4 border border-[#1C1C19] pressure-btn">
             RSVP
         </button></a>
+</div>
 </nav>
 <main class="relative min-h-screen pt-32 pb-24 px-6 overflow-x-hidden">
 <!-- Girikh Background Accents -->
@@ -169,7 +198,13 @@
 </div>
 </div>
 </div>
-<div class="mt-20 md:mt-32 space-y-8 max-w-lg">
+<!-- RU placeholder — only visible in Russian mode -->
+<div data-lang="ru" class="mt-20 md:mt-32 max-w-lg">
+<p class="font-body text-xl leading-relaxed">ой — эту страницу я ещё не доделала. приходи попозже.</p>
+<p class="font-['Epilogue'] italic text-primary text-lg mt-4">(но будет — обещаю.)</p>
+</div>
+<!-- EN content — hidden in RU, leaving empty space -->
+<div data-lang="en" class="mt-20 md:mt-32 space-y-8 max-w-lg">
 <div class="flex items-start gap-4 group cursor-default">
 <span class="font-mono text-secondary text-lg shrink-0">01</span>
 <p class="font-body text-xl font-medium border-b border-on-surface/10 pb-2 group-hover:border-primary transition-colors">
@@ -229,6 +264,16 @@ document.querySelectorAll(".rsvp-link").forEach(function(el){
     window.open("https://t.me/"+"parapam_tg","_blank");
   });
 });
+function setLang(lang) {
+  localStorage.setItem('uzbekbday-lang', lang);
+  document.body.classList.toggle('lang-ru', lang === 'ru');
+  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
+  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+}
+(function() {
+  var saved = localStorage.getItem('uzbekbday-lang');
+  if (saved === 'ru') setLang('ru');
+})();
 </script>
 
 
