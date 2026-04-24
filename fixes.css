@@ -4,10 +4,11 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Countdown heading uses tracking-[1em] which breaks words letter-by-letter on mobile.
-   Tighten on small screens so "TIME UNTIL YOU HAVE TO DECIDE" / "ВРЕМЕНИ НА РЕШЕНИЕ ОСТАЛОСЬ"
-   reads as words, not scattered characters. */
-@media (max-width: 767px) {
+/* Countdown heading uses tracking-[1em] which at 24px font-size ≈ 48px per glyph,
+   making "TIME UNTIL YOU HAVE TO DECIDE" / "ВРЕМЕНИ НА РЕШЕНИЕ ОСТАЛОСЬ" ≈ 1440px wide.
+   Below xl (1280px) it can't fit on one line and breaks awkwardly. Tighten tracking
+   so the heading reads as words, not scattered characters, at any width up to xl. */
+@media (max-width: 1279px) {
   [data-i18n="countdown-title"] {
     letter-spacing: 0.25em;
   }
@@ -43,12 +44,13 @@ html, body {
   }
 }
 
-/* --- /plan city cards at tablet (768-1023px) ---
-   The 3-column grid with large city names (TASHKENT, SAMARKAND, BUKHARA)
-   in text-6xl makes names overflow their columns at this width, especially
-   in the English version where the typography is already tighter.
-   Collapse to a single-column stack; keep the 3-column layout at lg+. */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* --- /plan city cards below xl (768-1279px) ---
+   The 3-column grid with large city names (TASHKENT, SAMARKAND, BUKHARA) in
+   text-6xl fits only at xl+ (1280px+). Below that, columns are too narrow and
+   the names overflow and overlap — visible on iPad landscape (1024px) and
+   common laptop widths (1100-1200px). Collapse to a single-column stack for
+   the whole range, restore 3-column layout at xl+. */
+@media (min-width: 768px) and (max-width: 1279px) {
   .grid.grid-cols-3.gap-0 {
     grid-template-columns: 1fr;
   }
