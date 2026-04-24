@@ -4,11 +4,75 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Countdown heading uses tracking-[1em] which breaks words letter-by-letter on mobile.
-   Tighten on small screens so "TIME UNTIL YOU HAVE TO DECIDE" / "ВРЕМЕНИ НА РЕШЕНИЕ ОСТАЛОСЬ"
-   reads as words, not scattered characters. */
-@media (max-width: 767px) {
+/* Countdown heading uses tracking-[1em] which at 24px font-size ≈ 48px per glyph,
+   making "TIME UNTIL YOU HAVE TO DECIDE" / "ВРЕМЕНИ НА РЕШЕНИЕ ОСТАЛОСЬ" ≈ 1440px wide.
+   Below xl (1280px) it can't fit on one line and breaks awkwardly. Tighten tracking
+   so the heading reads as words, not scattered characters, at any width up to xl. */
+@media (max-width: 1279px) {
   [data-i18n="countdown-title"] {
     letter-spacing: 0.25em;
   }
+}
+
+/* ============================================================
+   PR #2 additions (2026-04-24): tablet layout fixes + section rhythm
+   ============================================================ */
+
+/* --- Top nav at tablet (768-1023px) ---
+   At this width, logo + 6 nav links + language toggle + RSVP button cannot fit
+   in the viewport simultaneously, causing RSVP to be clipped off-screen.
+   Compress typography and spacing so everything lands within the viewport.
+   At lg+ (1024px+) the default spacing fits naturally and is preserved. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav.fixed.top-0 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  nav.fixed.top-0 > div:first-of-type {
+    font-size: 1.25rem;
+  }
+  nav.fixed.top-0 > div:nth-of-type(2) {
+    gap: 0.75rem;
+  }
+  nav.fixed.top-0 > div:nth-of-type(2) > a {
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+  nav.fixed.top-0 .rsvp-link button {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* --- /plan city cards below xl (768-1279px) ---
+   The 3-column grid with large city names (TASHKENT, SAMARKAND, BUKHARA) in
+   text-6xl fits only at xl+ (1280px+). Below that, columns are too narrow and
+   the names overflow and overlap — visible on iPad landscape (1024px) and
+   common laptop widths (1100-1200px). Collapse to a single-column stack for
+   the whole range, restore 3-column layout at xl+. */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .grid.grid-cols-3.gap-0 {
+    grid-template-columns: 1fr;
+  }
+  .city-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(28, 28, 25, 0.1);
+  }
+  .city-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* --- Unify section vertical rhythm ---
+   Audit found 4 distinct padding values (py-20/24/32/40 = 80/96/128/160px)
+   used for sections of similar weight. Collapse to two values:
+   96px (calm) and 128px (anchor). This applies to <section> tags only —
+   nav / footer / decorative dividers are untouched. */
+section.py-20 {
+  padding-top: 6rem;     /* 80px → 96px */
+  padding-bottom: 6rem;
+}
+section.py-40 {
+  padding-top: 8rem;     /* 160px → 128px */
+  padding-bottom: 8rem;
 }
