@@ -1,0 +1,14 @@
+/* Prevent horizontal scroll from decorative rotated/wide elements.
+   Audit found document scrollWidth > viewport by 30-110px on several breakpoints. */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Countdown heading uses tracking-[1em] which breaks words letter-by-letter on mobile.
+   Tighten on small screens so "TIME UNTIL YOU HAVE TO DECIDE" / "ВРЕМЕНИ НА РЕШЕНИЕ ОСТАЛОСЬ"
+   reads as words, not scattered characters. */
+@media (max-width: 767px) {
+  [data-i18n="countdown-title"] {
+    letter-spacing: 0.25em;
+  }
+}
