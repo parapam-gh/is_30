@@ -1,480 +1,579 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PLAN - UZBEK BDAY</title>
+<title>PLAN · UZBEK BDAY</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "secondary-fixed-dim": "#37e0a0",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary": "#006c49",
-                    "on-tertiary-container": "#462500",
-                    "primary-fixed-dim": "#ffaedd",
-                    "on-primary": "#ffffff",
-                    "on-tertiary-fixed": "#2d1600",
-                    "on-surface-variant": "#57404c",
-                    "on-secondary-fixed": "#002113",
-                    "surface-variant": "#e5e2dd",
-                    "on-tertiary": "#ffffff",
-                    "outline-variant": "#ddbecd",
-                    "on-error-container": "#93000a",
-                    "tertiary-fixed-dim": "#ffb875",
-                    "on-background": "#1c1c19",
-                    "secondary-fixed": "#5efdbb",
-                    "on-surface": "#1c1c19",
-                    "inverse-surface": "#31302d",
-                    "surface-container-highest": "#e5e2dd",
-                    "secondary-container": "#5afab8",
-                    "surface-tint": "#b2008a",
-                    "tertiary-container": "#da7e00",
-                    "error": "#ba1a1a",
-                    "on-primary-container": "#5b0045",
-                    "tertiary-fixed": "#ffdcc0",
-                    "surface-dim": "#dcdad5",
-                    "surface-bright": "#fcf9f4",
-                    "outline": "#8a707d",
-                    "on-secondary-container": "#00714d",
-                    "on-error": "#ffffff",
-                    "on-primary-fixed-variant": "#880069",
-                    "surface": "#fcf9f4",
-                    "surface-container": "#f0ede9",
-                    "on-secondary": "#ffffff",
-                    "on-tertiary-fixed-variant": "#6b3b00",
-                    "error-container": "#ffdad6",
-                    "primary-fixed": "#ffd8eb",
-                    "inverse-on-surface": "#f3f0eb",
-                    "on-secondary-fixed-variant": "#005236",
-                    "inverse-primary": "#ffaedd",
-                    "tertiary": "#8d4f00",
-                    "on-primary-fixed": "#3b002c",
-                    "surface-container-high": "#ebe8e3",
-                    "primary": "#b2008a",
-                    "background": "#fcf9f4",
-                    "surface-container-low": "#f6f3ee",
-                    "primary-container": "#ff46ca"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0px",
-                    "lg": "0px",
-                    "xl": "0px",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Epilogue"],
-                    "body": ["Space Grotesk"],
-                    "label": ["Space Grotesk"],
-                    "mono": ["Space Mono"],
-                    "hand": ["Caveat"]
-            }
-          },
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#1C1C19',
+          cream:  '#FCF9F4',
+          pink:   '#FF46CA',
+          green:  '#00CB8D',
+          orange: '#FF9400',
+          s1: '#F6F3EE', s2: '#F0EDE9', s3: '#EBE8E3', s4: '#E5E2DD',
         },
-      }
-    </script>
+        borderRadius: { DEFAULT: '0px', lg: '0px', xl: '0px', full: '9999px' },
+        fontFamily: {
+          headline: ['Epilogue', 'sans-serif'],
+          body: ['"Space Grotesk"', 'sans-serif'],
+          mono: ['"Space Mono"', 'monospace'],
+          hand: ['"Caveat"', 'cursive'],
+        },
+      },
+    },
+  };
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        /* girikh-bg: s-star pattern from project/assets/girih-tiles-stencil.svg (canonical DS pattern) */
-        .girikh-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231C1C19' stroke-opacity='0.08' stroke-width='1.4' stroke-linejoin='miter'%3E%3Crect x='10' y='10' width='100' height='100'/%3E%3Crect x='10' y='10' width='100' height='100' transform='rotate(45 60 60)'/%3E%3Cpolygon points='60,32 80,40 88,60 80,80 60,88 40,80 32,60 40,40'/%3E%3C/g%3E%3C/svg%3E");
-        }
-        .shaky-line {
-            border-bottom: 1px solid #1c1c19;
-            mask-image: linear-gradient(to right, black 0%, black 10%, transparent 10%, transparent 12%, black 12%, black 45%, transparent 45%, transparent 47%, black 47%, black 100%);
-        }
-        .sticker-shadow { box-shadow: 4px 4px 0 0 #1C1C19; }
-        .sticker-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
-        .sticker-6 { box-shadow: 6px 6px 0 0 #1C1C19; }
-        .sticker-offset-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
-        .sticker-pink { box-shadow: 6px 6px 0 0 #FF46CA; }
-        .sticker-green { box-shadow: 6px 6px 0 0 #00CB8D; }
-        .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
-        .pressure-btn {
-            transition: opacity .3s ease, transform .2s ease;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            user-select: none;
-            cursor: pointer;
-        }
-        .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
-        /* Map route animations */
-        .draw-route { stroke-dasharray: 6 6; animation: draw-in 3s ease-in-out forwards; }
-        @keyframes draw-in { from { stroke-dashoffset: 2000; } to { stroke-dashoffset: 0; } }
-        .pin-pulse > rect:first-of-type { animation: pin-pulse 2.5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-        div.pin-pulse { animation: pin-pulse 2.5s ease-in-out infinite; transform-origin: center; }
-        @keyframes pin-pulse { 0%,100% { transform: rotate(45deg) scale(1); } 50% { transform: rotate(45deg) scale(1.15); } }
+  body { font-family: "Space Grotesk", sans-serif; background: #FCF9F4; color: #1C1C19; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
 
-        /* RU overrides: Russian city names (САМАРКАНД) are longer than EN (SAMARKAND) and overflow in city-card grid */
-        body.lang-ru .city-card h3 { font-size: 2.25rem; }
-        @media (min-width: 768px) {
-          body.lang-ru .city-card h3 { font-size: 3rem; }
-        }
-        .style-shaky-ink {
-            border-bottom-width: 1px;
-            border-image: url("data:image/svg+xml,%3Csvg width='100' height='2' viewBox='0 0 100 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1C5 0.5 10 1.5 15 1C20 0.5 25 1.5 30 1C35 0.5 40 1.5 45 1C50 0.5 55 1.5 60 1C65 0.5 70 1.5 75 1C80 0.5 85 1.5 90 1C95 0.5 100 1.5 100 1' stroke='%231C1C19' stroke-width='0.5'/%3E%3C/svg%3E") 1;
-        }
-        /* Desktop: animated SVG timeline */
-        @keyframes dash {
-            to { stroke-dashoffset: 0; }
-        }
-        .animate-draw {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: dash 3s ease-in-out forwards;
-        }
-        /* Desktop: city card image hover */
-        .city-card img {
-            filter: grayscale(100%);
-            transition: all 0.5s ease;
-        }
-        .city-card:hover img {
-            filter: grayscale(0%) brightness(1.1);
-        }
+  .girih-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231C1C19' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z'/%3E%3Cpath d='M40 14 L66 40 L40 66 L14 40 Z'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+  }
 
-        /* Lang toggle */
-        .lang-toggle {
-            display: inline-flex;
-            border: 1px solid #1C1C19;
-            box-shadow: 3px 3px 0 0 #1C1C19;
-        }
-        .lang-toggle button {
-            padding: 4px 10px;
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border: none;
-            transition: background 0.2s, color 0.2s;
-        }
-        .lang-toggle button.lang-active {
-            background: #FF46CA;
-            color: #fff;
-        }
-        .lang-toggle button:not(.lang-active) {
-            background: #fff;
-            color: #1C1C19;
-        }
-        .lang-toggle button:not(.lang-active):hover {
-            background: #f0ede9;
-        }
-    </style>
-<link href="fixes.css" rel="stylesheet"/>                                                          
-<script defer src="typography-fix.js"></script> 
+  .sticker-4  { box-shadow: 4px 4px 0 0 #1C1C19; }
+  .sticker-6  { box-shadow: 6px 6px 0 0 #1C1C19; }
+  .sticker-pink   { box-shadow: 6px 6px 0 0 #FF46CA; }
+  .sticker-green  { box-shadow: 6px 6px 0 0 #00CB8D; }
+  .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
+
+  .shaky-line { border-bottom: 1px solid #1C1C19; position: relative; }
+  .shaky-line::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 1px;
+    background: #1C1C19; transform: skewY(0.2deg);
+  }
+
+  .pressure-btn { transition: transform .15s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; }
+  .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
+
+  .link-wavy { color: #FF46CA; text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: all .2s ease; }
+  .link-wavy:hover { color: #00CB8D; }
+
+  .nav-link { transition: all .2s ease; display: inline-block; }
+  .nav-link:hover { transform: skewX(-2deg); color: #00CB8D; }
+
+  .cross-stitch span:nth-child(3n+1) { color: #FF46CA; }
+  .cross-stitch span:nth-child(3n+2) { color: #00CB8D; }
+  .cross-stitch span:nth-child(3n)   { color: #FF9400; }
+
+  /* Divider B — girih line + pink diamond (major section breaks) */
+  .div-girih { display:flex; align-items:center; gap:1rem; }
+  .div-girih::before, .div-girih::after {
+    content:''; flex:1; height:8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 4 L4 0 L8 4 L12 0 L16 4 L12 8 L8 4 L4 8 Z' fill='none' stroke='%231C1C19' stroke-width='0.8' opacity='0.7'/%3E%3C/svg%3E");
+    background-repeat: repeat-x; background-size: 16px 8px;
+  }
+  .div-girih .diamond {
+    width:10px; height:10px; background:#FF46CA; border:1px solid #1C1C19;
+    transform: rotate(45deg); box-shadow: 2px 2px 0 0 #1C1C19;
+  }
+
+  /* Divider C — dashed rule + mono tag (subsections) */
+  .div-tag { display:flex; align-items:center; gap:.75rem; }
+  .div-tag::before, .div-tag::after {
+    content:''; flex:1; border-top: 1px dashed rgba(28,28,25,0.35);
+  }
+  .div-tag .tag {
+    font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.25em;
+    text-transform:uppercase; font-weight:700; color:rgba(28,28,25,.55);
+    padding: 2px 10px; border: 1px solid rgba(28,28,25,.35);
+    background:#FCF9F4; white-space:nowrap;
+  }
+
+  /* Divider E — thread + caveat glyph (small pauses) */
+  .div-thread { display:flex; align-items:center; gap:1rem; }
+  .div-thread::before, .div-thread::after {
+    content:''; flex:1; height:1px; background:#1C1C19; opacity:.4;
+  }
+  .div-thread .knot {
+    color:#FF46CA; font-size:28px;
+    line-height:1; transform: rotate(-8deg);
+  }
+
+  .pin-pulse { animation: pin-pulse 2.5s ease-in-out infinite; transform-origin: center; }
+  @keyframes pin-pulse {
+    0%,100% { transform: rotate(45deg) scale(1); }
+    50%     { transform: rotate(45deg) scale(1.18); }
+  }
+
+  .draw-route { stroke-dasharray: 6 6; animation: draw-in 3s ease-in-out forwards; }
+  @keyframes draw-in { from { stroke-dashoffset: 2000; } to { stroke-dashoffset: 0; } }
+
+  .city-card img { filter: grayscale(100%) contrast(125%); transition: all .5s ease; }
+  .city-card:hover img { filter: grayscale(0%) contrast(100%); transform: scale(1.05); }
+
+  /* Photo placeholder */
+  .photo-tbd {
+    background:
+      repeating-linear-gradient(45deg, rgba(28,28,25,0.04) 0 12px, transparent 12px 24px),
+      #F0EDE9;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    letter-spacing: 0.25em; color: rgba(28,28,25,0.5);
+    text-transform: uppercase; font-weight: 700;
+  }
+
+  /* RU city-title sizing handled by .city-title clamp — no override needed */
+
+  .en, .ru { display: inline; }
+  body.lang-ru .en { display: none; }
+  body.lang-en .ru { display: none; }
+  .en-block, .ru-block { display: block; }
+  body.lang-ru .en-block { display: none; }
+  body.lang-en .ru-block { display: none; }
+
+  .lang-toggle { display: inline-flex; border: 1px solid #1C1C19; box-shadow: 3px 3px 0 0 #1C1C19; }
+  .lang-toggle button {
+    padding: 4px 10px; font-family: 'Space Mono', monospace; font-size: 11px;
+    font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; border: none; transition: background .2s, color .2s;
+  }
+  .lang-toggle button.active { background: #FF46CA; color: #fff; }
+  .lang-toggle button:not(.active) { background: #fff; color: #1C1C19; }
+  .lang-toggle button:not(.active):hover { background: #F0EDE9; }
+
+  .hand-annotation { font-family: "Caveat", cursive; font-weight: 700; color: #FF46CA; transform: rotate(-3deg); display: inline-block; }
+
+  /* Tick connector from train sticker down to the horizontal rail (sticker is shifted up 2.5rem, tick bridges that gap) */
+  .train-tick::after {
+    content: ''; position: absolute; left: 50%; top: 100%;
+    width: 0; height: 2.5rem;
+    border-left: 1px dashed rgba(28,28,25,0.45);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  /* City-card display headings: fluid clamp tuned so SAMARKAND/САМАРКАНД fits the ~205px inner card width */
+  .city-title { font-size: clamp(1.5rem, 3.2vw, 2.125rem); }
+  @media (max-width: 767px) { .city-title { font-size: clamp(1.5rem, 7vw, 2.25rem); } }
+</style>
 </head>
-<body class="bg-[#FCF9F4] text-[#1C1C19] font-body selection:bg-[#FF46CA] selection:text-white overflow-x-hidden girikh-bg">
+<body class="bg-cream text-ink overflow-x-hidden girih-bg lang-en selection:bg-pink selection:text-white">
 
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#FCF9F4] border-b-[1px] border-[#1C1C19]/20 style-shaky-ink">
-  <div class="font-['Epilogue'] text-3xl font-black text-[#FF46CA] italic tracking-tighter uppercase">UZBEK BDAY</div>
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-cream border-b border-ink/20">
+  <a href="index.html" class="font-headline text-3xl font-black italic tracking-tighter uppercase text-pink">UZBEK BDAY</a>
   <div class="hidden md:flex gap-8 items-center">
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="index.html" data-i18n="nav-invitation">INVITATION</a>
-    <a class="text-[#FF46CA] border-b-2 border-[#FF46CA] pb-1 font-['Space_Mono'] uppercase text-sm font-black tracking-tighter" href="plan.html" data-i18n="nav-plan">PLAN</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="tashkent.html" data-i18n="nav-tashkent">TASHKENT</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="samarkand.html" data-i18n="nav-samarkand">SAMARKAND</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html" data-i18n="nav-bukhara">BUKHARA</a>
-    <a class="font-['Space_Mono'] text-[#1C1C19] uppercase text-sm hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html" data-i18n="nav-practical">PRACTICAL</a>
+    <a class="nav-link font-mono uppercase text-sm" href="index.html"><span class="en">INVITATION</span><span class="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a class="text-pink border-b-2 border-pink pb-1 font-mono uppercase text-sm font-bold tracking-tighter" href="plan.html"><span class="en">PLAN</span><span class="ru">ПЛАН</span></a>
+    <a class="nav-link font-mono uppercase text-sm" href="tashkent.html">TASHKENT</a>
+    <a class="nav-link font-mono uppercase text-sm" href="samarkand.html">SAMARKAND</a>
+    <a class="nav-link font-mono uppercase text-sm" href="bukhara.html">BUKHARA</a>
+    <a class="nav-link font-mono uppercase text-sm" href="practical.html"><span class="en">PRACTICAL</span><span class="ru">ДЕТАЛИ</span></a>
   </div>
   <div class="flex items-center gap-3">
     <div class="lang-toggle">
-      <button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
+      <button id="lang-en" onclick="setLang('en')" class="active">EN</button>
       <button id="lang-ru" onclick="setLang('ru')">RU</button>
     </div>
-    <a class="rsvp-link" style="cursor:pointer"><button class="bg-[#FF46CA] text-white px-6 py-2 font-headline font-black uppercase tracking-tighter sticker-4 border border-[#1C1C19] pressure-btn">RSVP</button></a>
+    <a class="rsvp-link" href="#rsvp" style="cursor:pointer">
+      <button class="bg-pink text-white px-6 py-2 font-headline font-black uppercase tracking-tighter sticker-4 border border-ink pressure-btn">RSVP</button>
+    </a>
   </div>
 </nav>
 
-<!-- ═══════════════════════════════════════════════════════ -->
-<!-- DESKTOP LAYOUT — md and above                          -->
-<!-- ═══════════════════════════════════════════════════════ -->
-<div class="hidden md:block">
-<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- ══════════════ UNIFIED RESPONSIVE ══════════════ -->
+<div>
+<main class="pt-24 md:pt-32 pb-24 px-5 md:px-12 max-w-7xl mx-auto">
 
-  <!-- Section Header -->
-  <div class="mb-12">
-    <p class="font-mono text-sm tracking-widest uppercase" data-i18n="plan-when">[ WHEN WE GO · JUN 09 → JUN 16 ]</p>
+  <!-- Page tag -->
+  <div class="mb-8">
+    <p class="font-mono text-xs tracking-widest uppercase text-ink/60">
+      <span class="en">[ WHEN WE GO · JUN 09 → JUN 16 ]</span>
+      <span class="ru">[ КОГДА ЕДЕМ · 9 ИЮН → 16 ИЮН ]</span>
+    </p>
   </div>
 
-  <!-- SCHEMA (redesigned with DS elements, all 10 improvements applied) -->
-  <div class="relative pt-12 pb-12 px-6 md:px-12 mb-20 overflow-hidden">
+  <!-- HEADLINE -->
+  <div class="mb-16 max-w-5xl">
+    <h1 class="font-headline font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.85] uppercase mb-6">
+      <span class="en">THE <span class="text-pink italic">PLAN</span>.<br/>SEVEN DAYS. THREE CITIES.</span>
+      <span class="ru"><span class="text-pink italic">ПЛАН</span>.<br/>СЕМЬ ДНЕЙ. ТРИ ГОРОДА.</span>
+    </h1>
+    <p class="font-body text-xl md:text-2xl text-ink/70 leading-snug italic max-w-3xl en">
+      one loop across Uzbekistan — Tashkent, Samarkand, Bukhara, back to Tashkent. <span class="text-ink/50">(join for any part of it.)</span>
+    </p>
+    <p class="font-body text-xl md:text-2xl text-ink/70 leading-snug italic max-w-3xl ru">
+      один круг по узбекистану — ташкент, самарканд, бухара, снова ташкент. <span class="text-ink/50">(присоединяйся на любую часть поездки)</span>
+    </p>
+  </div>
 
-    <!-- Top metadata row: arrival + stamp + departure -->
-    <div class="flex justify-between items-start mb-16">
-      <!-- ARRIVAL -->
-      <div class="flex items-start gap-2">
-        <span class="material-symbols-outlined text-[#FF46CA] text-3xl" style="font-variation-settings: 'FILL' 1;">flight_land</span>
-        <div>
-          <div class="font-mono text-[10px] uppercase tracking-widest opacity-60" data-i18n="plan-schema-arrival-label">ARRIVAL</div>
-          <div class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-schema-arrival-loc">TASHKENT · JUN 09</div>
-          <div class="shaky-line h-px opacity-40 mt-1"></div>
-        </div>
+  <!-- ROUTE SCHEMA · MOBILE (compact chain) -->
+  <div class="md:hidden mb-16">
+    <div class="flex items-center justify-between mb-3 text-[10px] font-mono uppercase tracking-widest">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-pink text-base" style="font-variation-settings:'FILL' 1;">flight_land</span>
+        <span class="text-pink font-bold"><span class="en">JUN 09</span><span class="ru">9 ИЮН</span></span>
       </div>
-      <!-- Center stamp-box -->
-      <div class="hidden md:block bg-white border border-[#1C1C19] px-3 py-1 sticker-4 rotate-[-1deg] mt-1">
-        <span class="font-mono text-[10px] uppercase tracking-widest" data-i18n="plan-schema-meta">[ 7 DAYS · 3 CITIES · 1100 KM ]</span>
-      </div>
-      <!-- DEPARTURE -->
-      <div class="flex items-start gap-2">
-        <div class="text-right">
-          <div class="font-mono text-[10px] uppercase tracking-widest opacity-60" data-i18n="plan-schema-departure-label">DEPARTURE</div>
-          <div class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-schema-departure-loc">TASHKENT · JUN 16</div>
-          <div class="shaky-line h-px opacity-40 mt-1"></div>
-        </div>
-        <span class="material-symbols-outlined text-[#FF46CA] text-3xl" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+      <span class="text-ink/40"><span class="en">[ 7 DAYS · 1100 KM ]</span><span class="ru">[ 7 ДНЕЙ · 1100 КМ ]</span></span>
+      <div class="flex items-center gap-1.5">
+        <span class="text-pink font-bold"><span class="en">JUN 16</span><span class="ru">16 ИЮН</span></span>
+        <span class="material-symbols-outlined text-pink text-base" style="font-variation-settings:'FILL' 1;">flight_takeoff</span>
       </div>
     </div>
 
-    <!-- Schema stage -->
+    <div class="bg-white border border-ink p-4 sticker-4">
+      <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-4 text-center"><span class="en">[ ROUTE ]</span><span class="ru">[ маршрут ]</span></div>
+      <div class="relative">
+        <div class="absolute left-3 right-3 top-2 h-px shaky-line"></div>
+        <div class="grid grid-cols-4 gap-1 relative">
+          <a href="tashkent.html" class="text-center pressure-btn block">
+            <div class="w-3.5 h-3.5 rounded-full bg-pink mx-auto border border-ink mb-2 relative z-10"></div>
+            <div class="font-headline font-black text-xs uppercase tracking-tight">TAS</div>
+            <div class="font-mono text-[9px] text-pink font-bold">9–12</div>
+          </a>
+          <a href="samarkand.html" class="text-center pressure-btn block">
+            <div class="w-3.5 h-3.5 rounded-full bg-green mx-auto border border-ink mb-2 relative z-10"></div>
+            <div class="font-headline font-black text-xs uppercase tracking-tight">SAM</div>
+            <div class="font-mono text-[9px] text-green font-bold">12–14</div>
+          </a>
+          <a href="bukhara.html" class="text-center pressure-btn block">
+            <div class="w-3.5 h-3.5 rounded-full bg-orange mx-auto border border-ink mb-2 relative z-10"></div>
+            <div class="font-headline font-black text-xs uppercase tracking-tight">BUK</div>
+            <div class="font-mono text-[9px] text-orange font-bold">14–15</div>
+          </a>
+          <div class="text-center">
+            <div class="w-3.5 h-3.5 rounded-full bg-ink mx-auto border border-ink mb-2 relative z-10"></div>
+            <div class="font-headline font-black text-xs uppercase tracking-tight">TAS</div>
+            <div class="font-mono text-[9px] font-bold">16 ✈</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 mt-3 px-3">
+          <div class="text-center">
+            <span class="material-symbols-outlined text-[11px] text-ink/60 align-middle">train</span>
+            <span class="font-mono text-[8px] uppercase tracking-widest text-ink/60 ml-0.5">2Ч 10М</span>
+          </div>
+          <div class="text-center">
+            <span class="material-symbols-outlined text-[11px] text-ink/60 align-middle">train</span>
+            <span class="font-mono text-[8px] uppercase tracking-widest text-ink/60 ml-0.5">1Ч 30М</span>
+          </div>
+          <div class="text-center">
+            <span class="material-symbols-outlined text-[11px] text-ink/60 align-middle">train</span>
+            <span class="font-mono text-[8px] uppercase tracking-widest text-ink/60 ml-0.5">4Ч 15М</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROUTE SCHEMA · DESKTOP -->
+  <div class="hidden md:block relative pt-8 pb-12 mb-20 overflow-hidden">
+
+    <div class="flex justify-between items-start mb-16">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-pink text-3xl" style="font-variation-settings: 'FILL' 1;">flight_land</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-widest opacity-60"><span class="en">ARRIVAL</span><span class="ru">прилёт</span></div>
+          <div class="font-mono text-xs font-bold text-pink"><span class="en">TASHKENT · JUN 09</span><span class="ru">ТАШКЕНТ · 9 ИЮН</span></div>
+          <div class="shaky-line h-px opacity-40 mt-1 w-24"></div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-ink px-3 py-1 sticker-4 rotate-[-1deg] mt-1">
+        <span class="font-mono text-[10px] uppercase tracking-widest en">[ 7 DAYS · 3 CITIES · 1100 KM ]</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest ru">[ 7 ДНЕЙ · 3 ГОРОДА · 1100 КМ ]</span>
+      </div>
+
+      <div class="flex items-start gap-2">
+        <div class="text-right">
+          <div class="font-mono text-[10px] uppercase tracking-widest opacity-60"><span class="en">DEPARTURE</span><span class="ru">отлёт</span></div>
+          <div class="font-mono text-xs font-bold text-pink"><span class="en">TASHKENT · JUN 16</span><span class="ru">ТАШКЕНТ · 16 ИЮН</span></div>
+          <div class="shaky-line h-px opacity-40 mt-1 w-24 ml-auto"></div>
+        </div>
+        <span class="material-symbols-outlined text-pink text-3xl" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
+      </div>
+    </div>
+
     <div class="relative">
+      <div class="absolute top-1/2 left-[4%] right-[4%] h-[2px] bg-ink -translate-y-1/2 z-0 pointer-events-none"></div>
 
-      <!-- MAIN HORIZONTAL AXIS — solid black 2px line through card centers -->
-      <div class="absolute top-1/2 left-[4%] right-[4%] h-[2px] bg-[#1C1C19] -translate-y-1/2 z-0 pointer-events-none"></div>
-
-      <!-- Return arc SVG — solid pink curve below the axis -->
-      <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" preserveAspectRatio="none" viewBox="0 0 1000 240" aria-hidden="true">
-        <!-- Return arc: starts at right end of axis (y=120), swoops down and returns to left end -->
-        <path class="draw-route" d="M 940,120 Q 975,220 500,225 Q 25,220 70,126" fill="none" stroke="#FF46CA" stroke-width="3"/>
-        <!-- Arrow head on left end of return, inside small square -->
-        <g transform="translate(60,120)">
-          <rect x="-10" y="-10" width="20" height="20" fill="none" stroke="#FF46CA" stroke-width="1.5"/>
-          <path d="M 4,-6 L -6,4 L 6,8" fill="none" stroke="#FF46CA" stroke-width="2" stroke-linecap="round"/>
-        </g>
-      </svg>
-
-      <!-- Train markers: icon-left + 2-row text (date top, time bottom). Compact, sits above axis between cards -->
-      <div class="absolute top-1/2 -translate-y-[3.5rem] left-[25%] -translate-x-1/2 flex items-center gap-1 z-20 bg-white border border-[#1C1C19] px-2 py-1 sticker-4">
-        <span class="material-symbols-outlined text-base text-[#1C1C19]">train</span>
-        <div class="flex flex-col leading-none gap-0.5">
-          <span class="font-mono text-[9px] uppercase tracking-widest whitespace-nowrap text-[#1C1C19] font-bold" data-i18n="plan-schema-t1-date">JUN 12</span>
-          <span class="font-mono text-[9px] uppercase tracking-widest whitespace-nowrap text-[#FF46CA] font-bold" data-i18n="plan-schema-t1-time">2H 10M</span>
-        </div>
-      </div>
-      <div class="absolute top-1/2 -translate-y-[3.5rem] left-1/2 -translate-x-1/2 flex items-center gap-1 z-20 bg-white border border-[#1C1C19] px-2 py-1 sticker-4">
-        <span class="material-symbols-outlined text-base text-[#1C1C19]">train</span>
-        <div class="flex flex-col leading-none gap-0.5">
-          <span class="font-mono text-[9px] uppercase tracking-widest whitespace-nowrap text-[#1C1C19] font-bold" data-i18n="plan-schema-t2-date">JUN 14</span>
-          <span class="font-mono text-[9px] uppercase tracking-widest whitespace-nowrap text-[#00CB8D] font-bold" data-i18n="plan-schema-t2-time">1H 30M</span>
-        </div>
-      </div>
-      <div class="absolute top-1/2 -translate-y-[3.5rem] left-[75%] -translate-x-1/2 flex items-center gap-1 z-20 bg-white border border-[#1C1C19] px-2 py-1 sticker-4">
-        <span class="material-symbols-outlined text-base text-[#1C1C19]">train</span>
-        <div class="flex flex-col leading-none gap-0.5">
-          <span class="font-mono text-[9px] uppercase tracking-widest whitespace-nowrap text-[#1C1C19] font-bold" data-i18n="plan-schema-t3-date">JUN 15</span>
-          <span class="font-mono text-[9px] uppercase tracking-widest whitespace-nowrap text-[#FF46CA] font-bold" data-i18n="plan-schema-t3-time">4H 15M</span>
-        </div>
-      </div>
-
-      <!-- Numbered pins + sticker cards row (cards vertically centered on axis; pin+number absolute above each card) -->
-      <div class="relative z-10 grid grid-cols-4 gap-4 py-20">
-        <!-- NODE 01: TASHKENT -->
+      <!-- 7-column grid: city | train | city | train | city | train | return. Trains physically sit between cards. -->
+      <div class="relative z-10 grid items-center gap-2 py-20" style="grid-template-columns: 1.1fr auto 1.1fr auto 1fr auto 1fr;">
+        <!-- TASHKENT -->
         <div class="relative flex items-center justify-center min-h-[130px]">
           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3">
-            <div class="w-4 h-4 bg-[#FF46CA] border border-[#1C1C19] rotate-45 pin-pulse"></div>
+            <div class="w-4 h-4 bg-pink border border-ink pin-pulse"></div>
           </div>
-          <div class="bg-white border border-[#1C1C19] px-4 py-3 sticker-pink rotate-[-2deg] pressure-btn text-center">
-            <span class="font-headline font-black text-xl md:text-2xl uppercase tracking-tighter block leading-none mb-1" data-i18n="nav-tashkent">TASHKENT</span>
-            <span class="font-mono text-[10px] tracking-widest text-[#FF46CA] font-bold" data-i18n="plan-schema-c1-dates">[ JUN 09–12 ]</span>
-          </div>
+          <a href="tashkent.html" class="block bg-white border border-ink px-3 py-3 sticker-4 rotate-[-2deg] pressure-btn text-center">
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block leading-none mb-1"><span class="en">TASHKENT</span><span class="ru">ТАШКЕНТ</span></span>
+            <span class="font-mono text-[10px] tracking-widest text-pink font-bold"><span class="en">[ JUN 09–12 ]</span><span class="ru">[ 9–12 ИЮН ]</span></span>
+          </a>
         </div>
-        <!-- NODE 02: SAMARKAND (with girih watermark corner) -->
+
+        <!-- TRAIN 1 -->
+        <div class="train-tick relative flex flex-col items-center leading-none bg-white border border-ink px-1.5 py-1 sticker-4 -translate-y-10">
+          <span class="material-symbols-outlined text-sm text-ink">train</span>
+          <span class="font-mono text-[8px] uppercase tracking-widest whitespace-nowrap text-ink font-bold mt-0.5"><span class="en">JUN 12</span><span class="ru">12 ИЮН</span></span>
+          <span class="font-mono text-[8px] uppercase tracking-widest whitespace-nowrap text-pink font-bold">2H 10M</span>
+        </div>
+
+        <!-- SAMARKAND -->
         <div class="relative flex items-center justify-center min-h-[130px]">
           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3">
-            <div class="w-4 h-4 bg-[#00CB8D] border border-[#1C1C19] rotate-45 pin-pulse" style="animation-delay:.3s"></div>
+            <div class="w-4 h-4 bg-green border border-ink pin-pulse" style="animation-delay:.3s"></div>
           </div>
-          <div class="relative bg-white border border-[#1C1C19] px-4 py-3 sticker-green rotate-[2deg] pressure-btn text-center overflow-hidden">
-            <!-- Girih watermark corner (20% opacity per DS §Cards) -->
+          <a href="samarkand.html" class="block relative bg-white border border-ink px-3 py-3 sticker-4 rotate-[2deg] pressure-btn text-center overflow-hidden">
             <svg class="absolute -top-2 -right-2 w-10 h-10 opacity-20 pointer-events-none" viewBox="0 0 40 40" fill="none">
               <path d="M20 0 L40 20 L20 40 L0 20 Z M20 8 L32 20 L20 32 L8 20 Z" stroke="#1C1C19" stroke-width="0.8"/>
             </svg>
-            <span class="font-headline font-black text-xl md:text-2xl uppercase tracking-tighter block leading-none mb-1 relative" data-i18n="nav-samarkand">SAMARKAND</span>
-            <span class="font-mono text-[10px] tracking-widest text-[#00CB8D] font-bold relative" data-i18n="plan-schema-c2-dates">[ JUN 12–14 ]</span>
-          </div>
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block leading-none mb-1 relative"><span class="en">SAMARKAND</span><span class="ru">САМАРКАНД</span></span>
+            <span class="font-mono text-[10px] tracking-widest text-green font-bold relative"><span class="en">[ JUN 12–14 ]</span><span class="ru">[ 12–14 ИЮН ]</span></span>
+          </a>
         </div>
-        <!-- NODE 03: BUKHARA -->
+
+        <!-- TRAIN 2 -->
+        <div class="train-tick relative flex flex-col items-center leading-none bg-white border border-ink px-1.5 py-1 sticker-4 -translate-y-10">
+          <span class="material-symbols-outlined text-sm text-ink">train</span>
+          <span class="font-mono text-[8px] uppercase tracking-widest whitespace-nowrap text-ink font-bold mt-0.5"><span class="en">JUN 14</span><span class="ru">14 ИЮН</span></span>
+          <span class="font-mono text-[8px] uppercase tracking-widest whitespace-nowrap text-green font-bold">1H 30M</span>
+        </div>
+
+        <!-- BUKHARA -->
         <div class="relative flex items-center justify-center min-h-[130px]">
           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3">
-            <div class="w-4 h-4 bg-[#FF9400] border border-[#1C1C19] rotate-45 pin-pulse" style="animation-delay:.6s"></div>
+            <div class="w-4 h-4 bg-orange border border-ink pin-pulse" style="animation-delay:.6s"></div>
           </div>
-          <div class="bg-white border border-[#1C1C19] px-4 py-3 sticker-orange rotate-[-3deg] pressure-btn text-center">
-            <span class="font-headline font-black text-xl md:text-2xl uppercase tracking-tighter block leading-none mb-1" data-i18n="nav-bukhara">BUKHARA</span>
-            <span class="font-mono text-[10px] tracking-widest text-[#FF9400] font-bold" data-i18n="plan-schema-c3-dates">[ JUN 14–15 ]</span>
-          </div>
+          <a href="bukhara.html" class="block bg-white border border-ink px-3 py-3 sticker-4 rotate-[-3deg] pressure-btn text-center">
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block leading-none mb-1"><span class="en">BUKHARA</span><span class="ru">БУХАРА</span></span>
+            <span class="font-mono text-[10px] tracking-widest text-orange font-bold"><span class="en">[ JUN 14–15 ]</span><span class="ru">[ 14–15 ИЮН ]</span></span>
+          </a>
         </div>
-        <!-- NODE 04: TASHKENT RETURN -->
+
+        <!-- TRAIN 3 -->
+        <div class="train-tick relative flex flex-col items-center leading-none bg-white border border-ink px-1.5 py-1 sticker-4 -translate-y-10">
+          <span class="material-symbols-outlined text-sm text-ink">train</span>
+          <span class="font-mono text-[8px] uppercase tracking-widest whitespace-nowrap text-ink font-bold mt-0.5"><span class="en">JUN 15</span><span class="ru">15 ИЮН</span></span>
+          <span class="font-mono text-[8px] uppercase tracking-widest whitespace-nowrap text-pink font-bold">4H 15M</span>
+        </div>
+
+        <!-- RETURN -->
         <div class="relative flex items-center justify-center min-h-[130px]">
           <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3">
-            <div class="w-4 h-4 bg-[#1C1C19] border border-[#1C1C19] rotate-45 pin-pulse" style="animation-delay:.9s"></div>
+            <div class="w-4 h-4 bg-ink border border-ink pin-pulse" style="animation-delay:.9s"></div>
           </div>
-          <div class="bg-white border border-[#1C1C19] px-4 py-3 sticker-4 rotate-[2deg] pressure-btn text-center relative">
-            <span class="font-headline font-black text-xl md:text-2xl uppercase tracking-tighter block leading-none mb-1" data-i18n="nav-tashkent">TASHKENT</span>
-            <span class="font-mono text-[10px] tracking-widest font-bold" data-i18n="plan-schema-c4-dates">[ JUN 16 ✈ ]</span>
-            <!-- RETURN sticker badge — pink + larger + stronger rotation -->
-            <div class="absolute -top-4 -right-7 bg-[#FF46CA] text-white font-mono text-xs font-bold px-2 py-1 tracking-widest rotate-[-8deg] border border-[#1C1C19] sticker-4" data-i18n="plan-return">RETURN</div>
+          <div class="relative bg-white border border-ink px-3 py-3 sticker-4 rotate-[2deg] pressure-btn text-center">
+            <span class="font-headline font-black text-xl uppercase tracking-tighter block leading-none mb-1"><span class="en">TASHKENT</span><span class="ru">ТАШКЕНТ</span></span>
+            <span class="font-mono text-[10px] tracking-widest font-bold"><span class="en">[ JUN 16 ✈ ]</span><span class="ru">[ 16 ИЮН ✈ ]</span></span>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Quatrefoil girih divider (pink/green/orange rotation) — matches index.html invitation page -->
-    <div class="mt-16 flex items-center justify-center gap-3 flex-wrap [&>svg:nth-child(3n+1)]:text-[#FF46CA] [&>svg:nth-child(3n+2)]:text-[#00CB8D] [&>svg:nth-child(3n)]:text-[#FF9400]">
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-      <svg viewBox="0 0 100 100" class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M 50 14 C 58 14 60 23 56 29 C 66 25 77 33 75 44 C 79 44 83 48 83 50 C 83 52 79 56 75 56 C 77 67 66 75 56 71 C 60 77 58 86 50 86 C 42 86 40 77 44 71 C 34 75 23 67 25 56 C 21 56 17 52 17 50 C 17 48 21 44 25 44 C 23 33 34 25 44 29 C 40 23 42 14 50 14 Z"/></svg>
-    </div>
-
-  </div>
-
-  <!-- How This Works -->
-  <div class="mb-16">
-    <div class="bg-surface-container-low border border-[#1C1C19]/20 p-10">
-      <h2 class="font-headline font-black text-3xl uppercase tracking-tighter mb-1" data-i18n="plan-htw">HOW THIS WORKS</h2>
-      <p class="font-body text-sm text-[#1C1C19]/60 italic mb-10" data-i18n="plan-htw-sub">a quick note on how this works.</p>
-
-      <div class="grid grid-cols-3 gap-10 mb-10">
-        <div>
-          <div class="font-mono text-[11px] uppercase font-bold text-[#FF46CA] mb-4 tracking-widest" data-i18n="plan-wwd">WHAT WE DO</div>
-          <ul class="space-y-3 font-body text-[15px] text-[#1C1C19]/80 leading-relaxed">
-            <li data-i18n="plan-wwd-1">— share info: where we're staying, which restaurants to hit, what's worth seeing</li>
-            <li data-i18n="plan-wwd-2">— run a schedule of group activities — 1–2 per day. join whichever you like. skip whichever you don't.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-mono text-[11px] uppercase font-bold text-[#00CB8D] mb-4 tracking-widest" data-i18n="plan-wyd">WHAT YOU DO</div>
-          <ul class="space-y-3 font-body text-[15px] text-[#1C1C19]/80 leading-relaxed">
-            <li data-i18n="plan-wyd-1">— pick your dates</li>
-            <li data-i18n="plan-wyd-2">— book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us — booking on you.)</em></li>
-            <li data-i18n="plan-wyd-3">— decide which group activities to join. the rest of the time is yours.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-mono text-[11px] uppercase font-bold text-[#FF9400] mb-4 tracking-widest" data-i18n="plan-wtw">WHY THIS WAY</div>
-          <p class="font-body text-[15px] text-[#1C1C19]/80 leading-relaxed" data-i18n="plan-wtw-text">there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we're leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.</p>
-        </div>
-      </div>
-
-      <div class="border-t border-dashed border-[#1C1C19]/20 pt-6 space-y-3">
-        <p class="font-body text-sm italic text-[#1C1C19]/60" data-i18n="plan-pay">(we pay for the group activities. trains, hotels, everything else — that's on you.)</p>
-        <p class="font-body text-base font-bold" data-i18n="plan-questions">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.</p>
       </div>
     </div>
   </div>
 
-  <!-- Deadlines Header -->
-  <div class="mb-8 relative">
-    <div class="bg-[#ffffff] p-10 border border-[#1C1C19] relative">
-      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap" data-i18n="plan-attention">
-        Attention // DIK_KAT
+  <!-- Divider B — hero → how it works -->
+  <div class="div-girih mb-20">
+    <div class="diamond"></div>
+  </div>
+
+  <!-- HOW THIS WORKS -->
+  <div class="mb-24">
+    <div class="flex items-baseline justify-between mb-2">
+      <h2 class="font-headline font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tighter">
+        <span class="en">HOW THIS <span class="text-pink italic">WORKS</span></span>
+        <span class="ru">КАК ЭТО <span class="text-pink italic">РАБОТАЕТ</span></span>
+      </h2>
+      <span class="font-mono text-xs uppercase tracking-widest text-ink/40 hidden sm:inline">[ 01 / 03 ]</span>
+    </div>
+    <p class="font-body italic text-ink/60 mb-10">
+      <span class="en">a few words on how it all works.</span>
+      <span class="ru">пара слов о том, как всё устроено.</span>
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-ink/20">
+      <!-- 01 WHAT WE DO -->
+      <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-ink/20">
+        <div class="flex items-baseline gap-3 mb-6">
+          <span class="font-mono text-4xl text-pink font-bold">01</span>
+          <span class="font-mono text-[11px] uppercase font-bold text-pink tracking-widest"><span class="en">WHAT WE DO</span><span class="ru">что делаем мы</span></span>
+        </div>
+        <ul class="space-y-5 font-body text-[15px] text-ink/80 leading-relaxed">
+          <li class="en"><span class="font-bold text-ink">share info</span> — where we're staying, which restaurants to hit, what's worth seeing.</li>
+          <li class="en"><span class="font-bold text-ink">run the schedule</span> — 1–2 group activities per day. join whichever. skip whichever.</li>
+          <li class="ru"><span class="font-bold text-ink">делимся инфой</span> — где живём, куда идти ужинать, что стоит смотреть.</li>
+          <li class="ru"><span class="font-bold text-ink">ведём расписание</span> — 1–2 групповых активности в день. приходи на те, что нравятся. остальные пропускай.</li>
+        </ul>
       </div>
-      <h2 class="font-headline font-black text-4xl uppercase tracking-tighter text-center" data-i18n="plan-deadlines">
-        The <span class="text-secondary">Deadlines</span> — the serious bit.
+      <!-- 02 WHAT YOU DO -->
+      <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-ink/20">
+        <div class="flex items-baseline gap-3 mb-6">
+          <span class="font-mono text-4xl text-green font-bold">02</span>
+          <span class="font-mono text-[11px] uppercase font-bold text-green tracking-widest"><span class="en">WHAT YOU DO</span><span class="ru">что делаешь ты</span></span>
+        </div>
+        <ul class="space-y-5 font-body text-[15px] text-ink/80 leading-relaxed">
+          <li class="en"><span class="font-bold text-ink">pick your dates.</span></li>
+          <li class="en"><span class="font-bold text-ink">book train + hotel.</span> <em class="text-ink/50">(advice on us — booking on you.)</em></li>
+          <li class="en"><span class="font-bold text-ink">choose your activities.</span> the rest of the time is yours.</li>
+          <li class="ru"><span class="font-bold text-ink">выбери свои даты.</span></li>
+          <li class="ru"><span class="font-bold text-ink">забронируй поезд и отель.</span> <em class="text-ink/50">(советы на нас — бронь на тебе.)</em></li>
+          <li class="ru"><span class="font-bold text-ink">реши, на какие активности идти.</span> остальное время — твоё.</li>
+        </ul>
+      </div>
+      <!-- 03 WHY THIS WAY -->
+      <div class="p-6 md:p-8">
+        <div class="flex items-baseline gap-3 mb-6">
+          <span class="font-mono text-4xl text-orange font-bold">03</span>
+          <span class="font-mono text-[11px] uppercase font-bold text-orange tracking-widest"><span class="en">WHY THIS WAY</span><span class="ru">почему так</span></span>
+        </div>
+        <ul class="space-y-5 font-body text-[15px] text-ink/80 leading-relaxed">
+          <li class="en"><span class="font-bold text-ink">there are a lot of us.</span> different rhythms, different energy.</li>
+          <li class="en"><span class="font-bold text-ink">shared meals every day</span> — logistically impossible. honestly, not needed.</li>
+          <li class="en"><span class="font-bold text-ink">room for the accidental</span> — dinners of three, late-night walks, unplanned plov breaks.</li>
+          <li class="ru"><span class="font-bold text-ink">нас много.</span> разные ритмы, разная энергия.</li>
+          <li class="ru"><span class="font-bold text-ink">общие завтраки-обеды-ужины каждый день</span> — логистически невозможно. честно говоря, не нужно.</li>
+          <li class="ru"><span class="font-bold text-ink">место для случайного</span> — ужины на троих, ночные прогулки, незапланированные перерывы на плов.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-dashed border-ink/20 space-y-3 max-w-3xl">
+      <p class="font-body text-sm italic text-ink/60 en">(we cover the group activities — we'll split it up after. trains, hotels, everything else — that's on you.)</p>
+      <p class="font-body text-sm italic text-ink/60 ru">(совместные активности мы берём на себя — потом поделим. поезда, отели, всё остальное — ты сам.)</p>
+      <p class="font-body text-base en">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="link-wavy">text Anastasia</a>.</p>
+      <p class="font-body text-base ru">вопросы, сомнения, идеи — <a href="https://t.me/parapam_tg" target="_blank" class="link-wavy">напиши насте</a>.</p>
+    </div>
+  </div>
+
+  <!-- Divider C — subsection shift -->
+  <div class="div-tag mb-12">
+    <span class="tag en">· read carefully ·</span>
+    <span class="tag ru">· читать внимательно ·</span>
+  </div>
+
+  <!-- DIQQAT banner -->
+  <div class="mb-10 relative">
+    <div class="bg-white p-6 md:p-10 border border-ink relative">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-ink text-cream px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">
+        <span class="en">ATTENTION // DIQQAT</span>
+        <span class="ru">DIQQAT // внимание</span>
+      </div>
+      <h2 class="font-headline font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter text-center leading-[0.95]">
+        <span class="en">THE <span class="text-green italic">DEADLINES</span> — THE SERIOUS BIT.</span>
+        <span class="ru">ДЕДЛАЙНЫ — <span class="text-green italic">серьёзная</span> часть.</span>
       </h2>
     </div>
   </div>
 
-  <!-- Info Cards — 2 columns -->
-  <div class="grid grid-cols-2 gap-8 mb-16">
-    <!-- Train Tickets -->
-    <div class="bg-[#1C1C19] text-white p-8 relative overflow-hidden group">
+  <!-- Deadlines -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-20 md:mb-24">
+    <div class="bg-ink text-white p-6 md:p-10 relative overflow-hidden group">
       <div class="relative z-10">
-        <h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4 text-[#00CB8D]" data-i18n="plan-train-title">TRAIN TICKETS</h2>
-        <p class="font-body text-lg mb-8 text-white/80 leading-relaxed" data-i18n="plan-train-text">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.</p>
-        <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono uppercase text-sm group-hover:translate-x-2 transition-transform" href="practical.html" data-i18n="plan-train-link">→ see practical page</a>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-3"><span class="en">[ DEADLINE · END OF APRIL ]</span><span class="ru">[ ДЕДЛАЙН · КОНЕЦ АПРЕЛЯ ]</span></div>
+        <h3 class="font-headline text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter mb-5 text-green"><span class="en">TRAIN TICKETS</span><span class="ru">БИЛЕТЫ НА ПОЕЗД</span></h3>
+        <p class="font-body text-base md:text-lg mb-8 text-white/80 leading-relaxed en">urgent notice: tickets sell out fast. uzbekistan railways releases them 45 days in advance. we recommend booking by <span class="text-orange font-mono font-bold">end of April</span>. book at <span class="font-mono">railway.uz</span>.</p>
+        <p class="font-body text-base md:text-lg mb-8 text-white/80 leading-relaxed ru">важно: билеты заканчиваются быстро. узбекские железные дороги открывают продажу за 45 дней. рекомендуем забронировать до <span class="text-orange font-mono font-bold">конца апреля</span>. сайт — <span class="font-mono">railway.uz</span>.</p>
+        <a class="inline-flex items-center gap-2 text-green font-mono uppercase text-sm font-bold group-hover:translate-x-2 transition-transform" href="practical.html">
+          → <span class="en">SEE PRACTICAL PAGE</span><span class="ru">СТРАНИЦА ДЕТАЛЕЙ</span>
+        </a>
       </div>
       <div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
-        <span class="material-symbols-outlined text-[120px]">train</span>
+        <span class="material-symbols-outlined" style="font-size:160px">train</span>
       </div>
     </div>
-    <!-- Where We're Staying -->
-    <div class="bg-surface-container p-8 relative group border border-dashed border-[#1C1C19]/20">
-      <h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-4" data-i18n="plan-stay-title">WHERE WE'RE STAYING</h2>
-      <p class="font-body text-lg mb-4 text-[#1C1C19]/70 italic" data-i18n="plan-stay-soon">Coming soon</p>
-      <p class="font-body text-base text-[#1C1C19]/70 mb-6 leading-relaxed" data-i18n="plan-stay-text">We'll share where we're staying and a couple of places nearby. <em>(advice on us — booking on you.)</em></p>
-      <div class="relative mt-4">
-        <span class="font-hand text-3xl text-[#FF46CA] -rotate-3 inline-block" data-i18n="plan-stay-note">(details incoming.)</span>
-        <div class="absolute -top-8 -left-12 pointer-events-none">
-          <svg class="text-[#FF46CA]" fill="none" height="40" viewBox="0 0 60 40" width="60">
-            <path d="M10 30Q25 5 50 15" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5"/>
-            <path d="M45 10L52 15L44 18" stroke="currentColor" stroke-width="1.5"/>
+
+    <div class="bg-s2 p-6 md:p-10 relative group border border-dashed border-ink/30">
+      <div class="font-mono text-[10px] uppercase tracking-widest text-ink/40 mb-3"><span class="en">[ INFO · COMING SOON ]</span><span class="ru">[ ИНФО · СКОРО ]</span></div>
+      <h3 class="font-headline text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter mb-5"><span class="en">WHERE WE'RE STAYING</span><span class="ru">ГДЕ МЫ ЖИВЁМ</span></h3>
+      <p class="font-body text-base md:text-lg mb-4 text-ink/70 leading-relaxed en">we'll share where we're staying and a handful of places nearby. <em class="text-ink/50">(advice on us — booking on you.)</em></p>
+      <p class="font-body text-base md:text-lg mb-4 text-ink/70 leading-relaxed ru">мы поделимся, где живём сами, и парой мест рядом. <em class="text-ink/50">(советы на нас — бронь на тебе.)</em></p>
+      <div class="relative mt-10 h-12">
+        <span class="hand-annotation text-4xl en">(details incoming.)</span>
+        <span class="hand-annotation text-4xl ru">(подробности скоро.)</span>
+        <div class="absolute -top-6 left-44 pointer-events-none hidden lg:block">
+          <svg class="text-pink" fill="none" height="40" viewBox="0 0 60 40" width="60">
+            <path d="M10 30 Q 25 5 50 15" stroke="currentColor" stroke-dasharray="4 2" stroke-width="1.5"/>
+            <path d="M45 10 L 52 15 L 44 18" stroke="currentColor" stroke-width="1.5"/>
           </svg>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- City Cards — 3 columns, tall portrait -->
-  <div class="grid grid-cols-3 gap-0 border-t border-b border-[#1C1C19]/10">
+  <!-- Divider E — small pause -->
+  <div class="div-thread mb-16">
+    <span class="knot">✧</span>
+  </div>
+
+  <!-- CITY CARDS -->
+  <div class="mb-12 flex items-baseline justify-between">
+    <h2 class="font-headline font-black text-3xl sm:text-4xl md:text-5xl uppercase tracking-tighter">
+      <span class="en">THE <span class="text-pink italic">CITIES</span>.</span>
+      <span class="ru"><span class="text-pink italic">ГОРОДА</span>.</span>
+    </h2>
+    <span class="font-mono text-xs uppercase tracking-widest text-ink/40 hidden sm:inline">[ 03 · TAS → SAM → BUK ]</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-20">
     <!-- TASHKENT -->
-    <div class="city-card group flex flex-col border-r border-[#1C1C19]/10 p-6 md:p-8 hover:bg-white transition-colors">
-      <div class="font-mono text-xs mb-4 opacity-40" data-i18n="plan-city1-label">01 / CAPITAL</div>
-      <div class="aspect-[3/4] overflow-hidden mb-6 grayscale group-hover:grayscale-0 transition-all duration-700">
-        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Soviet-era architecture in Tashkent" src="images/tashkent.jpg"/>
+    <div class="city-card group flex flex-col bg-white border border-ink p-6 sticker-4">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-mono text-xs font-bold text-pink">01</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40"><span class="en">[ CAPITAL ]</span><span class="ru">[ СТОЛИЦА ]</span></span>
       </div>
-      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4" data-i18n="nav-tashkent">TASHKENT</h3>
-      <div class="font-mono text-xs text-[#FF46CA] mb-4" data-i18n="plan-city1-dates">JUN 09–12</div>
-      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow" data-i18n="plan-city1-text">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.</p>
-      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="tashkent.html" data-i18n="plan-explore">→ explore</a>
+      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5">
+        <div class="w-full h-full overflow-hidden">
+          <img class="w-full h-full object-cover" alt="Soviet-era architecture in Tashkent" src="images/tashkent.jpg"/>
+        </div>
+      </div>
+      <h3 class="city-title font-headline font-black uppercase tracking-tighter mb-3 leading-[0.85] whitespace-nowrap"><span class="en">TASHKENT</span><span class="ru">ТАШКЕНТ</span></h3>
+      <div class="font-mono text-xs font-bold text-pink mb-4 tracking-widest"><span class="en">[ JUN 09–12 · 3 DAYS ]</span><span class="ru">[ 9–12 ИЮН · 3 ДНЯ ]</span></div>
+      <p class="font-body text-base text-ink/80 mb-8 flex-grow leading-relaxed en">arrival. birthday. soviet metro mosaics. plov at 7am. from a cauldron the size of you.</p>
+      <p class="font-body text-base text-ink/80 mb-8 flex-grow leading-relaxed ru">прилёт. день рождения. советские мозаики в метро. плов в 7 утра. из казана размером с тебя.</p>
+      <a class="inline-flex items-center gap-2 link-wavy font-mono uppercase text-sm font-bold no-underline group-hover:translate-x-2 transition-transform duration-300" href="tashkent.html">→ <span class="en">EXPLORE</span><span class="ru">ПОДРОБНЕЕ</span></a>
     </div>
+
     <!-- SAMARKAND -->
-    <div class="city-card group flex flex-col border-r border-[#1C1C19]/10 p-6 md:p-8 hover:bg-white transition-colors">
-      <div class="font-mono text-xs mb-4 opacity-40" data-i18n="plan-city2-label">02 / SILK ROAD HERO</div>
-      <div class="aspect-[3/4] overflow-hidden mb-6">
-        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Registan Square Samarkand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-2HxP9VlKP4ZFltjXJS-l43s8tt5lsux9f0T61JUQl3Mvpvx_PZECUZJjS0QDK_yWWoVpQR9w3hw_LjD8oQHugGBQP1VW7YS2FifWGuxeeLVdJavmKDqtRRkP4dhetKhgZr8JOHgZbVUb_npuCy1O5Y8uwHfQh_G8ZtG_jnrWANKQvcUh5v6VDATcQYZ3SuCGUnJCH2tOqAtvw63HegTqLEmwOGkWqzTWvgseTUeONLMoE_lZW9B5kqOcEtf4i1XrFo0zAqn713f"/>
+    <div class="city-card group flex flex-col bg-white border border-ink p-6 sticker-4">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-mono text-xs font-bold text-green">02</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40"><span class="en">[ SILK ROAD HERO ]</span><span class="ru">[ ШЁЛКОВЫЙ ПУТЬ ]</span></span>
       </div>
-      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4" data-i18n="nav-samarkand">SAMARKAND</h3>
-      <div class="font-mono text-xs text-[#FF46CA] mb-4" data-i18n="plan-city2-dates">JUN 12–14</div>
-      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow" data-i18n="plan-city2-text">The Registan. Turquoise domes, minarets, tiles — more blue than you've ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)</p>
-      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="samarkand.html" data-i18n="plan-explore">→ explore</a>
+      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5">
+        <div class="w-full h-full overflow-hidden">
+          <img class="w-full h-full object-cover" alt="Registan Square Samarkand" src="images/samarkand.jpg"/>
+        </div>
+      </div>
+      <h3 class="city-title font-headline font-black uppercase tracking-tighter mb-3 leading-[0.85] whitespace-nowrap"><span class="en">SAMARKAND</span><span class="ru">САМАРКАНД</span></h3>
+      <div class="font-mono text-xs font-bold text-green mb-4 tracking-widest"><span class="en">[ JUN 12–14 · 2 DAYS ]</span><span class="ru">[ 12–14 ИЮН · 2 ДНЯ ]</span></div>
+      <p class="font-body text-base text-ink/80 mb-8 flex-grow leading-relaxed en">the registan. turquoise domes, minarets, tiles — more blue than you've ever seen in one place. samarkand bread is so iconic, locals carry it home across the country. in hand luggage. <em>(we will too.)</em></p>
+      <p class="font-body text-base text-ink/80 mb-8 flex-grow leading-relaxed ru">регистан. бирюзовые купола, минареты. а самаркандская лепёшка настолько культовая, что её везут через всю страну. в ручной клади. <em>(мы тоже повезём.)</em></p>
+      <a class="inline-flex items-center gap-2 link-wavy font-mono uppercase text-sm font-bold no-underline group-hover:translate-x-2 transition-transform duration-300" href="samarkand.html">→ <span class="en">EXPLORE</span><span class="ru">ПОДРОБНЕЕ</span></a>
     </div>
+
     <!-- BUKHARA -->
-    <div class="city-card group flex flex-col p-6 md:p-8 hover:bg-white transition-colors">
-      <div class="font-mono text-xs mb-4 opacity-40" data-i18n="plan-city3-label">03 / OLD WORLD SOUL</div>
-      <div class="aspect-[3/4] overflow-hidden mb-6">
-        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Old Bukhara streets and domes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2TSE7qLwcTOxQnpJ3WIAobuiS267GkO1-oljpb_QpsA_8FAk9rfZw6n8vHvJupn2jiJbi45EY_kR6UmnORTIBz0Tc911euZrc-DIURDEXBD1BQ32JogkvyQMU5v4mMyh3lkiE2Z6f4_-k33hMpQRS1kF3Kbwy7TzxfJFWiFZFjGe-BGSPhQKm8Zcx5Y6z5kS2YFjT-3apmQ_xUpjF1jHO9fFLb3ipDmdrNGMRE_M3bbnZqo_CL3JZ38K7HTBIJgNz7P6CHHl9luTI"/>
+    <div class="city-card group flex flex-col bg-white border border-ink p-6 sticker-4">
+      <div class="flex items-center justify-between mb-4">
+        <span class="font-mono text-xs font-bold text-orange">03</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40"><span class="en">[ OLD WORLD SOUL ]</span><span class="ru">[ СТАРЫЙ ГОРОД ]</span></span>
       </div>
-      <h3 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4" data-i18n="nav-bukhara">BUKHARA</h3>
-      <div class="font-mono text-xs text-[#FF46CA] mb-4" data-i18n="plan-city3-dates">JUN 14–15</div>
-      <p class="font-body text-base text-[#1C1C19]/80 mb-8 flex-grow" data-i18n="plan-city3-text">140 monuments. No cars in the old city. You'll forget what year it is.</p>
-      <a class="inline-flex items-center gap-2 text-[#FF46CA] font-mono uppercase text-sm group-hover:translate-x-4 transition-transform duration-300" href="bukhara.html" data-i18n="plan-explore">→ explore</a>
+      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5">
+        <div class="w-full h-full overflow-hidden">
+          <img class="w-full h-full object-cover" alt="Old Bukhara streets and domes" src="images/bukhara.jpg"/>
+        </div>
+      </div>
+      <h3 class="city-title font-headline font-black uppercase tracking-tighter mb-3 leading-[0.85] whitespace-nowrap"><span class="en">BUKHARA</span><span class="ru">БУХАРА</span></h3>
+      <div class="font-mono text-xs font-bold text-orange mb-4 tracking-widest"><span class="en">[ JUN 14–15 · 1 DAY ]</span><span class="ru">[ 14–15 ИЮН · 1 ДЕНЬ ]</span></div>
+      <p class="font-body text-base text-ink/80 mb-8 flex-grow leading-relaxed en">140 monuments. no cars in the old city. you'll forget what year it is.</p>
+      <p class="font-body text-base text-ink/80 mb-8 flex-grow leading-relaxed ru">140 памятников. ни одной машины в старом городе. ты забудешь, какой сейчас год.</p>
+      <a class="inline-flex items-center gap-2 link-wavy font-mono uppercase text-sm font-bold no-underline group-hover:translate-x-2 transition-transform duration-300" href="bukhara.html">→ <span class="en">EXPLORE</span><span class="ru">ПОДРОБНЕЕ</span></a>
     </div>
   </div>
 
   <!-- Annotation -->
-  <div class="mt-20 flex justify-center">
-    <div class="relative group cursor-default">
-      <p class="font-hand text-4xl text-[#FF9400] rotate-2" data-i18n="plan-annotation">you will want to move here. (we are not responsible for this.)</p>
-      <div class="absolute -top-4 -right-8">
-        <span class="material-symbols-outlined text-[#FF46CA] animate-pulse" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">explore</span>
+  <div class="mt-12 mb-8 flex justify-center">
+    <div class="relative">
+      <p class="font-hand text-3xl sm:text-4xl md:text-5xl text-orange rotate-2 leading-tight text-center md:text-left">
+        <span class="en">you will want to move here. (we are not responsible for this.)</span>
+        <span class="ru">ты захочешь сюда переехать. (мы не несём за это ответственность.)</span>
+      </p>
+      <div class="absolute -top-6 -right-10">
+        <span class="material-symbols-outlined text-pink animate-pulse" style="font-size:32px; font-variation-settings:'FILL' 1;">explore</span>
       </div>
     </div>
   </div>
@@ -482,437 +581,28 @@
 </main>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════ -->
-<!-- MOBILE LAYOUT — below md                               -->
-<!-- ═══════════════════════════════════════════════════════ -->
-<div class="md:hidden">
-<main class="pt-28 pb-32 px-6 max-w-2xl mx-auto">
-
-  <!-- Section Header -->
-  <div class="mb-10 mt-4">
-    <div class="flex items-center gap-2 mb-2">
-      <span class="text-[#FF46CA] font-mono text-xs font-bold" data-i18n="plan-when-label">WHEN WE GO</span>
-      <div class="flex-grow border-b border-dashed border-[#1C1C19]/10"></div>
-    </div>
-    <h2 class="font-headline font-black text-4xl leading-none uppercase italic tracking-tighter" data-i18n="plan-when-heading">WHEN WE GO<br/>// JUN 09 → JUN 16</h2>
-    <a href="#mobile-timeline" class="inline-flex items-center gap-1 mt-3 font-mono text-xs text-[#FF46CA] font-bold uppercase hover:underline" data-i18n="plan-dates-link">dates by city ↓</a>
-    <div class="mt-3 flex gap-1 text-[8px] font-mono opacity-20">
-      <span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span><span>XXXXX</span>
-    </div>
+<!-- FOOTER -->
+<footer class="w-full py-10 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-cream border-t border-double border-ink/60">
+  <div class="font-mono text-xs uppercase tracking-widest text-ink/60">© 2026 UZBEK BDAY ZINE</div>
+  <div class="font-headline text-xl font-black italic text-pink tracking-tighter uppercase">UZBEK BDAY</div>
+  <div class="flex items-center gap-2 font-mono text-[10px] tracking-widest text-ink/60">
+    <span class="en uppercase">made with love</span>
+    <span class="ru">сделано с любовью</span>
   </div>
-
-  <!-- How This Works -->
-  <div class="mb-10">
-    <div class="bg-surface-container-low border border-[#1C1C19]/20 p-6">
-      <h2 class="font-headline font-black text-2xl uppercase tracking-tighter mb-1" data-i18n="plan-htw">HOW THIS WORKS</h2>
-      <p class="font-body text-xs text-[#1C1C19]/60 italic mb-6" data-i18n="plan-htw-sub">a quick note on how this works.</p>
-
-      <div class="space-y-6 mb-6">
-        <div>
-          <div class="font-mono text-[10px] uppercase font-bold text-[#FF46CA] mb-2 tracking-widest" data-i18n="plan-wwd">WHAT WE DO</div>
-          <ul class="space-y-2 font-body text-sm text-[#1C1C19]/80 leading-relaxed">
-            <li data-i18n="plan-wwd-1">— share info: where we're staying, which restaurants to hit, what's worth seeing</li>
-            <li data-i18n="plan-wwd-2">— run a schedule of group activities — 1–2 per day. join whichever you like. skip whichever you don't.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-mono text-[10px] uppercase font-bold text-[#00CB8D] mb-2 tracking-widest" data-i18n="plan-wyd">WHAT YOU DO</div>
-          <ul class="space-y-2 font-body text-sm text-[#1C1C19]/80 leading-relaxed">
-            <li data-i18n="plan-wyd-1">— pick your dates</li>
-            <li data-i18n="plan-wyd-2">— book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us — booking on you.)</em></li>
-            <li data-i18n="plan-wyd-3">— decide which group activities to join. the rest of the time is yours.</li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-mono text-[10px] uppercase font-bold text-[#FF9400] mb-2 tracking-widest" data-i18n="plan-wtw">WHY THIS WAY</div>
-          <p class="font-body text-sm text-[#1C1C19]/80 leading-relaxed" data-i18n="plan-wtw-text">there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we're leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.</p>
-        </div>
-      </div>
-
-      <div class="border-t border-dashed border-[#1C1C19]/20 pt-4 space-y-2">
-        <p class="font-body text-xs italic text-[#1C1C19]/60" data-i18n="plan-pay">(we pay for the group activities. trains, hotels, everything else — that's on you.)</p>
-        <p class="font-body text-sm font-bold" data-i18n="plan-questions">questions, doubts, ideas — <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Deadlines Header -->
-  <div class="mb-6 relative">
-    <div class="bg-[#ffffff] p-8 border border-[#1C1C19] relative">
-      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1C1C19] text-[#FCF9F4] px-4 py-1 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap" data-i18n="plan-attention">
-        Attention // DIK_KAT
-      </div>
-      <h2 class="font-headline font-black text-3xl uppercase tracking-tighter text-center" data-i18n="plan-deadlines">
-        The <span class="text-secondary">Deadlines</span> — the serious bit.
-      </h2>
-    </div>
-  </div>
-
-  <!-- Alert Cards -->
-  <section class="space-y-4 mb-14">
-    <div class="bg-[#1C1C19] p-6 text-white relative overflow-hidden group">
-      <div class="relative z-10">
-        <h2 class="font-headline text-2xl font-black uppercase tracking-tighter mb-3 text-[#00CB8D]" data-i18n="plan-train-title">TRAIN TICKETS</h2>
-        <p class="font-body text-sm mb-6 text-white/80 leading-relaxed" data-i18n="plan-train-text">Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.</p>
-        <a class="inline-flex items-center gap-2 text-[#00CB8D] font-mono text-xs font-bold group-hover:translate-x-2 transition-transform" href="practical.html" data-i18n="plan-train-link">→ see practical page</a>
-      </div>
-      <div class="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
-        <span class="material-symbols-outlined text-[80px]">train</span>
-      </div>
-    </div>
-    <div class="bg-surface-container p-6 relative group border border-dashed border-[#1C1C19]/20">
-      <h2 class="font-headline text-2xl font-black uppercase tracking-tighter mb-3" data-i18n="plan-stay-title">WHERE WE'RE STAYING</h2>
-      <p class="font-body text-sm mb-3 text-[#1C1C19]/70 italic" data-i18n="plan-stay-soon">Coming soon</p>
-      <p class="font-body text-sm text-[#1C1C19]/70 mb-5 leading-relaxed" data-i18n="plan-stay-text">We'll share where we're staying and a couple of places nearby. <em>(advice on us — booking on you.)</em></p>
-      <div class="relative mt-3">
-        <span class="font-hand text-2xl text-[#FF46CA] -rotate-3 inline-block" data-i18n="plan-stay-note">(details incoming.)</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vertical Timeline -->
-  <section class="relative">
-    <div class="absolute left-4 top-0 bottom-0 w-px border-l border-dashed border-[#FF46CA]/30 -z-10"></div>
-
-    <!-- Arrival -->
-    <div id="mobile-timeline" class="relative pl-12 mb-14 scroll-mt-24">
-      <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
-        <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_land</span>
-      </div>
-      <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1" data-i18n="plan-arrival">ARRIVAL IN TASHKENT</div>
-      <div class="h-px shaky-line w-16"></div>
-    </div>
-
-    <!-- Tashkent -->
-    <article class="mb-14 relative pl-12">
-      <div class="bg-white p-4 sticker-shadow border border-[#1C1C19] group">
-        <div class="relative h-56 w-full mb-4 overflow-hidden">
-          <img alt="Soviet-era architecture in Tashkent" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" src="images/tashkent.jpg"/>
-          <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px] tracking-widest">[ JUN 09–12 ]</div>
-        </div>
-        <div class="flex justify-between items-end mb-2">
-          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none" data-i18n="nav-tashkent">TASHKENT</h3>
-          <span class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-city1-dates">JUN 09–12</span>
-        </div>
-        <p class="font-mono text-xs opacity-70 mb-4 leading-snug" data-i18n="plan-city1-text">Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.</p>
-        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="tashkent.html" data-i18n="plan-explore">→ explore</a>
-      </div>
-    </article>
-
-    <!-- Train 1 -->
-    <div class="relative pl-12 mb-14">
-      <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
-        <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
-      </div>
-      <div class="font-mono text-[10px] uppercase opacity-40" data-i18n="plan-train1">AFROSIYOB EXPRESS [2H 10M]</div>
-    </div>
-
-    <!-- Samarkand -->
-    <article class="mb-14 relative pl-12">
-      <div class="bg-white p-4 sticker-shadow border border-[#1C1C19] group">
-        <div class="relative h-56 w-full mb-4 overflow-hidden">
-          <img alt="Registan Square Samarkand" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-2HxP9VlKP4ZFltjXJS-l43s8tt5lsux9f0T61JUQl3Mvpvx_PZECUZJjS0QDK_yWWoVpQR9w3hw_LjD8oQHugGBQP1VW7YS2FifWGuxeeLVdJavmKDqtRRkP4dhetKhgZr8JOHgZbVUb_npuCy1O5Y8uwHfQh_G8ZtG_jnrWANKQvcUh5v6VDATcQYZ3SuCGUnJCH2tOqAtvw63HegTqLEmwOGkWqzTWvgseTUeONLMoE_lZW9B5kqOcEtf4i1XrFo0zAqn713f"/>
-          <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px] tracking-widest">[ JUN 12–14 ]</div>
-        </div>
-        <div class="flex justify-between items-end mb-2">
-          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none" data-i18n="nav-samarkand">SAMARKAND</h3>
-          <span class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-city2-dates">JUN 12–14</span>
-        </div>
-        <p class="font-mono text-xs opacity-70 mb-4 leading-snug" data-i18n="plan-city2-text">The Registan. Turquoise domes, minarets, tiles — more blue than you've ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)</p>
-        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="samarkand.html" data-i18n="plan-explore">→ explore</a>
-      </div>
-    </article>
-
-    <!-- Train 2 -->
-    <div class="relative pl-12 mb-14">
-      <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
-        <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
-      </div>
-      <div class="font-mono text-[10px] uppercase opacity-40" data-i18n="plan-train2">AFROSIYOB EXPRESS [1H 30M]</div>
-    </div>
-
-    <!-- Bukhara -->
-    <article class="mb-14 relative pl-12">
-      <div class="bg-white p-4 sticker-shadow border border-[#1C1C19] group">
-        <div class="relative h-56 w-full mb-4 overflow-hidden">
-          <img alt="Old Bukhara streets and domes" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2TSE7qLwcTOxQnpJ3WIAobuiS267GkO1-oljpb_QpsA_8FAk9rfZw6n8vHvJupn2jiJbi45EY_kR6UmnORTIBz0Tc911euZrc-DIURDEXBD1BQ32JogkvyQMU5v4mMyh3lkiE2Z6f4_-k33hMpQRS1kF3Kbwy7TzxfJFWiFZFjGe-BGSPhQKm8Zcx5Y6z5kS2YFjT-3apmQ_xUpjF1jHO9fFLb3ipDmdrNGMRE_M3bbnZqo_CL3JZ38K7HTBIJgNz7P6CHHl9luTI"/>
-          <div class="absolute top-2 right-2 bg-primary-container text-white px-2 py-1 font-mono text-[10px] tracking-widest">[ JUN 14–15 ]</div>
-        </div>
-        <div class="flex justify-between items-end mb-2">
-          <h3 class="font-headline font-black text-3xl uppercase tracking-tighter leading-none" data-i18n="nav-bukhara">BUKHARA</h3>
-          <span class="font-mono text-xs font-bold text-[#FF46CA]" data-i18n="plan-city3-dates">JUN 14–15</span>
-        </div>
-        <p class="font-mono text-xs opacity-70 mb-4 leading-snug" data-i18n="plan-city3-text">140 monuments. No cars in the old city. You'll forget what year it is.</p>
-        <a class="flex items-center gap-1 text-[#FF46CA] font-mono text-sm font-bold group-hover:translate-x-2 transition-transform" href="bukhara.html" data-i18n="plan-explore">→ explore</a>
-      </div>
-    </article>
-
-    <!-- Train 3 — return to Tashkent -->
-    <div class="relative pl-12 mb-14">
-      <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
-        <span class="material-symbols-outlined text-[#1C1C19] text-lg" style="font-variation-settings: 'FILL' 1;">train</span>
-      </div>
-      <div class="font-mono text-[10px] uppercase opacity-40" data-i18n="plan-train3">AFROSIYOB EXPRESS [4H 15M] · RETURN</div>
-    </div>
-
-    <!-- Departure -->
-    <div class="relative pl-12 mb-12">
-      <div class="absolute left-0 top-0 w-8 h-8 bg-white border border-[#1C1C19] flex items-center justify-center -translate-x-1/2">
-        <span class="material-symbols-outlined text-[#FF46CA] text-lg" style="font-variation-settings: 'FILL' 1;">flight_takeoff</span>
-      </div>
-      <div class="font-mono text-[10px] uppercase text-[#FF46CA] font-bold mb-1" data-i18n="plan-departure">DEPARTURE — TASHKENT</div>
-      <div class="h-px shaky-line w-full"></div>
-    </div>
-  </section>
-
-  <!-- Annotation -->
-  <div class="flex justify-center pt-4 pb-8">
-    <p class="font-hand text-3xl text-[#FF9400] rotate-2" data-i18n="plan-annotation">you will want to move here. (we are not responsible for this.)</p>
-  </div>
-
-  <div class="py-8 flex justify-center opacity-20">
-    <span class="font-mono text-xs tracking-widest">X X X X X X X X X X X X X X X X X X X</span>
-  </div>
-
-</main>
-</div>
-
-<!-- Footer -->
-<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-[#FCF9F4] border-t-[1px] border-double border-[#1C1C19]">
-  <div class="font-['Epilogue'] text-lg font-bold text-[#FF46CA] italic">UZBEK BDAY</div>
-  <div class="font-['Space_Mono'] text-xs uppercase text-[#1C1C19]/60 flex gap-8">
-    <a class="hover:text-[#FF46CA] hover:italic transition-all" href="map.html">MAPS</a>
-  </div>
-  <div class="font-['Space_Mono'] text-xs uppercase text-[#1C1C19]/60">© 2026 UZBEK BDAY ZINE</div>
 </footer>
 
 <script>
-document.querySelectorAll(".rsvp-link").forEach(function(el){
-  el.addEventListener("click",function(){
-    window.open("https://t.me/"+"parapam_tg","_blank");
-  });
-});
-</script>
-
-<!-- Bottom Nav (mobile only) -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#FCF9F4]/95 backdrop-blur-md border-t border-[#1C1C19]/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
-  <a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">home</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-home">HOME</span>
-  </a>
-  <a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold transition-colors" data-i18n="bnav-plan">PLAN</span>
-    <div class="h-[2px] w-3 bg-[#FF46CA] mt-0.5 rounded-full"></div>
-  </a>
-  <a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">apartment</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-tas">TAS</span>
-  </a>
-  <a href="samarkand.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">mosque</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-sam">SAM</span>
-  </a>
-  <a href="bukhara.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">account_balance</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-buk">BUK</span>
-  </a>
-  <a href="practical.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">checklist</span>
-    <span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" data-i18n="bnav-info">INFO</span>
-  </a>
-</nav>
-<div class="h-20 md:hidden"></div>
-
-<!-- Language Switcher -->
-<script>
-var translations = {
-  en: {
-    'nav-invitation': 'INVITATION',
-    'nav-plan': 'PLAN',
-    'nav-tashkent': 'TASHKENT',
-    'nav-samarkand': 'SAMARKAND',
-    'nav-bukhara': 'BUKHARA',
-    'nav-practical': 'PRACTICAL',
-    'plan-when': '[ WHEN WE GO \u00b7 JUN 09 \u2192 JUN 16 ]',
-    'plan-when-label': 'WHEN WE GO',
-    'plan-when-heading': 'WHEN WE GO<br/>// JUN 09 \u2192 JUN 16',
-    'plan-dates-link': 'dates by city \u2193',
-    'plan-node-tashkent': 'Tashkent',
-    'plan-node-samarkand': 'Samarkand',
-    'plan-node-bukhara': 'Bukhara',
-    'plan-node-date1': 'JUN 09',
-    'plan-node-date2': 'JUN 12',
-    'plan-node-date3': 'JUN 14',
-    'plan-node-date4': 'JUN 16',
-    'plan-return': 'RETURN',
-    'plan-htw': 'HOW THIS WORKS',
-    'plan-htw-sub': 'a quick note on how this works.',
-    'plan-wwd': 'WHAT WE DO',
-    'plan-wwd-1': '\u2014 share info: where we\u2019re staying, which restaurants to hit, what\u2019s worth seeing',
-    'plan-wwd-2': '\u2014 run a schedule of group activities \u2014 1\u20132 per day. join whichever you like. skip whichever you don\u2019t.',
-    'plan-wyd': 'WHAT YOU DO',
-    'plan-wyd-1': '\u2014 pick your dates',
-    'plan-wyd-2': '\u2014 book your train and hotel. <em class="text-[#1C1C19]/50">(advice on us \u2014 booking on you.)</em>',
-    'plan-wyd-3': '\u2014 decide which group activities to join. the rest of the time is yours.',
-    'plan-wtw': 'WHY THIS WAY',
-    'plan-wtw-text': 'there are a lot of us, and everyone has a different rhythm. shared breakfasts-lunches-dinners every day is logistically impossible and, honestly, not needed. we\u2019re leaving room for the accidental: dinners of three, late-night walks, unplanned plov breaks.',
-    'plan-pay': '(we\u2019ll cover the group activities \u2014 and split the cost after. trains, hotels, everything else \u2014 that\u2019s on you.)',
-    'plan-questions': 'questions, doubts, ideas \u2014 <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">text Anastasia</a>.',
-    'plan-attention': 'Attention // DIK_KAT',
-    'plan-deadlines': 'The <span class="text-secondary">Deadlines</span> \u2014 the serious bit.',
-    'plan-train-title': 'TRAIN TICKETS',
-    'plan-train-text': 'Urgent notice: tickets sell out fast. Uzbekistan Railways releases them 45 days in advance. We recommend booking by <span class="text-[#FF9400] font-mono">end of April</span>. Book at railway.uz.',
-    'plan-train-link': '\u2192 see practical page',
-    'plan-stay-title': 'WHERE WE\u2019RE STAYING',
-    'plan-stay-soon': 'Coming soon',
-    'plan-stay-text': 'We\u2019ll share where we\u2019re staying and a couple of places nearby. <em>(advice on us \u2014 booking on you.)</em>',
-    'plan-stay-note': '(details incoming.)',
-    'plan-city1-label': '01 / CAPITAL',
-    'plan-city1-dates': 'JUN 09\u201312',
-    'plan-city1-text': 'Arrival. Birthday. Soviet metro mosaics. Plov at 7am. From a cauldron the size of you.',
-    'plan-city2-label': '02 / SILK ROAD HERO',
-    'plan-city2-dates': 'JUN 12\u201314',
-    'plan-city2-text': 'The Registan. Turquoise domes, minarets, tiles \u2014 more blue than you\u2019ve ever seen in one place. Samarkand bread is so iconic, locals carry it home across the country. In hand luggage. (we will too.)',
-    'plan-city3-label': '03 / OLD WORLD SOUL',
-    'plan-city3-dates': 'JUN 14\u201315',
-    'plan-city3-text': '140 monuments. No cars in the old city. You\u2019ll forget what year it is.',
-    'plan-explore': '\u2192 explore',
-    'plan-annotation': 'you will want to move here. (we are not responsible for this.)',
-    'plan-schema-arrival-label': 'ARRIVAL',
-    'plan-schema-arrival-loc': 'TASHKENT · JUN 09',
-    'plan-schema-departure-label': 'DEPARTURE',
-    'plan-schema-departure-loc': 'TASHKENT · JUN 16',
-    'plan-schema-meta': '[ 7 DAYS · 3 CITIES · 1100 KM ]',
-    'plan-schema-t1-date': 'JUN 12',
-    'plan-schema-t1-time': '2H 10M',
-    'plan-schema-t2-date': 'JUN 14',
-    'plan-schema-t2-time': '1H 30M',
-    'plan-schema-t3-date': 'JUN 15',
-    'plan-schema-t3-time': '4H 15M',
-    'plan-schema-c1-dates': '[ JUN 09–12 ]',
-    'plan-schema-c2-dates': '[ JUN 12–14 ]',
-    'plan-schema-c3-dates': '[ JUN 14–15 ]',
-    'plan-schema-c4-dates': '[ JUN 16 ✈ ]',
-    'plan-arrival': 'ARRIVAL IN TASHKENT',
-    'plan-departure': 'DEPARTURE \u2014 TASHKENT',
-    'plan-train1': 'AFROSIYOB EXPRESS [2H 10M]',
-    'plan-train2': 'AFROSIYOB EXPRESS [1H 30M]',
-    'plan-train3': 'AFROSIYOB EXPRESS [4H 15M] · RETURN',
-    'bnav-home': 'HOME',
-    'bnav-plan': 'PLAN',
-    'bnav-tas': 'TAS',
-    'bnav-sam': 'SAM',
-    'bnav-buk': 'BUK',
-    'bnav-info': 'INFO'
-  },
-  ru: {
-    'nav-invitation': '\u041f\u0420\u0418\u0413\u041b\u0410\u0428\u0415\u041d\u0418\u0415',
-    'nav-plan': '\u041f\u041b\u0410\u041d',
-    'nav-tashkent': '\u0422\u0410\u0428\u041a\u0415\u041d\u0422',
-    'nav-samarkand': '\u0421\u0410\u041c\u0410\u0420\u041a\u0410\u041d\u0414',
-    'nav-bukhara': '\u0411\u0423\u0425\u0410\u0420\u0410',
-    'nav-practical': '\u0418\u041d\u0424\u041e',
-    'plan-when': '[ \u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c \u00b7 9 \u0418\u042e\u041d \u2192 16 \u0418\u042e\u041d ]',
-    'plan-when-label': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c',
-    'plan-when-heading': '\u041a\u041e\u0413\u0414\u0410 \u0415\u0414\u0415\u041c<br/>// 9 \u0418\u042e\u041d \u2192 16 \u0418\u042e\u041d',
-    'plan-dates-link': '\u0434\u0430\u0442\u044b \u043f\u043e \u0433\u043e\u0440\u043e\u0434\u0430\u043c \u2193',
-    'plan-node-tashkent': '\u0422\u0430\u0448\u043a\u0435\u043d\u0442',
-    'plan-node-samarkand': '\u0421\u0430\u043c\u0430\u0440\u043a\u0430\u043d\u0434',
-    'plan-node-bukhara': '\u0411\u0443\u0445\u0430\u0440\u0430',
-    'plan-node-date1': '\u0418\u042e\u041d 09',
-    'plan-node-date2': '\u0418\u042e\u041d 12',
-    'plan-node-date3': '\u0418\u042e\u041d 14',
-    'plan-node-date4': '\u0418\u042e\u041d 16',
-    'plan-return': '\u041e\u0411\u0420\u0410\u0422\u041d\u041e',
-    'plan-htw': '\u041a\u0410\u041a \u042d\u0422\u041e \u0420\u0410\u0411\u041e\u0422\u0410\u0415\u0422',
-    'plan-htw-sub': '\u043f\u0430\u0440\u0430 \u0441\u043b\u043e\u0432 \u043e \u0442\u043e\u043c, \u043a\u0430\u043a \u0432\u0441\u0451 \u0443\u0441\u0442\u0440\u043e\u0435\u043d\u043e.',
-    'plan-wwd': '\u0427\u0422\u041e \u041c\u042b \u0414\u0415\u041b\u0410\u0415\u041c',
-    'plan-wwd-1': '\u2014 \u0434\u0435\u043b\u0438\u043c\u0441\u044f \u0438\u043d\u0444\u043e\u0439: \u0433\u0434\u0435 \u043c\u044b \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c\u0441\u044f, \u043a\u0430\u043a\u0438\u0435 \u0440\u0435\u0441\u0442\u043e\u0440\u0430\u043d\u044b \u0441\u043e\u0432\u0435\u0442\u0443\u0435\u043c, \u043a\u0443\u0434\u0430 \u0441\u0442\u043e\u0438\u0442 \u0441\u0445\u043e\u0434\u0438\u0442\u044c',
-    'plan-wwd-2': '\u2014 \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0435\u0439 \u2014 1\u20132 \u0432 \u0434\u0435\u043d\u044c. \u043f\u0440\u0438\u0441\u043e\u0435\u0434\u0438\u043d\u044f\u0439\u0441\u044f \u043a \u043b\u044e\u0431\u044b\u043c. \u043f\u0440\u043e\u043f\u0443\u0441\u043a\u0430\u0439, \u0435\u0441\u043b\u0438 \u043d\u0435 \u043f\u043e \u043d\u0430\u0441\u0442\u0440\u043e\u0435\u043d\u0438\u044e.',
-    'plan-wyd': '\u0427\u0422\u041e \u0422\u042b \u0414\u0415\u041b\u0410\u0415\u0428\u042c \u0421\u0410\u041c',
-    'plan-wyd-1': '\u2014 \u0432\u044b\u0431\u0438\u0440\u0430\u0435\u0448\u044c \u0441\u0432\u043e\u0438 \u0434\u0430\u0442\u044b',
-    'plan-wyd-2': '\u2014 \u0431\u0440\u043e\u043d\u0438\u0440\u0443\u0435\u0448\u044c \u043f\u043e\u0435\u0437\u0434 \u0438 \u043e\u0442\u0435\u043b\u044c. <em class="text-[#1C1C19]/50">(\u043f\u043e\u043c\u043e\u0436\u0435\u043c \u0441\u043e\u0432\u0435\u0442\u043e\u043c \u2014 \u0431\u0440\u043e\u043d\u044c \u0437\u0430 \u0442\u043e\u0431\u043e\u0439.)</em>',
-    'plan-wyd-3': '\u2014 \u0440\u0435\u0448\u0430\u0435\u0448\u044c, \u043d\u0430 \u0447\u0442\u043e \u0438\u0434\u0442\u0438, \u0430 \u0447\u0442\u043e \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u0442\u044c. \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f \u2014 \u0442\u0432\u043e\u0451.',
-    'plan-wtw': '\u041f\u041e\u0427\u0415\u041c\u0423 \u0422\u0410\u041a',
-    'plan-wtw-text': '\u043d\u0430\u0441 \u043c\u043d\u043e\u0433\u043e, \u0443 \u0432\u0441\u0435\u0445 \u0440\u0430\u0437\u043d\u044b\u0439 \u0440\u0438\u0442\u043c. \u043a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0445 \u0437\u0430\u0432\u0442\u0440\u0430\u043a\u043e\u0432-\u043e\u0431\u0435\u0434\u043e\u0432-\u0443\u0436\u0438\u043d\u043e\u0432 \u2014 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0438, \u0447\u0435\u0441\u0442\u043d\u043e, \u043d\u0435 \u043d\u0443\u0436\u043d\u043e. \u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c \u0432\u043e\u0437\u0434\u0443\u0445 \u0434\u043b\u044f \u0441\u043b\u0443\u0447\u0430\u0439\u043d\u043e\u0433\u043e: \u0443\u0436\u0438\u043d\u043e\u0432 \u043f\u043e \u0442\u0440\u043e\u0435, \u043f\u0440\u043e\u0433\u0443\u043b\u043e\u043a \u0434\u043e \u0443\u0442\u0440\u0430, \u0432\u043d\u0435\u043f\u043b\u0430\u043d\u043e\u0432\u044b\u0445 \u043f\u043b\u043e\u0432-\u043f\u0430\u0443\u0437.',
-    'plan-pay': '(\u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438 \u043c\u044b \u0431\u0435\u0440\u0451\u043c \u043d\u0430 \u0441\u0435\u0431\u044f \u2014 \u043f\u043e\u0442\u043e\u043c \u043f\u043e\u0434\u0435\u043b\u0438\u043c. \u043f\u043e\u0435\u0437\u0434\u0430, \u043e\u0442\u0435\u043b\u0438, \u0432\u0441\u0451 \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u2014 \u0442\u044b \u0441\u0430\u043c.)',
-    'plan-questions': '\u0432\u043e\u043f\u0440\u043e\u0441\u044b, \u0441\u043e\u043c\u043d\u0435\u043d\u0438\u044f, \u0438\u0434\u0435\u0438 \u2014 <a href="https://t.me/parapam_tg" target="_blank" class="text-[#FF46CA] hover:underline">\u043f\u0438\u0448\u0438 \u043d\u0430\u0441\u0442\u0435</a>.',
-    'plan-attention': '\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435 // DIK_KAT',
-    'plan-deadlines': '<span class="text-secondary">\u0414\u0435\u0434\u043b\u0430\u0439\u043d\u044b</span> \u2014 \u0441\u0435\u0440\u044c\u0451\u0437\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c.',
-    'plan-train-title': '\u0411\u0418\u041b\u0415\u0422\u042b \u041d\u0410 \u041f\u041e\u0415\u0417\u0414',
-    'plan-train-text': '\u0441\u0440\u043e\u0447\u043d\u043e: \u0431\u0438\u043b\u0435\u0442\u044b \u0440\u0430\u0437\u043b\u0435\u0442\u0430\u044e\u0442\u0441\u044f. \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0431\u0438\u043b\u0435\u0442\u043e\u0432 \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u0437\u0430 45 \u0434\u043d\u0435\u0439 \u0434\u043e \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f. \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u043c \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 <span class="text-[#FF9400] font-mono">\u043a\u043e\u043d\u0446\u0435 \u0430\u043f\u0440\u0435\u043b\u044f</span>. \u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u0430 railway.uz.',
-    'plan-train-link': '\u2192 \u0441\u043c. \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0438\u043d\u0444\u043e',
-    'plan-stay-title': '\u0413\u0414\u0415 \u041c\u042b \u0416\u0418\u0412\u0401\u041c',
-    'plan-stay-soon': '\u0441\u043a\u043e\u0440\u043e',
-    'plan-stay-text': '\u043c\u044b \u0440\u0430\u0441\u0441\u043a\u0430\u0436\u0435\u043c, \u0433\u0434\u0435 \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c\u0441\u044f, \u0438 \u043f\u043e\u0434\u043a\u0438\u043d\u0435\u043c \u043f\u0430\u0440\u0443 \u043e\u043f\u0446\u0438\u0439 \u0440\u044f\u0434\u043e\u043c. <em>(\u043f\u043e\u043c\u043e\u0436\u0435\u043c \u0441\u043e\u0432\u0435\u0442\u043e\u043c \u2014 \u0431\u0440\u043e\u043d\u044c \u0437\u0430 \u0442\u043e\u0431\u043e\u0439.)</em>',
-    'plan-stay-note': '(\u0441\u043a\u043e\u0440\u043e \u0440\u0430\u0441\u0441\u043a\u0430\u0436\u0435\u043c.)',
-    'plan-city1-label': '01 / \u0421\u0422\u041e\u041b\u0418\u0426\u0410',
-    'plan-city1-dates': '9\u201312 \u0418\u042e\u041d',
-    'plan-city1-text': '\u043f\u0440\u0438\u043b\u0451\u0442. \u0434\u0435\u043d\u044c \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f. \u0441\u043e\u0432\u0435\u0442\u0441\u043a\u0438\u0435 \u043c\u043e\u0437\u0430\u0438\u043a\u0438 \u0432 \u043c\u0435\u0442\u0440\u043e. \u043f\u043b\u043e\u0432 \u0432 7 \u0443\u0442\u0440\u0430. \u0438\u0437 \u043a\u0430\u0437\u0430\u043d\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u043c \u0441 \u0442\u0435\u0431\u044f.',
-    'plan-city2-label': '02 / \u0413\u0415\u0420\u041e\u0419 \u0428\u0401\u041b\u041a\u041e\u0412\u041e\u0413\u041e \u041f\u0423\u0422\u0418',
-    'plan-city2-dates': '12\u201314 \u0418\u042e\u041d',
-    'plan-city2-text': '\u0420\u0435\u0433\u0438\u0441\u0442\u0430\u043d. \u0431\u0438\u0440\u044e\u0437\u043e\u0432\u044b\u0435 \u043a\u0443\u043f\u043e\u043b\u0430, \u043c\u0438\u043d\u0430\u0440\u0435\u0442\u044b, \u043f\u043b\u0438\u0442\u043a\u0430 \u2014 \u0441\u0442\u043e\u043b\u044c\u043a\u043e \u0441\u0438\u043d\u0435\u0433\u043e \u0446\u0432\u0435\u0442\u0430 \u0442\u044b \u0435\u0449\u0451 \u043d\u0435 \u0432\u0438\u0434\u0435\u043b. \u0441\u0430\u043c\u0430\u0440\u043a\u0430\u043d\u0434\u0441\u043a\u0438\u0439 \u0445\u043b\u0435\u0431 \u043d\u0430\u0441\u0442\u043e\u043b\u044c\u043a\u043e \u043a\u0443\u043b\u044c\u0442\u043e\u0432\u044b\u0439, \u0447\u0442\u043e \u0435\u0433\u043e \u0432\u0435\u0437\u0443\u0442 \u0434\u043e\u043c\u043e\u0439 \u0447\u0435\u0440\u0435\u0437 \u043f\u043e\u043b\u0441\u0442\u0440\u0430\u043d\u044b. \u0432 \u0440\u0443\u0447\u043d\u043e\u0439 \u043a\u043b\u0430\u0434\u0438. (\u043c\u044b \u0442\u043e\u0436\u0435 \u043f\u043e\u0432\u0435\u0437\u0451\u043c.)',
-    'plan-city3-label': '03 / \u0414\u0423\u0428\u0410 \u0421\u0422\u0410\u0420\u041e\u0413\u041e \u041c\u0418\u0420\u0410',
-    'plan-city3-dates': '14\u201315 \u0418\u042e\u041d',
-    'plan-city3-text': '140 \u043f\u0430\u043c\u044f\u0442\u043d\u0438\u043a\u043e\u0432. \u043d\u0438 \u043e\u0434\u043d\u043e\u0439 \u043c\u0430\u0448\u0438\u043d\u044b \u0432 \u0441\u0442\u0430\u0440\u043e\u043c \u0433\u043e\u0440\u043e\u0434\u0435. \u0442\u044b \u0437\u0430\u0431\u0443\u0434\u0435\u0448\u044c, \u043a\u0430\u043a\u043e\u0439 \u0441\u0435\u0439\u0447\u0430\u0441 \u0433\u043e\u0434.',
-    'plan-explore': '\u2192 \u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c',
-    'plan-annotation': '\u0442\u044b \u0437\u0430\u0445\u043e\u0447\u0435\u0448\u044c \u0441\u044e\u0434\u0430 \u043f\u0435\u0440\u0435\u0435\u0445\u0430\u0442\u044c. (\u043c\u044b \u043d\u0435 \u043d\u0435\u0441\u0451\u043c \u0437\u0430 \u044d\u0442\u043e \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0441\u0442\u044c.)',
-    'plan-schema-arrival-label': '\u041f\u0420\u0418\u041b\u0401\u0422',
-    'plan-schema-departure-label': '\u0412\u042b\u041b\u0415\u0422',
-    'plan-schema-arrival-loc': '\u0422\u0410\u0428\u041a\u0415\u041d\u0422 \u00b7 9 \u0418\u042e\u041d',
-    'plan-schema-departure-loc': '\u0422\u0410\u0428\u041a\u0415\u041d\u0422 \u00b7 16 \u0418\u042e\u041d',
-    'plan-schema-meta': '[ 7 \u0414\u041d\u0415\u0419 \u00b7 3 \u0413\u041e\u0420\u041e\u0414\u0410 \u00b7 1100 \u041a\u041c ]',
-    'plan-schema-t1-date': '12 \u0418\u042e\u041d',
-    'plan-schema-t1-time': '2\u0427 10\u041c',
-    'plan-schema-t2-date': '14 \u0418\u042e\u041d',
-    'plan-schema-t2-time': '1\u0427 30\u041c',
-    'plan-schema-t3-date': '15 \u0418\u042e\u041d',
-    'plan-schema-t3-time': '4\u0427 15\u041c',
-    'plan-schema-c1-dates': '[ 9\u201312 \u0418\u042e\u041d ]',
-    'plan-schema-c2-dates': '[ 12\u201314 \u0418\u042e\u041d ]',
-    'plan-schema-c3-dates': '[ 14\u201315 \u0418\u042e\u041d ]',
-    'plan-schema-c4-dates': '[ 16 \u0418\u042e\u041d \u2708 ]',
-    'plan-arrival': '\u041f\u0420\u0418\u041b\u0401\u0422 \u0412 \u0422\u0410\u0428\u041a\u0415\u041d\u0422',
-    'plan-departure': '\u0412\u042b\u041b\u0415\u0422 \u2014 \u0422\u0410\u0428\u041a\u0415\u041d\u0422',
-    'plan-train1': '\u0410\u0424\u0420\u041e\u0421\u042c\u0401\u0411 \u042d\u041a\u0421\u041f\u0420\u0415\u0421\u0421 [2\u0427 10\u041c]',
-    'plan-train2': '\u0410\u0424\u0420\u041e\u0421\u042c\u0401\u0411 \u042d\u041a\u0421\u041f\u0420\u0415\u0421\u0421 [1\u0427 30\u041c]',
-    'plan-train3': '\u0410\u0424\u0420\u041e\u0421\u042c\u0401\u0411 \u042d\u041a\u0421\u041f\u0420\u0415\u0421\u0421 [4\u0427 15\u041c] \u00b7 \u041e\u0411\u0420\u0410\u0422\u041d\u041e',
-    'bnav-home': '\u0416\u0414\u0423',
-    'bnav-plan': '\u041f\u041b\u0410\u041d',
-    'bnav-tas': '\u0422\u0410\u0428',
-    'bnav-sam': '\u0421\u0410\u041c',
-    'bnav-buk': '\u0411\u0423\u0425',
-    'bnav-info': '\u0418\u041d\u0424\u041e'
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+    try { localStorage.setItem('uzbek-bday-lang', lang); } catch(e) {}
   }
-};
-
-function applyLang(lang) {
-  var dict = translations[lang];
-  if (!dict) return;
-  document.querySelectorAll('[data-i18n]').forEach(function(el) {
-    var key = el.getAttribute('data-i18n');
-    if (dict[key] !== undefined) {
-      el.innerHTML = dict[key];
-    }
-  });
-  document.documentElement.lang = lang;
-  document.body.classList.toggle('lang-ru', lang === 'ru');
-  document.title = lang === 'ru' ? '\u041f\u041b\u0410\u041d \u2014 \u0423\u0417\u0411\u0415\u041a \u0414\u0420' : 'PLAN - UZBEK BDAY';
-  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
-  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
-}
-
-function setLang(lang) {
-  localStorage.setItem('uzbekbday-lang', lang);
-  applyLang(lang);
-}
-
-(function() {
-  var saved = localStorage.getItem('uzbekbday-lang');
-  if (saved && translations[saved]) {
-    applyLang(saved);
-  }
-})();
+  try {
+    var saved = localStorage.getItem('uzbek-bday-lang');
+    if (saved === 'ru') setLang('ru');
+  } catch(e) {}
 </script>
-</body></html>
+</body>
+</html>
