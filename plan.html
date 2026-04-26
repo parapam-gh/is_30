@@ -551,7 +551,7 @@
         <span class="font-mono text-xs font-bold text-pink">01</span>
         <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40"><span class="en">[ CAPITAL ]</span><span class="ru">[ СТОЛИЦА ]</span></span>
       </div>
-      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5">
+      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5" style="aspect-ratio:3/4">
         <div class="w-full h-full overflow-hidden">
           <img class="w-full h-full object-cover" alt="Soviet-era architecture in Tashkent" src="images/tashkent.jpg"/>
         </div>
@@ -569,7 +569,7 @@
         <span class="font-mono text-xs font-bold text-green">02</span>
         <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40"><span class="en">[ SILK ROAD HERO ]</span><span class="ru">[ ШЁЛКОВЫЙ ПУТЬ ]</span></span>
       </div>
-      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5">
+      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5" style="aspect-ratio:3/4">
         <div class="w-full h-full overflow-hidden">
           <img class="w-full h-full object-cover" alt="Registan Square Samarkand" src="images/samarkand.jpg"/>
         </div>
@@ -587,7 +587,7 @@
         <span class="font-mono text-xs font-bold text-orange">03</span>
         <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40"><span class="en">[ OLD WORLD SOUL ]</span><span class="ru">[ СТАРЫЙ ГОРОД ]</span></span>
       </div>
-      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5">
+      <div class="aspect-[3/4] mb-6 border border-dashed border-ink/20 p-0.5" style="aspect-ratio:3/4">
         <div class="w-full h-full overflow-hidden">
           <img class="w-full h-full object-cover" alt="Old Bukhara streets and domes" src="images/bukhara.jpg"/>
         </div>
@@ -632,10 +632,10 @@
     document.body.classList.add('lang-' + lang);
     document.getElementById('lang-en').classList.toggle('active', lang === 'en');
     document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
-    try { localStorage.setItem('uzbek-bday-lang', lang); } catch(e) {}
+    try { localStorage.setItem('uzbekbday-lang', lang); } catch(e) {}
   }
   try {
-    var saved = localStorage.getItem('uzbek-bday-lang');
+    var saved = localStorage.getItem('uzbekbday-lang');
     if (saved === 'ru') setLang('ru');
   } catch(e) {}
 </script>
