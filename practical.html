@@ -139,29 +139,41 @@
 </head>
 <body class="bg-background text-on-surface font-body girikh-bg min-h-screen overflow-x-hidden">
 <script>(function(){var s=localStorage.getItem("uzbekbday-lang");if(s==="ru")document.body.classList.add("lang-ru");})();</script>
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-[#FCF9F4] border-b-[1px] border-dashed border-[#1C1C19]">
-<div class="text-3xl font-black text-[#FF46CA] italic font-['Epilogue'] tracking-tighter uppercase">
-            UZBEK BDAY
-        </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="index.html"><span data-lang="en">INVITATION</span><span data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
-<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="plan.html"><span data-lang="en">PLAN</span><span data-lang="ru">ПЛАН</span></a>
-<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="tashkent.html"><span data-lang="en">TASHKENT</span><span data-lang="ru">ТАШКЕНТ</span></a>
-<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="samarkand.html"><span data-lang="en">SAMARKAND</span><span data-lang="ru">САМАРКАНД</span></a>
-<a class="text-[#1C1C19] font-['Space_Mono'] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform uppercase text-sm" href="bukhara.html"><span data-lang="en">BUKHARA</span><span data-lang="ru">БУХАРА</span></a>
-<a class="text-[#FF46CA] underline decoration-wavy decoration-1 underline-offset-4 font-['Space_Mono'] uppercase text-sm" href="practical.html"><span data-lang="en">PRACTICAL</span><span data-lang="ru">ИНФО</span></a>
+<!-- NAV (unified) -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 bg-[#FCF9F4] border-b border-[#1C1C19]/20">
+  <a href="index.html" class="font-['Epilogue'] text-xl md:text-3xl font-black italic tracking-tighter uppercase text-[#FF46CA]">UZBEK BDAY</a>
+  <div class="hidden md:flex gap-7 items-center">
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="plan.html"><span class="en" data-lang="en">PLAN</span><span class="ru" data-lang="ru">ПЛАН</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="tashkent.html"><span class="en" data-lang="en">TASHKENT</span><span class="ru" data-lang="ru">ТАШКЕНТ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="samarkand.html"><span class="en" data-lang="en">SAMARKAND</span><span class="ru" data-lang="ru">САМАРКАНД</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html"><span class="en" data-lang="en">BUKHARA</span><span class="ru" data-lang="ru">БУХАРА</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm font-bold tracking-tighter text-[#FF46CA] border-b-2 border-[#FF46CA] pb-1" href="practical.html"><span class="en" data-lang="en">PRACTICAL</span><span class="ru" data-lang="ru">ДЕТАЛИ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
+  </div>
+  <div class="flex items-center gap-3">
+    <div class="lang-toggle">
+      <button id="lang-en" onclick="setLang('en')" class="active lang-active">EN</button>
+      <button id="lang-ru" onclick="setLang('ru')">РУ</button>
+    </div>
+    <button id="menu-btn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" class="md:hidden flex items-center justify-center w-10 h-10 bg-[#FF46CA] text-white border border-[#1C1C19] sticker-4 pressure-btn">
+      <svg id="menu-icon-open" viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6 H21"/><path d="M3 12 H21"/><path d="M3 18 H21"/></svg>
+      <svg id="menu-icon-close" viewBox="0 0 24 24" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5 L19 19"/><path d="M19 5 L5 19"/></svg>
+    </button>
+  </div>
 </nav>
-<div class="flex items-center gap-3">
-<div class="lang-toggle">
-<button id="lang-en" onclick="setLang('en')" class="lang-active">EN</button>
-<button id="lang-ru" onclick="setLang('ru')">RU</button>
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-x-0 top-[65px] z-40 md:hidden hidden bg-[#FCF9F4] border-b border-[#1C1C19]/20">
+  <div class="flex flex-col px-5 py-4 gap-1">
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="plan.html"><span class="en" data-lang="en">PLAN</span><span class="ru" data-lang="ru">ПЛАН</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="tashkent.html"><span class="en" data-lang="en">TASHKENT</span><span class="ru" data-lang="ru">ТАШКЕНТ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="samarkand.html"><span class="en" data-lang="en">SAMARKAND</span><span class="ru" data-lang="ru">САМАРКАНД</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="bukhara.html"><span class="en" data-lang="en">BUKHARA</span><span class="ru" data-lang="ru">БУХАРА</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 text-[#FF46CA] font-bold" href="practical.html"><span class="en" data-lang="en">PRACTICAL</span><span class="ru" data-lang="ru">ДЕТАЛИ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
+  </div>
 </div>
-<a class="rsvp-link" style="cursor:pointer"><button class="bg-primary-container text-white px-6 py-2 font-['Epilogue'] font-black uppercase tracking-tighter sticker-4 border border-on-surface pressure-btn">
-            RSVP
-        </button></a>
-</div>
-</header>
 <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
 <!-- Hero Section -->
 <div class="relative w-full lg:w-1/2">
@@ -252,67 +264,14 @@
 </div>
 </footer>
 <!-- Mobile Navigation (Semantic Rule) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface border-t border-on-surface/10 px-4 py-3 flex justify-around items-center z-50">
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-on-surface opacity-50" data-icon="home">home</span>
-<span class="font-mono text-[8px]">INVITATION</span>
-</button>
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-on-surface opacity-50" data-icon="map">map</span>
-<span class="font-mono text-[8px]">PLAN</span>
-</button>
-<button class="flex flex-col items-center gap-1">
-<span class="material-symbols-outlined text-primary-container" data-icon="info">info</span>
-<span class="font-mono text-[8px] text-primary-container">INFO</span>
-</button>
-</nav>
+
 <script>
-document.querySelectorAll(".rsvp-link").forEach(function(el){
-  el.addEventListener("click",function(){
-    window.open("https://t.me/"+"parapam_tg","_blank");
-  });
-});
-function setLang(lang) {
-  localStorage.setItem('uzbekbday-lang', lang);
-  document.body.classList.toggle('lang-ru', lang === 'ru');
-  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
-  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
+function toggleMenu(){
+  var m=document.getElementById('mobile-menu'),b=document.getElementById('menu-btn');
+  var open=m.classList.toggle('hidden')===false;
+  b.setAttribute('aria-expanded',open?'true':'false');
+  document.getElementById('menu-icon-open').classList.toggle('hidden',open);
+  document.getElementById('menu-icon-close').classList.toggle('hidden',!open);
 }
-(function() {
-  var saved = localStorage.getItem('uzbekbday-lang');
-  if (saved === 'ru') setLang('ru');
-})();
 </script>
-
-
-<!-- Bottom Nav (mobile only) -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#FCF9F4]/95 backdrop-blur-md border-t border-[#1C1C19]/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
-<a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">home</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors"><span data-lang="en">HOME</span><span data-lang="ru">ЖДУ</span></span>
-</a>
-<a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors"><span data-lang="en">PLAN</span><span data-lang="ru">ПЛАН</span></span>
-</a>
-<a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">apartment</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors"><span data-lang="en">TAS</span><span data-lang="ru">ТАШ</span></span>
-</a>
-<a href="samarkand.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">mosque</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors"><span data-lang="en">SAM</span><span data-lang="ru">САМ</span></span>
-</a>
-<a href="bukhara.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">account_balance</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#1C1C19]/40 group-hover:text-[#FF46CA] transition-colors"><span data-lang="en">BUK</span><span data-lang="ru">БУХ</span></span>
-</a>
-<a href="practical.html" class="flex flex-col items-center gap-0.5 group py-1">
-<span class="material-symbols-outlined text-[#FF46CA] group-hover:text-[#FF46CA] transition-colors" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">checklist</span>
-<span class="font-['Space_Mono'] text-[8px] uppercase tracking-tight text-[#FF46CA] font-bold group-hover:text-[#FF46CA] transition-colors"><span data-lang="en">INFO</span><span data-lang="ru">ИНФО</span></span>
-<div class="h-[2px] w-3 bg-[#FF46CA] mt-0.5 rounded-full"></div>
-</a>
-</nav>
-<!-- Spacer so content doesn't hide behind bottom nav on mobile -->
-<div class="h-20 md:hidden"></div>
 </body></html>

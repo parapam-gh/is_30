@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>UZBEK BDAY · MAPS</title>
+<title>MAPS · UZBEK BDAY</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -31,37 +31,103 @@
   };
 </script>
 <style>
-  body { font-family: "Space Grotesk", sans-serif; background: #FCF9F4; color: #1C1C19; position: relative; }
+  body { font-family: "Space Grotesk", sans-serif; background: #FCF9F4; color: #1C1C19; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
 
-  .watermark { position: fixed; pointer-events: none; opacity: 0.05; z-index: 0; }
-  .watermark-tl { top: 80px; left: -100px; width: 360px; transform: rotate(15deg); }
-  .watermark-br { bottom: -120px; right: -120px; width: 460px; transform: rotate(-22deg); }
-
-  body > nav, body > main, body > footer { position: relative; z-index: 10; }
+  .girih-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231C1C19' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z'/%3E%3Cpath d='M40 14 L66 40 L40 66 L14 40 Z'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+  }
 
   .sticker-4  { box-shadow: 4px 4px 0 0 #1C1C19; }
   .sticker-6  { box-shadow: 6px 6px 0 0 #1C1C19; }
+  .sticker-8  { box-shadow: 8px 8px 0 0 #1C1C19; }
   .sticker-pink   { box-shadow: 6px 6px 0 0 #FF46CA; }
   .sticker-green  { box-shadow: 6px 6px 0 0 #00CB8D; }
   .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
 
-  .pressure-btn { transition: transform .25s ease, opacity .3s ease, text-shadow .3s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; display: inline-block; }
-  .pressure-btn:hover { transform: scale(1.1) rotate(-2deg); }
+  .shaky-line { border-bottom: 1px solid #1C1C19; position: relative; }
+  .shaky-line::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 1px;
+    background: #1C1C19; transform: skewY(0.2deg);
+  }
+
+  .pressure-btn { transition: transform .15s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; }
   .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
+
+  .link-wavy { color: #FF46CA; text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: all .2s ease; }
+  .link-wavy:hover { color: #00CB8D; }
 
   .nav-link { transition: all .2s ease; display: inline-block; }
   .nav-link:hover { transform: skewX(-2deg); color: #00CB8D; }
 
-  /* pin-diamond marker accent (язык меток на карте) */
-  .pin-dot { display: inline-block; border: 1.5px solid #1C1C19; transform: rotate(45deg); }
-  .map-btn { transition: transform .2s ease, box-shadow .2s ease; }
-  .map-btn:hover { transform: translate(-2px,-2px); }
-  .map-btn:active { transform: translate(1px,1px); }
-
-  .girikh-bg {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 10 L50 30 L30 50 L10 30 Z' fill='none' stroke='%231C1C19' stroke-width='0.5' opacity='0.06'/%3E%3C/svg%3E");
+  /* Divider B — girih line + pink diamond (major section breaks) */
+  .div-girih { display:flex; align-items:center; gap:1rem; }
+  .div-girih::before, .div-girih::after {
+    content:''; flex:1; height:8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 4 L4 0 L8 4 L12 0 L16 4 L12 8 L8 4 L4 8 Z' fill='none' stroke='%231C1C19' stroke-width='0.8' opacity='0.7'/%3E%3C/svg%3E");
+    background-repeat: repeat-x; background-size: 16px 8px;
   }
+  .div-girih .diamond {
+    width:10px; height:10px; background:#FF46CA; border:1px solid #1C1C19;
+    transform: rotate(45deg); box-shadow: 2px 2px 0 0 #1C1C19;
+  }
+
+  /* Divider C — dashed rule + mono tag (subsections) */
+  .div-tag { display:flex; align-items:center; gap:.75rem; }
+  .div-tag::before, .div-tag::after {
+    content:''; flex:1; border-top: 1px dashed rgba(28,28,25,0.35);
+  }
+  .div-tag .tag {
+    font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.25em;
+    text-transform:uppercase; font-weight:700; color:rgba(28,28,25,.55);
+    padding: 2px 10px; border: 1px solid rgba(28,28,25,.35);
+    background:#FCF9F4; white-space:nowrap;
+  }
+
+  /* Divider E — thread + caveat glyph (small pauses) */
+  .div-thread { display:flex; align-items:center; gap:1rem; }
+  .div-thread::before, .div-thread::after {
+    content:''; flex:1; height:1px; background:#1C1C19; opacity:.4;
+  }
+  .div-thread .knot { color:#FF46CA; font-size:28px; line-height:1; transform: rotate(-8deg); }
+
+  /* Map pin — square rotated, pulsing */
+  .map-pin-dot { width: 18px; height: 18px; border: 1.5px solid #1C1C19; box-shadow: 3px 3px 0 0 rgba(28,28,25,.35); }
+  .pin-pulse { animation: pin-pulse 2.5s ease-in-out infinite; transform-origin: center; }
+  @keyframes pin-pulse {
+    0%,100% { transform: rotate(45deg) scale(1); }
+    50%     { transform: rotate(45deg) scale(1.16); }
+  }
+  .draw-route { stroke-dasharray: 7 7; animation: draw-in 3.2s ease-in-out forwards; }
+  @keyframes draw-in { from { stroke-dashoffset: 2600; } to { stroke-dashoffset: 0; } }
+
+  /* Place row hover */
+  .place-row { transition: background .2s ease, transform .2s ease; }
+  .place-row:hover { background: #fff; transform: translateX(4px); }
+
+  /* Filter chip */
+  .chip { transition: all .15s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; user-select: none; }
+  .chip[aria-pressed="false"] { opacity: .4; }
+  .chip[aria-pressed="false"] .chip-sw { background: transparent !important; }
+
+  .photo-tbd {
+    background:
+      repeating-linear-gradient(45deg, rgba(28,28,25,0.04) 0 12px, transparent 12px 24px),
+      #F0EDE9;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    letter-spacing: 0.25em; color: rgba(28,28,25,0.5);
+    text-transform: uppercase; font-weight: 700;
+  }
+
+  .hand-annotation { font-family: "Caveat", cursive; font-weight: 700; color: #FF46CA; transform: rotate(-3deg); display: inline-block; }
+
+  .en, .ru { display: inline; }
+  body.lang-ru .en { display: none; }
+  body.lang-en .ru { display: none; }
+  .en-block, .ru-block { display: block; }
+  body.lang-ru .en-block { display: none; }
+  body.lang-en .ru-block { display: none; }
 
   .lang-toggle { display: inline-flex; border: 1px solid #1C1C19; box-shadow: 3px 3px 0 0 #1C1C19; }
   .lang-toggle button {
@@ -72,184 +138,152 @@
   .lang-toggle button.active { background: #FF46CA; color: #fff; }
   .lang-toggle button:not(.active) { background: #fff; color: #1C1C19; }
   .lang-toggle button:not(.active):hover { background: #F0EDE9; }
-
-  .en, .ru { display: inline; }
-  body.lang-ru .en { display: none; }
-  body.lang-en .ru { display: none; }
-
-  .wrap { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 1.25rem; padding-right: 1.25rem; }
-  @media (min-width: 768px) { .wrap { padding-left: 3rem; padding-right: 3rem; } }
 </style>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3c6a24999d494e6289fd1b79d517476e"}'></script>
-<!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3c6a24999d494e6289fd1b79d517476e"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
-<body class="bg-cream text-ink overflow-x-hidden girikh-bg lang-en selection:bg-pink selection:text-white">
+<body class="bg-cream text-ink overflow-x-hidden girih-bg lang-en selection:bg-pink selection:text-white">
 <script>(function(){var s=localStorage.getItem("uzbekbday-lang");if(s==="ru"){document.body.classList.remove("lang-en");document.body.classList.add("lang-ru");}})();</script>
 
-<svg class="watermark watermark-tl" viewBox="0 0 100 100" fill="none" stroke="#1C1C19" stroke-width="0.4">
-  <path d="M50 5 L75 15 L85 40 L75 65 L50 75 L25 65 L15 40 L25 15 Z M50 18 L66 24 L72 40 L66 56 L50 62 L34 56 L28 40 L34 24 Z"/>
-</svg>
-<svg class="watermark watermark-br" viewBox="0 0 100 100" fill="none" stroke="#1C1C19" stroke-width="0.4">
-  <rect x="20" y="20" width="60" height="60"/>
-  <rect x="20" y="20" width="60" height="60" transform="rotate(45 50 50)"/>
-</svg>
-
-<!-- Nav -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-cream border-b border-ink/20">
-  <a href="index.html" class="font-headline text-3xl font-black italic tracking-tighter uppercase text-pink">UZBEK BDAY</a>
-  <div class="hidden md:flex gap-8 items-center">
-    <a class="nav-link font-mono uppercase text-sm" href="index.html"><span class="en">INVITATION</span><span class="ru">ПРИГЛАШЕНИЕ</span></a>
-    <a class="nav-link font-mono uppercase text-sm" href="plan.html"><span class="en">PLAN</span><span class="ru">ПЛАН</span></a>
-    <a class="nav-link font-mono uppercase text-sm" href="tashkent.html">TASHKENT</a>
-    <a class="nav-link font-mono uppercase text-sm" href="samarkand.html">SAMARKAND</a>
-    <a class="nav-link font-mono uppercase text-sm" href="bukhara.html">BUKHARA</a>
-    <a class="nav-link font-mono uppercase text-sm" href="practical.html"><span class="en">PRACTICAL</span><span class="ru">ДЕТАЛИ</span></a>
-    <a class="text-pink border-b-2 border-pink pb-1 font-mono uppercase text-sm font-bold tracking-tighter" href="map.html"><span class="en">MAPS</span><span class="ru">КАРТА</span></a>
+<!-- NAV (unified) -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 bg-[#FCF9F4] border-b border-[#1C1C19]/20">
+  <a href="index.html" class="font-['Epilogue'] text-xl md:text-3xl font-black italic tracking-tighter uppercase text-[#FF46CA]">UZBEK BDAY</a>
+  <div class="hidden md:flex gap-7 items-center">
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="plan.html"><span class="en" data-lang="en">PLAN</span><span class="ru" data-lang="ru">ПЛАН</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="tashkent.html"><span class="en" data-lang="en">TASHKENT</span><span class="ru" data-lang="ru">ТАШКЕНТ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="samarkand.html"><span class="en" data-lang="en">SAMARKAND</span><span class="ru" data-lang="ru">САМАРКАНД</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="bukhara.html"><span class="en" data-lang="en">BUKHARA</span><span class="ru" data-lang="ru">БУХАРА</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="practical.html"><span class="en" data-lang="en">PRACTICAL</span><span class="ru" data-lang="ru">ДЕТАЛИ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-sm font-bold tracking-tighter text-[#FF46CA] border-b-2 border-[#FF46CA] pb-1" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
   </div>
   <div class="flex items-center gap-3">
     <div class="lang-toggle">
-      <button id="lang-en" onclick="setLang('en')" class="active">EN</button>
-      <button id="lang-ru" onclick="setLang('ru')">RU</button>
+      <button id="lang-en" onclick="setLang('en')" class="active lang-active">EN</button>
+      <button id="lang-ru" onclick="setLang('ru')">РУ</button>
     </div>
-    <a href="index.html#cta" style="cursor:pointer">
-      <button class="bg-pink text-white px-6 py-2 font-headline font-black uppercase tracking-tighter sticker-4 border border-ink pressure-btn">RSVP</button>
+    <button id="menu-btn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" class="md:hidden flex items-center justify-center w-10 h-10 bg-[#FF46CA] text-white border border-[#1C1C19] sticker-4 pressure-btn">
+      <svg id="menu-icon-open" viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6 H21"/><path d="M3 12 H21"/><path d="M3 18 H21"/></svg>
+      <svg id="menu-icon-close" viewBox="0 0 24 24" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5 L19 19"/><path d="M19 5 L5 19"/></svg>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="fixed inset-x-0 top-[65px] z-40 md:hidden hidden bg-[#FCF9F4] border-b border-[#1C1C19]/20">
+  <div class="flex flex-col px-5 py-4 gap-1">
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="plan.html"><span class="en" data-lang="en">PLAN</span><span class="ru" data-lang="ru">ПЛАН</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="tashkent.html"><span class="en" data-lang="en">TASHKENT</span><span class="ru" data-lang="ru">ТАШКЕНТ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="samarkand.html"><span class="en" data-lang="en">SAMARKAND</span><span class="ru" data-lang="ru">САМАРКАНД</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="bukhara.html"><span class="en" data-lang="en">BUKHARA</span><span class="ru" data-lang="ru">БУХАРА</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="practical.html"><span class="en" data-lang="en">PRACTICAL</span><span class="ru" data-lang="ru">ДЕТАЛИ</span></a>
+    <a class="font-['Space_Mono'] uppercase text-base py-3 text-[#FF46CA] font-bold" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
+  </div>
+</div>
+
+<main class="pt-24 md:pt-32 pb-24 px-5 md:px-12 max-w-7xl mx-auto">
+
+  <!-- Page tag -->
+  <div class="mb-8">
+    <p class="font-mono text-xs tracking-widest uppercase text-ink/60">
+      <span class="en">[ MAPS · TAS / SAM / BUK ]</span>
+      <span class="ru">[ КАРТА · ТАШ / САМ / БУХ ]</span>
+    </p>
+  </div>
+
+  <!-- HEADLINE -->
+  <div class="mb-12 md:mb-16 max-w-5xl">
+    <h1 class="font-headline font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.85] uppercase mb-6">
+      <span class="en">THE <span class="text-pink italic">MAP</span>.<br/>FOR THE MAP PEOPLE.</span>
+      <span class="ru"><span class="text-pink italic">КАРТА</span>.<br/>ДЛЯ ЛЮБИТЕЛЕЙ <span class="font-hand lowercase text-5xl sm:text-6xl md:text-7xl text-orange tracking-normal" style="text-transform:none">(карт)</span></span>
+    </h1>
+    <p class="font-body text-xl md:text-2xl text-ink/70 leading-snug italic max-w-3xl en">
+      every spot worth the detour across Tashkent, Samarkand &amp; Bukhara — restaurants, bazaars, monuments. <span class="text-ink/50">open it in your maps app and save it for the trip.</span>
+    </p>
+    <p class="font-body text-xl md:text-2xl text-ink/70 leading-snug italic max-w-3xl ru">все места по ташкенту, самарканду и бухаре, в одном месте — рестораны, базары, памятники.</p>
+  </div>
+
+  <!-- ══════════ TWO BUTTONS · GOOGLE / YANDEX ══════════ -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-12">
+    <a href="https://www.google.com/maps/d/viewer?mid=1HIPlXSqRza9QIJPQHCUvAEAGuaEW8vA" target="_blank" rel="noopener" class="flex items-center justify-between gap-4 bg-pink text-white border border-ink px-6 py-7 md:py-9 sticker-6 pressure-btn rotate-[-1deg] hover:rotate-0 transition-transform">
+      <span class="font-headline font-black uppercase tracking-tighter text-2xl md:text-3xl leading-none">GOOGLE MAPS</span>
+      <svg viewBox="0 0 24 24" class="w-7 h-7 md:w-9 md:h-9 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7 H17 V16"/></svg>
+    </a>
+    <a href="https://yandex.com/maps/?um=constructor%3A5b4e878a3b6ac0c3b04ffcc5bfe745c6df774bc20a2437162953ca4679cf5089&source=constructorLink" target="_blank" rel="noopener" class="flex items-center justify-between gap-4 bg-green text-ink border border-ink px-6 py-7 md:py-9 sticker-6 pressure-btn rotate-[1deg] hover:rotate-0 transition-transform">
+      <span class="font-headline font-black uppercase tracking-tighter text-2xl md:text-3xl leading-none"><span class="en">YANDEX MAPS</span><span class="ru">ЯНДЕКС.КАРТЫ</span></span>
+      <svg viewBox="0 0 24 24" class="w-7 h-7 md:w-9 md:h-9 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 L17 7"/><path d="M8 7 H17 V16"/></svg>
     </a>
   </div>
-</nav>
 
-<!-- Main -->
-<main class="min-h-[calc(100vh-65px)] pt-[96px] pb-24 flex flex-col justify-center">
-  <div class="wrap max-w-5xl w-full">
-
-    <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-pink mb-5">[ MAPS · 76 PINS · TAS / SAM / BUK ]</div>
-
-    <h1 class="font-headline font-black text-6xl sm:text-7xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-6">
-      <span class="en">THE MAP</span><span class="ru">КАРТА</span>
-    </h1>
-
-    <p class="font-body text-lg md:text-2xl text-ink/80 leading-snug max-w-3xl mb-4">
-      <span class="en">Every spot worth the detour across Tashkent, Samarkand &amp; Bukhara &mdash; restaurants, bazaars, monuments. Open it in your maps app and save it for the trip.</span>
-      <span class="ru">Все места по&nbsp;Ташкенту, Самарканду и&nbsp;Бухаре, ради которых стоит свернуть&nbsp;&mdash; рестораны, базары, памятники. Открой в&nbsp;своём приложении карт и&nbsp;сохрани к&nbsp;поездке.</span>
-    </p>
-
-    <p class="font-hand font-bold text-2xl md:text-3xl text-orange italic rotate-[-2deg] inline-block leading-none mb-10">
-      <span class="en">(same pins &mdash; pick your app)</span>
-      <span class="ru">(метки те&nbsp;же&nbsp;&mdash; выбирай своё приложение)</span>
-    </p>
-
-    <!-- Legend: three pin-diamonds = категории меток -->
-    <div class="flex flex-wrap gap-x-7 gap-y-3 mb-10">
-      <div class="flex items-center gap-2.5">
-        <span class="pin-dot w-4 h-4 bg-pink"></span>
-        <span class="font-mono text-xs uppercase tracking-widest text-ink/70"><span class="en">Sights</span><span class="ru">Достопримечательности</span></span>
+  <!-- Pin decoder — what the colours mean (no counts) -->
+  <div class="mb-16">
+    <div class="font-mono text-[10px] uppercase tracking-widest text-ink/45 mb-5 text-center"><span class="en">[ WHAT THE PINS MEAN ]</span><span class="ru">[ ЧТО ОЗНАЧАЮТ МЕТКИ ]</span></div>
+    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+      <div class="flex items-center gap-2.5 bg-white border border-ink px-4 py-2.5 sticker-4 rotate-[-1deg]">
+        <span class="w-3.5 h-3.5 bg-pink border border-ink shrink-0"></span>
+        <span class="material-symbols-outlined text-lg text-ink/70">account_balance</span>
+        <span class="font-headline font-black uppercase tracking-tighter text-sm"><span class="en">SIGHTS</span><span class="ru">МЕСТА</span></span>
       </div>
-      <div class="flex items-center gap-2.5">
-        <span class="pin-dot w-4 h-4 bg-orange"></span>
-        <span class="font-mono text-xs uppercase tracking-widest text-ink/70"><span class="en">Food</span><span class="ru">Еда</span></span>
+      <div class="flex items-center gap-2.5 bg-white border border-ink px-4 py-2.5 sticker-4 rotate-[1deg]">
+        <span class="w-3.5 h-3.5 bg-orange border border-ink shrink-0"></span>
+        <span class="material-symbols-outlined text-lg text-ink/70">restaurant</span>
+        <span class="font-headline font-black uppercase tracking-tighter text-sm"><span class="en">FOOD</span><span class="ru">ЕДА</span></span>
       </div>
-      <div class="flex items-center gap-2.5">
-        <span class="pin-dot w-4 h-4 bg-green"></span>
-        <span class="font-mono text-xs uppercase tracking-widest text-ink/70"><span class="en">Hotels</span><span class="ru">Отели</span></span>
+      <div class="flex items-center gap-2.5 bg-white border border-ink px-4 py-2.5 sticker-4 rotate-[-1deg]">
+        <span class="w-3.5 h-3.5 bg-green border border-ink shrink-0"></span>
+        <span class="material-symbols-outlined text-lg text-ink/70">bed</span>
+        <span class="font-headline font-black uppercase tracking-tighter text-sm"><span class="en">HOTELS</span><span class="ru">ОТЕЛИ</span></span>
       </div>
     </div>
-
-    <!-- Two platform buttons -->
-    <div class="grid sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl">
-
-      <!-- Google -->
-      <a href="https://www.google.com/maps/d/viewer?mid=1HIPlXSqRza9QIJPQHCUvAEAGuaEW8vA"
-         target="_blank" rel="noopener"
-         class="map-btn group block bg-pink text-white border border-ink p-7 sticker-4">
-        <div class="flex items-center justify-between mb-6">
-          <span class="pin-dot w-9 h-9 bg-white border-2"></span>
-          <span class="material-symbols-outlined text-3xl group-hover:translate-x-1 transition-transform">arrow_outward</span>
-        </div>
-        <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-white/70 mb-1">Google Maps</div>
-        <div class="font-headline font-black text-2xl md:text-3xl uppercase tracking-tighter leading-none">
-          <span class="en">Open in Google&nbsp;Maps</span><span class="ru">Открыть в&nbsp;Google&nbsp;Maps</span>
-        </div>
-      </a>
-
-      <!-- Yandex -->
-      <a href="https://yandex.com/maps/?um=constructor%3A5b4e878a3b6ac0c3b04ffcc5bfe745c6df774bc20a2437162953ca4679cf5089&source=constructorLink"
-         target="_blank" rel="noopener"
-         class="map-btn group block bg-green text-ink border border-ink p-7 sticker-4">
-        <div class="flex items-center justify-between mb-6">
-          <span class="pin-dot w-9 h-9 bg-ink border-2"></span>
-          <span class="material-symbols-outlined text-3xl group-hover:translate-x-1 transition-transform">arrow_outward</span>
-        </div>
-        <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 mb-1">Yandex Maps</div>
-        <div class="font-headline font-black text-2xl md:text-3xl uppercase tracking-tighter leading-none">
-          <span class="en">Open in Yandex&nbsp;Maps</span><span class="ru">Открыть в&nbsp;Яндекс.Картах</span>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="font-mono text-xs text-ink/60 mt-6 max-w-3xl leading-relaxed space-y-2">
-      <p class="flex gap-2.5">
-        <span class="pin-dot w-3 h-3 bg-pink shrink-0 mt-1"></span>
-        <span>
-          <span class="en"><b class="text-ink">Google</b> &mdash; open &amp; tap &ldquo;save&rdquo;: the whole map lands in your Saved &rarr; Maps.</span>
-          <span class="ru"><b class="text-ink">Google</b>&nbsp;&mdash; открой и&nbsp;нажми &laquo;сохранить&raquo;: вся карта ляжет в&nbsp;Сохранённое &rarr; Карты.</span>
-        </span>
-      </p>
-      <p class="flex gap-2.5">
-        <span class="pin-dot w-3 h-3 bg-green shrink-0 mt-1"></span>
-        <span>
-          <span class="en"><b class="text-ink">Yandex</b> &mdash; opens for viewing; bookmark the link or add it to your home screen (no &ldquo;save map&rdquo; on Yandex).</span>
-          <span class="ru"><b class="text-ink">Яндекс</b>&nbsp;&mdash; открывается на&nbsp;просмотр; добавь ссылку в&nbsp;закладки или на&nbsp;экран &laquo;Домой&raquo; (сохранить карту целиком Яндекс не&nbsp;умеет).</span>
-        </span>
-      </p>
-    </div>
-
-    <div class="mt-12">
-      <a href="plan.html" class="inline-flex items-center gap-2 font-mono text-sm uppercase text-ink border-b border-ink hover:text-pink hover:border-pink transition-colors pb-0.5">
-        <span class="en">&larr; back to plan</span><span class="ru">&larr; назад к&nbsp;плану</span>
-      </a>
-    </div>
-
   </div>
+
+  <!-- Divider C -->
+  <div class="div-tag mt-20 mb-12">
+    <span class="tag en">· how to save it ·</span>
+    <span class="tag ru">· как сохранить ·</span>
+  </div>
+
+  <!-- ══════════ INSTRUCTIONS ══════════ -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
+    <div class="bg-white border border-ink p-6 md:p-8 sticker-4">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-mono text-3xl text-pink font-bold">01</span>
+        <span class="font-headline font-black uppercase tracking-tighter text-xl">GOOGLE</span>
+      </div>
+      <p class="font-body text-base text-ink/75 leading-relaxed en">open &amp; tap <span class="font-bold text-ink">"save"</span> — the whole map lands in your <span class="font-mono text-sm">Saved → Maps</span>. it travels with you, offline-ish.</p>
+      <p class="font-body text-base text-ink/75 leading-relaxed ru">открой и нажми <span class="font-bold text-ink">«сохранить»</span> — вся карта ляжет в <span class="font-mono text-sm">Сохранённое → Карты</span>. поедет с тобой, почти оффлайн.</p>
+    </div>
+    <div class="bg-white border border-ink p-6 md:p-8 sticker-4">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-mono text-3xl text-green font-bold">02</span>
+        <span class="font-headline font-black uppercase tracking-tighter text-xl">YANDEX</span>
+      </div>
+      <p class="font-body text-base text-ink/75 leading-relaxed en">opens for viewing — <span class="font-bold text-ink">bookmark the link</span> or add it to your home screen. <span class="text-ink/50">(yandex won't save the whole map, but its driving is sharp in uzbekistan.)</span></p>
+      <p class="font-body text-base text-ink/75 leading-relaxed ru">открывается на просмотр — <span class="font-bold text-ink">добавь ссылку в закладки</span> или на экран «домой». <span class="text-ink/50">(целиком яндекс не сохранит, зато его навигация по узбекистану точная.)</span></p>
+    </div>
+  </div>
+
+  <!-- Divider E -->
+  <div class="div-thread mb-12"><span class="knot">✧</span></div>
+
+  <!-- back to plan -->
+  <div class="flex justify-center">
+    <a href="plan.html" class="inline-flex items-center gap-2 link-wavy font-mono uppercase text-sm font-bold no-underline group">
+      <svg viewBox="0 0 24 24" class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 L4 12 L11 19"/><path d="M4 12 H20"/></svg>
+      <span class="en">to the plan</span><span class="ru">к плану</span>
+    </a>
+  </div>
+
 </main>
 
-<!-- Footer -->
-<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-cream border-t-[1px] border-double border-ink">
-  <div class="font-mono text-xs uppercase tracking-widest text-ink">&copy; 2026 UZBEK BDAY ZINE</div>
-  <div class="font-headline text-lg font-black italic text-pink tracking-tighter uppercase">UZBEK BDAY</div>
-  <div class="flex gap-10">
-    <a class="font-mono text-xs uppercase tracking-widest text-ink hover:text-orange transition-colors" href="map.html">MAPS</a>
+<!-- FOOTER -->
+<footer class="w-full py-10 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-cream border-t border-double border-ink/60">
+  <div class="font-mono text-xs uppercase tracking-widest text-ink/60">© 2026 UZBEK BDAY ZINE</div>
+  <div class="font-headline text-xl font-black italic text-pink tracking-tighter uppercase">UZBEK BDAY</div>
+  <div class="flex items-center gap-2 font-mono text-[10px] tracking-widest text-ink/60">
+    <span class="en uppercase">made with love</span>
+    <span class="ru">сделано с любовью</span>
   </div>
 </footer>
-
-<!-- Bottom Nav (mobile) -->
-<nav class="fixed bottom-0 left-0 w-full bg-cream/95 backdrop-blur-md border-t border-ink/10 flex justify-around items-center py-2 px-1 z-50 md:hidden">
-  <a href="index.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-ink/40 group-hover:text-pink transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">home</span>
-    <span class="font-mono text-[8px] uppercase tracking-tight text-ink/40"><span class="en">HOME</span><span class="ru">ЖДУ</span></span>
-  </a>
-  <a href="plan.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-ink/40 group-hover:text-pink transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">map</span>
-    <span class="font-mono text-[8px] uppercase tracking-tight text-ink/40"><span class="en">PLAN</span><span class="ru">ПЛАН</span></span>
-  </a>
-  <a href="tashkent.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-ink/40 group-hover:text-pink transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">apartment</span>
-    <span class="font-mono text-[8px] uppercase tracking-tight text-ink/40"><span class="en">TAS</span><span class="ru">ТАШ</span></span>
-  </a>
-  <a href="map.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-pink" style="font-size:22px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">pin_drop</span>
-    <span class="font-mono text-[8px] uppercase tracking-tight text-pink font-bold"><span class="en">MAP</span><span class="ru">КАРТА</span></span>
-  </a>
-  <a href="bukhara.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-ink/40 group-hover:text-pink transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">account_balance</span>
-    <span class="font-mono text-[8px] uppercase tracking-tight text-ink/40"><span class="en">BUK</span><span class="ru">БУХ</span></span>
-  </a>
-  <a href="practical.html" class="flex flex-col items-center gap-0.5 group py-1">
-    <span class="material-symbols-outlined text-ink/40 group-hover:text-pink transition-colors" style="font-size:22px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;">checklist</span>
-    <span class="font-mono text-[8px] uppercase tracking-tight text-ink/40"><span class="en">INFO</span><span class="ru">ИНФО</span></span>
-  </a>
-</nav>
-<div class="h-20 md:hidden"></div>
 
 <script>
   function setLang(lang) {
@@ -263,7 +297,15 @@
     var saved = localStorage.getItem('uzbekbday-lang');
     if (saved === 'ru') setLang('ru');
   } catch(e) {}
-</script>
 
+  function toggleMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('menu-btn');
+    var open = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.getElementById('menu-icon-open').classList.toggle('hidden', open);
+    document.getElementById('menu-icon-close').classList.toggle('hidden', !open);
+  }
+</script>
 </body>
 </html>
