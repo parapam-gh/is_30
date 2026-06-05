@@ -1,137 +1,190 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>TASHKENT - UZBEK BDAY</title>
+<title>TASHKENT · UZBEK BDAY</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Space+Grotesk:wght@400;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#1C1C19', cream:'#FCF9F4', pink:'#FF46CA', green:'#00CB8D', orange:'#FF9400',
+          s1:'#F6F3EE', s2:'#F0EDE9', s3:'#EBE8E3', s4:'#E5E2DD',
+        },
+        borderRadius: { DEFAULT:'0px', lg:'0px', xl:'0px', full:'9999px' },
+        fontFamily: {
+          headline:['Epilogue','sans-serif'],
+          body:['"Space Grotesk"','sans-serif'],
+          mono:['"Space Mono"','monospace'],
+          hand:['"Caveat"','cursive'],
+        },
+      },
+    },
+  };
+</script>
 <style>
-        .shaky-line {
-            border-bottom: 1px solid #1C1C19;
-            mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1 Q 2.5 0.5, 5 1 T 10 1 T 15 1 T 20 1 T 25 1 T 30 1 T 35 1 T 40 1 T 45 1 T 50 1 T 55 1 T 60 1 T 65 1 T 70 1 T 75 1 T 80 1 T 85 1 T 90 1 T 95 1 T 100 1' stroke='black' fill='transparent'/%3E%3C/svg%3E");
-            mask-size: 100px 2px;
-        }
-        .girikh-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 10 L50 30 L30 50 L10 30 Z' fill='none' stroke='%231C1C19' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
-        }
-        .sticker-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
-        .sticker-6 { box-shadow: 6px 6px 0 0 #1C1C19; }
-        .sticker-pink { box-shadow: 6px 6px 0 0 #FF46CA; }
-        .sticker-green { box-shadow: 6px 6px 0 0 #00CB8D; }
-        .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
-        .pressure-btn {
-            transition: opacity .3s ease, transform .2s ease;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
-            user-select: none;
-            cursor: pointer;
-        }
-        .pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
-        /* Lang toggle — same style as plan.html */
-        .lang-toggle {
-            display: inline-flex;
-            border: 1px solid #1C1C19;
-            box-shadow: 3px 3px 0 0 #1C1C19;
-        }
-        .lang-toggle button {
-            padding: 4px 10px;
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border: none;
-            transition: background 0.2s, color 0.2s;
-        }
-        .lang-toggle button.lang-active { background: #FF46CA; color: #fff; }
-        .lang-toggle button:not(.lang-active) { background: #fff; color: #1C1C19; }
-        .lang-toggle button:not(.lang-active):hover { background: #f0ede9; }
-        /* Bilingual content swap via data-lang attribute */
-        [data-lang="ru"] { display: none; }
-        body.lang-ru [data-lang="ru"] { display: revert; }
-        body.lang-ru [data-lang="en"] { display: none; }
-    </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-primary-fixed": "#3b002c",
-                      "on-secondary": "#ffffff",
-                      "on-secondary-fixed-variant": "#005236",
-                      "on-secondary-container": "#00714d",
-                      "secondary": "#006c49",
-                      "surface-container": "#f0ede9",
-                      "surface-variant": "#e5e2dd",
-                      "surface-bright": "#fcf9f4",
-                      "outline-variant": "#ddbecd",
-                      "on-tertiary-fixed-variant": "#6b3b00",
-                      "on-primary-container": "#5b0045",
-                      "inverse-on-surface": "#f3f0eb",
-                      "on-background": "#1c1c19",
-                      "on-primary": "#ffffff",
-                      "surface-dim": "#dcdad5",
-                      "surface-container-lowest": "#ffffff",
-                      "surface-container-low": "#f6f3ee",
-                      "secondary-fixed-dim": "#37e0a0",
-                      "secondary-container": "#5afab8",
-                      "tertiary": "#8d4f00",
-                      "error-container": "#ffdad6",
-                      "primary-fixed-dim": "#ffaedd",
-                      "on-surface": "#1c1c19",
-                      "error": "#ba1a1a",
-                      "on-tertiary-container": "#462500",
-                      "surface": "#fcf9f4",
-                      "outline": "#8a707d",
-                      "on-error-container": "#93000a",
-                      "primary": "#b2008a",
-                      "on-secondary-fixed": "#002113",
-                      "background": "#fcf9f4",
-                      "on-primary-fixed-variant": "#880069",
-                      "on-tertiary": "#ffffff",
-                      "on-error": "#ffffff",
-                      "primary-container": "#ff46ca",
-                      "on-surface-variant": "#57404c",
-                      "primary-fixed": "#ffd8eb",
-                      "on-tertiary-fixed": "#2d1600",
-                      "tertiary-fixed-dim": "#ffb875",
-                      "surface-tint": "#b2008a",
-                      "inverse-primary": "#ffaedd",
-                      "inverse-surface": "#31302d",
-                      "surface-container-highest": "#e5e2dd",
-                      "surface-container-high": "#ebe8e3",
-                      "secondary-fixed": "#5efdbb",
-                      "tertiary-container": "#da7e00",
-                      "tertiary-fixed": "#ffdcc0"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0rem",
-                      "lg": "0rem",
-                      "xl": "0rem",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["Epilogue"],
-                      "body": ["Space Grotesk"],
-                      "label": ["Space Grotesk"]
-              }
-            },
-          },
-        }
-    </script>
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3c6a24999d494e6289fd1b79d517476e"}'></script>
-<!-- End Cloudflare Web Analytics -->
+  body { font-family:"Space Grotesk", sans-serif; background:#FCF9F4; color:#1C1C19; }
+  .material-symbols-outlined { font-family:'Material Symbols Outlined'; font-weight:normal; font-style:normal; line-height:1; letter-spacing:normal; text-transform:none; white-space:nowrap; word-wrap:normal; direction:ltr; font-feature-settings:'liga'; -webkit-font-feature-settings:'liga'; -webkit-font-smoothing:antialiased; font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+
+  .girih-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231C1C19' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z'/%3E%3Cpath d='M40 14 L66 40 L40 66 L14 40 Z'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .sticker-4  { box-shadow: 4px 4px 0 0 #1C1C19; }
+  .sticker-6  { box-shadow: 6px 6px 0 0 #1C1C19; }
+  .sticker-8  { box-shadow: 8px 8px 0 0 #1C1C19; }
+  .sticker-pink   { box-shadow: 6px 6px 0 0 #FF46CA; }
+  .sticker-green  { box-shadow: 6px 6px 0 0 #00CB8D; }
+  .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
+  .sticker-pink-8 { box-shadow: 8px 8px 0 0 #FF46CA; }
+
+  .shaky-line { border-bottom:1px solid #1C1C19; position:relative; }
+  .shaky-line::after { content:''; position:absolute; bottom:-1px; left:0; width:100%; height:1px; background:#1C1C19; transform:skewY(0.2deg); }
+
+  .pressure-btn { transition: transform .15s ease; cursor:pointer; -webkit-tap-highlight-color:transparent; user-select:none; }
+  .pressure-btn:active { transform: scale(0.95) translate(1px,1px); }
+
+  .link-wavy { color:#FF46CA; text-decoration:underline; text-decoration-style:wavy; text-decoration-thickness:1px; text-underline-offset:4px; transition:all .2s ease; }
+  .link-wavy:hover { color:#00CB8D; }
+
+  .nav-link { transition:all .2s ease; display:inline-block; }
+  .nav-link:hover { transform: skewX(-2deg); color:#00CB8D; }
+
+  /* Divider — girih line + pink diamond */
+  .div-girih { display:flex; align-items:center; gap:1rem; }
+  .div-girih::before, .div-girih::after {
+    content:''; flex:1; height:8px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 4 L4 0 L8 4 L12 0 L16 4 L12 8 L8 4 L4 8 Z' fill='none' stroke='%231C1C19' stroke-width='0.8' opacity='0.7'/%3E%3C/svg%3E");
+    background-repeat:repeat-x; background-size:16px 8px;
+  }
+  .div-girih .diamond { width:10px; height:10px; background:#FF46CA; border:1px solid #1C1C19; transform:rotate(45deg); box-shadow:2px 2px 0 0 #1C1C19; }
+
+  /* Divider — dashed rule + mono tag */
+  .div-tag { display:flex; align-items:center; gap:.75rem; }
+  .div-tag::before, .div-tag::after { content:''; flex:1; border-top:1px dashed rgba(28,28,25,0.35); }
+  .div-tag .tag { font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; font-weight:700; color:rgba(28,28,25,.55); padding:2px 10px; border:1px solid rgba(28,28,25,.35); background:#FCF9F4; white-space:nowrap; }
+  .div-tag--pink::before, .div-tag--pink::after { border-top:1px solid #FF46CA; opacity:.6; }
+  .div-tag--pink .tag { color:#FF46CA; border-color:#FF46CA; }
+
+  /* Divider — thread + glyph */
+  .div-thread { display:flex; align-items:center; gap:1rem; }
+  .div-thread::before, .div-thread::after { content:''; flex:1; height:1px; background:#1C1C19; opacity:.4; }
+  .div-thread .knot { color:#FF46CA; font-size:28px; line-height:1; transform:rotate(-8deg); }
+
+  .cross-stitch { display:inline-flex; gap:1rem; font-family:"Space Mono",monospace; }
+  .cross-stitch span:nth-child(3n+1){ color:#FF46CA; }
+  .cross-stitch span:nth-child(3n+2){ color:#00CB8D; }
+  .cross-stitch span:nth-child(3n)  { color:#FF9400; }
+
+  .hand-annotation { font-family:"Caveat",cursive; font-weight:700; color:#FF9400; transform:rotate(-2deg); display:inline-block; line-height:1; }
+
+  .photo-tbd {
+    background: repeating-linear-gradient(45deg, rgba(28,28,25,0.04) 0 12px, transparent 12px 24px), #F0EDE9;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.25em; color:rgba(28,28,25,0.5);
+    text-transform:uppercase; font-weight:700;
+  }
+
+  .pin-pulse { animation: pin-pulse 2.5s ease-in-out infinite; transform-origin:center; }
+  @keyframes pin-pulse { 0%,100%{ transform:rotate(45deg) scale(1);} 50%{ transform:rotate(45deg) scale(1.18);} }
+
+  /* birthday handwritten line — gentle sway + brand-colour cycle */
+  .bday-line { transform: rotate(-2deg); transform-origin:center; color:#FF46CA; }
+  @keyframes bday-sway { 0%,100%{ transform: rotate(-2deg);} 50%{ transform: rotate(-1deg) translateY(-3px);} }
+  @keyframes bday-hue { 0%{ color:#FF46CA;} 33%{ color:#00CB8D;} 66%{ color:#FF9400;} 100%{ color:#FF46CA;} }
+  .bday-star { display:inline-block; transform-origin:center; }
+  @media (prefers-reduced-motion: no-preference){ .bday-line { animation: bday-sway 5s ease-in-out infinite, bday-hue 9s ease-in-out infinite; } .bday-star { animation: bday-sway 5s ease-in-out infinite, bday-hue 9s ease-in-out infinite; } }
+
+  /* timeline spine */
+  .spine { position:relative; }
+
+  /* ── Unified day timeline ── */
+  .tl-row { display:flex; gap:1rem; }
+  .tl-time { flex:0 0 78px; text-align:right; padding-top:1px; font-family:'Space Mono',monospace; font-weight:700; line-height:1.15; }
+  .tl-body { position:relative; flex:1; min-width:0; padding-left:1.3rem; padding-bottom:1.7rem; border-left:2px solid rgba(28,28,25,0.14); }
+  .tl-row:last-child .tl-body { padding-bottom:0; }
+  .tl-dot { position:absolute; left:-7px; top:5px; width:12px; height:12px; border:1px solid #1C1C19; transform:rotate(45deg); background:#1C1C19; }
+  @media (min-width:768px){
+    .tl-row { gap:1.5rem; }
+    .tl-time { flex-basis:104px; }
+    .tl-body { padding-left:1.6rem; }
+  }
+  /* free-time entry — muted, dashed */
+  .tl-body.is-free { border-left-style:dashed; border-left-color:rgba(28,28,25,0.22); }
+  .tl-dot.is-free { background:#FCF9F4; border-color:#00CB8D; border-width:1.5px; }
+  /* move/taxi entry — compact, dotted */
+  .tl-body.is-move { border-left-style:dotted; border-left-color:rgba(28,28,25,0.22); padding-bottom:1.05rem; }
+  .tl-dot.is-move { width:7px; height:7px; left:-4.5px; top:7px; background:#FCF9F4; }
+  /* dark variant (day 11) */
+  .tl-dark .tl-body { border-left-color:rgba(252,249,244,0.2); }
+  .tl-dark .tl-dot { border-color:rgba(252,249,244,0.55); }
+  .tl-dark .tl-body.is-free { border-left-color:rgba(252,249,244,0.25); }
+  .tl-dark .tl-dot.is-free { background:#1C1C19; border-color:#00CB8D; border-width:1.5px; }
+  .tl-dark .tl-dot.is-move { background:#1C1C19; }
+  .tl-dark .tl-body.is-move { border-left-color:rgba(252,249,244,0.25); }
+  .tl-tag { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
+  .tl-cue { font-family:'Space Mono',monospace; font-size:12px; line-height:1.45; }
+
+  /* Day-rail active chip */
+  .rail-chip { transition: all .2s ease; }
+  .rail-chip.is-active { background:#1C1C19; color:#FCF9F4; border-color:rgba(252,249,244,.4); }
+
+  /* Today highlight ring */
+  .is-today { outline: 3px solid #FF46CA; outline-offset: 6px; }
+
+  /* Bilingual visibility */
+  .en, .ru { display:inline; }
+  body.lang-ru .en { display:none; }
+  body.lang-en .ru { display:none; }
+  .en-block, .ru-block { display:block; }
+  body.lang-ru .en-block { display:none; }
+  body.lang-en .ru-block { display:none; }
+
+  .lang-toggle { display:inline-flex; border:1px solid #1C1C19; box-shadow:3px 3px 0 0 #1C1C19; }
+  .lang-toggle button { padding:4px 10px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; cursor:pointer; border:none; transition:background .2s, color .2s; }
+  .lang-toggle button.active { background:#FF46CA; color:#fff; }
+  .lang-toggle button.active:hover { background:#e637b6; }
+  .lang-toggle button:not(.active) { background:#fff; color:#1C1C19; }
+  .lang-toggle button:not(.active):hover { background:#F0EDE9; }
+
+  html { scroll-behavior:smooth; }
+  [id]{ scroll-margin-top: 9rem; }
+
+  /* Free-time menu tabs */
+  .ftm-tab { transition:all .15s ease; }
+  .ftm-tab.is-active { background:#1C1C19; color:#FCF9F4; }
+  .ftm-tab.ftm-see.is-active { background:#FF46CA; color:#fff; }
+  .ftm-tab.ftm-eat.is-active { background:#FF9400; color:#fff; }
+  .ftm-tab.ftm-shop.is-active { background:#00CB8D; color:#fff; }
+  .ftm-tab:not(.is-active):hover { background:#F0EDE9; }
+  .ftm-filter { transition: all .15s ease; cursor:pointer; }
+  .ftm-filter:hover { border-color:#1C1C19; }
+  .ftm-filter.is-on { background:#1C1C19; color:#FCF9F4; border-color:#1C1C19; }
+  .ftm-panel[hidden]{ display:none; }
+
+  /* Collapsible day */
+  .day-toggle { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; flex-shrink:0; border:1px solid #1C1C19; background:#FCF9F4; color:#1C1C19; font-family:'Space Mono',monospace; font-weight:700; font-size:20px; line-height:1; cursor:pointer; box-shadow:3px 3px 0 0 #1C1C19; transition:transform .12s ease, box-shadow .12s ease; -webkit-tap-highlight-color:transparent; }
+  .day-toggle:active { transform:translate(1px,1px); box-shadow:2px 2px 0 0 #1C1C19; }
+  .day-toggle.on-dark { background:#1C1C19; color:#FCF9F4; border-color:#FCF9F4; box-shadow:3px 3px 0 0 #FF46CA; }
+  .day-toggle .dt-chev { display:block; transition:transform .25s ease; }
+  .is-collapsed .day-toggle .dt-chev { transform:rotate(180deg); }
+  .is-collapsed .day-body { display:none; }
+
+  /* Schedule-only collapse (compact day cards) */
+  .sched-toggle { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; flex-shrink:0; border:1px solid #1C1C19; background:#FCF9F4; color:#1C1C19; font-family:'Space Mono',monospace; font-weight:700; font-size:15px; line-height:1; cursor:pointer; box-shadow:2px 2px 0 0 #1C1C19; transition:transform .12s ease, box-shadow .12s ease; -webkit-tap-highlight-color:transparent; }
+  .sched-toggle:active { transform:translate(1px,1px); box-shadow:1px 1px 0 0 #1C1C19; }
+  .sched-toggle .dt-chev { display:block; transition:transform .25s ease; }
+  .sched-toggle.is-off .dt-chev { transform:rotate(180deg); }
+  .sched-body.sched-hidden { display:none; }
+</style>
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white overflow-x-hidden">
-<script>(function(){var s=localStorage.getItem("uzbekbday-lang");if(s==="ru")document.body.classList.add("lang-ru");})();</script>
-<!-- TopNavBar -->
-<!-- NAV (unified) -->
+<body class="bg-cream text-ink overflow-x-hidden girih-bg lang-en selection:bg-pink selection:text-white">
+
+<!-- ══════════════ NAV ══════════════ -->
 <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 bg-[#FCF9F4] border-b border-[#1C1C19]/20">
   <a href="index.html" class="font-['Epilogue'] text-xl md:text-3xl font-black italic tracking-tighter uppercase text-[#FF46CA]">UZBEK BDAY</a>
   <div class="hidden md:flex gap-7 items-center">
@@ -154,7 +207,8 @@
     </button>
   </div>
 </nav>
-<!-- MOBILE MENU -->
+
+<!-- mobile menu (unified across pages) -->
 <div id="mobile-menu" class="fixed inset-x-0 top-[65px] z-40 md:hidden hidden bg-[#FCF9F4] border-b border-[#1C1C19]/20">
   <div class="flex flex-col px-5 py-4 gap-1">
     <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
@@ -166,73 +220,892 @@
     <a class="font-['Space_Mono'] uppercase text-base py-3 border-b border-[#1C1C19]/10" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
   </div>
 </div>
-<main class="pt-32 pb-24 px-6 min-h-screen girikh-pattern flex items-center">
-<div class="max-w-3xl mx-auto text-center">
-<div class="inline-block bg-surface-container border border-on-surface px-3 py-1 sticker-4 rotate-[-1deg] mb-12">
-<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest font-bold" data-lang="en">[ STATUS · COMING SOON ]</span>
-<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest font-bold" data-lang="ru">[ СТАТУС · СКОРО ]</span>
+
+<!-- ══════════════ STICKY DAY-RAIL ══════════════ -->
+<div class="fixed top-[60px] md:top-[68px] left-0 right-0 z-40 bg-cream/95 backdrop-blur-sm border-b border-ink/15">
+  <div class="max-w-7xl mx-auto px-5 md:px-12 py-2.5 flex items-center gap-2 md:gap-3 overflow-x-auto">
+    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40 shrink-0 hidden sm:inline mr-1">
+      <span class="en">DAYS →</span><span class="ru">ДНИ →</span>
+    </span>
+    <a href="#day-9"  data-rail="day-9"  class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide"><span class="en">JUN 9</span><span class="ru">9 ИЮН</span></a>
+    <a href="#day-10" data-rail="day-10" class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide"><span class="en">JUN 10</span><span class="ru">10 ИЮН</span></a>
+    <a href="#day-11" data-rail="day-11" class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide flex items-center gap-1"><span class="en">JUN 11</span><span class="ru">11 ИЮН</span> <span class="text-pink">✦</span></a>
+    <a href="#day-12" data-rail="day-12" class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide"><span class="en">JUN 12</span><span class="ru">12 ИЮН</span></a>
+    <a href="#day-15" data-rail="day-15" class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide"><span class="en">JUN 15</span><span class="ru">15 ИЮН</span></a>
+    <a href="#free-time" data-rail="free-time" class="rail-chip shrink-0 inline-flex items-center gap-1.5 bg-ink text-cream border border-cream/30 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-wide ml-auto sticker-4 pressure-btn">
+      <span class="en">WHAT TO DO</span><span class="ru">ЧЕМ ЗАНЯТЬСЯ</span><span class="text-pink">↓</span>
+    </a>
+  </div>
 </div>
-<h1 class="font-['Epilogue'] font-black text-7xl md:text-9xl uppercase tracking-tighter leading-[0.85] mb-10 text-on-surface">
-<span data-lang="en">TASHKENT</span>
-<span data-lang="ru">ТАШКЕНТ</span>
-</h1>
-<p class="font-['Space_Grotesk'] text-xl md:text-2xl text-on-surface mb-8 leading-snug">
-<span data-lang="en">this page is in the works.<br/>check back closer to the trip.</span>
-<span data-lang="ru">страница пока в работе.<br/>загляни ближе к поездке.</span>
-</p>
-<p class="font-['Epilogue'] italic text-lg md:text-xl text-primary-container mt-6">
-<span data-lang="en">(we know what's going here. we just haven't written it down yet.)</span>
-<span data-lang="ru">(мы уже знаем, что тут будет. просто пока не записали.)</span>
-</p>
+
+<main class="pt-32 md:pt-36">
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="px-5 md:px-12 max-w-7xl mx-auto pt-6 md:pt-10 pb-10 relative">
+  <p class="font-mono text-xs tracking-widest uppercase text-pink font-bold mb-6">
+    <span class="en">[ CAPITAL · JUN 9–12, 15 ]</span>
+    <span class="ru">[ СТОЛИЦА · 9–12, 15 ИЮН ]</span>
+  </p>
+
+  <div>
+    <h1 class="font-headline font-black text-[22vw] sm:text-[18vw] md:text-[15vw] lg:text-[13rem] leading-[0.78] tracking-tighter uppercase mb-6 -ml-1">
+      <span class="en"><span class="text-pink italic">T</span>ASHKENT<span class="text-pink">.</span></span>
+      <span class="ru"><span class="text-pink italic">Т</span>АШКЕНТ<span class="text-pink">.</span></span>
+    </h1>
+    <p class="font-body text-xl md:text-2xl text-ink/75 leading-snug italic max-w-5xl">
+      <span class="en">three million people. soviet modernism at full blast. plov from a cauldron the size of you. the wonders (and the weight gain) start and end here :)</span>
+      <span class="ru">три миллиона человек. советский модернизм на полную. плов из казана размером с тебя. чудеса (и набор веса) начинаются и заканчиваются здесь :)</span>
+    </p>
+  </div>
+
+  <!-- Meta chips -->
+  <div class="flex flex-wrap gap-3 mt-10">
+    <div class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[-1deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5">
+      <span class="inline-block w-2.5 h-2.5 bg-pink border border-ink rotate-45 shrink-0"></span>
+      <span class="en">[ 3 DAYS + 1 EVENING ]</span><span class="ru">[ 3 ДНЯ + 1 ВЕЧЕР ]</span>
+    </div>
+    <div class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[1deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5">
+      <span class="inline-block w-2.5 h-2.5 bg-green border border-ink rotate-45 shrink-0"></span>
+      <span class="en">[ HOTEL · DOUBLETREE ]</span><span class="ru">[ ОТЕЛЬ · DOUBLETREE ]</span>
+    </div>
+    <div class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[-1.5deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5">
+      <span class="inline-block w-2.5 h-2.5 bg-orange border border-ink rotate-45 shrink-0"></span>
+      <span class="en">[ HEAT · +35–40°C ]</span><span class="ru">[ ЖАРА · +35–40°C ]</span>
+    </div>
+  </div>
+</section>
+
+<!-- Divider hero → days -->
+<div class="max-w-7xl mx-auto px-5 md:px-12">
+  <div class="div-girih my-14 md:my-20"><div class="diamond"></div></div>
 </div>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#FCF9F4] border-t-[1px] border-double border-[#1C1C19]">
-<div class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19]">
-            © 2026 UZBEK BDAY ZINE
+
+<!-- ══════════════ DAYS INSERT ══════════════ -->
+<div class="max-w-7xl mx-auto px-5 md:px-12">
+
+<!-- ─────────── DAY · JUN 9 · ARRIVALS ─────────── -->
+<section id="day-9" class="mb-24 md:mb-32">
+  <!-- header -->
+  <div class="mb-7 day-head">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none flex items-baseline gap-3 md:gap-4 flex-wrap">
+        <span class="font-mono font-bold text-pink text-4xl sm:text-5xl md:text-6xl leading-none tabular-nums"><span class="en">JUN 9</span><span class="ru">9.06</span></span>
+        <span class="en">· TUE · ARRIVALS</span><span class="ru">· ВТ · ПРИЛЁТ</span>
+      </h2>
+      <button class="day-toggle" onclick="toggleDay(this)" aria-expanded="true" aria-label="свернуть / развернуть день"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="shaky-line h-px mt-3 opacity-40"></div>
+  </div>
+  <div class="day-body">
+  <p class="font-body text-lg md:text-2xl italic text-ink/70 leading-snug max-w-5xl mb-12">
+    <span class="en">first day. nothing happened yet. you are tired, jet-lagged, hungry. hang in there.</span>
+    <span class="ru">первый день. ещё ничего не было. ты уставший, под джетлагом, голодный. держись.</span>
+  </p>
+
+  <!-- timeline header + legend -->
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8">
+    <span class="font-mono text-[11px] uppercase tracking-widest text-ink/50 shrink-0"><span class="en">schedule</span><span class="ru">расписание</span></span>
+    <span class="flex-1 min-w-[20px] border-t border-dashed border-ink/20"></span>
+    <span class="flex items-center gap-x-3 gap-y-1 flex-wrap font-mono text-[10px] uppercase tracking-wide text-ink/45">
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-pink border border-ink"></span><span class="en">plan</span><span class="ru">план</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-cream border border-green"></span><span class="en">free</span><span class="ru">свободно</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rotate-45 bg-cream border border-ink/50"></span><span class="en">taxi / move</span><span class="ru">такси / переезд</span></span>
+    </span>
+  </div>
+
+  <div class="bg-white border border-ink p-5 md:p-8 sticker-pink">
+    <!-- on arrival -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-[11px] md:text-xs uppercase"><span class="en">on arrival</span><span class="ru">по&nbsp;прилёту</span></div>
+      <div class="tl-body is-free">
+        <span class="tl-dot is-free"></span>
+        <div class="tl-tag text-green mb-1"><span class="en">free</span><span class="ru">свободно</span></div>
+        <p class="font-body text-ink/70 text-sm md:text-[15px] leading-snug"><span class="en">check in at DoubleTree, grab a SIM at the airport, regroup. landed late afternoon? you can still make Hast-Imam.</span><span class="ru">заселись в DoubleTree, возьми SIM в аэропорту, передохни. прилетел под вечер? ещё успеваешь на хаст-имам.</span></p>
+      </div>
+    </div>
+
+    <!-- 17:00 taxi from hotel -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">17:00</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55"><span class="en">→ taxi from the hotel · DoubleTree → centre ≈ 20–30 min (Yandex Go)</span><span class="ru">→ такси из отеля · DoubleTree → центр ≈ 20–30 мин (Yandex Go)</span></p>
+      </div>
+    </div>
+
+    <!-- 17:30 Hast-Imam -->
+    <div class="tl-row">
+      <div class="tl-time text-pink text-sm md:text-base">17:30<span class="block font-mono text-[9px] uppercase tracking-wide text-ink/35 font-bold mt-0.5"><span class="en">optional</span><span class="ru">по&nbsp;желанию</span></span></div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#FF46CA;"></span>
+        <div class="flex items-start justify-between gap-3">
+          <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">Hast-Imam Complex</span><span class="ru">комплекс хаст-имам</span></p>
+          <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/Hast-Imam+Complex+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Hast-Imam+Complex+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
         </div>
-<div class="font-['Epilogue'] text-lg font-black italic text-[#FF46CA] tracking-tighter uppercase">UZBEK BDAY</div>
-<div class="flex gap-8">
-<a class="font-['Space_Mono'] text-xs uppercase tracking-widest text-[#1C1C19] hover:italic hover:opacity-80" href="map.html">MAPS</a>
+        <p class="font-body text-ink/60 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">for whoever's already in town by 5. quran of uthman, 7th century. heat backs off, golden hour kicks in.</span><span class="ru">для тех, кто уже в городе к пяти. коран османа, vii век. жара уже отпустит, можем погулять.</span></p>
+      </div>
+    </div>
+
+    <!-- move to dinner -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">~19:00</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55"><span class="en">→ taxi straight to the dinner area — don't loop back to the hotel</span><span class="ru">→ такси сразу в район ужина — не возвращаемся в отель</span></p>
+      </div>
+    </div>
+
+    <!-- 19:30 welcome dinner -->
+    <div class="tl-row">
+      <div class="tl-time text-pink text-sm md:text-base">~19:30</div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#FF46CA;"></span>
+        <div class="flex items-start justify-between gap-3">
+          <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">welcome dinner</span><span class="ru">приветственный ужин</span></p>
+          <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/place/Sharshara/@41.3415583,69.2539577,17z" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Sharshara+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
+        </div>
+        <p class="font-body text-ink/60 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">Sharshara — by the river, a waterfall inside. uzbek food. (you will not leave hungry. that's not a thing here.)</span><span class="ru">Sharshara — построен у реки, внутри водопад. узбекская кухня. (голодным ты не уйдёшь. тут так не бывает.)</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- tomorrow bridge -->
+  </div>
+  <a href="#day-10" class="group mt-10 flex items-start gap-3 bg-green/10 border border-green/40 px-5 py-4 sticker-green hover:translate-x-1 transition-transform">
+    <span class="font-mono text-xs md:text-sm font-bold leading-relaxed text-ink/85">
+      <span class="en">→ TOMORROW · JUN 10 · Chorsu from 9:00 · markets · Korean lunch · evening free.</span>
+      <span class="ru">→ ЗАВТРА · 10.06 · Чорсу с 9:00 · рынки · корейский обед · вечер свободный.</span>
+    </span>
+  </a>
+</section>
+
+<!-- ─────────── DAY · JUN 10 · FIRST FULL DAY ─────────── -->
+<section id="day-10" class="mb-24 md:mb-32">
+  <div class="mb-7 day-head">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none flex items-baseline gap-3 md:gap-4 flex-wrap">
+        <span class="font-mono font-bold text-green text-4xl sm:text-5xl md:text-6xl leading-none tabular-nums"><span class="en">JUN 10</span><span class="ru">10.06</span></span>
+        <span class="en">· WED · FIRST FULL DAY</span><span class="ru">· СР · ПЕРВЫЙ ПОЛНЫЙ ДЕНЬ</span>
+      </h2>
+      <button class="day-toggle" onclick="toggleDay(this)" aria-expanded="true" aria-label="свернуть / развернуть день"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="shaky-line h-px mt-3 opacity-40"></div>
+  </div>
+  <div class="day-body">
+  <p class="font-body text-lg md:text-2xl italic text-ink/70 leading-snug max-w-5xl mb-12">
+    <span class="en">landed at 3am? you can sleep. (we'll send you selfies with the samsa :))</span>
+    <span class="ru">прилетел в 3 ночи? можешь проспать утро. (скинем тебе селфи с самсой :))</span>
+  </p>
+
+  <!-- timeline header + legend -->
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8">
+    <span class="font-mono text-[11px] uppercase tracking-widest text-ink/50 shrink-0"><span class="en">schedule</span><span class="ru">расписание</span></span>
+    <span class="flex-1 min-w-[20px] border-t border-dashed border-ink/20"></span>
+    <span class="flex items-center gap-x-3 gap-y-1 flex-wrap font-mono text-[10px] uppercase tracking-wide text-ink/45">
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-green border border-ink"></span><span class="en">plan</span><span class="ru">план</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-cream border border-green"></span><span class="en">free</span><span class="ru">свободно</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rotate-45 bg-cream border border-ink/50"></span><span class="en">taxi / move</span><span class="ru">такси / переезд</span></span>
+    </span>
+  </div>
+
+  <div class="mb-12 bg-white border border-ink p-5 md:p-8 sticker-green">
+    <!-- night arrivals -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-[11px] md:text-xs uppercase"><span class="en">late&nbsp;arr.</span><span class="ru">ночной&nbsp;прилёт</span></div>
+      <div class="tl-body is-free">
+        <span class="tl-dot is-free"></span>
+        <div class="tl-tag text-green mb-1"><span class="en">free · if you flew overnight</span><span class="ru">свободно · если летел ночью</span></div>
+        <p class="font-body text-ink/70 text-sm md:text-[15px] leading-snug"><span class="en">sleep in — you flew through the night. up early? join the 9:00 Chorsu run. otherwise catch the group at lunch (~13:00).</span><span class="ru">отсыпайся — ты летел всю ночь. проснулся бодрым? присоединяйся к выезду в 9:00. иначе догоняй группу на обеде.</span></p>
+      </div>
+    </div>
+
+    <!-- ~9:00 move to Chorsu -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">~9:00</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55"><span class="en">→ DoubleTree → Chorsu ≈ 25 min (Yandex Go)</span><span class="ru">→ DoubleTree → Чорсу ≈ 25 мин (Yandex Go)</span></p>
+      </div>
+    </div>
+
+    <!-- ~9:30 Chorsu morning -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-xs md:text-sm">~9:30<span class="block font-mono text-[9px] uppercase tracking-wide text-ink/35 font-bold mt-0.5"><span class="en">optional</span><span class="ru">по&nbsp;желанию</span></span></div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#00CB8D;"></span>
+        <div class="flex items-start justify-between gap-3">
+          <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">breakfast at Chorsu market</span><span class="ru">завтрак на рынке чорсу</span></p>
+          <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
+        </div>
+        <p class="font-body text-ink/60 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">breakfast (the armenian men will pick samsa for every one, hihi). then clothes &amp; gold market — wander, take in the area.</span><span class="ru">завтрак (армянские мужчины выберут нам самсу хихи). потом рынок одежды и золота  гуляем, смотрим окрестности.</span></p>
+      </div>
+    </div>
+
+    <!-- move -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">~12:45</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55"><span class="en">→ taxi to lunch</span><span class="ru">→ такси на обед</span></p>
+      </div>
+    </div>
+
+    <!-- 13:00 lunch -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-xs md:text-sm">~13:00</div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#00CB8D;"></span>
+        <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">lunch · Korean restaurant</span><span class="ru">обед в корейском ресторане</span></p>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-ink/40 mt-2"><span class="en">[ TBD · pick + book ]</span><span class="ru">[ TBD · выбрать + забронировать ]</span></div>
+      </div>
+    </div>
+
+    <!-- afternoon + evening free (merged) -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-xs md:text-sm uppercase"><span class="en">14:00 → eve</span><span class="ru">с&nbsp;14:00</span></div>
+      <div class="tl-body is-free">
+        <span class="tl-dot is-free"></span>
+        <div class="tl-tag text-green mb-1"><span class="en">free · rest, siesta, evening · +40°C</span><span class="ru">свободно · отдых, сиеста, вечер · +40°C</span></div>
+        <p class="font-body text-ink/70 text-sm md:text-[15px] leading-snug"><span class="en">peak heat — indoor options: Centre for Contemporary Arts, the cinema, the circus. evening is your call, everyone does their own thing.</span><span class="ru">пик жары — опции в помещении: CCA, кинотеатр, цирк. вечером каждый смотрит что хочет.</span></p>
+        <a href="#free-time" class="tl-cue text-pink hover:text-green inline-block mt-2"><span class="en">↓ ideas in the free-time menu</span><span class="ru">↓ идеи в меню свободного времени</span></a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <a href="#day-11" class="group mt-2 flex items-start gap-3 bg-pink/10 border border-pink/40 px-5 py-4 sticker-pink hover:translate-x-1 transition-transform">
+    <span class="font-mono text-xs md:text-sm font-bold leading-relaxed text-ink/85">
+      <span class="en">→ TOMORROW · JUN 11 · <span class="text-pink">✦</span> BIRTHDAY · yoga, cooking workshop, dinner. (we recommend sleep.)</span>
+      <span class="ru">→ ЗАВТРА · 11.06 · <span class="text-pink">✦</span> ДР · йога, кулинарный мастер-класс, ужин. (рекомендуем поспать.)</span>
+    </span>
+  </a>
+</section>
+<!-- ─────────── DAY · JUN 11 · ⭐ BIRTHDAY (peak · inverse) ─────────── -->
+<section id="day-11" class="mb-24 md:mb-32 relative">
+  <div class="bg-ink text-cream border border-cream/35 sticker-pink-8 relative overflow-hidden px-6 py-10 md:px-12 md:py-14">
+    <!-- girih watermark -->
+    <svg class="absolute -top-10 -right-10 w-72 h-72 opacity-[0.07] pointer-events-none" viewBox="0 0 80 80" fill="none">
+      <path d="M40 4 L76 40 L40 76 L4 40 Z M40 14 L66 40 L40 66 L14 40 Z" stroke="#FCF9F4" stroke-width="0.8"/>
+      <rect x="10" y="10" width="60" height="60" transform="rotate(45 40 40)" stroke="#FCF9F4" stroke-width="0.8"/>
+    </svg>
+
+    <!-- header -->
+    <div class="relative mb-7">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none text-cream flex items-baseline gap-3 md:gap-4 flex-wrap">
+          <span class="font-mono font-bold text-pink text-4xl sm:text-5xl md:text-6xl leading-none tabular-nums"><span class="en">JUN 11</span><span class="ru">11.06</span></span>
+          <span class="en">· THU · <span class="text-pink bday-star">✦</span> BIRTHDAY</span><span class="ru">· ЧТ · <span class="text-pink bday-star">✦</span> ДР</span>
+        </h2>
+        <button class="day-toggle on-dark" onclick="toggleDay(this)" aria-expanded="true" aria-label="свернуть / развернуть день"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+    <div class="day-body">
+    <p class="relative font-body text-lg md:text-2xl italic text-cream/70 leading-snug max-w-5xl mb-10">
+      <span class="en">if you landed last night — sleeping through yoga is allowed. the rest of the day — all together.</span>
+      <span class="ru">если прилетел ночью — можно проспать йогу. всё остальное — вместе.</span>
+    </p>
+
+    <!-- HAND-WRITTEN signature line -->
+    <div class="relative my-10 md:my-12 flex items-center justify-center">
+      <p class="bday-line relative px-5 md:px-8 text-center font-hand font-bold text-pink leading-[0.95] text-3xl sm:text-4xl md:text-5xl">
+        <span class="en">i turn 30 in front of everyone. don't miss it.</span>
+        <span class="ru">мне исполняется 30 на глазах у всех. не пропусти.</span>
+      </p>
+    </div>
+
+    <!-- timeline header + legend -->
+    <div class="relative flex flex-wrap items-center gap-x-4 gap-y-2 mt-12 mb-8">
+      <span class="font-mono text-[11px] uppercase tracking-widest text-green shrink-0"><span class="en">schedule</span><span class="ru">расписание</span></span>
+      <span class="flex-1 min-w-[20px] border-t border-dashed border-cream/20"></span>
+      <span class="flex items-center gap-x-3 gap-y-1 flex-wrap font-mono text-[10px] uppercase tracking-wide text-cream/45">
+        <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-pink border border-cream/50"></span><span class="en">plan</span><span class="ru">план</span></span>
+        <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-ink border border-green"></span><span class="en">free</span><span class="ru">свободно</span></span>
+        <span class="flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rotate-45 bg-ink border border-cream/50"></span><span class="en">taxi / move</span><span class="ru">такси / переезд</span></span>
+      </span>
+    </div>
+
+    <div class="relative tl-dark">
+      <!-- morning: yoga + breakfast -->
+      <div class="tl-row">
+        <div class="tl-time text-pink text-xs md:text-sm uppercase"><span class="en">morning</span><span class="ru">утро</span><span class="block font-mono text-[9px] uppercase tracking-wide text-cream/35 font-bold mt-0.5"><span class="en">optional</span><span class="ru">по&nbsp;желанию</span></span></div>
+        <div class="tl-body">
+          <span class="tl-dot" style="background:#FF46CA;"></span>
+          <p class="font-body font-bold text-cream text-lg md:text-xl leading-tight"><span class="en">Yoga + breakfast</span><span class="ru">йога и завтрак</span></p>
+          <p class="font-body text-cream/55 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">maybe there's yoga, maybe not. either way, grab coffee at the hotel before we leave for the workshop at ~11:00.</span><span class="ru">может быть, будет йога... в любом случае, стоит выпить кофе в отеле до выезда на воркшоп в ~11:00.</span></p>
+        </div>
+      </div>
+
+      <!-- move -->
+      <div class="tl-row">
+        <div class="tl-time text-cream/35 text-[11px] md:text-xs">~11:00</div>
+        <div class="tl-body is-move">
+          <span class="tl-dot is-move"></span>
+          <p class="tl-cue text-cream/55"><span class="en">→ taxi to the cooking workshop</span><span class="ru">→ такси на кулинарный мастер-класс</span></p>
+        </div>
+      </div>
+
+      <!-- 11:30 workshop -->
+      <div class="tl-row">
+        <div class="tl-time text-pink text-xs md:text-sm">11:30</div>
+        <div class="tl-body">
+          <span class="tl-dot" style="background:#FF46CA;"></span>
+          <div class="flex items-start justify-between gap-3">
+            <p class="font-body font-bold text-cream text-lg md:text-xl leading-tight"><span class="en">Cooking workshop + lunch</span><span class="ru">кулинарный мастер-класс + обед</span></p>
+            <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/Plov+Museum+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Plov+Museum+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
+          </div>
+          <p class="font-body text-cream/55 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">chaikhana plov at the Plov Museum. we cook together, we eat what we cook. (~3 hours.)</span><span class="ru">чайханский плов в Музее Плова. готовим вместе, едим то, что приготовили. (~3 часа.)</span></p>
+        </div>
+      </div>
+
+      <!-- before-dinner free -->
+      <div class="tl-row">
+        <div class="tl-time text-green text-xs md:text-sm">~14:30</div>
+        <div class="tl-body is-free">
+          <span class="tl-dot is-free"></span>
+          <div class="tl-tag text-green mb-1"><span class="en">free · before the big dinner</span><span class="ru">свободно · до большого ужина</span></div>
+          <a href="#free-time" class="tl-cue text-pink hover:text-green inline-block mt-1"><span class="en">↓ ideas in the free-time menu</span><span class="ru">↓ идеи в меню свободного времени</span></a>
+        </div>
+      </div>
+
+      <!-- move -->
+      <div class="tl-row">
+        <div class="tl-time text-cream/35 text-[11px] md:text-xs">~19:00</div>
+        <div class="tl-body is-move">
+          <span class="tl-dot is-move"></span>
+          <p class="tl-cue text-cream/55"><span class="en">→ taxi to Sette (Hyatt) ≈ 25 min from DoubleTree</span><span class="ru">→ такси в Sette (Hyatt) ≈ 25 мин из DoubleTree</span></p>
+        </div>
+      </div>
+
+      <!-- 19:30 birthday dinner -->
+      <div class="tl-row">
+        <div class="tl-time text-pink text-sm md:text-base">19:30</div>
+        <div class="tl-body">
+          <span class="tl-dot" style="background:#FF46CA;"></span>
+          <div class="flex items-start justify-between gap-3">
+            <p class="font-body font-bold text-cream text-lg md:text-xl leading-tight"><span class="en">Birthday dinner — Sette rooftop</span><span class="ru">праздничный ужин — Sette руфтоп</span></p>
+            <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/Sette+Hyatt+Regency+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Sette+Hyatt+Regency+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
+          </div>
+          <p class="font-body text-cream/55 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">yes, we came to Uzbekistan for Italian food. (no, we will not be explaining ourselves.)</span><span class="ru">да, мы приехали в Узбекистан ради итальянской кухни. (нет, объясняться мы не будем.)</span></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- tomorrow bridge (warning) -->
+  <a href="#day-12" class="group mt-6 flex items-start gap-3 bg-orange/15 border border-orange/50 px-5 py-4 sticker-orange hover:translate-x-1 transition-transform">
+    <span class="font-mono text-xs md:text-sm font-bold leading-relaxed text-ink/85">
+      <span class="en">→ TOMORROW · JUN 12 · ⚠️ WAKE-UP 6:30 · train to samarkand 8:30 · day ends with emirhan rooftop over the registan. (sleep matters tonight.)</span>
+      <span class="ru">→ ЗАВТРА · 12.06 · ⚠️ ПОДЪЁМ 6:30 · поезд в самарканд 8:30 · день закончится на emirhan, руфтоп над регистаном. (сегодня важно поспать.)</span>
+    </span>
+  </a>
+</section>
+
+<!-- ─────────── COMPACT TRAVEL DAYS · JUN 12 + JUN 15 ─────────── -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-24 md:mb-32">
+
+  <!-- JUN 12 · TRANSIT MORNING -->
+  <section id="day-12" class="bg-white border border-ink p-6 md:p-8 sticker-green flex flex-col">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <h2 class="font-headline font-black text-base sm:text-lg md:text-xl uppercase tracking-tighter leading-tight flex items-baseline gap-2 flex-wrap">
+        <span class="font-mono font-bold text-green text-3xl md:text-4xl leading-none tabular-nums"><span class="en">JUN 12</span><span class="ru">12.06</span></span>
+        <span class="en">· FRI · TRANSIT MORNING</span><span class="ru">· ПТ · УТРОМ В ДОРОГУ</span>
+      </h2>
+      <span class="shrink-0 w-4 h-4 mt-1 rotate-45 bg-green border border-ink"></span>
+    </div>
+    <p class="font-body text-base md:text-lg italic text-ink/65 leading-snug mb-7">
+      <span class="en">morning starts here. by lunch you're in samarkand.</span>
+      <span class="ru">утро начинается здесь. к обеду уже— в самарканде.</span>
+    </p>
+
+    <div class="flex items-center justify-between gap-3 mb-5">
+      <span class="font-mono text-[10px] uppercase tracking-widest text-ink/45"><span class="en">· morning schedule ·</span><span class="ru">· утренний план ·</span></span>
+      <button class="sched-toggle" onclick="toggleSched(this)" aria-expanded="true" aria-label="свернуть / развернуть расписание"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="sched-body space-y-3 mb-6 flex-1">
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-green tabular-nums w-16 shrink-0 text-right">~06:30</span><p class="font-body text-[15px] text-ink/85"><span class="en">wake up. yes, really.</span><span class="ru">подъём. да, серьёзно.</span></p></div>
+      <div class="border-t border-dashed border-ink/15"></div>
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-green tabular-nums w-16 shrink-0 text-right">~07:15</span><p class="font-body text-[15px] text-ink/85"><span class="en">taxi from doubletree to Tashkent Pass. Tsentralny station. ≈ 25 min, account for morning traffic.</span><span class="ru">такси из doubletree на вокзал ташкент пасс. центральный. ≈ 25 мин, закладывай утренний трафик.</span></p></div>
+      <div class="border-t border-dashed border-ink/15"></div>
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-green tabular-nums w-16 shrink-0 text-right">~07:50</span><div class="flex-1"><p class="font-body text-[15px] text-ink/85"><span class="en">AT THE STATION.</span><span class="ru">УЖЕ НА ВОКЗАЛЕ.</span></p><div class="mt-2 flex items-start gap-2 bg-orange/15 border-l-4 border-orange px-3 py-2"><span class="inline-block w-2 h-2 mt-1.5 rotate-45 bg-orange border border-ink shrink-0"></span><p class="font-body text-[14px] font-bold text-ink leading-snug"><span class="en">important — registration closes 30 min before departure. don't be late.</span><span class="ru">важно — регистрация закрывается за 30 мин до отправления. не опаздывай.</span></p></div></div></div>
+      <div class="border-t border-dashed border-ink/15"></div>
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-ink tabular-nums w-16 shrink-0 text-right">08:30</span><p class="font-body text-[15px] text-ink font-medium"><span class="en">train Afrosiyob 770 — Tashkent → Samarkand, 2h 19m.</span><span class="ru">поезд афросиёб 770 — ташкент → самарканд, 2ч 19м.</span></p></div>
+    </div>
+
+    <a href="samarkand.html#day-12" class="group flex items-center justify-between gap-3 bg-green text-ink border border-ink px-5 py-4 sticker-4 pressure-btn font-headline font-black uppercase tracking-tighter text-base md:text-lg mb-7">
+      <span><span class="en">FULL DAY CONTINUES IN SAMARKAND</span><span class="ru">ПРОДОЛЖЕНИЕ ДНЯ — В САМАРКАНДЕ</span></span>
+      <span class="font-mono group-hover:translate-x-1 transition-transform">→</span>
+    </a>
+
+    <p class="font-hand font-bold text-orange text-2xl md:text-3xl rotate-[-1.5deg] mt-auto leading-tight">
+      <span class="en">today a few of us fly home. (we'll miss them. they'll miss the samsa.)</span>
+      <span class="ru">сегодня несколько человек улетают. (мы будем скучать по ним. они — по самсе.)</span>
+    </p>
+  </section>
+
+  <!-- JUN 15 · YOU'RE BACK · DINNER -->
+  <section id="day-15" class="bg-white border border-ink p-6 md:p-8 sticker-orange flex flex-col">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <h2 class="font-headline font-black text-base sm:text-lg md:text-xl uppercase tracking-tighter leading-tight flex items-baseline gap-2 flex-wrap">
+        <span class="font-mono font-bold text-orange text-3xl md:text-4xl leading-none tabular-nums"><span class="en">JUN 15</span><span class="ru">15.06</span></span>
+        <span class="en">· MON · YOU'RE BACK · DINNER</span><span class="ru">· ПН · ТЫ ВЕРНУЛСЯ · УЖИН</span>
+      </h2>
+      <span class="shrink-0 w-4 h-4 mt-1 rotate-45 bg-orange border border-ink"></span>
+    </div>
+    <a href="bukhara.html#day-15" class="group flex items-center justify-between gap-3 bg-orange text-ink border border-ink px-5 py-4 sticker-4 pressure-btn font-headline font-black uppercase tracking-tighter text-base md:text-lg mb-6">
+      <span class="font-mono group-hover:-translate-x-1 transition-transform">←</span>
+      <span class="text-right"><span class="en">DAY STARTED IN BUKHARA</span><span class="ru">НАЧАЛО ДНЯ — В БУХАРЕ</span></span>
+    </a>
+
+    <div class="flex items-center justify-between gap-3 mb-5">
+      <span class="font-mono text-[10px] uppercase tracking-widest text-ink/45"><span class="en">· evening schedule ·</span><span class="ru">· вечерний план ·</span></span>
+      <button class="sched-toggle" onclick="toggleSched(this)" aria-expanded="true" aria-label="свернуть / развернуть расписание"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="sched-body space-y-3 mb-7">
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-orange tabular-nums w-16 shrink-0 text-right">20:30</span><p class="font-body text-[15px] text-ink/85"><span class="en">train arrives at Tashkent Pass. Tsentralny.</span><span class="ru">поезд приходит на ташкент пасс. центральный.</span></p></div>
+      <div class="border-t border-dashed border-ink/15"></div>
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-orange tabular-nums w-16 shrink-0 text-right">~21:00</span><p class="font-body text-[15px] text-ink/85"><span class="en">taxi to DoubleTree, drop bags in the room. shower if you can.</span><span class="ru">такси в doubletree, бросаешь вещи в номер. душ если успеваешь.</span></p></div>
+      <div class="border-t border-dashed border-ink/15"></div>
+      <div class="flex gap-3 items-baseline"><span class="font-mono text-sm font-bold text-orange tabular-nums w-16 shrink-0 text-right">~21:30</span><p class="font-body text-[15px] text-ink font-medium"><span class="en">farewell dinner — inside doubletree or walking distance.</span><span class="ru">прощальный ужин — внутри doubletree или в пешей доступности.</span></p></div>
+    </div>
+
+    <div class="mb-7"></div>
+
+    <p class="font-hand font-bold text-pink text-2xl md:text-3xl rotate-[-1.5deg] mt-auto leading-tight">
+      <span class="en">tomorrow everyone leaves on their own flight. (time to cry is... NOW.)</span>
+      <span class="ru">завтра все улетают своими рейсами. (ПЛАКАТЬ УЖЕ МОЖНО...)</span>
+    </p>
+  </section>
 </div>
+<!-- ─────────── FREE-TIME MENU ─────────── -->
+<section id="free-time" class="mb-24 md:mb-32">
+  <div class="div-thread mb-14"><span class="knot">✧</span></div>
+
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+    <h2 class="font-headline font-black text-3xl sm:text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9]">
+      <span class="en">WHAT TO DO IN YOUR <span class="text-pink italic">FREE</span> TIME</span>
+      <span class="ru">ЧЕМ ЗАНЯТЬСЯ В <span class="text-pink italic">СВОБОДНОЕ</span> ВРЕМЯ</span>
+    </h2>
+    <span class="font-mono text-xs uppercase tracking-widest text-ink/40 hidden"></span>
+  </div>
+  <p class="font-body italic text-ink/60 mb-8 text-lg">
+    <span class="en">for the hours between group things. pick by mood.</span>
+    <span class="ru">для часов между общими активностями. выбирай по настроению.</span>
+  </p>
+
+  <!-- filters -->
+  <!-- type selector — rectangular icon tabs (full width) -->
+  <div class="flex border border-ink sticker-4 mb-5">
+    <button onclick="showFtm('see', this)" class="ftm-tab ftm-see is-active flex-1 flex items-center justify-center gap-2 py-3 font-headline font-black uppercase tracking-tighter text-sm md:text-base border-r border-ink"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">mosque</span><span class="en">SEE</span><span class="ru">СМОТРЕТЬ</span></button>
+    <button onclick="showFtm('eat', this)" class="ftm-tab ftm-eat flex-1 flex items-center justify-center gap-2 py-3 font-headline font-black uppercase tracking-tighter text-sm md:text-base border-r border-ink"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">restaurant</span><span class="en">EAT</span><span class="ru">ЕДА</span></button>
+    <button onclick="showFtm('shop', this)" class="ftm-tab ftm-shop flex-1 flex items-center justify-center gap-2 py-3 font-headline font-black uppercase tracking-tighter text-sm md:text-base"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">shopping_bag</span><span class="en">SHOP</span><span class="ru">ШОПИНГ</span></button>
+  </div>
+
+  <!-- attribute row (refine · SEE only) + map link -->
+  <div class="flex items-start justify-between gap-4 mb-8">
+    <div id="ftm-attrs" class="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[9px] uppercase tracking-widest text-ink/40 shrink-0 mr-0.5"><span class="en">priority</span><span class="ru">приоритет</span></span>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="priority" data-val="must" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>⭐</span><span class="en">must-see</span><span class="ru">обязательно</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="priority" data-val="worth" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span class="text-pink">★</span><span class="en">worth it</span><span class="ru">стоит</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="priority" data-val="iftime" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span class="text-ink/40">☆</span><span class="en">if time</span><span class="ru">если время</span></button>
+      </div>
+      <span class="w-px h-5 bg-ink/15 hidden sm:block"></span>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[9px] uppercase tracking-widest text-ink/40 shrink-0 mr-0.5"><span class="en">when</span><span class="ru">когда</span></span>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="time" data-val="morning" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>🌅</span><span class="en">morning</span><span class="ru">утро</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="time" data-val="sunset" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>🌇</span><span class="en">sunset</span><span class="ru">закат</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="time" data-val="heat" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>🏠</span><span class="en">in the heat</span><span class="ru">в жару</span></button>
+      </div>
+      <span class="w-px h-5 bg-ink/15 hidden sm:block"></span>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[9px] uppercase tracking-widest text-ink/40 shrink-0 mr-0.5"><span class="en">theme</span><span class="ru">тема</span></span>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="arch" data-val="brutal" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>🏗️</span><span class="en">modernism</span><span class="ru">модернизм</span></button>
+      </div>
+      <button type="button" id="ftm-reset" onclick="resetFtm()" class="hidden font-mono text-[11px] uppercase tracking-wide bg-pink text-white border border-ink px-2.5 py-1 items-center gap-1.5 sticker-4 pressure-btn"><span>✕</span><span class="en">reset</span><span class="ru">сбросить</span></button>
+    </div>
+    <a href="https://parapam-gh.github.io/is_30/map.html" target="_blank" rel="noopener" class="link-wavy shrink-0 hidden sm:flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest pt-1"><span class="inline-block w-2 h-2 rotate-45 bg-pink border border-ink"></span><span class="en">↓ download map</span><span class="ru">↓ скачать карту</span></a>
+  </div>
+
+  <!-- SEE panel -->
+  <div class="ftm-panel" data-ftm="see">
+    <div id="ftm-see-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <p id="ftm-empty" class="hidden col-span-full font-body italic text-ink/50 py-8 text-center"><span class="en">nothing matches those filters. <button type="button" onclick="resetFtm()" class="link-wavy">reset</button>.</span><span class="ru">ничего не подходит под фильтры. <button type="button" onclick="resetFtm()" class="link-wavy">сбросить</button>.</span></p>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">⭐ <span class="text-base">🌅</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 1.5–2H ]</span></div>
+        <div class="aspect-[4/3] mb-5 border border-ink/20 overflow-hidden bg-s2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Barakhan_Madrasah_Tashkent.jpg/1280px-Barakhan_Madrasah_Tashkent.jpg" alt="Hast-Imam Complex" loading="lazy" class="w-full h-full object-cover"/></div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Hast-Imam Complex</span> — quran of uthman, 7th century. one of the oldest in the world. mosques, madrasas, mausoleums.</span><span class="ru"><span class="font-bold text-ink">комплекс хаст-имам</span> — коран османа, vii век. один из старейших в мире. мечети, медресе, мавзолеи.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Hast-Imam+Complex+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Hast-Imam+Complex+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">⭐ <span class="text-base">🌅</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 1–1.5H ]</span></div>
+        <div class="aspect-[4/3] mb-5 border border-ink/20 overflow-hidden bg-s2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Chorsu_Market_general_view.jpg/1280px-Chorsu_Market_general_view.jpg" alt="Chorsu bazaar" loading="lazy" class="w-full h-full object-cover"/></div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Chorsu bazaar</span> — giant covered market under a blue dome. samsa, lepyoshka, cherries.</span><span class="ru"><span class="font-bold text-ink">базар чорсу</span> — гигантский крытый рынок под голубым куполом. самса, лепёшки, черешня.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">⭐ <span class="text-base">🏠</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 30 MIN ]</span></div>
+        <div class="photo-tbd aspect-[4/3] mb-5 border border-dashed border-ink/20">[ PHOTO TBD ]</div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Alisher Navoi Cinema</span> — (modernism) the only uzbek building in chaubin's CCCP book. still a working cinema.</span><span class="ru"><span class="font-bold text-ink">кинотеатр алишер навои</span> — (модернизм) единственное узбекское здание в книге шобена CCCP. действующий кинотеатр.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Alisher+Navoi+Cinema+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Alisher+Navoi+Cinema+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🏠</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 2–3H ]</span></div>
+        <div class="aspect-[4/3] mb-5 border border-ink/20 overflow-hidden bg-s2"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Kosmonavtlar_station_2023.jpg/1280px-Kosmonavtlar_station_2023.jpg" alt="Tashkent metro — Kosmonavtlar station" loading="lazy" class="w-full h-full object-cover"/></div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Tashkent metro</span> — (modernism) palace-stations: Kosmonavtlar, Alisher Navoi, Mustaqillik. +20°C when it's +40 outside.</span><span class="ru"><span class="font-bold text-ink">метро ташкента</span> — (модернизм) станции-дворцы: космонавтлар, алишер навоий, мустакиллик. +20°C в жару +40°C.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Alisher+Navoi+Metro+Station+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Alisher+Navoi+Metro+Station+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🏠</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 20 MIN ]</span></div>
+        <div class="photo-tbd aspect-[4/3] mb-5 border border-dashed border-ink/20">[ PHOTO TBD ]</div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Hotel Uzbekistan (1974)</span> — (modernism) panjara lattice at skyscraper scale. classic southern brutalism — they let you into the lobby.</span><span class="ru"><span class="font-bold text-ink">hotel uzbekistan (1974)</span> — (модернизм) решётка панджара в масштабе небоскрёба. классика южного брутализма. в лобби пустят.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Hotel+Uzbekistan+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Hotel+Uzbekistan+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🌅</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 30 MIN ]</span></div>
+        <div class="aspect-[4/3] mb-5 border border-ink/20 overflow-hidden bg-s2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Davlat_sirk.jpg/1280px-Davlat_sirk.jpg" alt="Tashkent Circus (1975)" loading="lazy" class="w-full h-full object-cover"/></div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Tashkent Circus (1975)</span> — (modernism) geometry outside; stained glass, mosaic, carving inside. check for a june show.</span><span class="ru"><span class="font-bold text-ink">цирк (1975)</span> — (модернизм) снаружи геометрия, внутри витражи, мозаика, резьба. проверить шоу в июне.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Tashkent+Circus" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Tashkent+Circus" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🏠</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 20 MIN ]</span></div>
+        <div class="aspect-[4/3] mb-5 border border-ink/20 overflow-hidden bg-s2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Exhibition_Hall_of_the_Academy_of_Arts_of_Uzbekistan.jpg/1280px-Exhibition_Hall_of_the_Academy_of_Arts_of_Uzbekistan.jpg" alt="Union of Artists exhibition hall" loading="lazy" class="w-full h-full object-cover"/></div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Union of Artists hall</span> — (modernism) eastern arch, turquoise tiles, two-tone hall. next to Hotel Uzbekistan.</span><span class="ru"><span class="font-bold text-ink">союз художников</span> — (модернизм) восточная арка, бирюзовые изразцы, двухтонный зал. рядом с hotel uzbekistan.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Union+of+Artists+Exhibition+Hall+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Union+of+Artists+Exhibition+Hall+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🌇</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ SUNSET ]</span></div>
+        <div class="photo-tbd aspect-[4/3] mb-5 border border-dashed border-ink/20">[ PHOTO TBD ]</div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Minor Mosque</span> — white marble on the Anhor canal. best light at sunset.</span><span class="ru"><span class="font-bold text-ink">мечеть минор</span> — белый мрамор на берегу канала анхор. на закате — лучший свет.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Minor+Mosque+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Minor+Mosque+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🌇</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 1H ]</span></div>
+        <div class="photo-tbd aspect-[4/3] mb-5 border border-dashed border-ink/20">[ PHOTO TBD ]</div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Old Town walk</span> — narrow lanes, grape vines, clay walls. not a touristy rhythm.</span><span class="ru"><span class="font-bold text-ink">старый город</span> — узкие переулки, виноградные лозы, глинобитные стены. не туристический ритм.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Old+Town+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Old+Town+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">☆ <span class="text-base">🏠</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 1H · AC ]</span></div>
+        <div class="photo-tbd aspect-[4/3] mb-5 border border-dashed border-ink/20">[ PHOTO TBD ]</div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Centre for Contemporary Arts</span> — contemporary uzbek artists + international shows. air-conditioned, good for siesta.</span><span class="ru"><span class="font-bold text-ink">centre for contemporary arts</span> — современные узбекские художники + международные выставки. кондиционер, для сиесты.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Centre+for+Contemporary+Arts+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Centre+for+Contemporary+Arts+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">☆ <span class="text-base">🌅</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 30–45 MIN ]</span></div>
+        <div class="photo-tbd aspect-[4/3] mb-5 border border-dashed border-ink/20">[ PHOTO TBD ]</div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Shota Rustaveli mosaics</span> — (modernism) fantastical mosaics on the facades of residential blocks.</span><span class="ru"><span class="font-bold text-ink">мозаики на шота руставели</span> — (модернизм) фантастические мозаики на фасадах жилых домов.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Soviet+mosaics+Shota+Rustaveli+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Soviet+mosaics+Shota+Rustaveli+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">☆ <span class="text-base">🌅</span> <span class="text-base">🏗️</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 20 MIN ]</span></div>
+        <div class="aspect-[4/3] mb-5 border border-ink/20 overflow-hidden bg-s2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Tashkent%2C_Peoples_Friendship_Palace_%286241108689%29.jpg/1280px-Tashkent%2C_Peoples_Friendship_Palace_%286241108689%29.jpg" alt="Palace of People's Friendship" loading="lazy" class="w-full h-full object-cover"/></div>
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Palace of People's Friendship</span> — (modernism) modernism + uzbek ornament at maximum scale. from outside.</span><span class="ru"><span class="font-bold text-ink">дворец дружбы народов</span> — (модернизм) модернизм + узбекский орнамент в максимальном масштабе. снаружи.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Palace+of+Peoples+Friendship+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Palace+of+Peoples+Friendship+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EAT -->
+  <div class="ftm-panel" data-ftm="eat" hidden>
+    <div class="font-mono text-[11px] uppercase tracking-widest text-ink/45 mb-4"><span class="en">· by dish ·</span><span class="ru">· по блюдам ·</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1.5"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight"><span class="en">Plov</span><span class="ru">плов</span> ⭐</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en"><span class="font-bold text-ink">Besh Qozon</span> — giant cauldrons, horse meat (kazy), ~$3.</span><span class="ru"><span class="font-bold text-ink">Besh Qozon</span> — гигантские казаны, конина (казы), ~$3.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://maps.google.com/?q=Central+Asian+Plov+Center+Besh+Qozon+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Central+Asian+Plov+Center+Besh+Qozon+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1.5"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight"><span class="en">Local plov</span><span class="ru">плов местный</span></span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en"><span class="font-bold text-ink">Nurafshon Osh Markazi</span> — locals' favourite. Old Town. go before 13:00.</span><span class="ru"><span class="font-bold text-ink">Nurafshon Osh Markazi</span> — лучший по мнению местных. старый город. идти до 13:00.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Nurafshon+Osh+Markazi+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Nurafshon+Osh+Markazi+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1.5"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight"><span class="en">Samsa</span><span class="ru">самса</span></span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en"><span class="font-bold text-ink">Minor Somsa №1</span> — from 7am, minced meat from the tandoor. fresh batch 11–12.</span><span class="ru"><span class="font-bold text-ink">Minor Somsa №1</span> — с 7 утра, рубленое мясо из тандыра. свежая партия 11–12.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Minor+Somsa+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Minor+Somsa+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1.5"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight"><span class="en">Manti</span><span class="ru">манты</span></span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en"><span class="font-bold text-ink">MANDU MANTI</span> — best in Tashkent (uyghur school). wooden steamers, cream sauce.</span><span class="ru"><span class="font-bold text-ink">MANDU MANTI</span> — лучшие в ташкенте (уйгурская школа). деревянные пароварки, крем-соус.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://maps.google.com/?q=Mandu+Manti+Khadra+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Mandu+Manti+Khadra+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1.5"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight"><span class="en">Lagman</span><span class="ru">лагман</span></span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en"><span class="font-bold text-ink">Karasaray Lagman</span> — across from Hast-Imam, drop in after the walk. signature adjika.</span><span class="ru"><span class="font-bold text-ink">Карасарай Лагман</span> — напротив хаст-имам, зайти после прогулки. фирменная аджика.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Karasaray+Lagman+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Karasaray+Lagman+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1.5"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight"><span class="en">Shashlik</span><span class="ru">шашлык</span></span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en"><span class="font-bold text-ink">Chorsu bazaar</span> — straight off the grill at the market.</span><span class="ru"><span class="font-bold text-ink">Чорсу базар</span> — прямо на базаре.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+
+    <div class="font-mono text-[11px] uppercase tracking-widest text-ink/45 mb-4"><span class="en">· restaurants ·</span><span class="ru">· рестораны ·</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Ember</span><span class="font-mono text-[10px] text-pink shrink-0">$$$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2">pan-asian · rooftop</div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">rooftop panorama, Private Dining Room with a fireplace (InterCont, 17–22 fl).</span><span class="ru">руфтоп-панорама, private dining room с камином (InterCont, 17–22 эт).</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Ember+InterContinental+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Ember+InterContinental+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Sette</span><span class="font-mono text-[10px] text-pink shrink-0">$$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">italian · rooftop</span><span class="ru">итальянская · руфтоп</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">wood-fired pizza, complimentary cake for birthdays (Hyatt, 7 fl). ✦ the ДР dinner.</span><span class="ru">пицца из дровяной печи, торт для именинников (Hyatt, 7 эт). ✦ ужин на ДР.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Sette+Hyatt+Regency+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Sette+Hyatt+Regency+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">QUADRO</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">lebanese-uzbek</span><span class="ru">ливанско-узб.</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">live music, a mood of its own.</span><span class="ru">live music, особая атмосфера.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/QUADRO+restaurant+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=QUADRO+restaurant+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Cafe 1991</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">uzbek-lebanese</span><span class="ru">узб.-ливанская</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">good terrace, crispy eggplant.</span><span class="ru">хорошая терраса, crispy eggplant.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Cafe+1991+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Cafe+1991+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Navvat Lounge</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">chaikhana + bar</span><span class="ru">чайхана + бар</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">in + outdoor, live music.</span><span class="ru">in+outdoor, живая музыка.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Navvat+Lounge+Bar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Navvat+Lounge+Bar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Khiva</span><span class="font-mono text-[10px] text-pink shrink-0">$$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">uzbek · Hyatt</span><span class="ru">узбекская · Hyatt</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">char-grilled, terrace, private rooms.</span><span class="ru">char-grilled, терраса, отдельные комнаты.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Khiva+Hyatt+Regency+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Khiva+Hyatt+Regency+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Afsona</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">uzbek</span><span class="ru">узбекская</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">classic courtyard with ayvans, open tandoor, plov in the cauldron.</span><span class="ru">классический дворик с айванами, тандыр на виду, плов в казане.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Afsona+restaurant+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Afsona+restaurant+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Caravan</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">uzbek</span><span class="ru">узбекская</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">loud and folksy, caravanserai decor, rugs, giant cauldrons.</span><span class="ru">народный, шумный, караван-сарайный декор, ковры, гигантские казаны.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Caravan+restaurant+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Caravan+restaurant+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">12 Rooftop</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">bar · pan-asian</span><span class="ru">бар · pan-asian</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">rooftop, a view. check group capacity.</span><span class="ru">руфтоп, вид. уточнить вместимость для группы.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/12+Rooftop+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=12+Rooftop+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Sharshara</span><span class="font-mono text-[10px] text-pink shrink-0">$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">uzbek</span><span class="ru">узбекская</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">built by the river, a waterfall inside. (the welcome dinner.)</span><span class="ru">построен у реки, внутри водопад. (приветственный ужин.)</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/place/Sharshara/@41.3415583,69.2539577,17z" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Sharshara" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Koinot</span><span class="font-mono text-[10px] text-pink shrink-0">$$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">view · TV tower 110m</span><span class="ru">вид · телебашня 110м</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">revolving, 360° panorama. food is average — go for the view.</span><span class="ru">вращающийся, панорама 360°. еда средняя — идти за видом.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Koinot+Tashkent+TV+Tower" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Koinot+Tashkent+TV+Tower" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="flex items-baseline justify-between gap-2 mb-1"><span class="font-headline font-black uppercase tracking-tighter text-base leading-tight">Gruzinskiy Dvorik</span><span class="font-mono text-[10px] text-pink shrink-0">$$</span></div>
+        <div class="font-mono text-[9px] uppercase tracking-widest text-ink/40 mb-2"><span class="en">georgian</span><span class="ru">грузинская</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">best georgian in the city.</span><span class="ru">лучший грузинский в городе.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Gruzinskiy+Dvorik+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Gruzinskiy+Dvorik+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOP -->
+  <div class="ftm-panel" data-ftm="shop" hidden>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-lg mb-3"><span class="en">Chorsu bazaar</span><span class="ru">базар чорсу</span></div>
+        <p class="font-body text-[15px] text-ink/75 leading-snug flex-1"><span class="en">spices (cumin, turmeric, barberry), dried fruit, non, nuts. cash.</span><span class="ru">специи (зира, куркума, барбарис), сухофрукты, нон, орехи. наличные.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-lg mb-3"><span class="en">Hast-Imam souvenirs</span><span class="ru">хаст-имам / сувениры</span></div>
+        <p class="font-body text-[15px] text-ink/75 leading-snug flex-1"><span class="en">ceramics, miniatures, teapots, scarves.</span><span class="ru">керамика, миниатюры, чайники, платки.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/Hast-Imam+Complex+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=Hast-Imam+Complex+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-lg mb-3"><span class="en">TSUM / Navoi</span><span class="ru">цум / навои</span></div>
+        <p class="font-body text-[15px] text-ink/75 leading-snug flex-1"><span class="en">mass-market + local clothing brands.</span><span class="ru">масс-маркет + местные бренды одежды.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/TSUM+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=TSUM+Tashkent" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- (map CTA relocated into the free-time section as a mini element) -->
+
+<!-- ─────────── CROSS-CITY HANDOFF → SAMARKAND ─────────── -->
+<section id="rsvp" class="mb-12">
+  <div class="div-girih mb-12"><div class="diamond"></div></div>
+  <a href="samarkand.html" class="group block bg-white border border-ink p-6 md:p-12 sticker-green relative overflow-hidden hover:-translate-y-1 transition-transform">
+    <svg class="absolute -top-8 -right-8 w-56 h-56 opacity-[0.06] pointer-events-none" viewBox="0 0 80 80" fill="none">
+      <path d="M40 4 L76 40 L40 76 L4 40 Z M40 14 L66 40 L40 66 L14 40 Z" stroke="#1C1C19" stroke-width="0.8"/>
+    </svg>
+    <div class="relative flex items-center gap-2 mb-4">
+      <div class="w-3.5 h-3.5 bg-green border border-ink pin-pulse"></div>
+      <span class="font-mono text-[11px] uppercase tracking-widest text-green font-bold"><span class="en">NEXT STOP →</span><span class="ru">СЛЕДУЮЩАЯ ОСТАНОВКА →</span></span>
+    </div>
+    <h2 class="relative font-headline font-black text-4xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-5">
+      <span class="en">JUN 12 · <span class="text-green italic">SAMARKAND</span></span>
+      <span class="ru">12.06 · <span class="text-green italic">САМАРКАНД</span></span>
+    </h2>
+    <p class="relative font-body text-lg md:text-2xl italic text-ink/70 leading-snug max-w-5xl mb-8">
+      <span class="en">the registan. turquoise domes. the bread that locals fly home in hand luggage.</span>
+      <span class="ru">регистан. бирюзовые купола. лепёшка, которую местные везут самолётами в ручной клади.</span>
+    </p>
+    <div class="relative inline-flex items-center gap-3 bg-green text-ink border border-ink px-6 py-3.5 sticker-4 font-headline font-black uppercase tracking-tighter text-base md:text-lg">
+      <span><span class="en">→ OPEN SAMARKAND</span><span class="ru">→ ОТКРЫТЬ САМАРКАНД</span></span>
+      <span class="font-mono group-hover:translate-x-1 transition-transform">→</span>
+    </div>
+  </a>
+</section>
+
+</div>
+<!-- END DAYS -->
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="w-full py-10 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-cream border-t border-double border-ink/60 mt-10">
+  <div class="font-mono text-xs uppercase tracking-widest text-ink/60">© 2026 UZBEK BDAY ZINE</div>
+  <div class="font-headline text-xl font-black italic text-pink tracking-tighter uppercase">UZBEK BDAY</div>
+  <div class="flex items-center gap-2 font-mono text-[10px] tracking-widest text-ink/60">
+    <span class="en uppercase">made with love</span>
+    <span class="ru">сделано с любовью</span>
+  </div>
 </footer>
-<!-- Decorative Girikh Fragment in Corner -->
-<div class="fixed bottom-10 -right-20 opacity-10 pointer-events-none transform rotate-45">
-<svg fill="none" height="400" stroke="#1C1C19" stroke-width="0.2" viewbox="0 0 100 100" width="400">
-<path d="M50 0 L100 50 L50 100 L0 50 Z"></path>
-<path d="M50 10 L90 50 L50 90 L10 50 Z"></path>
-<path d="M50 20 L80 50 L50 80 L20 50 Z"></path>
-<circle cx="50" cy="50" r="5"></circle>
-</svg>
-</div>
-<script>
-document.querySelectorAll(".rsvp-link").forEach(function(el){
-  el.addEventListener("click",function(){
-    window.open("https://t.me/"+"parapam_tg","_blank");
-  });
-});
-// Lang toggle — shared with index/plan via 'uzbekbday-lang' localStorage key
-function setLang(lang) {
-  localStorage.setItem('uzbekbday-lang', lang);
-  document.body.classList.toggle('lang-ru', lang === 'ru');
-  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
-  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
-}
-(function() {
-  var saved = localStorage.getItem('uzbekbday-lang');
-  if (saved === 'ru') setLang('ru');
-})();
-</script>
-
-
 
 <script>
-function toggleMenu(){
-  var m=document.getElementById('mobile-menu'),b=document.getElementById('menu-btn');
-  var open=m.classList.toggle('hidden')===false;
-  b.setAttribute('aria-expanded',open?'true':'false');
-  document.getElementById('menu-icon-open').classList.toggle('hidden',open);
-  document.getElementById('menu-icon-close').classList.toggle('hidden',!open);
-}
+  function toggleMenu(){
+    var m=document.getElementById('mobile-menu'),b=document.getElementById('menu-btn');
+    var open=m.classList.toggle('hidden')===false;
+    b.setAttribute('aria-expanded',open?'true':'false');
+    document.getElementById('menu-icon-open').classList.toggle('hidden',open);
+    document.getElementById('menu-icon-close').classList.toggle('hidden',!open);
+  }
+  function setLang(lang) {
+    document.body.classList.remove('lang-en','lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+    try { localStorage.setItem('uzbekbday-lang', lang); } catch(e) {}
+  }
+  try { var saved = localStorage.getItem('uzbekbday-lang'); if (saved === 'ru') setLang('ru'); } catch(e) {}
+
+  /* Free-time menu tabs */
+  function showFtm(key, btn) {
+    document.querySelectorAll('.ftm-tab').forEach(function(b){ b.classList.toggle('is-active', b === btn); });
+    document.querySelectorAll('.ftm-panel').forEach(function(p){ p.hidden = (p.getAttribute('data-ftm') !== key); });
+    var attrs = document.getElementById('ftm-attrs');
+    if (attrs) attrs.style.display = (key === 'see') ? '' : 'none';
+  }
+
+  /* Collapsible day sections (always open on load, no persistence) */
+  function toggleDay(btn){
+    var s = btn.closest('section');
+    if (!s) return;
+    var c = s.classList.toggle('is-collapsed');
+    btn.setAttribute('aria-expanded', String(!c));
+  }
+
+  /* Schedule-only collapse (compact day cards) */
+  function toggleSched(btn){
+    var body = btn.closest('div').nextElementSibling;
+    if (!body || !body.classList.contains('sched-body')) return;
+    var c = body.classList.toggle('sched-hidden');
+    btn.classList.toggle('is-off', c);
+    btn.setAttribute('aria-expanded', String(!c));
+  }
+
+  /* Free-time menu filters */
+  var ftmFilters = { priority: [], time: [], arch: [] };
+  function ftmCardTags(card){
+    var m = card.querySelector('span.text-lg');
+    var t = m ? m.textContent : '';
+    var p = t.indexOf('⭐')>-1?'must': t.indexOf('★')>-1?'worth': t.indexOf('☆')>-1?'iftime':'';
+    var tm = t.indexOf('🌅')>-1?'morning': t.indexOf('🌇')>-1?'sunset': t.indexOf('🏠')>-1?'heat':'';
+    var br = t.indexOf('🏗')>-1;
+    return { p:p, t:tm, br:br };
+  }
+  function toggleFtmFilter(btn){
+    var g = btn.getAttribute('data-group'), v = btn.getAttribute('data-val');
+    var arr = ftmFilters[g], i = arr.indexOf(v);
+    if (i>-1){ arr.splice(i,1); btn.classList.remove('is-on'); }
+    else { arr.push(v); btn.classList.add('is-on'); }
+    applyFtmFilter();
+  }
+  function resetFtm(){
+    ftmFilters.priority = []; ftmFilters.time = []; ftmFilters.arch = [];
+    document.querySelectorAll('.ftm-filter').forEach(function(b){ b.classList.remove('is-on'); });
+    applyFtmFilter();
+  }
+  function applyFtmFilter(){
+    var pr = ftmFilters.priority, tm = ftmFilters.time, ar = ftmFilters.arch;
+    var any = pr.length || tm.length || ar.length;
+    var reset = document.getElementById('ftm-reset');
+    if (reset){ reset.classList.toggle('hidden', !any); reset.classList.toggle('inline-flex', !!any); }
+    var shown = 0;
+    document.querySelectorAll('#ftm-see-grid > .bg-white').forEach(function(card){
+      var tags = ftmCardTags(card);
+      var okP = pr.length===0 || pr.indexOf(tags.p)>-1;
+      var okT = tm.length===0 || tm.indexOf(tags.t)>-1;
+      var okA = ar.length===0 || tags.br;
+      var show = okP && okT && okA;
+      card.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    var empty = document.getElementById('ftm-empty');
+    if (empty) empty.classList.toggle('hidden', shown>0);
+  }
+
+  /* Day-rail active state via scroll-spy */
+  (function(){
+    var ids = ['day-9','day-10','day-11','day-12','day-15','free-time'];
+    var sections = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+    var chips = {};
+    document.querySelectorAll('.rail-chip').forEach(function(c){ chips[c.getAttribute('data-rail')] = c; });
+    var spyLock = 0;
+    Object.keys(chips).forEach(function(k){
+      chips[k].addEventListener('click', function(){
+        spyLock = Date.now();
+        Object.keys(chips).forEach(function(j){ chips[j].classList.toggle('is-active', j === k); });
+      });
+    });
+    function spy(){
+      if (Date.now() - spyLock < 1200) return;
+      var pos = window.scrollY + 200;
+      var current = sections[0] && sections[0].id;
+      var bestTop = -Infinity;
+      sections.forEach(function(s){ if (s.offsetTop <= pos && s.offsetTop > bestTop){ bestTop = s.offsetTop; current = s.id; } });
+      Object.keys(chips).forEach(function(k){ chips[k].classList.toggle('is-active', k === current); });
+    }
+    window.addEventListener('scroll', spy, { passive:true });
+    window.addEventListener('resize', spy);
+    spy();
+  })();
+
+  /* Today-highlight if within the trip (Jun 9–15, 2026) */
+  (function(){
+    var now = new Date();
+    if (now.getFullYear() !== 2026 || now.getMonth() !== 5) return; // June = month 5
+    var d = now.getDate();
+    var map = { 9:'day-9', 10:'day-10', 11:'day-11', 12:'day-12', 15:'day-15' };
+    var id = map[d];
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el) el.classList.add('is-today');
+    var chip = document.querySelector('.rail-chip[data-rail="'+id+'"]');
+    if (chip) { chip.classList.add('is-active'); var t = document.createElement('span'); t.className='ml-1 text-green'; t.textContent='●'; chip.appendChild(t); }
+  })();
 </script>
-</body></html>
+</body>
+</html>
