@@ -140,6 +140,7 @@
   /* Day-rail active chip */
   .rail-chip { transition: all .2s ease; }
   .rail-chip.is-active { background:#1C1C19; color:#FCF9F4; border-color:rgba(252,249,244,.4); }
+  @media (hover:hover){ .rail-chip:hover { transform:translateY(-1px); box-shadow:3px 3px 0 0 #1C1C19; } }
 
   /* Today highlight ring */
   .is-today { outline: 3px solid #FF46CA; outline-offset: 6px; }
@@ -299,7 +300,7 @@
       <span class="inline-block w-2.5 h-2.5 bg-pink border border-ink rotate-45 shrink-0"></span>
       <span class="en">[ 3 DAYS + 1 EVENING ]</span><span class="ru">[ 3 ДНЯ + 1 ВЕЧЕР ]</span>
     </div>
-    <a href="https://3.redirect.appmetrica.yandex.com/route?start-lat=&amp;start-lon=&amp;end-lat=41.303395&amp;end-lon=69.319613&amp;level=&amp;lang=ru&amp;ref=&amp;appmetrica_tracking_id=1178268795219780156" target="_blank" rel="noopener" class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[1deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5 no-underline text-ink">
+    <a href="https://3.redirect.appmetrica.yandex.com/route?start-lat=&amp;start-lon=&amp;end-lat=41.303395&amp;end-lon=69.319613&amp;level=&amp;lang=ru&amp;ref=&amp;appmetrica_tracking_id=1178268795219780156" target="_blank" rel="noopener" class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[1deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5 no-underline text-ink hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#1C1C19] transition-all">
       <span class="inline-block w-2.5 h-2.5 bg-green border border-ink rotate-45 shrink-0"></span>
       <span class="en">[ HOTEL · DOUBLETREE ]</span><span class="ru">[ ОТЕЛЬ · DOUBLETREE ]</span>
     </a>
