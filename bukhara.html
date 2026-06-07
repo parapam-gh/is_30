@@ -1,233 +1,815 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BUKHARA - UZBEK BDAY</title>
+<title>BUKHARA · UZBEK BDAY</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-primary-fixed": "#3b002c",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-fixed-variant": "#005236",
-                    "on-secondary-container": "#00714d",
-                    "secondary": "#006c49",
-                    "surface-container": "#f0ede9",
-                    "surface-variant": "#e5e2dd",
-                    "surface-bright": "#fcf9f4",
-                    "outline-variant": "#ddbecd",
-                    "on-tertiary-fixed-variant": "#6b3b00",
-                    "on-primary-container": "#5b0045",
-                    "inverse-on-surface": "#f3f0eb",
-                    "on-background": "#1c1c19",
-                    "on-primary": "#ffffff",
-                    "surface-dim": "#dcdad5",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-container-low": "#f6f3ee",
-                    "secondary-fixed-dim": "#37e0a0",
-                    "secondary-container": "#5afab8",
-                    "tertiary": "#8d4f00",
-                    "error-container": "#ffdad6",
-                    "primary-fixed-dim": "#ffaedd",
-                    "on-surface": "#1c1c19",
-                    "error": "#ba1a1a",
-                    "on-tertiary-container": "#462500",
-                    "surface": "#fcf9f4",
-                    "outline": "#8a707d",
-                    "on-error-container": "#93000a",
-                    "primary": "#b2008a",
-                    "on-secondary-fixed": "#002113",
-                    "background": "#fcf9f4",
-                    "on-primary-fixed-variant": "#880069",
-                    "on-tertiary": "#ffffff",
-                    "on-error": "#ffffff",
-                    "primary-container": "#ff46ca",
-                    "on-surface-variant": "#57404c",
-                    "primary-fixed": "#ffd8eb",
-                    "on-tertiary-fixed": "#2d1600",
-                    "tertiary-fixed-dim": "#ffb875",
-                    "surface-tint": "#b2008a",
-                    "inverse-primary": "#ffaedd",
-                    "inverse-surface": "#31302d",
-                    "surface-container-highest": "#e5e2dd",
-                    "surface-container-high": "#ebe8e3",
-                    "secondary-fixed": "#5efdbb",
-                    "tertiary-container": "#da7e00",
-                    "tertiary-fixed": "#ffdcc0"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0px",
-                    "lg": "0px",
-                    "xl": "0px",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Epilogue"],
-                    "body": ["Space Grotesk"],
-                    "label": ["Space Grotesk"],
-                    "mono": ["Space Mono", "monospace"]
-            }
-          },
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#1C1C19', cream:'#FCF9F4', pink:'#FF46CA', green:'#00CB8D', orange:'#FF9400',
+          s1:'#F6F3EE', s2:'#F0EDE9', s3:'#EBE8E3', s4:'#E5E2DD',
         },
-      }
-    </script>
-<style>.shaky-line {
-    border-bottom: 1px solid #1C1C19;
-    mask-image: url("data:image/svg+xml,%3Csvg width='100%25' height='2' viewBox='0 0 1200 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1C50 0.5 100 1.5 150 1C200 0.5 250 1.5 300 1C350 0.5 400 1.5 450 1C500 0.5 550 1.5 600 1C650 0.5 700 1.5 750 1C800 0.5 850 1.5 900 1C950 0.5 1000 1.5 1050 1C1100 0.5 1150 1.5 1200 1' stroke='black'/%3E%3C/svg%3E");
-    mask-size: cover
-    }
-.girikh-watermark {
-    opacity: 0.08;
-    pointer-events: none;
-    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA7YgiL3XoE7Wkv9moWYyVvynx0WFN6kfckqHRBomgVeBj6lUiNoXY9r1DLAMwk3oo1yBZqLOgPT0cRyZ6FAsx29fAn36jXZlVnW1GHNuMWlmrMTzNG-tmJ-5Xav8MCRM5tXQ0zCz_eweErtGzORUDOR0we7p0UKRgn-d9HYCnwyPaRXJ19w2nsxTy1VQGpS96SD6QSp79odh45mukf_WKUAQpIjYhUOCtNq6iknmc2modVAmx_ghOmgr2VYExkHra1p2bcF6e11ckl);
-    /* Placeholder for geometric complexity */
-    }
-.handwritten {
-    font-family: "Epilogue", sans-serif;
-    font-style: italic;
-    transform: rotate(-2deg)
-    }
-.sticker-4 { box-shadow: 4px 4px 0 0 #1C1C19; }
-.sticker-6 { box-shadow: 6px 6px 0 0 #1C1C19; }
-.sticker-pink { box-shadow: 6px 6px 0 0 #FF46CA; }
-.sticker-green { box-shadow: 6px 6px 0 0 #00CB8D; }
-.sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
-.pressure-btn {
-    transition: opacity .3s ease, transform .2s ease;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    user-select: none;
-    cursor: pointer;
-}
-.pressure-btn:active { transform: scale(0.95) translate(1px, 1px); }
-.lang-toggle {
-    display: inline-flex;
-    border: 1px solid #1C1C19;
-    box-shadow: 3px 3px 0 0 #1C1C19;
-}
-.lang-toggle button {
-    padding: 4px 10px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    transition: background 0.2s, color 0.2s;
-}
-.lang-toggle button.lang-active { background: #FF46CA; color: #fff; }
-.lang-toggle button:not(.lang-active) { background: #fff; color: #1C1C19; }
-.lang-toggle button:not(.lang-active):hover { background: #f0ede9; }
-[data-lang="ru"] { display: none; }
-body.lang-ru [data-lang="ru"] { display: revert; }
-body.lang-ru [data-lang="en"] { display: none; }
-    </style>
-<!-- Cloudflare Web Analytics -->
+        borderRadius: { DEFAULT:'0px', lg:'0px', xl:'0px', full:'9999px' },
+        fontFamily: {
+          headline:['Epilogue','sans-serif'],
+          body:['"Space Grotesk"','sans-serif'],
+          mono:['"Space Mono"','monospace'],
+          hand:['"Caveat"','cursive'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family:"Space Grotesk", sans-serif; background:#FCF9F4; color:#1C1C19; }
+  .material-symbols-outlined { font-family:'Material Symbols Outlined'; font-weight:normal; font-style:normal; line-height:1; letter-spacing:normal; text-transform:none; white-space:nowrap; word-wrap:normal; direction:ltr; font-feature-settings:'liga'; -webkit-font-feature-settings:'liga'; -webkit-font-smoothing:antialiased; font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle; }
+
+  .girih-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231C1C19' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M40 4 L76 40 L40 76 L4 40 Z'/%3E%3Cpath d='M40 14 L66 40 L40 66 L14 40 Z'/%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .sticker-4  { box-shadow: 4px 4px 0 0 #1C1C19; }
+  .sticker-6  { box-shadow: 6px 6px 0 0 #1C1C19; }
+  .sticker-8  { box-shadow: 8px 8px 0 0 #1C1C19; }
+  .sticker-pink   { box-shadow: 6px 6px 0 0 #FF46CA; }
+  .sticker-green  { box-shadow: 6px 6px 0 0 #00CB8D; }
+  .sticker-orange { box-shadow: 6px 6px 0 0 #FF9400; }
+  .sticker-orange-8 { box-shadow: 8px 8px 0 0 #FF9400; }
+  .sticker-pink-8 { box-shadow: 8px 8px 0 0 #FF46CA; }
+
+  .shaky-line { border-bottom:1px solid #1C1C19; position:relative; }
+  .shaky-line::after { content:''; position:absolute; bottom:-1px; left:0; width:100%; height:1px; background:#1C1C19; transform:skewY(0.2deg); }
+
+  .pressure-btn { transition: transform .15s ease; cursor:pointer; -webkit-tap-highlight-color:transparent; user-select:none; }
+  .pressure-btn:active { transform: scale(0.95) translate(1px,1px); }
+
+  .link-wavy { color:#FF46CA; text-decoration:underline; text-decoration-style:wavy; text-decoration-thickness:1px; text-underline-offset:4px; transition:all .2s ease; }
+  .link-wavy:hover { color:#00CB8D; }
+
+  .nav-link { transition:all .2s ease; display:inline-block; }
+  .nav-link:hover { transform: skewX(-2deg); color:#00CB8D; }
+
+  /* Divider — girih line + orange diamond */
+  .div-girih { display:flex; align-items:center; gap:1rem; }
+  .div-girih::before, .div-girih::after {
+    content:''; flex:1; height:8px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 4 L4 0 L8 4 L12 0 L16 4 L12 8 L8 4 L4 8 Z' fill='none' stroke='%231C1C19' stroke-width='0.8' opacity='0.7'/%3E%3C/svg%3E");
+    background-repeat:repeat-x; background-size:16px 8px;
+  }
+  .div-girih .diamond { width:10px; height:10px; background:#FF9400; border:1px solid #1C1C19; transform:rotate(45deg); box-shadow:2px 2px 0 0 #1C1C19; }
+
+  /* Divider — dashed rule + mono tag */
+  .div-tag { display:flex; align-items:center; gap:.75rem; }
+  .div-tag::before, .div-tag::after { content:''; flex:1; border-top:1px dashed rgba(28,28,25,0.35); }
+  .div-tag .tag { font-family:"Space Mono",monospace; font-size:10px; letter-spacing:.25em; text-transform:uppercase; font-weight:700; color:rgba(28,28,25,.55); padding:2px 10px; border:1px solid rgba(28,28,25,.35); background:#FCF9F4; white-space:nowrap; }
+  .div-tag--orange::before, .div-tag--orange::after { border-top:1px solid #FF9400; opacity:.6; }
+  .div-tag--orange .tag { color:#FF9400; border-color:#FF9400; }
+
+  /* Divider — thread + glyph */
+  .div-thread { display:flex; align-items:center; gap:1rem; }
+  .div-thread::before, .div-thread::after { content:''; flex:1; height:1px; background:#1C1C19; opacity:.4; }
+  .div-thread .knot { color:#FF9400; font-size:28px; line-height:1; transform:rotate(-8deg); }
+
+  .cross-stitch { display:inline-flex; gap:1rem; font-family:"Space Mono",monospace; }
+  .cross-stitch span:nth-child(3n+1){ color:#FF46CA; }
+  .cross-stitch span:nth-child(3n+2){ color:#00CB8D; }
+  .cross-stitch span:nth-child(3n)  { color:#FF9400; }
+
+  .hand-annotation { font-family:"Caveat",cursive; font-weight:700; color:#FF9400; transform:rotate(-2deg); display:inline-block; line-height:1; }
+  .hand-inline { font-family:"Caveat",cursive; font-weight:700; color:#FF9400; font-size:1.35em; line-height:1; }
+
+  .photo-tbd {
+    background: repeating-linear-gradient(45deg, rgba(28,28,25,0.04) 0 12px, transparent 12px 24px), #F0EDE9;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.25em; color:rgba(28,28,25,0.5);
+    text-transform:uppercase; font-weight:700;
+  }
+
+  .pin-pulse { animation: pin-pulse 2.5s ease-in-out infinite; transform-origin:center; }
+  @keyframes pin-pulse { 0%,100%{ transform:rotate(45deg) scale(1);} 50%{ transform:rotate(45deg) scale(1.18);} }
+  @keyframes bridge-nudge { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(3px);} }
+
+  /* timeline spine */
+  .spine { position:relative; }
+
+  /* ── Unified day timeline ── */
+  .tl-row { display:flex; gap:1rem; }
+  .tl-time { flex:0 0 78px; text-align:right; padding-top:1px; font-family:'Space Mono',monospace; font-weight:700; line-height:1.15; }
+  .tl-body { position:relative; flex:1; min-width:0; padding-left:1.3rem; padding-bottom:1.7rem; border-left:2px solid rgba(28,28,25,0.14); }
+  .tl-row:last-child .tl-body { padding-bottom:0; }
+  .tl-dot { position:absolute; left:-7px; top:5px; width:12px; height:12px; border:1px solid #1C1C19; transform:rotate(45deg); background:#1C1C19; }
+  @media (min-width:768px){
+    .tl-row { gap:1.5rem; }
+    .tl-time { flex-basis:104px; }
+    .tl-body { padding-left:1.6rem; }
+  }
+  /* free-time entry — muted, dashed */
+  .tl-body.is-free { border-left-style:dashed; border-left-color:rgba(28,28,25,0.22); }
+  .tl-dot.is-free { background:#FCF9F4; border-color:#00CB8D; border-width:1.5px; }
+  /* move/taxi entry — compact, dotted */
+  .tl-body.is-move { border-left-style:dotted; border-left-color:rgba(28,28,25,0.22); padding-bottom:1.05rem; }
+  .tl-dot.is-move { width:7px; height:7px; left:-4.5px; top:7px; background:#FCF9F4; }
+  /* hero/peak entry — orange highlight (the madrasah dances) */
+  .tl-body.is-peak { background:rgba(255,148,0,0.08); border-left-color:#FF9400; margin-left:-2px; padding-left:1.5rem; padding-top:.3rem; }
+  @media (min-width:768px){ .tl-body.is-peak { padding-left:1.8rem; } }
+  .tl-tag { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
+  .tl-cue { font-family:'Space Mono',monospace; font-size:12px; line-height:1.45; }
+  .taxi-pill { display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#FF46CA; background:transparent; border:0; padding:0; box-shadow:none; white-space:nowrap; text-decoration:none; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:color .12s ease; }
+  .taxi-pill:hover { color:#1C1C19; }
+  .taxi-pill .material-symbols-outlined { font-size:14px; text-decoration:none; }
+  .taxi-pill .en, .taxi-pill .ru { text-decoration:underline; text-decoration-style:wavy; text-decoration-thickness:1px; text-underline-offset:4px; }
+  @media (max-width:767px){ .taxi-pill { padding:6px 0; font-size:12px; } }
+
+  /* Day-rail active chip */
+  .rail-chip { transition: all .2s ease; }
+  .rail-chip.is-active { background:#1C1C19; color:#FCF9F4; border-color:rgba(252,249,244,.4); }
+  @media (hover:hover){ .rail-chip:hover { transform:translateY(-1px); box-shadow:3px 3px 0 0 #1C1C19; } }
+
+  /* Today highlight ring */
+  .is-today { outline: 3px solid #FF9400; outline-offset: 6px; }
+
+  /* Bilingual visibility */
+  .en, .ru { display:inline; }
+  body.lang-ru .en { display:none; }
+  body.lang-en .ru { display:none; }
+  .en-block, .ru-block { display:block; }
+  body.lang-ru .en-block { display:none; }
+  body.lang-en .ru-block { display:none; }
+
+  .lang-toggle { display:inline-flex; border:1px solid #1C1C19; box-shadow:3px 3px 0 0 #1C1C19; }
+  .lang-toggle button { padding:4px 10px; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; cursor:pointer; border:none; transition:background .2s, color .2s; }
+  .lang-toggle button.active { background:#FF9400; color:#fff; }
+  .lang-toggle button.active:hover { background:#e68600; }
+  .nb-line { width:18px; height:2px; background:#1C1C19; display:block; transition:transform .2s ease, opacity .2s ease; }
+  .nb-line + .nb-line { margin-top:3px; }
+  #navburger.open .nb-line:nth-child(1) { transform:translateY(5px) rotate(45deg); }
+  #navburger.open .nb-line:nth-child(2) { opacity:0; }
+  #navburger.open .nb-line:nth-child(3) { transform:translateY(-5px) rotate(-45deg); }
+
+  /* ───── MOBILE OPTIMISATIONS (≤767px) ───── */
+  #dayrail { transition: transform .3s ease; }
+  body.rail-up #dayrail { transform: translateY(-110%); }
+  @media (max-width: 767px) {
+    .tl-row { flex-direction: column; gap: 2px; }
+    .tl-time { flex: none; text-align: left; padding-top: 0; }
+    .tl-time .block { display: inline-block; margin-left: 6px; margin-top: 0 !important; }
+    .tl-body { padding-left: 1.15rem; }
+    .tl-dot { top: 3px; }
+    .tl-body .flex.items-start.justify-between { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .ftm-panel .grid { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 6px; }
+    .ftm-panel .grid > * { flex: 0 0 80%; scroll-snap-align: start; }
+    #ftm-attrs { flex-direction: column; align-items: flex-start; gap: 10px; }
+    #ftm-attrs > * { flex-shrink: 0; }
+    .lang-toggle button { padding: 11px 14px; }
+    .day-toggle { width: 44px; height: 44px; }
+    .rail-chip { padding-top: 8px; padding-bottom: 8px; }
+    .ftm-filter { padding-top: 8px; padding-bottom: 8px; }
+    .bridge-arrow { animation: bridge-nudge 1.5s ease-in-out infinite; }
+  }
+  .lang-toggle button:not(.active) { background:#fff; color:#1C1C19; }
+  .lang-toggle button:not(.active):hover { background:#F0EDE9; }
+
+  html { scroll-behavior:smooth; }
+  [id]{ scroll-margin-top: 9rem; }
+
+  /* Free-time menu tabs */
+  .ftm-tab { transition:all .15s ease; }
+  .ftm-tab.is-active { background:#1C1C19; color:#FCF9F4; }
+  .ftm-tab.ftm-see.is-active { background:#FF9400; color:#fff; }
+  .ftm-tab.ftm-eat.is-active { background:#FF46CA; color:#fff; }
+  .ftm-tab.ftm-spa.is-active { background:#00CB8D; color:#fff; }
+  .ftm-tab.ftm-shop.is-active { background:#1C1C19; color:#FCF9F4; }
+  .ftm-tab:not(.is-active):hover { background:#F0EDE9; }
+  .ftm-filter { transition: all .15s ease; cursor:pointer; }
+  .ftm-filter:hover { border-color:#1C1C19; }
+  .ftm-filter.is-on { background:#1C1C19; color:#FCF9F4; border-color:#1C1C19; }
+  .ftm-panel[hidden]{ display:none; }
+
+  /* Collapsible day */
+  .day-toggle { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; flex-shrink:0; border:1px solid #1C1C19; background:#FCF9F4; color:#1C1C19; font-family:'Space Mono',monospace; font-weight:700; font-size:20px; line-height:1; cursor:pointer; box-shadow:3px 3px 0 0 #1C1C19; transition:transform .12s ease, box-shadow .12s ease; -webkit-tap-highlight-color:transparent; }
+  .day-toggle:active { transform:translate(1px,1px); box-shadow:2px 2px 0 0 #1C1C19; }
+  .day-toggle .dt-chev { display:block; transition:transform .25s ease; }
+  .is-collapsed .day-toggle .dt-chev { transform:rotate(180deg); }
+  .is-collapsed .day-body { display:none; }
+
+  /* Hero heat-melt — cyclic liquefy (variant 04) */
+  .hero-melt{ filter:url(#heroMelt); }
+  @media (prefers-reduced-motion: reduce){ .hero-melt{ filter:none; } }
+</style>
+<script>/* auto-update: reload once if a newer version is deployed (version.txt) */(function(){var V="2026-06-07-5";try{fetch("version.txt?cb="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():null}).then(function(t){if(!t)return;var s=t.trim();if(!s||s===V)return;var k="is30-reloaded-for";if(sessionStorage.getItem(k)===s)return;sessionStorage.setItem(k,s);location.replace(location.pathname.split("?")[0]+"?v="+encodeURIComponent(s)+location.hash)}).catch(function(){})}catch(e){}})();</script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3c6a24999d494e6289fd1b79d517476e"}'></script>
-<!-- End Cloudflare Web Analytics -->
-<script>/* auto-update: reload once if a newer version is deployed (version.txt) */(function(){var V="2026-06-07-4";try{fetch("version.txt?cb="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():null}).then(function(t){if(!t)return;var s=t.trim();if(!s||s===V)return;var k="is30-reloaded-for";if(sessionStorage.getItem(k)===s)return;sessionStorage.setItem(k,s);location.replace(location.pathname.split("?")[0]+"?v="+encodeURIComponent(s)+location.hash)}).catch(function(){})}catch(e){}})();</script>
 </head>
-<body class="bg-background text-on-surface font-body overflow-x-hidden">
-<script>(function(){var s=localStorage.getItem("uzbekbday-lang");if(s==="ru")document.body.classList.add("lang-ru");})();</script>
-<!-- TopNavBar -->
-<!-- NAV (unified) -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 bg-[#FCF9F4] border-b border-[#1C1C19]/20">
-  <a href="index.html" class="font-['Epilogue'] text-xl md:text-3xl font-black italic tracking-tighter uppercase text-[#FF46CA]">UZBEK BDAY</a>
-  <div class="hidden md:flex gap-7 items-center">
-    <a class="font-mono uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
-    <a class="font-mono uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="plan.html"><span class="en" data-lang="en">PLAN</span><span class="ru" data-lang="ru">ПЛАН</span></a>
-    <a class="font-mono uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="tashkent.html"><span class="en" data-lang="en">TASHKENT</span><span class="ru" data-lang="ru">ТАШКЕНТ</span></a>
-    <a class="font-mono uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="samarkand.html"><span class="en" data-lang="en">SAMARKAND</span><span class="ru" data-lang="ru">САМАРКАНД</span></a>
-    <a class="font-mono uppercase text-sm font-bold tracking-tighter text-[#FF46CA] border-b-2 border-[#FF46CA] pb-1" href="bukhara.html"><span class="en" data-lang="en">BUKHARA</span><span class="ru" data-lang="ru">БУХАРА</span></a>
-    <a class="font-mono uppercase text-sm text-[#1C1C19] hover:skew-x-[-2deg] hover:text-[#00CB8D] transition-transform" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
+<body class="bg-cream text-ink overflow-x-hidden girih-bg lang-en selection:bg-orange selection:text-white">
+
+<!-- hero heat-melt filter (cyclic liquefy) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="heroMelt" x="-18%" y="-18%" width="136%" height="136%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.014 0.022" numOctaves="2" seed="4" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" xChannelSelector="R" yChannelSelector="G" result="disp" scale="0">
+      <animate attributeName="scale" dur="7.5s" values="0;0;18;0" keyTimes="0;0.20;0.42;1" calcMode="spline" keySplines="0.4 0 0.6 1;0.3 0 0.3 1;0.25 0 0.2 1" repeatCount="indefinite"/>
+    </feDisplacementMap>
+    <feGaussianBlur in="disp" stdDeviation="0">
+      <animate attributeName="stdDeviation" dur="7.5s" values="0;0;1.5;0" keyTimes="0;0.20;0.42;1" calcMode="spline" keySplines="0.4 0 0.6 1;0.3 0 0.3 1;0.25 0 0.2 1" repeatCount="indefinite"/>
+    </feGaussianBlur>
+  </filter>
+</defs></svg>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-6 py-4 bg-cream border-b border-ink/20">
+  <a href="index.html" class="font-headline text-2xl md:text-3xl font-black italic tracking-tighter uppercase text-orange whitespace-nowrap">UZBEK BDAY</a>
+  <div class="hidden md:flex gap-8 items-center">
+    <a class="nav-link font-mono uppercase text-sm" href="index.html"><span class="en">INVITATION</span><span class="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a class="nav-link font-mono uppercase text-sm" href="plan.html"><span class="en">PLAN</span><span class="ru">ПЛАН</span></a>
+    <a class="nav-link font-mono uppercase text-sm" href="tashkent.html"><span class="en">TASHKENT</span><span class="ru">ТАШКЕНТ</span></a>
+    <a class="nav-link font-mono uppercase text-sm" href="samarkand.html"><span class="en">SAMARKAND</span><span class="ru">САМАРКАНД</span></a>
+    <a class="text-orange border-b-2 border-orange pb-1 font-mono uppercase text-sm font-bold tracking-tighter" href="bukhara.html"><span class="en">BUKHARA</span><span class="ru">БУХАРА</span></a>
   </div>
   <div class="flex items-center gap-3">
     <div class="lang-toggle">
-      <button id="lang-en" onclick="setLang('en')" class="active lang-active">EN</button>
+      <button id="lang-en" onclick="setLang('en')" class="active">EN</button>
       <button id="lang-ru" onclick="setLang('ru')">РУ</button>
     </div>
-    <button id="menu-btn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" class="md:hidden flex items-center justify-center w-10 h-10 bg-[#FF46CA] text-white border border-[#1C1C19] sticker-4 pressure-btn">
-      <svg id="menu-icon-open" viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6 H21"/><path d="M3 12 H21"/><path d="M3 18 H21"/></svg>
-      <svg id="menu-icon-close" viewBox="0 0 24 24" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5 L19 19"/><path d="M19 5 L5 19"/></svg>
-    </button>
+    <button id="navburger" onclick="toggleNav()" class="md:hidden flex flex-col justify-center items-center w-9 h-9 border border-ink bg-white sticker-4 pressure-btn shrink-0" aria-label="меню" aria-expanded="false"><span class="nb-line"></span><span class="nb-line"></span><span class="nb-line"></span></button>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="navbackdrop" onclick="closeNav()" class="hidden md:hidden fixed inset-0 z-[55] bg-ink/40" style="top:56px;"></div>
+  <div id="navmenu" class="hidden md:hidden fixed left-0 right-0 z-[60] bg-cream border-b border-ink shadow-[0_14px_30px_rgba(28,28,25,0.22)]" style="top:56px;">
+    <a href="index.html" class="block px-5 py-4 font-mono uppercase text-sm border-b border-ink/10 hover:bg-s1"><span class="en">INVITATION</span><span class="ru">ПРИГЛАШЕНИЕ</span></a>
+    <a href="plan.html" class="block px-5 py-4 font-mono uppercase text-sm border-b border-ink/10 hover:bg-s1"><span class="en">PLAN</span><span class="ru">ПЛАН</span></a>
+    <a href="tashkent.html" class="block px-5 py-4 font-mono uppercase text-sm border-b border-ink/10 hover:bg-s1"><span class="en">TASHKENT</span><span class="ru">ТАШКЕНТ</span></a>
+    <a href="samarkand.html" class="block px-5 py-4 font-mono uppercase text-sm border-b border-ink/10 hover:bg-s1"><span class="en">SAMARKAND</span><span class="ru">САМАРКАНД</span></a>
+    <a href="bukhara.html" class="block px-5 py-4 font-mono uppercase text-sm font-bold text-orange border-b border-ink/10 hover:bg-s1"><span class="en">BUKHARA</span><span class="ru">БУХАРА</span></a>
+    <a href="#free-time" onclick="closeNav()" class="flex items-center justify-between gap-2 px-5 py-4 font-mono uppercase text-sm font-bold bg-ink text-cream"><span><span class="en">WHAT TO DO</span><span class="ru">ЧЕМ ЗАНЯТЬСЯ</span></span><span class="text-orange">↓</span></a>
   </div>
 </nav>
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="fixed inset-x-0 top-[65px] z-40 md:hidden hidden bg-[#FCF9F4] border-b border-[#1C1C19]/20">
-  <div class="flex flex-col px-5 py-4 gap-1">
-    <a class="font-mono uppercase text-base py-3 border-b border-[#1C1C19]/10" href="index.html"><span class="en" data-lang="en">INVITATION</span><span class="ru" data-lang="ru">ПРИГЛАШЕНИЕ</span></a>
-    <a class="font-mono uppercase text-base py-3 border-b border-[#1C1C19]/10" href="plan.html"><span class="en" data-lang="en">PLAN</span><span class="ru" data-lang="ru">ПЛАН</span></a>
-    <a class="font-mono uppercase text-base py-3 border-b border-[#1C1C19]/10" href="tashkent.html"><span class="en" data-lang="en">TASHKENT</span><span class="ru" data-lang="ru">ТАШКЕНТ</span></a>
-    <a class="font-mono uppercase text-base py-3 border-b border-[#1C1C19]/10" href="samarkand.html"><span class="en" data-lang="en">SAMARKAND</span><span class="ru" data-lang="ru">САМАРКАНД</span></a>
-    <a class="font-mono uppercase text-base py-3 text-[#FF46CA] font-bold" href="bukhara.html"><span class="en" data-lang="en">BUKHARA</span><span class="ru" data-lang="ru">БУХАРА</span></a>
-    <a class="font-mono uppercase text-base py-3 border-b border-[#1C1C19]/10" href="map.html"><span class="en" data-lang="en">MAPS</span><span class="ru" data-lang="ru">КАРТА</span></a>
+
+<!-- ══════════════ STICKY DAY-RAIL ══════════════ -->
+<div id="dayrail" class="fixed top-[60px] md:top-[68px] left-0 right-0 z-40 bg-cream/95 backdrop-blur-sm border-b border-ink/15">
+  <div class="max-w-7xl mx-auto px-5 md:px-12 py-2.5 flex items-center gap-2 md:gap-3 overflow-x-auto">
+    <span class="font-mono text-[10px] uppercase tracking-widest text-ink/40 shrink-0 mr-1 inline-flex items-center gap-1">
+      <span class="material-symbols-outlined text-[16px]">calendar_month</span><span class="hidden sm:inline"><span class="en">DAYS →</span><span class="ru">ДНИ →</span></span>
+    </span>
+    <a href="#day-14" data-rail="day-14" class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide"><span class="en">JUN 14</span><span class="ru">14</span></a>
+    <a href="#day-15" data-rail="day-15" class="rail-chip shrink-0 border border-ink px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wide flex items-center gap-1"><span class="en">JUN 15</span><span class="ru">15</span> <span class="text-orange">⚠</span></a>
+    <a href="#free-time" data-rail="free-time" class="rail-chip shrink-0 inline-flex items-center gap-1.5 bg-ink text-cream border border-cream/30 px-3.5 py-1 font-mono text-[11px] font-bold uppercase tracking-wide ml-auto sticker-4 pressure-btn">
+      <span class="en">WHAT TO DO</span><span class="ru">ЧЕМ ЗАНЯТЬСЯ</span><span class="text-orange">↓</span>
+    </a>
   </div>
 </div>
-<main class="pb-24 pt-32 min-h-screen relative flex items-center">
-<div class="max-w-3xl mx-auto px-6 text-center">
-<div class="inline-block bg-surface-container border border-on-surface px-3 py-1 sticker-4 rotate-[-1deg] mb-12">
-<span class="font-mono text-[10px] uppercase tracking-widest font-bold" data-lang="en">[ STATUS · COMING SOON ]</span>
-<span class="font-mono text-[10px] uppercase tracking-widest font-bold" data-lang="ru">[ СТАТУС · СКОРО ]</span>
+
+<main class="pt-32 md:pt-36">
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="px-5 md:px-12 max-w-7xl mx-auto pt-6 md:pt-10 pb-10 relative">
+  <p class="font-mono text-xs tracking-widest uppercase text-orange font-bold mb-6">
+    <span class="en">[ CITY 03 · SOUL OF THE OLD WORLD · JUN 14–15 ]</span>
+    <span class="ru">[ ГОРОД 03 · ДУША СТАРОГО МИРА · 14–15 ИЮН ]</span>
+  </p>
+
+  <div>
+    <h1 class="hero-melt font-headline font-black text-[16vw] sm:text-[18vw] md:text-[15vw] lg:text-[13rem] leading-[0.78] tracking-tighter uppercase mb-6 -ml-1">
+      <span class="en"><span class="text-orange italic">B</span>UKHARA<span class="text-orange">.</span></span>
+      <span class="ru" data-comment-anchor="e3f7aca7e4-span"><span class="text-orange italic">Б</span>УХАРА<span class="text-orange">.</span></span>
+    </h1>
+    <p class="font-body text-xl md:text-2xl text-ink/75 leading-snug italic max-w-5xl">
+      <span class="en">the best-preserved medieval city in central asia. 140 monuments, almost no cars in the old town. the plov is done differently here. you'll forget what year it is.</span>
+      <span class="ru">самый хорошо сохранившийся средневековый город средней азии. 140 памятников, почти ни одной машины в старом городе. плов тут делают иначе. ты забудешь, какой сейчас год.</span>
+    </p>
+  </div>
+
+  <!-- Meta chips -->
+  <div class="flex flex-wrap gap-3 mt-10">
+    <div class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[-1deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5">
+      <span class="inline-block w-2.5 h-2.5 bg-orange border border-ink rotate-45 shrink-0"></span>
+      <span class="en">[ 1.5 DAYS ]</span><span class="ru">[ 1,5 ДНЯ ]</span>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=39.781781,64.42132" target="_blank" rel="noopener" class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[1deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5 no-underline text-ink hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#1C1C19] transition-all">
+      <span class="inline-block w-2.5 h-2.5 bg-green border border-ink rotate-45 shrink-0"></span>
+      <span class="en">[ HOTEL · MERCURE OLD TOWN ]</span><span class="ru">[ ОТЕЛЬ · MERCURE OLD TOWN ]</span>
+    </a>
+    <div class="bg-white border border-ink px-4 py-2 sticker-4 rotate-[-1.5deg] font-mono text-[11px] uppercase tracking-widest font-bold flex items-center gap-2.5">
+      <span class="inline-block w-2.5 h-2.5 bg-pink border border-ink rotate-45 shrink-0"></span>
+      <span class="en">[ OLD CITY · NO CARS · WALKABLE ]</span><span class="ru">[ СТАРЫЙ ГОРОД · БЕЗ МАШИН · ПЕШКОМ ]</span>
+    </div>
+  </div>
+</section>
+
+<!-- Divider hero → days -->
+<div class="max-w-7xl mx-auto px-5 md:px-12">
+  <div class="div-girih my-14 md:my-20"><div class="diamond"></div></div>
 </div>
-<h1 class="font-['Epilogue'] font-black text-7xl md:text-9xl uppercase tracking-tighter leading-[0.85] mb-10 text-on-surface">
-<span data-lang="en">BUKHARA</span>
-<span data-lang="ru">БУХАРА</span>
-</h1>
-<p class="font-['Space_Grotesk'] text-xl md:text-2xl text-on-surface mb-8 leading-snug">
-<span data-lang="en">this page is in the works.<br/>check back closer to the trip.</span>
-<span data-lang="ru">страница пока в работе.<br/>загляни ближе к поездке.</span>
-</p>
-<p class="font-['Epilogue'] italic text-lg md:text-xl text-primary-container mt-6">
-<span data-lang="en">(we know what's going here. we just haven't written it down yet.)</span>
-<span data-lang="ru">(мы уже знаем, что тут будет. просто пока не записали.)</span>
-</p>
-</div>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8 border-t-[1px] border-double border-[#1C1C19] bg-[#FCF9F4] mt-24">
-<div class="font-mono text-xs uppercase tracking-widest text-[#1C1C19] dark:text-[#FCF9F4]">
-            © 2026 UZBEK BDAY ZINE
+
+<!-- ══════════════ DAYS INSERT ══════════════ -->
+<div class="max-w-7xl mx-auto px-5 md:px-12">
+
+<!-- ─────────── DAY · JUN 14 · ARRIVAL · MADRASAH DANCES ─────────── -->
+<section id="day-14" class="mb-0">
+  <!-- header -->
+  <div class="mb-7 day-head">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none flex items-baseline gap-3 md:gap-4 flex-wrap">
+        <span class="font-mono font-bold text-orange text-4xl sm:text-5xl md:text-6xl leading-none tabular-nums"><span class="en">JUN 14</span><span class="ru">14.06</span></span>
+        <span class="en">· SUN · ARRIVAL · MADRASAH DANCES</span><span class="ru">· ВС · ПРИЕЗД · ТАНЦЫ В МЕДРЕСЕ</span>
+      </h2>
+      <button class="day-toggle" onclick="toggleDay(this)" aria-expanded="true" aria-label="свернуть / развернуть день"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="shaky-line h-px mt-3 opacity-40"></div>
+  </div>
+  <div class="day-body" data-comment-anchor="456cd2b909-div">
+  <p class="font-body text-lg md:text-2xl italic text-ink/70 leading-snug max-w-5xl mb-12">
+    <span class="en">morning — the train. then lunch in a chaikhana courtyard and dances! <span class="hand-inline">(we rested yesterday to survive this day :)</span></span>
+    <span class="ru">утром — поезд. дальше обед во дворе чайханы и танцы! <span class="hand-inline">(мы отдыхали вчера, чтобы выдержать этот день :)</span></span>
+  </p>
+
+  <!-- timeline header + legend -->
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8">
+    <span class="font-mono text-[11px] uppercase tracking-widest text-ink/50 shrink-0"><span class="en">schedule</span><span class="ru">расписание</span></span>
+    <span class="flex-1 min-w-[20px] border-t border-dashed border-ink/20"></span>
+    <span class="flex items-center gap-x-3 gap-y-1 flex-wrap font-mono text-[10px] uppercase tracking-wide text-ink/45">
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-orange border border-ink"></span><span class="en">plan</span><span class="ru">план</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-cream border border-green"></span><span class="en">free</span><span class="ru">свободно</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rotate-45 bg-cream border border-ink/50"></span><span class="en">taxi / move</span><span class="ru">такси / переезд</span></span>
+    </span>
+  </div>
+
+  <div class="bg-white border border-ink p-5 md:p-8 sticker-orange mb-12">
+    <!-- 12:42 train arrives + transfer warning -->
+    <div class="tl-row">
+      <div class="tl-time text-orange text-sm md:text-base">12:42</div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#FF9400;"></span>
+        <div class="flex items-start justify-between gap-3">
+          <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">train arrives at BUXORO-1</span><span class="ru">поезд приходит на BUXORO-1</span></p>
+          <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.7197,64.5497" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.7197%2C64.5497" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
         </div>
-<div class="font-['Epilogue'] text-lg font-black italic text-[#FF46CA] tracking-tighter uppercase">UZBEK BDAY</div>
-<div class="flex gap-12">
-<a class="font-mono text-xs uppercase tracking-widest text-[#1C1C19] dark:text-[#FCF9F4] hover:italic transition-all" href="map.html">MAPS</a>
+        <p class="font-body text-ink/60 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">(Kagan), 12 km from town.</span><span class="ru">(каган), 12 км от города.</span></p>
+      </div>
+    </div>
+
+    <!-- ~13:15 taxi station → hotel -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">~13:15</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55"><span class="en">→ taxi · BUXORO-1 → Mercure ≈ 30 min (Yandex Go), drop bags</span><span class="ru" data-comment-anchor="f29b8af53d-span">→ такси · BUXORO-1 → mercure ≈ 30 мин (Yandex Go), бросаем вещи</span></p>
+        <div class="mt-2"><a href="https://3.redirect.appmetrica.yandex.com/route?start-lat=&amp;start-lon=&amp;end-lat=39.781781&amp;end-lon=64.42132&amp;level=&amp;lang=ru&amp;ref=&amp;appmetrica_tracking_id=1178268795219780156" target="_blank" rel="noopener" class="taxi-pill"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">local_taxi</span><span class="en">call a taxi →</span><span class="ru">вызвать такси →</span></a></div>
+      </div>
+    </div>
+
+    <!-- ~13:50 walk to restaurant -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">~13:50</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55"><span class="en">→ 5–10 min walk from Mercure to the restaurant</span><span class="ru">→ пешком от mercure 5–10 мин до ресторана</span></p>
+      </div>
+    </div>
+
+    <!-- 14:00 lunch -->
+    <div class="tl-row">
+      <div class="tl-time text-orange text-sm md:text-base">14:00</div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#FF9400;"></span>
+        <div class="flex items-start justify-between gap-3">
+          <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">Joy Chaikhana — 19th-century caravanserai</span><span class="ru">joy chaikhana — каравансарай xix века</span></p>
+          <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.772469,64.419576" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.772469%2C64.419576" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
+        </div>
+        <p class="font-body text-ink/60 text-sm md:text-[15px] leading-snug mt-1.5" data-comment-anchor="82671bc1a0-p"><span class="en">lunch in a courtyard that's been feeding travellers for 200 years.</span><span class="ru">обед во дворе, который кормит путников уже 200 лет.</span></p>
+      </div>
+    </div>
+
+    <!-- 15:00–18:00 free · siesta -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-[11px] md:text-xs">15:00</div>
+      <div class="tl-body is-free">
+        <span class="tl-dot is-free"></span>
+        <div class="tl-tag text-green mb-1"><span class="en">free · siesta · 🏠</span><span class="ru">свободно · сиеста · 🏠</span></div>
+        <p class="font-body text-ink/70 text-sm md:text-[15px] leading-snug"><span class="en">stay in the hotel before evening — Mercure is in the centre, you'll walk everywhere</span><span class="ru">отдых в отеле перед вечером — mercure в центре, везде пешком</span></p>
+        <a href="#free-time" class="tl-cue text-orange hover:text-green inline-block mt-2"><span class="en">↓ ideas in the free-time menu</span><span class="ru">↓ идеи в меню свободного времени</span></a>
+      </div>
+    </div>
+
+    <!-- 19:30 madrasah dance show — the peak of the day -->
+    <div class="tl-row">
+      <div class="tl-time text-orange text-sm md:text-base">19:30</div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#FF9400;"></span>
+        <div class="tl-tag text-orange mb-1.5"><span class="en">the evening</span><span class="ru">вечер</span></div>
+        <div class="flex items-start justify-between gap-3">
+          <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">Nadir Divan-Begi madrasah</span><span class="ru">надир диван-беги</span></p>
+          <div class="flex gap-2 shrink-0 pt-1"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.773089,64.421318" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.773089%2C64.421318" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">[ yandex ↗ ]</a></div>
+        </div>
+        <p class="font-body text-ink/70 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">folklore dance show in the courtyard of the madrasah + dinner.</span><span class="ru" data-comment-anchor="806898e47e-span">фольклорное танцевальное шоу во дворе медресе + ужин.</span></p>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bird_Simurgh_on_Nadir_Devanbegi_Madrasah%2C_Bukhara_%28%D0%A1%D0%B8%D0%BC%D1%83%D1%80%D0%B3_%D0%BD%D0%B0_%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%9D%D0%BE%D0%B4%D0%B8%D1%80-%D0%94%D0%B8%D0%B2%D0%B0%D0%BD-%D0%91%D0%B5%D0%B3%D0%B8%2C_Nodir_devonbegi_madrasasi%29.jpg?width=1000" alt="Медресе Надир Диван-Беги, Бухара" loading="lazy" class="aspect-[16/9] max-w-md w-full object-cover mt-3 border border-ink/25" />
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- tomorrow bridge -->
+  <a href="#day-15" class="group mt-10 mb-16 md:mb-24 flex items-center justify-between gap-3 bg-orange/15 border border-orange/50 px-5 py-4 sticker-orange hover:translate-y-0.5 transition-transform">
+    <span class="font-mono text-xs md:text-sm font-bold leading-relaxed text-ink/85">
+      <span class="en">→ TOMORROW · JUN 15 · in bukhara till lunch, then a farewell dinner already in tashkent.</span>
+      <span class="ru">→ ЗАВТРА · 15.06 · до обеда в бухаре, а прощальный ужин уже в ташкенте.</span>
+    </span>
+    <span class="bridge-arrow shrink-0 self-center w-7 h-7 flex items-center justify-center border border-ink/25 text-ink/45 font-mono font-bold">↓</span>
+  </a>
+</section>
+
+<!-- ─────────── DAY · JUN 15 · LAST MORNING · THEN THE TRAIN (split day) ─────────── -->
+<section id="day-15" class="mb-24 md:mb-32">
+  <div class="mb-7 day-head">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none flex items-baseline gap-3 md:gap-4 flex-wrap">
+        <span class="font-mono font-bold text-orange text-4xl sm:text-5xl md:text-6xl leading-none tabular-nums"><span class="en">JUN 15</span><span class="ru">15.06</span></span>
+        <span class="en">· MON · LAST MORNING · THEN THE TRAIN</span><span class="ru">· ПН · ПОСЛЕДНЕЕ УТРО · ПОТОМ ПОЕЗД</span>
+      </h2>
+      <button class="day-toggle" onclick="toggleDay(this)" aria-expanded="true" aria-label="свернуть / развернуть день"><svg class="dt-chev" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 10 L8 5.5 L12.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="shaky-line h-px mt-3 opacity-40"></div>
+  </div>
+  <div class="day-body">
+  <p class="font-body text-lg md:text-2xl italic text-ink/70 leading-snug max-w-5xl mb-12">
+    <span class="en">the last full day. morning in bukhara, then 4 hours on the train to tashkent — maybe just enough to digest all the plov and the emotions.</span>
+    <span class="ru">последний полный день. утро в бухаре, потом 4 часа на поезде в ташкент — возможно, хватит, чтобы переварить весь плов и эмоции.</span>
+  </p>
+
+  <!-- timeline header + legend -->
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8">
+    <span class="font-mono text-[11px] uppercase tracking-widest text-ink/50 shrink-0"><span class="en">schedule</span><span class="ru">расписание</span></span>
+    <span class="flex-1 min-w-[20px] border-t border-dashed border-ink/20"></span>
+    <span class="flex items-center gap-x-3 gap-y-1 flex-wrap font-mono text-[10px] uppercase tracking-wide text-ink/45">
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-orange border border-ink"></span><span class="en">plan</span><span class="ru">план</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rotate-45 bg-cream border border-green"></span><span class="en">free</span><span class="ru">свободно</span></span>
+      <span class="flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rotate-45 bg-cream border border-ink/50"></span><span class="en">taxi / move</span><span class="ru">такси / переезд</span></span>
+    </span>
+  </div>
+
+  <div class="bg-white border border-ink p-5 md:p-8 sticker-orange mb-12">
+    <!-- morning until 14:30 — free -->
+    <div class="tl-row">
+      <div class="tl-time text-green text-[11px] md:text-xs uppercase"><span class="en">morning</span><span class="ru">утро</span></div>
+      <div class="tl-body is-free">
+        <span class="tl-dot is-free"></span>
+        <div class="tl-tag text-green mb-1"><span class="en">free · 🌅</span><span class="ru">свободно · 🌅</span></div>
+        <p class="font-body text-ink/70 text-sm md:text-[15px] leading-snug"><span class="en">a perfect time to wander the old town.</span><span class="ru">самое время погулять по старому городу.</span></p>
+        <a href="#free-time" class="tl-cue text-orange hover:text-green inline-block mt-2"><span class="en">↓ ideas in the free-time menu</span><span class="ru">↓ идеи в меню свободного времени</span></a>
+      </div>
+    </div>
+
+    <!-- 14:30 taxi to station -->
+    <div class="tl-row">
+      <div class="tl-time text-ink/35 text-[11px] md:text-xs">14:30</div>
+      <div class="tl-body is-move">
+        <span class="tl-dot is-move"></span>
+        <p class="tl-cue text-ink/55" data-comment-anchor="c3d0267632-p"><span class="en">→ ⚠️ taxi · Mercure → BUXORO-1 (Kagan) ≈ 30 min (Yandex Go) — leave by 14:30 for the 16:16 train!</span><span class="ru">→ ⚠️ такси · mercure → BUXORO-1 (каган) ≈ 30 мин (Yandex Go) — выезд к 14:30 на поезд 16:16!</span></p>
+        <div class="mt-2"><a href="https://3.redirect.appmetrica.yandex.com/route?start-lat=&amp;start-lon=&amp;end-lat=39.7197&amp;end-lon=64.5497&amp;level=&amp;lang=ru&amp;ref=&amp;appmetrica_tracking_id=1178268795219780156" target="_blank" rel="noopener" class="taxi-pill"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">local_taxi</span><span class="en">call a taxi →</span><span class="ru">вызвать такси →</span></a></div>
+      </div>
+    </div>
+
+    <!-- 16:16 → 20:30 train + warning -->
+    <div class="tl-row">
+      <div class="tl-time text-orange text-sm md:text-base">16:16</div>
+      <div class="tl-body">
+        <span class="tl-dot" style="background:#FF9400;"></span>
+        <p class="font-body font-bold text-ink text-lg md:text-xl leading-tight"><span class="en">train Afrosiyob 765 — Bukhara → Tashkent</span><span class="ru">поезд афросиёб 765 — бухара → ташкент</span></p>
+        <p class="font-body text-ink/60 text-sm md:text-[15px] leading-snug mt-1.5"><span class="en">4h 14m (vagon 05).</span><span class="ru">4ч 14м (вагон 05).</span></p>
+      </div>
+    </div>
+
+    <!-- handoff inside the schedule — evening continues in Tashkent -->
+    <a href="tashkent.html#day-15" class="group flex items-center justify-between gap-3 bg-orange text-ink border border-ink px-5 py-4 sticker-4 pressure-btn font-headline font-black uppercase tracking-tighter text-base md:text-lg mt-6">
+      <span><span class="en">EVENING CONTINUES IN TASHKENT</span><span class="ru">ВЕЧЕР ПРОДОЛЖАЕТСЯ В ТАШКЕНТЕ</span></span>
+      <span class="font-mono group-hover:translate-x-1 transition-transform">→</span>
+    </a>
+  </div>
+  </div>
+</section>
+
+<!-- ─────────── FREE-TIME MENU ─────────── -->
+<section id="free-time" class="mb-24 md:mb-32">
+  <div class="div-thread mb-14"><span class="knot" data-comment-anchor="51f4ef5f1a-span">✧</span></div>
+
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+    <h2 class="font-headline font-black text-3xl sm:text-4xl md:text-6xl uppercase tracking-tighter leading-[0.9]">
+      <span class="en">WHAT TO DO IN YOUR <span class="text-orange italic">FREE</span> TIME</span>
+      <span class="ru">ЧЕМ ЗАНЯТЬСЯ В <span class="text-orange italic">СВОБОДНОЕ</span> ВРЕМЯ</span>
+    </h2>
+  </div>
+  <p class="font-body italic text-ink/60 mb-8 text-lg">
+    <span class="en">for the hours between group things. pick by mood.</span>
+    <span class="ru">для часов между общими активностями. выбирай по настроению.</span>
+  </p>
+
+  <!-- type selector -->
+  <div class="flex border border-ink sticker-4 mb-5">
+    <button onclick="showFtm('see', this)" class="ftm-tab ftm-see is-active flex-1 flex items-center justify-center gap-2 py-3 font-headline font-black uppercase tracking-tighter text-sm md:text-base border-r border-ink"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">mosque</span><span class="en">SEE</span><span class="ru">СМОТРЕТЬ</span></button>
+    <button onclick="showFtm('eat', this)" class="ftm-tab ftm-eat flex-1 flex items-center justify-center gap-2 py-3 font-headline font-black uppercase tracking-tighter text-sm md:text-base border-r border-ink"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">restaurant</span><span class="en">EAT</span><span class="ru">ЕДА</span></button>
+    <button onclick="showFtm('shop', this)" class="ftm-tab ftm-shop flex-1 flex items-center justify-center gap-2 py-3 font-headline font-black uppercase tracking-tighter text-sm md:text-base"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings:'FILL' 1;">shopping_bag</span><span class="en">SHOP</span><span class="ru">ШОПИНГ</span></button>
+  </div>
+
+  <!-- attribute row (refine · SEE only) + map link -->
+  <div class="flex items-start justify-between gap-4 mb-8">
+    <div id="ftm-attrs" class="flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[9px] uppercase tracking-widest text-ink/40 shrink-0 mr-0.5"><span class="en">priority</span><span class="ru">приоритет</span></span>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="priority" data-val="must" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>⭐</span><span class="en">must</span><span class="ru">важно</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="priority" data-val="worth" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span class="text-orange">★</span><span class="en">worth</span><span class="ru">стоит</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="priority" data-val="iftime" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span class="text-ink/40">☆</span><span class="en">if time</span><span class="ru">если время</span></button>
+      </div>
+      <span class="w-px h-5 bg-ink/15 hidden sm:block"></span>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[9px] uppercase tracking-widest text-ink/40 shrink-0 mr-0.5"><span class="en">when</span><span class="ru">когда</span></span>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="time" data-val="morning" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>🌅</span><span class="en">morning</span><span class="ru">утро</span></button>
+        <button type="button" onclick="toggleFtmFilter(this)" data-group="time" data-val="heat" class="ftm-filter font-mono text-[11px] uppercase tracking-wide border border-ink/25 px-2.5 py-1 flex items-center gap-1.5"><span>🏠</span><span class="en">in the heat</span><span class="ru">в жару</span></button>
+      </div>
+      <button type="button" id="ftm-reset" onclick="resetFtm()" class="hidden font-mono text-[11px] uppercase tracking-wide bg-orange text-white border border-ink px-2.5 py-1 items-center gap-1.5 sticker-4 pressure-btn"><span>✕</span><span class="en">reset</span><span class="ru">сбросить</span></button>
+    </div>
+    <a href="map.html" class="link-wavy shrink-0 hidden sm:flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest pt-1"><span class="inline-block w-2 h-2 rotate-45 bg-orange border border-ink"></span><span class="en">↓ download map</span><span class="ru">↓ скачать карту</span></a>
+  </div>
+
+  <!-- SEE panel -->
+  <div class="ftm-panel" data-ftm="see">
+    <div id="ftm-see-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <p id="ftm-empty" class="hidden col-span-full font-body italic text-ink/50 py-8 text-center"><span class="en">nothing matches those filters. <button type="button" onclick="resetFtm()" class="link-wavy">reset</button>.</span><span class="ru">ничего не подходит под фильтры. <button type="button" onclick="resetFtm()" class="link-wavy">сбросить</button>.</span></p>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">⭐ <span class="text-base">🌅</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 1.5–2H ]</span></div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Po-i-Kalyan_in_Bukhara.jpg?width=1000" alt="Комплекс Пои-Калян, Бухара" loading="lazy" class="aspect-[4/3] w-full object-cover mb-5 border border-ink/20" />
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Poi-Kalyan complex</span> — the Kalon minaret (1127), the mosque, the Mir-i-Arab madrasah. Genghis Khan spared the minaret — the only thing he did.</span><span class="ru"><span class="font-bold text-ink">комплекс пои-калян</span> — минарет калян (1127), мечеть, медресе мир-и-араб. чингисхан пощадил минарет — единственное, что он сделал.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.775917,64.414817" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.775917%2C64.414817" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">⭐ <span class="text-base">🌅</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 45 MIN ]</span></div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bujar%C3%A1%2C_Liab-i-Hauz_3.jpg?width=1000" alt="Ляби-Хауз, Бухара" loading="lazy" class="aspect-[4/3] w-full object-cover mb-5 border border-ink/20" />
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Lyabi-Hauz</span> + coffee under a 1400-year-old mulberry tree.</span><span class="ru"><span class="font-bold text-ink">ляби-хауз</span> + кофе у тутового дерева возрастом 1400 лет.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.7758,64.4186" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.7758%2C64.4186" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">⭐ <span class="text-base">🏠</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 30–45 MIN ]</span></div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/%D0%A2%D0%BE%D0%BA%D0%B8_%D0%A1%D0%B0%D1%80%D1%80%D0%BE%D1%84%D0%BE%D0%BD_1.jpg?width=1000" alt="Торговые купола Токи, Бухара" loading="lazy" class="aspect-[4/3] w-full object-cover mb-5 border border-ink/20" />
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Toki Trading Domes</span> — medieval covered markets, +20°C inside. three domes (spices, silk, jewellery).</span><span class="ru"><span class="font-bold text-ink">торговые купола токи</span> — крытые средневековые рынки, +20°C внутри. три купола (специи, шёлк, украшения).</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.772493,64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.772493%2C64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★ <span class="text-base">🌅</span></span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 6:00–8:00 ]</span></div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chor_Minor%2C_Bukhara.jpg?width=1000" alt="Чор-Минор, Бухара" loading="lazy" class="aspect-[4/3] w-full object-cover mb-5 border border-ink/20" />
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">sunrise walk</span> 6:00–8:00 (for early risers): Chor-Minor → Poi-Kalyan → the Ark fortress</span><span class="ru"><span class="font-bold text-ink">рассветная прогулка</span> 6:00–8:00 (для жаворонков): чор-минор → пои-калян → крепость арк</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.77483,64.427383" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.77483%2C64.427383" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">☆</span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 1H · TAXI ]</span></div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sitorai_Mokhi-Khosa_Palace_01.jpg?width=1000" alt="Ситораи Мохи-Хоса, Бухара" loading="lazy" class="aspect-[4/3] w-full object-cover mb-5 border border-ink/20" />
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Sitorai Mohi-Hosa</span> — the emirs' summer palace, out of town (~15 min taxi).</span><span class="ru"><span class="font-bold text-ink">ситораи мохи-хоса</span> — летняя резиденция эмиров, за городом (~15 мин такси).</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.812632,64.440406" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.812632%2C64.440406" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-6 sticker-4 flex flex-col">
+        <div class="flex items-center justify-between mb-4"><span class="text-lg">★</span><span class="font-mono text-[10px] uppercase tracking-widest text-ink/40">[ 40MIN–1.5H ]</span></div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/25a_Bathroom_Bazari_Kord_210.jpg?width=1000" alt="Хаммам Бозори Корд, Бухара" loading="lazy" class="aspect-[4/3] w-full object-cover mb-5 border border-ink/20" />
+        <p class="font-body text-[15px] leading-relaxed text-ink/85 flex-1"><span class="en"><span class="font-bold text-ink">Bozori Kord hammam</span> — operating since the 14th century. Quick $30 / Classic+massage $45. (a good way to leave the trip relaxed.)</span><span class="ru"><span class="font-bold text-ink">хаммам бозори корд</span> — действует с xiv века. quick $30 / classic+массаж $45. (хороший способ уехать расслабленным.)</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.774891,64.417178" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.774891%2C64.417178" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EAT panel — lunch before the train -->
+  <div class="ftm-panel" data-ftm="eat" hidden>
+    <div class="font-mono text-[11px] uppercase tracking-widest text-ink/45 mb-4"><span class="en">· lunch before the train · ~12:00–14:00 ·</span><span class="ru">· обед перед поездом · ~12:00–14:00 ·</span></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">Lyabi-Hauz</span><span class="ru">ляби-хауз</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">by the pond.</span><span class="ru">у пруда.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.7758,64.4186" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.7758%2C64.4186" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">Sarrafon Al-Rashid</span><span class="ru">sarrafon al-rashid</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">manty.</span><span class="ru">манты.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.772487,64.418941" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.772487%2C64.418941" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">The Plov, "Mo Salah"</span><span class="ru">the plov, «mo salah»</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">taxi worth it for the plov.</span><span class="ru">за пловом стоит такси.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.783396,64.425795" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.783396%2C64.425795" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">snacks for the road</span><span class="ru">снэки в дорогу</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">from the bazaar.</span><span class="ru">с базара.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.772493,64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.772493%2C64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOP panel -->
+  <div class="ftm-panel" data-ftm="shop" hidden>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">Toki Trading Domes</span><span class="ru">Торговые купола Токи</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">ikat robes, suzani, silk, spices — right inside the medieval covered markets.</span><span class="ru">ikat-халаты, сузане, шёлк, специи — прямо в средневековых крытых рынках.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.772493,64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.772493%2C64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">Handmade suzani</span><span class="ru">Сузане ручной работы</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">embroidered panels &amp; covers. check the back: handmade = tiny knots; a silk base beats cotton.</span><span class="ru">вышитые панно/покрывала. проверять изнанку: ручная работа = мелкие узелки; шёлковая основа лучше хлопковой.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.772493,64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.772493%2C64.418654" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">Workshops by Poi-Kalyan</span><span class="ru">Мастерские у Пои-Калян</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">gold embroidery, miniatures, wooden boxes.</span><span class="ru">золотое шитьё, миниатюры, деревянные шкатулки.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.775917,64.414817" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.775917%2C64.414817" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+      <div class="bg-white border border-ink p-5 sticker-4 flex flex-col">
+        <div class="font-headline font-black uppercase tracking-tighter text-base leading-tight mb-1.5"><span class="en">Market by Lyabi-Hauz</span><span class="ru">Рынок у Ляби-Хауз</span></div>
+        <p class="font-body text-[14px] text-ink/70 leading-snug flex-1"><span class="en">saffron (5–10× cheaper than in Russia), spices, dried fruit, nuts.</span><span class="ru">шафран (в 5–10 раз дешевле РФ), специи, сухофрукты, орехи.</span></p>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 mt-3"><a href="https://www.google.com/maps/search/?api=1&amp;query=39.7758,64.4186" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ google ↗ ]</a><a href="https://yandex.ru/maps/?text=39.7758%2C64.4186" target="_blank" rel="noopener" class="link-wavy font-mono text-[10px] uppercase tracking-widest">[ yandex ↗ ]</a></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─────────── LAST-STOP HANDOFF ↩ BACK TO TASHKENT ─────────── -->
+<section id="last-stop" class="mb-12">
+  <div class="div-girih mb-12"><div class="diamond"></div></div>
+  <a href="tashkent.html" class="group block bg-white border border-ink p-6 md:p-12 sticker-pink-8 relative overflow-hidden hover:-translate-y-1 transition-transform">
+    <svg class="absolute -top-8 -right-8 w-56 h-56 opacity-[0.06] pointer-events-none" viewBox="0 0 80 80" fill="none">
+      <path d="M40 4 L76 40 L40 76 L4 40 Z M40 14 L66 40 L40 66 L14 40 Z" stroke="#1C1C19" stroke-width="0.8"/>
+    </svg>
+    <div class="relative flex items-center gap-2 mb-4">
+      <div class="w-3.5 h-3.5 bg-pink border border-ink pin-pulse"></div>
+      <span class="font-mono text-[11px] uppercase tracking-widest text-pink font-bold"><span class="en">LAST STOP ↩</span><span class="ru">ПОСЛЕДНЯЯ ОСТАНОВКА ↩</span></span>
+    </div>
+    <h2 class="relative font-headline font-black text-4xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-5">
+      <span class="en">JUN 15 · <span class="text-pink italic">BACK TO TASHKENT</span></span>
+      <span class="ru">15.06 · <span class="text-pink italic">ОБРАТНО В ТАШКЕНТ</span></span>
+    </h2>
+    <p class="relative font-body text-lg md:text-2xl italic text-ink/70 leading-snug max-w-5xl mb-8">
+      <span class="en">a 4-hour train, then one final dinner. the trip ends where it started.</span>
+      <span class="ru">4 часа поезда, потом финальный ужин. трип заканчивается там, где начался.</span>
+    </p>
+    <div class="relative inline-flex items-center gap-3 bg-pink text-white border border-ink px-6 py-3.5 sticker-4 font-headline font-black uppercase tracking-tighter text-base md:text-lg">
+      <span><span class="en">→ BACK TO TASHKENT</span><span class="ru">→ ОБРАТНО В ТАШКЕНТ</span></span>
+      <span class="font-mono group-hover:translate-x-1 transition-transform">↩</span>
+    </div>
+  </a>
+</section>
+
 </div>
+<!-- END DAYS -->
+
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="w-full py-10 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-cream border-t border-double border-ink/60 mt-10">
+  <div class="font-mono text-xs uppercase tracking-widest text-ink/60">© 2026 UZBEK BDAY ZINE</div>
+  <div class="font-headline text-xl font-black italic text-orange tracking-tighter uppercase">UZBEK BDAY</div>
+  <div class="flex items-center gap-2 font-mono text-[10px] tracking-widest text-ink/60">
+    <span class="en uppercase">made with love</span>
+    <span class="ru">сделано с любовью</span>
+  </div>
 </footer>
-<script>
-document.querySelectorAll(".rsvp-link").forEach(function(el){
-  el.addEventListener("click",function(){
-    window.open("https://t.me/"+"parapam_tg","_blank");
-  });
-});
-function setLang(lang) {
-  localStorage.setItem('uzbekbday-lang', lang);
-  document.body.classList.toggle('lang-ru', lang === 'ru');
-  document.getElementById('lang-en').classList.toggle('lang-active', lang === 'en');
-  document.getElementById('lang-ru').classList.toggle('lang-active', lang === 'ru');
-}
-(function() {
-  var saved = localStorage.getItem('uzbekbday-lang');
-  if (saved === 'ru') setLang('ru');
-})();
-</script>
 
-
+<!-- back to top (mobile) -->
+<button id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="md:hidden fixed bottom-5 right-5 z-[45] w-11 h-11 flex items-center justify-center bg-ink/85 text-cream border border-cream/40 sticker-4 pressure-btn" aria-label="наверх" style="opacity:0;pointer-events:none;transition:opacity .25s ease;"><span class="font-mono font-bold text-lg leading-none">↑</span></button>
 
 <script>
-function toggleMenu(){
-  var m=document.getElementById('mobile-menu'),b=document.getElementById('menu-btn');
-  var open=m.classList.toggle('hidden')===false;
-  b.setAttribute('aria-expanded',open?'true':'false');
-  document.getElementById('menu-icon-open').classList.toggle('hidden',open);
-  document.getElementById('menu-icon-close').classList.toggle('hidden',!open);
-}
+  function setLang(lang) {
+    document.body.classList.remove('lang-en','lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+    try { localStorage.setItem('uzbekbday-lang', lang); } catch(e) {}
+  }
+  try { var saved = localStorage.getItem('uzbekbday-lang'); if (saved === 'ru') setLang('ru'); } catch(e) {}
+
+  function toggleNav() {
+    var m = document.getElementById('navmenu'), b = document.getElementById('navburger'), bd = document.getElementById('navbackdrop');
+    if (!m || !b) return;
+    var nowHidden = m.classList.toggle('hidden');
+    if (bd) bd.classList.toggle('hidden', nowHidden);
+    b.classList.toggle('open', !nowHidden);
+    b.setAttribute('aria-expanded', String(!nowHidden));
+  }
+  function closeNav() {
+    var m = document.getElementById('navmenu'), b = document.getElementById('navburger'), bd = document.getElementById('navbackdrop');
+    if (m) m.classList.add('hidden'); if (bd) bd.classList.add('hidden');
+    if (b) { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+  }
+  /* day-rail auto-hide on scroll-down, reveal on scroll-up (mobile only) */
+  (function(){
+    var last = window.scrollY, ticking = false;
+    function upd(){
+      ticking = false;
+      var y = window.scrollY;
+      var tt = document.getElementById('totop');
+      if (tt){ var s = y > 400; tt.style.opacity = s ? '1' : '0'; tt.style.pointerEvents = s ? 'auto' : 'none'; }
+      if (!window.matchMedia('(max-width:767px)').matches){ document.body.classList.remove('rail-up'); last = y; return; }
+      if (y > last + 8 && y > 150) document.body.classList.add('rail-up');
+      else if (y < last - 8) document.body.classList.remove('rail-up');
+      last = y;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(upd); ticking = true; } }, { passive:true });
+  })();
+
+  /* Free-time menu tabs */
+  function showFtm(key, btn) {
+    document.querySelectorAll('.ftm-tab').forEach(function(b){ b.classList.toggle('is-active', b === btn); });
+    document.querySelectorAll('.ftm-panel').forEach(function(p){ p.hidden = (p.getAttribute('data-ftm') !== key); });
+    var attrs = document.getElementById('ftm-attrs');
+    if (attrs) attrs.style.display = (key === 'see') ? '' : 'none';
+  }
+
+  /* Collapsible day sections */
+  function toggleDay(btn){
+    var s = btn.closest('section');
+    if (!s) return;
+    var c = s.classList.toggle('is-collapsed');
+    btn.setAttribute('aria-expanded', String(!c));
+  }
+
+  /* Free-time menu filters */
+  var ftmFilters = { priority: [], time: [] };
+  function ftmCardTags(card){
+    var m = card.querySelector('span.text-lg');
+    var t = m ? m.textContent : '';
+    var p = t.indexOf('⭐')>-1?'must': t.indexOf('★')>-1?'worth': t.indexOf('☆')>-1?'iftime':'';
+    var tm = t.indexOf('🌅')>-1?'morning': t.indexOf('🌇')>-1?'sunset': t.indexOf('🏠')>-1?'heat':'';
+    return { p:p, t:tm };
+  }
+  function toggleFtmFilter(btn){
+    var g = btn.getAttribute('data-group'), v = btn.getAttribute('data-val');
+    var arr = ftmFilters[g], i = arr.indexOf(v);
+    if (i>-1){ arr.splice(i,1); btn.classList.remove('is-on'); }
+    else { arr.push(v); btn.classList.add('is-on'); }
+    applyFtmFilter();
+  }
+  function resetFtm(){
+    ftmFilters.priority = []; ftmFilters.time = [];
+    document.querySelectorAll('.ftm-filter').forEach(function(b){ b.classList.remove('is-on'); });
+    applyFtmFilter();
+  }
+  function applyFtmFilter(){
+    var pr = ftmFilters.priority, tm = ftmFilters.time;
+    var any = pr.length || tm.length;
+    var reset = document.getElementById('ftm-reset');
+    if (reset){ reset.classList.toggle('hidden', !any); reset.classList.toggle('inline-flex', !!any); }
+    var shown = 0;
+    document.querySelectorAll('#ftm-see-grid > .bg-white').forEach(function(card){
+      var tags = ftmCardTags(card);
+      var okP = pr.length===0 || pr.indexOf(tags.p)>-1;
+      var okT = tm.length===0 || tm.indexOf(tags.t)>-1;
+      var show = okP && okT;
+      card.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    var empty = document.getElementById('ftm-empty');
+    if (empty) empty.classList.toggle('hidden', shown>0);
+  }
+
+  /* Day-rail active state via scroll-spy */
+  (function(){
+    var ids = ['day-14','day-15','free-time'];
+    var sections = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+    var chips = {};
+    document.querySelectorAll('.rail-chip').forEach(function(c){ chips[c.getAttribute('data-rail')] = c; });
+    var spyLock = 0;
+    Object.keys(chips).forEach(function(k){
+      chips[k].addEventListener('click', function(){
+        spyLock = Date.now();
+        Object.keys(chips).forEach(function(j){ chips[j].classList.toggle('is-active', j === k); });
+      });
+    });
+    function spy(){
+      if (Date.now() - spyLock < 1200) return;
+      var pos = window.scrollY + 200;
+      var current = sections[0] && sections[0].id;
+      var bestTop = -Infinity;
+      sections.forEach(function(s){ if (s.offsetTop <= pos && s.offsetTop > bestTop){ bestTop = s.offsetTop; current = s.id; } });
+      Object.keys(chips).forEach(function(k){ chips[k].classList.toggle('is-active', k === current); });
+    }
+    window.addEventListener('scroll', spy, { passive:true });
+    window.addEventListener('resize', spy);
+    spy();
+  })();
+
+  /* Today-highlight if within the trip (Jun 9–15, 2026) */
+  (function(){
+    var now = new Date();
+    if (now.getFullYear() !== 2026 || now.getMonth() !== 5) return; // June = month 5
+    var d = now.getDate();
+    var map = { 14:'day-14', 15:'day-15' };
+    var id = map[d];
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el) el.classList.add('is-today');
+    var chip = document.querySelector('.rail-chip[data-rail="'+id+'"]');
+    if (chip) { chip.classList.add('is-active'); var t = document.createElement('span'); t.className='ml-1 text-orange'; t.textContent='●'; chip.appendChild(t); }
+  })();
 </script>
-</body></html>
+</body>
+</html>
