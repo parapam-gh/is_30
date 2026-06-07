@@ -673,7 +673,17 @@
   (function () {
     var clicks = 0;
     var some = document.getElementById('pressure-some');
+    var no = document.getElementById('pressure-no');
     if (!some) return;
+    function resetMax() {
+      clicks = 0;
+      var sec = document.getElementById('timer-seconds');
+      if (sec) sec.classList.remove('seconds-max');
+      var col = document.getElementById('timer-seconds-col');
+      if (col) col.classList.remove('pressure-shake');
+      some.querySelector('.en').textContent = '(some pressure)';
+      some.querySelector('.ru').textContent = '(немного давления)';
+    }
     some.addEventListener('click', function () {
       if (++clicks !== 5) return;
       var sec = document.getElementById('timer-seconds');
@@ -683,6 +693,8 @@
       some.querySelector('.en').textContent = '(MAXIMUM PRESSURE)';
       some.querySelector('.ru').textContent = '(МАКСИМАЛЬНОЕ ДАВЛЕНИЕ)';
     });
+    // «(без давления)» откатывает максимальное давление обратно к «(немного давления)»
+    if (no) no.addEventListener('click', resetMax);
   })();
 </script>
 
