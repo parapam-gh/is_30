@@ -109,6 +109,17 @@
   @media (min-width: 768px) {
     #timer-seconds.seconds-big { font-size: 15rem; }
   }
+  /* ── ПАСХАЛКА: максимальное давление ── */
+  #timer-seconds.seconds-max { color: #FF46CA; }
+  @media (min-width: 768px) {
+    #timer-seconds.seconds-max { font-size: 22rem; }
+  }
+  .pressure-shake { animation: pressure-shake 0.35s infinite; }
+  @keyframes pressure-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
 
   body.lang-ru .cta-note { top: -6rem; width: 20rem; }
 
@@ -398,7 +409,7 @@
 
 <section class="px-6 md:px-20 py-40 bg-ink text-cream overflow-hidden relative girikh-bg">
   <div class="max-w-6xl mx-auto">
-    <h2 class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-green">
+    <h2 id="timer-headline" class="font-mono text-2xl tracking-[1em] uppercase mb-20 font-black text-center text-green">
       <span class="en">TIME UNTIL YOU HAVE TO DECIDE</span>
       <span class="ru">ВРЕМЕНИ НА РЕШЕНИЕ ОСТАЛОСЬ</span>
     </h2>
@@ -440,7 +451,7 @@
       </p>
     </div>
 
-    <p class="mt-12 font-mono text-sm max-w-lg mx-auto text-center leading-relaxed text-cream/50">
+    <p id="timer-note" class="mt-12 font-mono text-sm max-w-lg mx-auto text-center leading-relaxed text-cream/50">
       <span class="en">if you&rsquo;re joining for the full trip &mdash; train tickets sell out fast. like, genuinely fast. &rarr; <a href="plan.html" class="underline hover:text-green transition-colors">check the deadlines on the trip plan page</a></span>
       <span class="ru">если едешь на&nbsp;всю поездку&nbsp;&mdash; билеты на&nbsp;поезд исчезают быстрее, чем плов из&nbsp;казана. &rarr; <a href="plan.html" class="underline hover:text-green transition-colors">дедлайны на&nbsp;странице с&nbsp;планом</a></span>
     </p>
@@ -516,9 +527,27 @@
     var now = new Date();
     var diff = target - now;
     if (diff <= 0) {
-      ['timer-days','timer-hours','timer-minutes','timer-seconds'].forEach(function(id){
-        document.getElementById(id).textContent = '00';
-      });
+      // ── ПАСХАЛКА: отсчёт окончен, праздник идёт — считаем вверх ──
+      var up = now - target;
+      var upDays = Math.floor(up / 86400000);
+      var upHours = Math.floor((up % 86400000) / 3600000);
+      var upMin = Math.floor((up % 3600000) / 60000);
+      var upSec = Math.floor((up % 60000) / 1000);
+      document.getElementById('timer-days').textContent = '+' + String(upDays).padStart(2, '0');
+      document.getElementById('timer-hours').textContent = String(upHours).padStart(2, '0');
+      document.getElementById('timer-minutes').textContent = String(upMin).padStart(2, '0');
+      document.getElementById('timer-seconds').textContent = String(upSec).padStart(2, '0');
+      var h = document.getElementById('timer-headline');
+      if (h && !h.dataset.flipped) {
+        h.dataset.flipped = '1';
+        h.querySelector('.en').textContent = "COUNTDOWN'S OVER. PARTY'S ON.";
+        h.querySelector('.ru').textContent = 'ОТСЧЁТ ОКОНЧЕН. ПРАЗДНИК ИДЁТ:';
+        var note = document.getElementById('timer-note');
+        if (note) {
+          note.querySelector('.en').textContent = "(and you're still not here…)";
+          note.querySelector('.ru').textContent = '(а тебя всё нет…)';
+        }
+      }
       return;
     }
     var days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -568,6 +597,81 @@
     }
   }
   updatePressureVisuals();
+
+  // ── ПАСХАЛКА: «плов» → дождь из плова (десктоп — набор, мобилка — тап по слову) ──
+  (function () {
+    function rainPlov() {
+      var n = window.innerWidth < 640 ? 14 : 24;
+      for (var i = 0; i < n; i++) {
+        (function () {
+          var s = document.createElement('span');
+          s.textContent = '🥘';
+          s.style.cssText =
+            'position:fixed;top:-48px;font-size:2rem;z-index:9999;pointer-events:none;' +
+            'left:' + Math.floor(Math.random() * 100) + 'vw;' +
+            'transition:transform 3s linear, opacity 3s linear;';
+          document.body.appendChild(s);
+          requestAnimationFrame(function () {
+            s.style.transform = 'translateY(112vh) rotate(' + Math.floor(Math.random() * 360) + 'deg)';
+            s.style.opacity = '0';
+          });
+          setTimeout(function () { s.remove(); }, 3200);
+        })();
+      }
+    }
+    var buf = '';
+    document.addEventListener('keydown', function (e) {
+      if (e.key.length !== 1) return;
+      buf = (buf + e.key.toLowerCase()).slice(-4);
+      if (buf === 'plov' || buf === 'плов') { buf = ''; rainPlov(); }
+    });
+    document.querySelectorAll('a, span, p').forEach(function (el) {
+      if (el.children.length) return;
+      var t = el.textContent.toLowerCase();
+      if (t.indexOf('плов') !== -1 || t.indexOf('plov') !== -1) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', rainPlov);
+      }
+    });
+  })();
+
+  // ── ПАСХАЛКА: клик по ✈ в строке «НАШ ПЛАН» → самолётик улетает ──
+  (function () {
+    function flyPlane() {
+      var p = document.createElement('div');
+      p.textContent = '✈';
+      p.style.cssText =
+        'position:fixed;top:32vh;left:-64px;font-size:3rem;z-index:9999;pointer-events:none;' +
+        'transition:transform 2.4s cubic-bezier(0.4,0,0.6,1);';
+      document.body.appendChild(p);
+      requestAnimationFrame(function () {
+        p.style.transform = 'translate(112vw, -14vh) rotate(8deg)';
+      });
+      setTimeout(function () { p.remove(); }, 2600);
+    }
+    document.querySelectorAll('.font-bold').forEach(function (el) {
+      if (el.textContent.indexOf('✈') !== -1) {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', flyPlane);
+      }
+    });
+  })();
+
+  // ── ПАСХАЛКА: 5 кликов по «(немного давления)» → МАКСИМАЛЬНОЕ ДАВЛЕНИЕ ──
+  (function () {
+    var clicks = 0;
+    var some = document.getElementById('pressure-some');
+    if (!some) return;
+    some.addEventListener('click', function () {
+      if (++clicks !== 5) return;
+      var sec = document.getElementById('timer-seconds');
+      if (sec) sec.classList.add('seconds-max');
+      var col = document.getElementById('timer-seconds-col');
+      if (col) col.classList.add('pressure-shake');
+      some.querySelector('.en').textContent = '(MAXIMUM PRESSURE)';
+      some.querySelector('.ru').textContent = '(МАКСИМАЛЬНОЕ ДАВЛЕНИЕ)';
+    });
+  })();
 </script>
 
 <script>
