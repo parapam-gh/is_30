@@ -286,7 +286,7 @@
   </p>
 
   <div>
-    <h1 class="font-headline font-black text-[16vw] sm:text-[18vw] md:text-[15vw] lg:text-[13rem] leading-[0.78] tracking-tighter uppercase mb-6 -ml-1">
+    <h1 id="city-title" class="font-headline font-black text-[16vw] sm:text-[18vw] md:text-[15vw] lg:text-[13rem] leading-[0.78] tracking-tighter uppercase mb-6 -ml-1">
       <span class="en"><span class="text-pink italic">T</span>ASHKENT<span class="text-pink">.</span></span>
       <span class="ru"><span class="text-pink italic">Т</span>АШКЕНТ<span class="text-pink">.</span></span>
     </h1>
@@ -541,7 +541,7 @@
     <!-- header -->
     <div class="relative mb-7">
       <div class="flex items-end justify-between gap-4">
-        <h2 class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none text-cream flex items-baseline gap-3 md:gap-4 flex-wrap">
+        <h2 id="bday-head" class="font-headline font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-tighter leading-none text-cream flex items-baseline gap-3 md:gap-4 flex-wrap">
           <span class="font-mono font-bold text-pink text-4xl sm:text-5xl md:text-6xl leading-none tabular-nums"><span class="en">JUN 11</span><span class="ru">11.06</span></span>
           <span class="en">· THU · <span class="text-pink bday-star">✦</span> BIRTHDAY</span><span class="ru">· ЧТ · <span class="text-pink bday-star">✦</span> ДР</span>
         </h2>
@@ -595,7 +595,7 @@
       </div>
 
       <!-- 11:30 workshop -->
-      <div class="tl-row">
+      <div id="plov-museum" class="tl-row">
         <div class="tl-time text-pink text-xs md:text-sm">11:30</div>
         <div class="tl-body">
           <span class="tl-dot" style="background:#FF46CA;"></span>
@@ -1179,6 +1179,92 @@
     var chip = document.querySelector('.rail-chip[data-rail="'+id+'"]');
     if (chip) { chip.classList.add('is-active'); var t = document.createElement('span'); t.className='ml-1 text-green'; t.textContent='●'; chip.appendChild(t); }
   })();
+</script>
+<script>
+/* ── ПАСХАЛКИ Ташкента: плов-дождь, самолёт, ДР-взрыв, гигант-плов ── */
+(function () {
+  var css = document.createElement('style');
+  css.textContent =
+    '@keyframes egg-plane-fly{from{transform:translate(0,0) rotate(0)}to{transform:translate(96vw,-22vh) rotate(12deg);opacity:0}}' +
+    '@keyframes egg-fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}' +
+    '@keyframes egg-pop{0%{transform:translate(-50%,-50%) scale(0)}60%{transform:translate(-50%,-50%) scale(1.25)}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}';
+  document.head.appendChild(css);
+
+  function rainPlov(extra) {
+    var n = (window.innerWidth < 640 ? 14 : 24) + (extra || 0);
+    for (var i = 0; i < n; i++) {
+      var s = document.createElement('span');
+      s.textContent = '🥘';
+      s.style.cssText = 'position:fixed;top:-50px;z-index:9999;pointer-events:none;font-size:2rem;left:' +
+        Math.floor(Math.random() * 100) + 'vw;animation:egg-fall 3s linear forwards;animation-delay:' +
+        (Math.random() * 0.6).toFixed(2) + 's';
+      document.body.appendChild(s);
+      (function (el) { setTimeout(function () { el.remove(); }, 4000); })(s);
+    }
+  }
+  function flyPlane() {
+    var p = document.createElement('div');
+    p.textContent = '✈';
+    p.style.cssText = 'position:fixed;top:38vh;left:4vw;font-size:3.5rem;z-index:9999;pointer-events:none;animation:egg-plane-fly 3s cubic-bezier(0.4,0,0.6,1) forwards';
+    document.body.appendChild(p);
+    setTimeout(function () { p.remove(); }, 3200);
+  }
+  function giantPlov() {
+    rainPlov(6);
+    var g = document.createElement('div');
+    g.textContent = '🥘';
+    g.style.cssText = 'position:fixed;left:50%;top:45%;font-size:9rem;z-index:10000;pointer-events:none;animation:egg-pop 1.4s ease forwards';
+    document.body.appendChild(g);
+    setTimeout(function () { g.remove(); }, 1500);
+  }
+  function bdayBurst() {
+    var items = ['🎉', '🎂', '🥳', '✦', '30'];
+    var n = window.innerWidth < 640 ? 18 : 32;
+    for (var i = 0; i < n; i++) {
+      var s = document.createElement('span');
+      s.textContent = items[i % items.length];
+      s.style.cssText = 'position:fixed;top:-50px;z-index:10000;pointer-events:none;color:#FF46CA;font-weight:900;font-size:' +
+        (1.4 + Math.random() * 1.6).toFixed(2) + 'rem;left:' + Math.floor(Math.random() * 100) +
+        'vw;animation:egg-fall 3.2s linear forwards;animation-delay:' + (Math.random() * 0.5).toFixed(2) + 's';
+      document.body.appendChild(s);
+      (function (el) { setTimeout(function () { el.remove(); }, 4200); })(s);
+    }
+    var f = document.createElement('div');
+    f.style.cssText = 'position:fixed;left:50%;top:42%;z-index:10001;pointer-events:none;font-family:Epilogue,sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(2rem,8vw,5rem);color:#FF46CA;text-shadow:4px 4px 0 #00CB8D;text-align:center;animation:egg-pop 1.9s ease forwards';
+    f.innerHTML = '<span class="en">Happy Birthday!</span><span class="ru">С Днём Рождения!</span>';
+    document.body.appendChild(f);
+    setTimeout(function () { f.remove(); }, 2000);
+  }
+
+  // плов: физические клавиши P-L-O-V (любая раскладка) + тап по слову plov/плов
+  var buf = '', codes = '';
+  document.addEventListener('keydown', function (e) {
+    if (e.key && e.key.length === 1) buf = (buf + e.key.toLowerCase()).slice(-4);
+    if (e.code) codes = (codes + e.code).slice(-16);
+    if (buf === 'plov' || buf === 'плов' || codes.indexOf('KeyPKeyLKeyOKeyV') !== -1) { buf = ''; codes = ''; rainPlov(); }
+  });
+  document.querySelectorAll('span, p, a, div').forEach(function (el) {
+    if (el.children.length) return;
+    var t = el.textContent.toLowerCase();
+    if (t.indexOf('плов') !== -1 || t.indexOf('plov') !== -1) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function () { rainPlov(); });
+    }
+  });
+
+  // самолёт ← заголовок города
+  var title = document.getElementById('city-title');
+  if (title) { title.style.cursor = 'pointer'; title.addEventListener('click', flyPlane); }
+  // ДР-взрыв ← заголовок 11.06
+  var bday = document.getElementById('bday-head');
+  if (bday) { bday.style.cursor = 'pointer'; bday.addEventListener('click', bdayBurst); }
+  // гигант-плов ← блок Музея Плова (но не по клику на ссылки внутри)
+  var museum = document.getElementById('plov-museum');
+  if (museum) {
+    museum.style.cursor = 'pointer';
+    museum.addEventListener('click', function (e) { if (e.target.closest('a')) return; giantPlov(); });
+  }
+})();
 </script>
 </body>
 </html>

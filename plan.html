@@ -484,7 +484,7 @@
         <span class="en">ATTENTION // DIQQAT</span>
         <span class="ru">DIQQAT // внимание</span>
       </div>
-      <h2 class="font-headline font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter text-center leading-[0.95]">
+      <h2 id="deadlines-head" class="font-headline font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter text-center leading-[0.95]">
         <span class="en">THE <span class="text-green italic">DEADLINES</span> — THE SERIOUS BIT.</span>
         <span class="ru">ДЕДЛАЙНЫ — <span class="text-green italic">серьёзная</span> часть.</span>
       </h2>
@@ -718,6 +718,81 @@ function toggleMenu(){
   document.getElementById('menu-icon-open').classList.toggle('hidden',open);
   document.getElementById('menu-icon-close').classList.toggle('hidden',!open);
 }
+</script>
+<script>
+/* ── ПАСХАЛКИ Plan: плов-дождь, самолёт, шутка на дедлайнах ── */
+(function () {
+  var css = document.createElement('style');
+  css.textContent =
+    '@keyframes egg-plane-fly{from{transform:translate(0,0) rotate(0)}to{transform:translate(96vw,-22vh) rotate(12deg);opacity:0}}' +
+    '@keyframes egg-fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}' +
+    '@keyframes egg-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}' +
+    '.egg-shake{animation:egg-shake .35s 2}';
+  document.head.appendChild(css);
+
+  function rainPlov() {
+    var n = window.innerWidth < 640 ? 14 : 24;
+    for (var i = 0; i < n; i++) {
+      var s = document.createElement('span');
+      s.textContent = '🥘';
+      s.style.cssText = 'position:fixed;top:-50px;z-index:9999;pointer-events:none;font-size:2rem;left:' +
+        Math.floor(Math.random() * 100) + 'vw;animation:egg-fall 3s linear forwards;animation-delay:' +
+        (Math.random() * 0.6).toFixed(2) + 's';
+      document.body.appendChild(s);
+      (function (el) { setTimeout(function () { el.remove(); }, 4000); })(s);
+    }
+  }
+  function flyPlane() {
+    var p = document.createElement('div');
+    p.textContent = '✈';
+    p.style.cssText = 'position:fixed;top:38vh;left:4vw;font-size:3.5rem;z-index:9999;pointer-events:none;animation:egg-plane-fly 3s cubic-bezier(0.4,0,0.6,1) forwards';
+    document.body.appendChild(p);
+    setTimeout(function () { p.remove(); }, 3200);
+  }
+
+  // плов: физические клавиши P-L-O-V (любая раскладка) + тап по слову plov/плов
+  var buf = '', codes = '';
+  document.addEventListener('keydown', function (e) {
+    if (e.key && e.key.length === 1) buf = (buf + e.key.toLowerCase()).slice(-4);
+    if (e.code) codes = (codes + e.code).slice(-16);
+    if (buf === 'plov' || buf === 'плов' || codes.indexOf('KeyPKeyLKeyOKeyV') !== -1) { buf = ''; codes = ''; rainPlov(); }
+  });
+  document.querySelectorAll('span, p, a, div').forEach(function (el) {
+    if (el.children.length) return;
+    var t = el.textContent.toLowerCase();
+    if (t.indexOf('плов') !== -1 || t.indexOf('plov') !== -1) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function () { rainPlov(); });
+    }
+  });
+
+  // самолёт ← листовые элементы с ✈
+  document.querySelectorAll('span, div').forEach(function (el) {
+    if (el.children.length) return;
+    if (el.textContent.indexOf('✈') !== -1) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', flyPlane);
+    }
+  });
+
+  // шутка ← заголовок дедлайнов
+  var head = document.getElementById('deadlines-head');
+  if (head) {
+    head.style.cursor = 'pointer';
+    head.addEventListener('click', function () {
+      head.classList.remove('egg-shake');
+      void head.offsetWidth;
+      head.classList.add('egg-shake');
+      if (!document.getElementById('egg-believe')) {
+        var b = document.createElement('div');
+        b.id = 'egg-believe';
+        b.style.cssText = 'text-align:center;margin-top:1rem;font-family:Caveat,cursive;font-weight:700;font-size:1.6rem;color:#FF46CA;transform:rotate(-2deg)';
+        b.innerHTML = '<span class="en">(but we believe in you)</span><span class="ru">(но мы верим в тебя)</span>';
+        head.parentNode.appendChild(b);
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>
