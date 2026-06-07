@@ -274,7 +274,7 @@
   </p>
 
   <div>
-    <h1 class="font-headline font-black text-[13.5vw] sm:text-[14.5vw] md:text-[12.5vw] lg:text-[10.5rem] leading-[0.82] tracking-tighter uppercase mb-6 -ml-1 break-words">
+    <h1 id="city-title" class="font-headline font-black text-[13.5vw] sm:text-[14.5vw] md:text-[12.5vw] lg:text-[10.5rem] leading-[0.82] tracking-tighter uppercase mb-6 -ml-1 break-words">
       <span class="en"><span class="text-green italic">S</span>AMARKAND<span class="text-green">.</span></span>
       <span class="ru"><span class="text-green italic">С</span>АМАРКАНД<span class="text-green">.</span></span>
     </h1>
@@ -924,6 +924,56 @@
     var chip = document.querySelector('.rail-chip[data-rail="'+id+'"]');
     if (chip) { chip.classList.add('is-active'); var t = document.createElement('span'); t.className='ml-1 text-green'; t.textContent='●'; chip.appendChild(t); }
   })();
+</script>
+<script>
+/* ── ПАСХАЛКИ: плов-дождь + самолёт ── */
+(function () {
+  var css = document.createElement('style');
+  css.textContent =
+    '@keyframes egg-plane-fly{from{transform:translate(0,0) rotate(0)}to{transform:translate(96vw,-22vh) rotate(12deg);opacity:0}}' +
+    '@keyframes egg-fall{to{transform:translateY(112vh) rotate(360deg);opacity:0}}';
+  document.head.appendChild(css);
+
+  function rainPlov() {
+    var n = window.innerWidth < 640 ? 14 : 24;
+    for (var i = 0; i < n; i++) {
+      var s = document.createElement('span');
+      s.textContent = '🥘';
+      s.style.cssText = 'position:fixed;top:-50px;z-index:9999;pointer-events:none;font-size:2rem;left:' +
+        Math.floor(Math.random() * 100) + 'vw;animation:egg-fall 3s linear forwards;animation-delay:' +
+        (Math.random() * 0.6).toFixed(2) + 's';
+      document.body.appendChild(s);
+      (function (el) { setTimeout(function () { el.remove(); }, 4000); })(s);
+    }
+  }
+  function flyPlane() {
+    var p = document.createElement('div');
+    p.textContent = '✈';
+    p.style.cssText = 'position:fixed;top:38vh;left:4vw;font-size:3.5rem;z-index:9999;pointer-events:none;animation:egg-plane-fly 3s cubic-bezier(0.4,0,0.6,1) forwards';
+    document.body.appendChild(p);
+    setTimeout(function () { p.remove(); }, 3200);
+  }
+
+  // плов: физические клавиши P-L-O-V (любая раскладка) + тап по слову plov/плов
+  var buf = '', codes = '';
+  document.addEventListener('keydown', function (e) {
+    if (e.key && e.key.length === 1) buf = (buf + e.key.toLowerCase()).slice(-4);
+    if (e.code) codes = (codes + e.code).slice(-16);
+    if (buf === 'plov' || buf === 'плов' || codes.indexOf('KeyPKeyLKeyOKeyV') !== -1) { buf = ''; codes = ''; rainPlov(); }
+  });
+  document.querySelectorAll('span, p, a, div').forEach(function (el) {
+    if (el.children.length) return;
+    var t = el.textContent.toLowerCase();
+    if (t.indexOf('плов') !== -1 || t.indexOf('plov') !== -1) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function () { rainPlov(); });
+    }
+  });
+
+  // самолёт ← заголовок города
+  var title = document.getElementById('city-title');
+  if (title) { title.style.cursor = 'pointer'; title.addEventListener('click', flyPlane); }
+})();
 </script>
 </body>
 </html>
