@@ -120,6 +120,13 @@
     25% { transform: translateX(-6px); }
     75% { transform: translateX(6px); }
   }
+  /* ── ПАСХАЛКА: полёт самолётика ── */
+  .plane-flying { animation: plane-fly 3s cubic-bezier(0.4, 0, 0.6, 1) forwards; }
+  @keyframes plane-fly {
+    from { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    90%  { opacity: 1; }
+    to   { transform: translate(96vw, -22vh) rotate(12deg); opacity: 0; }
+  }
 
   body.lang-ru .cta-note { top: -6rem; width: 20rem; }
 
@@ -462,7 +469,7 @@
   <div class="text-center font-mono text-xs uppercase tracking-[0.3em] text-ink/60 mb-3">
     <span class="en">OUR PLAN</span><span class="ru">НАШ ПЛАН</span>
   </div>
-  <div class="flex justify-center whitespace-nowrap gap-12 font-mono text-lg md:text-2xl text-ink">
+  <div id="plan-marquee" class="flex justify-center whitespace-nowrap gap-12 font-mono text-lg md:text-2xl text-ink">
     <span class="font-bold"><span class="en">JUN 09 &rarr; TASHKENT</span><span class="ru">ИЮН 09 &rarr; ТАШКЕНТ</span></span>
     <span class="opacity-30">//</span>
     <span class="font-bold"><span class="en">JUN 12 &rarr; SAMARKAND</span><span class="ru">ИЮН 12 &rarr; САМАРКАНД</span></span>
@@ -619,11 +626,14 @@
         })();
       }
     }
-    var buf = '';
+    var buf = '', codes = '';
     document.addEventListener('keydown', function (e) {
-      if (e.key.length !== 1) return;
-      buf = (buf + e.key.toLowerCase()).slice(-4);
-      if (buf === 'plov' || buf === 'плов') { buf = ''; rainPlov(); }
+      if (e.key && e.key.length === 1) buf = (buf + e.key.toLowerCase()).slice(-4);
+      if (e.code) codes = (codes + e.code).slice(-16);
+      // слово plov/плов (любая раскладка) ИЛИ физические клавиши P-L-O-V
+      if (buf === 'plov' || buf === 'плов' || codes.indexOf('KeyPKeyLKeyOKeyV') !== -1) {
+        buf = ''; codes = ''; rainPlov();
+      }
     });
     document.querySelectorAll('a, span, p').forEach(function (el) {
       if (el.children.length) return;
@@ -635,19 +645,21 @@
     });
   })();
 
-  // ── ПАСХАЛКА: клик по ✈ в строке «НАШ ПЛАН» → самолётик улетает ──
+  // ── ПАСХАЛКА: клик по строке «НАШ ПЛАН» → самолётик улетает ──
   (function () {
     function flyPlane() {
       var p = document.createElement('div');
       p.textContent = '✈';
-      p.style.cssText =
-        'position:fixed;top:32vh;left:-64px;font-size:3rem;z-index:9999;pointer-events:none;' +
-        'transition:transform 2.4s cubic-bezier(0.4,0,0.6,1);';
+      p.className = 'plane-flying';
+      p.style.cssText = 'position:fixed;top:38vh;left:4vw;font-size:3.5rem;z-index:9999;pointer-events:none;';
       document.body.appendChild(p);
-      requestAnimationFrame(function () {
-        p.style.transform = 'translate(112vw, -14vh) rotate(8deg)';
-      });
-      setTimeout(function () { p.remove(); }, 2600);
+      setTimeout(function () { p.remove(); }, 3200);
+    }
+    // вся строка «НАШ ПЛАН» — крупная заметная цель, плюс сам ✈ как fallback
+    var strip = document.getElementById('plan-marquee');
+    if (strip) {
+      strip.style.cursor = 'pointer';
+      strip.addEventListener('click', flyPlane);
     }
     document.querySelectorAll('.font-bold').forEach(function (el) {
       if (el.textContent.indexOf('✈') !== -1) {
